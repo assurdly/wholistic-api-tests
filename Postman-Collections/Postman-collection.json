@@ -923,11 +923,53 @@
 					"item": [
 						{
 							"name": "Get User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e2acea02-54d1-4472-9a80-b26ad47d950c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData.status).to.be.an(\"string\");",
+											"    pm.expect(jsonData.message).to.be.a(\"string\");",
+											"    pm.expect(jsonData.data).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"",
+											"pm.test(\"Message is Successfully fetched user\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Successfully fetched user');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "610ed9ff-8655-4300-be28-2e595774fe91",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -951,6 +993,146 @@
 							"response": [
 								{
 									"id": "e6b2a04c-20b3-4b23-89c4-6a4a8bd19dc3",
+									"name": "Get User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "529cde26-4c64-446f-b081-341850156d35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "578"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"242-P8oMJ84HnaffMnsjQpYCT+Dt9Os\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:29:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched user\",\n    \"data\": {\n        \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"role\": {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"Member\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        },\n        \"profile\": {\n            \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get User - Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e2acea02-54d1-4472-9a80-b26ad47d950c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData.status).to.be.an(\"string\");",
+											"    pm.expect(jsonData.message).to.be.a(\"string\");",
+											"    pm.expect(jsonData.data).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"",
+											"pm.test(\"Message is Successfully fetched user\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Successfully fetched user');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "bd0c138a-7e83-404f-b9c3-bebd5c0cb45c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "e8b59188-bf2f-4de8-9906-4f17ef2d5721",
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "00fb2453-4045-4a99-a216-faa6f12e4158",
 									"name": "Get User",
 									"originalRequest": {
 										"method": "GET",
