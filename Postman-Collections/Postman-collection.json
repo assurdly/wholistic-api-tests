@@ -12,9 +12,21 @@
 					"name": "Get Auth Providers",
 					"event": [
 						{
+							"listen": "prerequest",
+							"script": {
+								"id": "0deb16dd-d3d4-4f86-b928-b39578b98e3c",
+								"exec": [
+									"pm.environment.set('base_url', 'https://platform-api.wholistic.work')",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
 							"listen": "test",
 							"script": {
-								"id": "9d9674bc-7410-4042-b9f2-e3e7b84509bf",
+								"id": "b8a55525-2bb0-4db4-bcf6-4db80f238649",
 								"exec": [
 									"const jsonData = pm.response.json()",
 									"console.log(jsonData)",
@@ -26,6 +38,11 @@
 									"pm.test(\"Successful GET request\", function () {",
 									"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);",
 									"});",
+									"",
+									"pm.test(\"Status code name is OK\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
 									"pm.test(\"Status code name is OK\", function () {",
 									"    pm.response.to.have.status(\"OK\");",
 									"});",
