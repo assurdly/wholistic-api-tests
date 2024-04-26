@@ -297,11 +297,35 @@
 					"item": [
 						{
 							"name": "Get Profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d2e922c0-5a41-480e-b02b-1c9968eec174",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "87121c26-1bed-4403-a2d3-46466a2a4a00",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/profile"
