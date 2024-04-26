@@ -1,0 +1,1718 @@
+{
+	"info": {
+		"_postman_id": "f7a329a4-4c92-42db-b701-05ea93538965",
+		"name": "Wholistic APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Get Auth Providers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9d9674bc-7410-4042-b9f2-e3e7b84509bf",
+								"exec": [
+									"const jsonData = pm.response.json()",
+									"console.log(jsonData)",
+									"",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"pm.test(\"Successful GET request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);",
+									"});",
+									"pm.test(\"Status code name is OK\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
+									"pm.test(\"Message is Successfully logged in\", function () {",
+									"    pm.expect(jsonData).to.be.an('array');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "98160d73-3d2f-4e65-a81f-c02c37b6b06e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/auth/providers"
+					},
+					"response": [
+						{
+							"id": "869940ca-c32b-465b-8dd4-ba9219734ec5",
+							"name": "Get Auth Providers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/auth/providers"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "853"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"355-V4QkWHTny3JwhMoD2a6OTi2H+XY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Apr 2024 06:45:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"provider\": \"microsoft\",\n        \"url\": \"https://login.microsoftonline.com/882a38c4-44ee-45de-a50d-e7ea4b689a3a/oauth2/v2.0/authorize?client_id=2fa24578-77f8-4597-8793-be664563ece1&response_type=code&redirect_uri=http://localhost:8080/auth/callback/microsoft&scope=User.Read\"\n    },\n    {\n        \"provider\": \"linkedin\",\n        \"url\": \"https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dgjl74gom187&scope=openid%20profile%20email&redirect_uri=http://localhost:8080/auth/callback/linkedin\"\n    },\n    {\n        \"provider\": \"google\",\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?client_id=757611791737-3hr66h6c8h18eocuihseqidr2fob794o.apps.googleusercontent.com&redirect_uri=http://localhost:8080/auth/callback/google&scope=https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&response_type=code&access_type=offline&prompt=consent\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Authorize Provider",
+					"id": "80ba3aad-154d-4efb-ac88-aa6dae7285ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"0.Aa4AxDgqiO5E3kWlDefqS2iaOnhFoi_4d5dFh5O-ZkVj7OGuADk.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P81hVv9F1hwS4hNFl7ppd9YLA_HwK5QzYfsvmjNKUPcIUKDXt0XiG1mnfKMS7YUx_SbNvuQ0-LV-k5eM9fJBg61Qb18GZIRzLzmV8_p5PAgrVXxdRyErfQcu_YG7L6mJvLRWCnSwKFSo5I3iNI7LG7GGpI5iGFQKFIAllYvoqtZyUapPdCpSBpVomfsPUrlgzVu7W21atV-SOlFg9L5vcnA6nU3SuJhXrwSJcr7m1zzffPMGwQew4zIRT8s5yxW3jm6TB5Cdqqlaz3iFPbu4vldOLR-RBCMAYx7k4JR70X2sOHKJQSOe5QF-KTUTICQkx4SoHnXLT-b4UWD_MNlsHVlkhauJ12RHnmrNFWYF0KBDuQvB9u0mId4Dg4448WJ7iE7DQs_Rdbhl5vwLFA-F4Geh5moh5sj_feN7ek8J0pvWDum9mA5cRwdtBAAXGjKs2H0T1tWirP_tYk9wj82Tpvt0J6X6kedaHEERChh8TUeZSVjCQm9s8piZaTBaPL-5eBhkUiRLfnaE9m45bI-f0DQwgkdPUWCYIskjR5utvQTK2_TCktYw0JbKx2JRbEoCSR9tG-JWjOvGWH9uaTDR7iHxOlspCEoJjiXyY6lu9g4cEIK7osW6Vqam-1qpnVyvw7ZMjzVR2sgELQuJk6yeHDFonUPZasdifv-hYdqBgbFMHOUsK7Lkzt9Gp3i7VLmkULLYkos8a7kPpjW58fvqQfGmRz6uUdQv7F447crivw3CTxA1jDwqq-8O-wMAR-9W7HAbfrVjMR8eMEttlvxheL2NB-AMxnw-zkL0YqoeHp2rBvPzg69GlVdgOHn-ERWxrQPW2YI-9wC2NpsiGPQfpnQhvmXXbfupan_ufI8NswWUr3uRj1nW39eMVlOJNqlpErB15GbGuCnTNrPKbG2GH4DSpc3YQsuCVlrFO23Zt6MOpuLq5h-FXWoK1ZnjCOX7hXsvze_yJN3zdihzQlQcAztax7nqHwuWXJFjJSRTZEb0dWAwJP_rUr0sTbUKeODgud0L3A9dJ_maMX1h_Wai8DMSC7gkJgBw8-d3-7TLkXPjmuXr0nlM-PJSWxb5ka4c1mPk9w0qT2b-W_HvHKKcEowjhilCStHQ_n9A2fLHI8IEXWx0n3ZRphOvw6i4Gdwf66dnosJzJ0_Mf3OFlsa6KLe1KQtbChnLoqqt8GOYbDlI-CkgAUnnuIMCe048YxFrPriWpV3FA96hsQxyyVE10yYX4XG1ENZzMHnk2dY-uecEjsJxLc-FNiEiMYzOILQf6URRAwHmdv5KxPYTEO0N4O0SmYUSnHmri6t45shWsFocv1DYwNHiQjHSMVykLlBG-it4FDvntc3aGzHceyrTDho9_G6PgCQ9KLPUAo7ZHxs5DSH5ksMrOZgrhdfKGKfO11i2fSmAZABbVTe-bKDnhWokjyxdVjrlg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/providers/:provider",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"providers",
+								":provider"
+							],
+							"variable": [
+								{
+									"id": "6edd8695-1d15-4c96-a381-effcf58dbc49",
+									"key": "provider",
+									"value": "microsoft",
+									"description": "google|microsoft|linkedin"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d38534e2-4075-4033-ba4d-c152072d1c5a",
+							"name": "Authorize Provider",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"AQSUMRQMeLRnrZQJEkO557WVjm-lQBQRliuDIw8sIwcrXrZDWW-8WQwkcTE5K--rZBtGkRPyHwGU7uxSKrJr6wud_ZZfOuQ6oS4DF2xjhwGldaKvWwALzTTbtn1kc6cLDngFtDAQ_qeAPFreWc5-tV7MCeB__8KPZN7s7isvZbOvHAfx5sXZ6M_LbF78On2ZeX9pqz0rI73O31mUf1U\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/providers/:provider",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"providers",
+										":provider"
+									],
+									"variable": [
+										{
+											"key": "provider",
+											"value": "linkedin",
+											"description": "google|microsoft|linkedin"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"156-kbTWg4PgPf7BkBXVmlU4NCBPtJE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Apr 2024 07:07:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYWMyMDI0LTg5M2QtNDEyOC1iNzBmLWU5ZjMyMWE4NmE2ZSIsImNvdW50IjowLCJpYXQiOjE3MTM3Njk2NTksImV4cCI6MTcxMzc3MDU1OX0.F_HutMZzxn6XwahU2CO8UfmPcWffTVChCgqUXGgmIbI\",\n        \"expiresIn\": 899\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "3bb86ebf-66ac-46dc-8d58-958eed29fc9e"
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"id": "87121c26-1bed-4403-a2d3-46466a2a4a00",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/profile"
+					},
+					"response": [
+						{
+							"id": "3f58059d-fc63-44ab-81ab-1c3c95bc783e",
+							"name": "Get Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "426"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Apr 2024 10:45:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Profile",
+					"id": "7fec1573-e08f-4322-a024-589d70325804",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/profile"
+					},
+					"response": [
+						{
+							"id": "69f6262b-0556-4de2-b9a4-8eb985684e96",
+							"name": "Update Profile",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "23628f28-ac17-4898-b321-a523d7e29a8e"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List Users",
+					"id": "2b5a5098-e4e0-4e72-b02d-eedbc7b3a565",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users"
+					},
+					"response": [
+						{
+							"id": "964438c7-78e9-4c40-a47d-872e1f15da18",
+							"name": "List Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/users"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1031"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"407-EeQVKFpchrjl7yxvmVtTd+JxPQo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:28:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched users\",\n    \"data\": [\n        {\n            \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n            \"email\": \"adewunmi_akinsanya@yahoo.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"pending\",\n            \"emailVerified\": false,\n            \"role\": {\n                \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n                \"name\": \"Team Member\",\n                \"slug\": \"team-member\",\n                \"description\": \"Member\",\n                \"status\": \"active\",\n                \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n            },\n            \"profile\": {\n                \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n                \"firstName\": \"\",\n                \"lastName\": \"\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n        },\n        {\n            \"id\": \"a1b367a3-4e15-4271-ae2b-83c520e55c61\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"profile\": {\n                \"id\": \"7f206b90-b3b6-430b-ab7d-d5a33c878586\",\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:04:32.086Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:04:31.634Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 2,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add User",
+					"id": "84de9d83-9196-4232-a09e-5f31ab37ef5a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"adewunmi_akinsanya@yahoo.com\",\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": [
+						{
+							"id": "26d84f85-6397-4258-9db5-f8aee265e6ec",
+							"name": "Add User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"adewunmi_akinsanya@yahoo.com\",\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/users"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "403"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"193-pkc0lvh5LfHi2Zjbhe3D75DrfGU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:23:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created user\",\n    \"data\": {\n        \"id\": \"3bb8b507-d481-4508-a035-a1971d23d885\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"profile\": {\n            \"id\": \"35ca9b0c-811a-43dd-9cfc-b27bad561f62\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:23:05.693Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:23:05.245Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"id": "610ed9ff-8655-4300-be28-2e595774fe91",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "e8b59188-bf2f-4de8-9906-4f17ef2d5721",
+									"key": "id",
+									"value": "529cde26-4c64-446f-b081-341850156d35"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e6b2a04c-20b3-4b23-89c4-6a4a8bd19dc3",
+							"name": "Get User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "578"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"242-P8oMJ84HnaffMnsjQpYCT+Dt9Os\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:29:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched user\",\n    \"data\": {\n        \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"role\": {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"Member\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        },\n        \"profile\": {\n            \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "b3e2f5ed-dd46-4829-ad67-216edf0c4112",
+									"key": "id",
+									"value": "529cde26-4c64-446f-b081-341850156d35"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:29:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"id": "a668c9df-baf7-4d0c-bb9a-7e16dca555b6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n    \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "cfd7b7c2-4d2e-47a6-883b-11c0ed17ca27",
+									"key": "id",
+									"value": "529cde26-4c64-446f-b081-341850156d35"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "be6d7e3a-e093-4b28-b35f-a0435c325120",
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n    \"status\": \"active\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-BvynQfReRLuSBdlSysxPI5ITnNc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:29:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated user\",\n    \"data\": {\n        \"status\": \"active\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "f5d492cd-390c-4585-800f-08f84a19752a"
+		},
+		{
+			"name": "Workspaces",
+			"item": [
+				{
+					"name": "List Workspaces",
+					"id": "a6cbb361-b50e-4563-85a4-79bbd1620a66",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/workspaces"
+					},
+					"response": [
+						{
+							"id": "c91109c9-a9c2-415c-b4dc-d8f1f58fdff6",
+							"name": "List Workspaces",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/workspaces"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "454"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c6-7QDcuVxZRlOJ7yE1CStFMplIn+w\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Apr 2024 10:44:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspaces\",\n    \"data\": [\n        {\n            \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n            \"name\": \"Assurdly\",\n            \"status\": \"active\",\n            \"slug\": \"assurdly\",\n            \"size\": \"1-10\",\n            \"purpose\": \"Testing\",\n            \"utmMedium\": \"Instagram\",\n            \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n            \"primaryUser\": {\n                \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n                \"email\": \"adewunmiakinsanya@gmail.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Workspace",
+					"id": "2b55feac-91e5-47f3-9e58-eb64c92cf1e5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workspaces/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "ebc00df8-01d5-45f4-b780-5a71075d6e91",
+									"key": "id",
+									"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "9c7462e7-6244-4dd0-9683-798c717661a3",
+							"name": "Get Workspace",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/workspaces/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "441"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b9-41hqW+JdMoNvyhfqhHZSEeuJ8As\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Apr 2024 10:44:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n        \"primaryUser\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Wunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Workspace",
+					"id": "3287825c-172b-4d18-a8ac-ddc01ec97350",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Assurdly\",\n    \"slug\": \"assurdly\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/workspaces"
+					},
+					"response": [
+						{
+							"id": "3923e842-c892-4e13-aa71-124582d3dfd1",
+							"name": "Create Workspace",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Assurdly\",\n    \"slug\": \"assurdly\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/workspaces"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "365"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16d-7HIB6CSOqlFFrHrvKvt5es5nYzA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Apr 2024 10:40:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created workspace\",\n    \"data\": {\n        \"id\": \"6699b925-e48d-4b3b-9c17-2360af4570cf\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:40:09.412Z\",\n        \"primaryUser\": {\n            \"id\": \"3fac2024-893d-4128-b70f-e9f321a86a6e\",\n            \"email\": \"adewunmiakinsanya@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "5a205488-15ab-4fab-aacf-2260a6e6408a"
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get Roles",
+					"id": "2a5dde88-a88a-4c06-927d-ffa2cf571cf7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/roles"
+					},
+					"response": [
+						{
+							"id": "e188b6d2-894b-450d-9a48-48b25e2a0fe5",
+							"name": "Get Roles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/roles"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13b-sjxsUhdq4AIdMRB/h2HXYdiSyGA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:12:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Role",
+					"id": "51adbd4c-5f39-4e6d-8dc5-c19e3313afd2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Team Member\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/roles"
+					},
+					"response": [
+						{
+							"id": "0b25f70e-cc15-41e1-b897-4153984a10e3",
+							"name": "Create Role",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Team Member\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/roles"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e3-m90kjOQcOgMpuZyp+0coKYvUldY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:12:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Permissions",
+					"id": "b1fab85b-52d1-41a6-a773-086a550be8a0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/roles/permissions"
+					},
+					"response": [
+						{
+							"id": "c9413070-03e9-45e4-b47a-a639c53a2ee4",
+							"name": "List Permissions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/roles/permissions"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3392"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d40-GrT1uPHhNQ7DUWPjNMn+Lj+zL58\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:08:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched permissions\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Role",
+					"id": "278c827c-3462-46bb-a959-4c970301c19c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/roles/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "00a523dd-79b8-4c63-b2f9-d2479ea62f42",
+									"key": "id",
+									"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "537de670-705d-4c98-8e71-9c2b31caf48b",
+							"name": "Get Role",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e3-g/uWjgyy2/KxC1T+JABKZNS+R/s\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:12:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Role Permissions",
+					"id": "4b813467-45a4-4a56-869f-7c2341adae5a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/roles/:id/permissions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles",
+								":id",
+								"permissions"
+							],
+							"variable": [
+								{
+									"id": "9aed19e4-49f2-49c0-9b07-7f2537cad892",
+									"key": "id",
+									"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "fd13473f-e5a0-4a77-bebd-dad4e9b416fc",
+							"name": "Get Role Permissions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id",
+										"permissions"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d39-4SV9XQv2qWux+eGMYth6UKiniCE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:13:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Role",
+					"id": "8dc9a916-7e5c-40a2-8ab7-8604be652d9e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/roles/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "23323b54-aa20-4a78-8507-a05344c9f3b7",
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"id": "ed4bf8cc-c39e-4eb8-b5bf-ff2bd683633c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/roles/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "f1333713-206e-454a-acba-b1537a7d7f56",
+									"key": "id",
+									"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "3adaa3a8-eed2-4da7-b195-38080f7c10b7",
+							"name": "Update Role",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"eb-0Onk9un/wqugABny4ek4IbFPqhs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:19:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"Member\",\n        \"status\": \"inactive\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "0d5efa06-f654-44c0-93fc-5ee465f0e941"
+		},
+		{
+			"name": "Audit Logs",
+			"item": [],
+			"id": "9c0d3120-2132-49e9-b622-45201fc3f60b"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1a48e48b-5a54-408f-a4fe-63d4f1438963",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "98f96b53-e46d-4103-aa42-239bf3608c6a",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
