@@ -1337,7 +1337,129 @@
 					"item": [
 						{
 							"name": "Add User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "07945608-1162-4491-bafd-5f70c31d9dac",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Created\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "84de9d83-9196-4232-a09e-5f31ab37ef5a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/users"
+							},
+							"response": [
+								{
+									"id": "26d84f85-6397-4258-9db5-f8aee265e6ec",
+									"name": "Add User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"adewunmi_akinsanya@yahoo.com\",\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/users"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "403"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"193-pkc0lvh5LfHi2Zjbhe3D75DrfGU\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:23:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created user\",\n    \"data\": {\n        \"id\": \"3bb8b507-d481-4508-a035-a1971d23d885\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"profile\": {\n            \"id\": \"35ca9b0c-811a-43dd-9cfc-b27bad561f62\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:23:05.693Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:23:05.245Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Add User - No Auth",
+							"id": "7f3e8cb4-9562-4296-8fa1-259028b0026e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1357,7 +1479,7 @@
 							},
 							"response": [
 								{
-									"id": "26d84f85-6397-4258-9db5-f8aee265e6ec",
+									"id": "322ad760-963e-4903-8a4f-252b4ebeccc1",
 									"name": "Add User",
 									"originalRequest": {
 										"method": "POST",
