@@ -161,7 +161,7 @@
 									"});",
 									"",
 									"pm.test(\"Message is Successfully logged in\", function () {",
-									"    pm.expect(jsonData.message).to.include('Login successful');",
+									"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
 									"});"
 								],
 								"type": "text/javascript",
@@ -197,9 +197,8 @@
 							],
 							"variable": [
 								{
-									"id": "6edd8695-1d15-4c96-a381-effcf58dbc49",
 									"key": "provider",
-									"value": "microsoft",
+									"value": "google",
 									"description": "google|microsoft|linkedin"
 								}
 							]
@@ -295,96 +294,112 @@
 			"item": [
 				{
 					"name": "Get Profile",
-					"id": "87121c26-1bed-4403-a2d3-46466a2a4a00",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/profile"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "3f58059d-fc63-44ab-81ab-1c3c95bc783e",
 							"name": "Get Profile",
-							"originalRequest": {
+							"id": "87121c26-1bed-4403-a2d3-46466a2a4a00",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/profile"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "426"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 23 Apr 2024 10:45:05 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "3f58059d-fc63-44ab-81ab-1c3c95bc783e",
+									"name": "Get Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "426"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:45:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "ee383dc4-d02c-4724-b1f6-4a0b8b8b5d46"
 				},
 				{
 					"name": "Update Profile",
-					"id": "7fec1573-e08f-4322-a024-589d70325804",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/profile"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "69f6262b-0556-4de2-b9a4-8eb985684e96",
 							"name": "Update Profile",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "df9f498d-ec1e-4071-9105-bfc1ea34e827",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "7fec1573-e08f-4322-a024-589d70325804",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -398,52 +413,183 @@
 								},
 								"url": "{{baseUrl}}/profile"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
+									"id": "69f6262b-0556-4de2-b9a4-8eb985684e96",
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Profile - No Auth",
+							"event": [
 								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "240"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 23 Apr 2024 11:00:36 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"listen": "test",
+									"script": {
+										"id": "df9f498d-ec1e-4071-9105-bfc1ea34e827",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
 								}
 							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+							"id": "3b87f8ad-9382-4bc0-995d-d95a3848c3e0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "df78268e-8994-4efd-892a-c5f67a73ce4c",
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
 						}
-					]
+					],
+					"id": "5331317b-bf22-465c-836c-c0093ba2cef7"
 				}
 			],
 			"id": "23628f28-ac17-4898-b321-a523d7e29a8e"
