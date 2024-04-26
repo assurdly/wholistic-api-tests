@@ -708,101 +708,330 @@
 			"item": [
 				{
 					"name": "List Users",
-					"item": [],
-					"id": "1ce6ef78-615b-4db5-8769-cd5f3ef93f8d"
-				},
-				{
-					"name": "List Users",
-					"id": "2b5a5098-e4e0-4e72-b02d-eedbc7b3a565",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/users"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "964438c7-78e9-4c40-a47d-872e1f15da18",
 							"name": "List Users",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c69eb719-ddfb-490f-bb46-e5215bc4f97a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('array');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"",
+											"pm.test(\"Message is Successfully fetched users\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Successfully fetched users');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "2b5a5098-e4e0-4e72-b02d-eedbc7b3a565",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/users"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
+									"id": "964438c7-78e9-4c40-a47d-872e1f15da18",
+									"name": "List Users",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/users"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1031"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"407-EeQVKFpchrjl7yxvmVtTd+JxPQo\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:28:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched users\",\n    \"data\": [\n        {\n            \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n            \"email\": \"adewunmi_akinsanya@yahoo.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"pending\",\n            \"emailVerified\": false,\n            \"role\": {\n                \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n                \"name\": \"Team Member\",\n                \"slug\": \"team-member\",\n                \"description\": \"Member\",\n                \"status\": \"active\",\n                \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n            },\n            \"profile\": {\n                \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n                \"firstName\": \"\",\n                \"lastName\": \"\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n        },\n        {\n            \"id\": \"a1b367a3-4e15-4271-ae2b-83c520e55c61\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"profile\": {\n                \"id\": \"7f206b90-b3b6-430b-ab7d-d5a33c878586\",\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:04:32.086Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:04:31.634Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 2,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "List Users - No Auth",
+							"event": [
 								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1031"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"407-EeQVKFpchrjl7yxvmVtTd+JxPQo\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 24 Apr 2024 18:28:37 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"listen": "test",
+									"script": {
+										"id": "7bf4b5f9-4d88-4d26-ba46-456d85742a6d",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Unauthorized\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Response body properties\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Message is present\", function () {",
+											"    pm.expect(jsonData.message).to.eql(\"You must provide an access token to access this resource.\");",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
 								}
 							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched users\",\n    \"data\": [\n        {\n            \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n            \"email\": \"adewunmi_akinsanya@yahoo.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"pending\",\n            \"emailVerified\": false,\n            \"role\": {\n                \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n                \"name\": \"Team Member\",\n                \"slug\": \"team-member\",\n                \"description\": \"Member\",\n                \"status\": \"active\",\n                \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n            },\n            \"profile\": {\n                \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n                \"firstName\": \"\",\n                \"lastName\": \"\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n        },\n        {\n            \"id\": \"a1b367a3-4e15-4271-ae2b-83c520e55c61\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"profile\": {\n                \"id\": \"7f206b90-b3b6-430b-ab7d-d5a33c878586\",\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:04:32.086Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:04:31.634Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 2,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+							"id": "36552ecd-349c-4fa1-a8b4-e7d29e4c60d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/users"
+							},
+							"response": [
+								{
+									"id": "1b8a5077-2e3f-4cef-a8aa-675333382f50",
+									"name": "List Users",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/users"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1031"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"407-EeQVKFpchrjl7yxvmVtTd+JxPQo\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:28:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched users\",\n    \"data\": [\n        {\n            \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n            \"email\": \"adewunmi_akinsanya@yahoo.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"pending\",\n            \"emailVerified\": false,\n            \"role\": {\n                \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n                \"name\": \"Team Member\",\n                \"slug\": \"team-member\",\n                \"description\": \"Member\",\n                \"status\": \"active\",\n                \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n            },\n            \"profile\": {\n                \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n                \"firstName\": \"\",\n                \"lastName\": \"\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n        },\n        {\n            \"id\": \"a1b367a3-4e15-4271-ae2b-83c520e55c61\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"profile\": {\n                \"id\": \"7f206b90-b3b6-430b-ab7d-d5a33c878586\",\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null,\n                \"country\": null,\n                \"createdAt\": \"2024-04-24T17:04:32.086Z\"\n            },\n            \"createdAt\": \"2024-04-24T17:04:31.634Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 2,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
 						}
-					]
+					],
+					"id": "1ce6ef78-615b-4db5-8769-cd5f3ef93f8d"
+				},
+				{
+					"name": "Get users",
+					"item": [
+						{
+							"name": "Get User",
+							"id": "610ed9ff-8655-4300-be28-2e595774fe91",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "e8b59188-bf2f-4de8-9906-4f17ef2d5721",
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "e6b2a04c-20b3-4b23-89c4-6a4a8bd19dc3",
+									"name": "Get User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "529cde26-4c64-446f-b081-341850156d35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "578"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"242-P8oMJ84HnaffMnsjQpYCT+Dt9Os\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:29:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched user\",\n    \"data\": {\n        \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"role\": {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"Member\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        },\n        \"profile\": {\n            \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "db4ed4e7-b7b3-4a21-b41e-dbb9a8443e0b"
 				},
 				{
 					"name": "Add User",
-					"id": "84de9d83-9196-4232-a09e-5f31ab37ef5a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"adewunmi_akinsanya@yahoo.com\",\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/users"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "26d84f85-6397-4258-9db5-f8aee265e6ec",
 							"name": "Add User",
-							"originalRequest": {
+							"id": "84de9d83-9196-4232-a09e-5f31ab37ef5a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -816,183 +1045,84 @@
 								},
 								"url": "{{baseUrl}}/users"
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "403"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"193-pkc0lvh5LfHi2Zjbhe3D75DrfGU\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 24 Apr 2024 18:23:05 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created user\",\n    \"data\": {\n        \"id\": \"3bb8b507-d481-4508-a035-a1971d23d885\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"profile\": {\n            \"id\": \"35ca9b0c-811a-43dd-9cfc-b27bad561f62\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:23:05.693Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:23:05.245Z\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get User",
-					"id": "610ed9ff-8655-4300-be28-2e595774fe91",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "e8b59188-bf2f-4de8-9906-4f17ef2d5721",
-									"key": "id",
-									"value": "529cde26-4c64-446f-b081-341850156d35"
+									"id": "26d84f85-6397-4258-9db5-f8aee265e6ec",
+									"name": "Add User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"adewunmi_akinsanya@yahoo.com\",\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/users"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "403"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"193-pkc0lvh5LfHi2Zjbhe3D75DrfGU\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:23:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created user\",\n    \"data\": {\n        \"id\": \"3bb8b507-d481-4508-a035-a1971d23d885\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"profile\": {\n            \"id\": \"35ca9b0c-811a-43dd-9cfc-b27bad561f62\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:23:05.693Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:23:05.245Z\"\n    }\n}"
 								}
 							]
 						}
-					},
-					"response": [
-						{
-							"id": "e6b2a04c-20b3-4b23-89c4-6a4a8bd19dc3",
-							"name": "Get User",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/users/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"users",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "529cde26-4c64-446f-b081-341850156d35"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "578"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"242-P8oMJ84HnaffMnsjQpYCT+Dt9Os\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 24 Apr 2024 18:29:00 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched user\",\n    \"data\": {\n        \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"role\": {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"Member\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        },\n        \"profile\": {\n            \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n    }\n}"
-						}
-					]
+					],
+					"id": "5d782426-1c4d-4104-8154-55e1d9b6c838"
 				},
 				{
 					"name": "Delete User",
-					"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "b3e2f5ed-dd46-4829-ad67-216edf0c4112",
-									"key": "id",
-									"value": "529cde26-4c64-446f-b081-341850156d35"
-								}
-							]
-						}
-					},
-					"response": [
+					"item": [
 						{
-							"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
 							"name": "Delete User",
-							"originalRequest": {
+							"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
@@ -1006,58 +1136,86 @@
 									],
 									"variable": [
 										{
+											"id": "b3e2f5ed-dd46-4829-ad67-216edf0c4112",
 											"key": "id",
 											"value": "529cde26-4c64-446f-b081-341850156d35"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "70"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 24 Apr 2024 18:29:54 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
+									"name": "Delete User",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "529cde26-4c64-446f-b081-341850156d35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:29:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
+							]
 						}
-					]
+					],
+					"id": "43145aca-8ea3-4505-a4c3-1d0a73a5eca9"
 				},
 				{
 					"name": "Update User",
