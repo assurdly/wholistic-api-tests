@@ -842,7 +842,7 @@
 											"});",
 											"",
 											"pm.test(\"Message is present\", function () {",
-											"    pm.expect(jsonData.message).to.eql(\"You must provide an access token to access this resource.\");",
+											"    pm.expect(jsonData.message).to.eql(\"Invalid credentials.\");",
 											"});"
 										],
 										"type": "text/javascript",
@@ -951,6 +951,104 @@
 							"response": [
 								{
 									"id": "e6b2a04c-20b3-4b23-89c4-6a4a8bd19dc3",
+									"name": "Get User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "529cde26-4c64-446f-b081-341850156d35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "578"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"242-P8oMJ84HnaffMnsjQpYCT+Dt9Os\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:29:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched user\",\n    \"data\": {\n        \"id\": \"529cde26-4c64-446f-b081-341850156d35\",\n        \"email\": \"adewunmi_akinsanya@yahoo.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"pending\",\n        \"emailVerified\": false,\n        \"role\": {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"Member\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        },\n        \"profile\": {\n            \"id\": \"33f47ef1-1d18-4b34-bde5-cdde0079bae3\",\n            \"firstName\": \"\",\n            \"lastName\": \"\",\n            \"phone\": null,\n            \"country\": null,\n            \"createdAt\": \"2024-04-24T17:28:25.158Z\"\n        },\n        \"createdAt\": \"2024-04-24T17:28:24.727Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get User Copy",
+							"id": "eb323a77-7942-4fef-9181-d5b522b12941",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "e8b59188-bf2f-4de8-9906-4f17ef2d5721",
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "1be63559-894d-4e7b-8fe1-f51b36641bbc",
 									"name": "Get User",
 									"originalRequest": {
 										"method": "GET",
