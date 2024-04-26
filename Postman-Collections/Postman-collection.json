@@ -708,6 +708,11 @@
 			"item": [
 				{
 					"name": "List Users",
+					"item": [],
+					"id": "1ce6ef78-615b-4db5-8769-cd5f3ef93f8d"
+				},
+				{
+					"name": "List Users",
 					"id": "2b5a5098-e4e0-4e72-b02d-eedbc7b3a565",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
