@@ -16,7 +16,7 @@
 							"script": {
 								"id": "0deb16dd-d3d4-4f86-b928-b39578b98e3c",
 								"exec": [
-									"pm.environment.set('base_url', 'https://platform-api.wholistic.work')",
+									"pm.environment.set('baseUrl', 'https://platform-api.wholistic.work')",
 									""
 								],
 								"type": "text/javascript",
