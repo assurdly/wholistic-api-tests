@@ -1459,6 +1459,42 @@
 						},
 						{
 							"name": "Add User - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e8b6d16b-e8ee-4e3c-8452-0df09688ec75",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"// pm.environment.set(\"createdUser\", jsonData.data.id)",
+											"// pm.environment.set(\"createdUserEmailAddress\", jsonData.data.email)",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(\"Unauthorized\");",
+											"});",
+											"",
+											"pm.test(\"Status code response is Unauthorized\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Invalid credentials.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "7f3e8cb4-9562-4296-8fa1-259028b0026e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
