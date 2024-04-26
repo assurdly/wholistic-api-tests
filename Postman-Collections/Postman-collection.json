@@ -950,6 +950,10 @@
 											"    pm.expect(jsonData.status).to.eql('success');",
 											"});",
 											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"",
 											"pm.test(\"Message is Successfully fetched user\", function () {",
 											"    pm.expect(jsonData.message).to.eql('Successfully fetched user');",
 											"});"
