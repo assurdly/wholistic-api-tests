@@ -361,6 +361,91 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Get Profile - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ddd0b62f-7a97-4d3f-b76a-9a9e24fba16b",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "bb6b8f5c-52cd-4742-90de-f6ee02188db7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "7cf00954-5bb6-4c6c-9a3e-36c32d189dab",
+									"name": "Get Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "426"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:45:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "ee383dc4-d02c-4724-b1f6-4a0b8b8b5d46"
