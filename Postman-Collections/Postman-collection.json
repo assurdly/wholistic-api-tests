@@ -1069,29 +1069,25 @@
 									"script": {
 										"id": "e2acea02-54d1-4472-9a80-b26ad47d950c",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"const jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
 											"});",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status(\"OK\");",
+											"pm.test(\"Status code response is Not FOund\", function () {",
+											"    pm.response.to.have.status(\"Not Found\");",
 											"});",
 											"",
-											"var jsonData = pm.response.json();",
 											"",
 											"pm.test(\"Response body property\", function () {",
 											"    pm.expect(jsonData).to.be.an(\"object\");",
-											"    pm.expect(jsonData.status).to.be.an(\"string\");",
-											"    pm.expect(jsonData.message).to.be.a(\"string\");",
-											"    pm.expect(jsonData.data).to.be.an(\"object\");",
+											"",
 											"});",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
 											"",
 											"pm.test(\"Message is Successfully fetched user\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Successfully fetched user');",
+											"    pm.expect(jsonData.message).to.eql('User not found.');",
 											"});"
 										],
 										"type": "text/javascript",
@@ -1202,12 +1198,46 @@
 							]
 						},
 						{
-							"name": "Get User Copy",
+							"name": "Get User - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6a279720-c81f-4eaa-a77d-9bd0bab464b8",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Not FOund\", function () {",
+											"    pm.response.to.have.status(\"Unauthorized\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"",
+											"});",
+											"",
+											"pm.test(\"Message is Successfully fetched user\", function () {",
+											"    pm.expect(jsonData.message).to.eql('You must provide an access token to access this resource.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "eb323a77-7942-4fef-9181-d5b522b12941",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
