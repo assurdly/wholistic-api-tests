@@ -123,6 +123,52 @@
 				},
 				{
 					"name": "Authorize Provider",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dad7168c-c60a-4fb0-8d7d-df962efbb076",
+								"exec": [
+									"const jsonData = pm.response.json();",
+									"",
+									"const accesstoken = jsonData.data.accessToken",
+									"const refreshtoken = jsonData.data.refreshToken;",
+									"",
+									"pm.environment.set(\"accessToken\", accesstoken)",
+									"// pm.environment.set(\"refreshToken\", refreshtoken)",
+									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"    pm.expect(jsonData.data).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});",
+									"",
+									"pm.test(\"Message is Successfully logged in\", function () {",
+									"    pm.expect(jsonData.message).to.include('Login successful');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "80ba3aad-154d-4efb-ac88-aa6dae7285ac",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -132,7 +178,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"code\": \"0.Aa4AxDgqiO5E3kWlDefqS2iaOnhFoi_4d5dFh5O-ZkVj7OGuADk.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P81hVv9F1hwS4hNFl7ppd9YLA_HwK5QzYfsvmjNKUPcIUKDXt0XiG1mnfKMS7YUx_SbNvuQ0-LV-k5eM9fJBg61Qb18GZIRzLzmV8_p5PAgrVXxdRyErfQcu_YG7L6mJvLRWCnSwKFSo5I3iNI7LG7GGpI5iGFQKFIAllYvoqtZyUapPdCpSBpVomfsPUrlgzVu7W21atV-SOlFg9L5vcnA6nU3SuJhXrwSJcr7m1zzffPMGwQew4zIRT8s5yxW3jm6TB5Cdqqlaz3iFPbu4vldOLR-RBCMAYx7k4JR70X2sOHKJQSOe5QF-KTUTICQkx4SoHnXLT-b4UWD_MNlsHVlkhauJ12RHnmrNFWYF0KBDuQvB9u0mId4Dg4448WJ7iE7DQs_Rdbhl5vwLFA-F4Geh5moh5sj_feN7ek8J0pvWDum9mA5cRwdtBAAXGjKs2H0T1tWirP_tYk9wj82Tpvt0J6X6kedaHEERChh8TUeZSVjCQm9s8piZaTBaPL-5eBhkUiRLfnaE9m45bI-f0DQwgkdPUWCYIskjR5utvQTK2_TCktYw0JbKx2JRbEoCSR9tG-JWjOvGWH9uaTDR7iHxOlspCEoJjiXyY6lu9g4cEIK7osW6Vqam-1qpnVyvw7ZMjzVR2sgELQuJk6yeHDFonUPZasdifv-hYdqBgbFMHOUsK7Lkzt9Gp3i7VLmkULLYkos8a7kPpjW58fvqQfGmRz6uUdQv7F447crivw3CTxA1jDwqq-8O-wMAR-9W7HAbfrVjMR8eMEttlvxheL2NB-AMxnw-zkL0YqoeHp2rBvPzg69GlVdgOHn-ERWxrQPW2YI-9wC2NpsiGPQfpnQhvmXXbfupan_ufI8NswWUr3uRj1nW39eMVlOJNqlpErB15GbGuCnTNrPKbG2GH4DSpc3YQsuCVlrFO23Zt6MOpuLq5h-FXWoK1ZnjCOX7hXsvze_yJN3zdihzQlQcAztax7nqHwuWXJFjJSRTZEb0dWAwJP_rUr0sTbUKeODgud0L3A9dJ_maMX1h_Wai8DMSC7gkJgBw8-d3-7TLkXPjmuXr0nlM-PJSWxb5ka4c1mPk9w0qT2b-W_HvHKKcEowjhilCStHQ_n9A2fLHI8IEXWx0n3ZRphOvw6i4Gdwf66dnosJzJ0_Mf3OFlsa6KLe1KQtbChnLoqqt8GOYbDlI-CkgAUnnuIMCe048YxFrPriWpV3FA96hsQxyyVE10yYX4XG1ENZzMHnk2dY-uecEjsJxLc-FNiEiMYzOILQf6URRAwHmdv5KxPYTEO0N4O0SmYUSnHmri6t45shWsFocv1DYwNHiQjHSMVykLlBG-it4FDvntc3aGzHceyrTDho9_G6PgCQ9KLPUAo7ZHxs5DSH5ksMrOZgrhdfKGKfO11i2fSmAZABbVTe-bKDnhWokjyxdVjrlg\"\n}",
+							"raw": "{\n    \"code\": \"4%2F0AeaYSHAbFSVUrI-YkVDQu_iWihmrxWEQb4EEMKWdaJDAk3m9EPAQVMblew_GCFhntObBdw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
