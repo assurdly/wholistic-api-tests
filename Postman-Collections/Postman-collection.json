@@ -292,7 +292,7 @@
 				},
 				{
 					"name": "Initialize Email Signup",
-					"id": "e266fbc3-c8c9-4cb2-b692-8d65e0cedabb",
+					"id": "c53fc128-8f01-4d34-bf91-5fb8fde62fa6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -312,7 +312,7 @@
 					},
 					"response": [
 						{
-							"id": "e3d0399c-e654-4da0-a3f2-3616b739237f",
+							"id": "2f1fab8a-13b0-4d6e-8fcc-5eafe65f59d8",
 							"name": "Initialize Email Signup",
 							"originalRequest": {
 								"method": "POST",
@@ -377,7 +377,7 @@
 				},
 				{
 					"name": "Complete Email Signup",
-					"id": "735b6a3d-402a-4d00-b4a6-d369c23b9e70",
+					"id": "8fa2d9f5-a0c8-48e4-a3d2-ccb42f899e54",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -405,6 +405,7 @@
 							],
 							"variable": [
 								{
+									"id": "0a745b58-d864-413d-b92a-c085b2d17f55",
 									"key": "token",
 									"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
 								}
@@ -413,7 +414,7 @@
 					},
 					"response": [
 						{
-							"id": "5829341e-203e-43f3-a0b9-b28722e52e5c",
+							"id": "9be9e221-5058-4deb-8d03-039b45452555",
 							"name": "Complete Email Signup",
 							"originalRequest": {
 								"method": "POST",
@@ -3059,7 +3060,7 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "{{token}}"
+			"token": "{{accessToken}}"
 		}
 	},
 	"event": [
