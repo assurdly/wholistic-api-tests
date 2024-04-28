@@ -310,6 +310,81 @@
 						},
 						"url": "{{baseUrl}}/auth/signup"
 					},
+					"response": [
+						{
+							"id": "e3d0399c-e654-4da0-a3f2-3616b739237f",
+							"name": "Initialize Email Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"adewunmiakinsanya@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/signup"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "291"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"123-tkzodprQRUi40CE+8w7oXg+Es50\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 21:47:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"You have successfully signed up, kindly verify your email to access the dashboard.\",\n    \"data\": {\n        \"id\": \"45291693-3544-4de2-8d79-d68195bed53e\",\n        \"email\": \"adewunmiakinsanya@gmail.com\",\n        \"profile\": {\n            \"id\": \"4684e465-5dff-4343-833e-417c62bc97ef\",\n            \"firstName\": \"\",\n            \"lastName\": \"\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Complete Email Signup",
+					"id": "735b6a3d-402a-4d00-b4a6-d369c23b9e70",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
 					"response": []
 				}
 			],
@@ -2757,48 +2832,21 @@
 					"id": "410dc93c-1b33-4bc6-ab39-d4b39ee9ce03"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "931c44d8-1057-46fd-a201-69b1d3d816a1"
-				},
-				{
 					"name": "Get Role Permissions",
-					"id": "4b813467-45a4-4a56-869f-7c2341adae5a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/roles/:id/permissions",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"roles",
-								":id",
-								"permissions"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
-								}
-							]
-						}
-					},
-					"response": [
+					"item": [
 						{
-							"id": "fd13473f-e5a0-4a77-bebd-dad4e9b416fc",
 							"name": "Get Role Permissions",
-							"originalRequest": {
+							"id": "4b813467-45a4-4a56-869f-7c2341adae5a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -2814,57 +2862,85 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+											"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "3385"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"d39-4SV9XQv2qWux+eGMYth6UKiniCE\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 24 Apr 2024 18:13:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "fd13473f-e5a0-4a77-bebd-dad4e9b416fc",
+									"name": "Get Role Permissions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:id/permissions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":id",
+												"permissions"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3385"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d39-4SV9XQv2qWux+eGMYth6UKiniCE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:13:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
+							]
 						}
-					]
+					],
+					"id": "931c44d8-1057-46fd-a201-69b1d3d816a1"
 				}
 			],
 			"id": "0d5efa06-f654-44c0-93fc-5ee465f0e941"
