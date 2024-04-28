@@ -1716,45 +1716,14 @@
 				},
 				{
 					"name": "Update User",
-					"id": "a668c9df-baf7-4d0c-bb9a-7e16dca555b6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n    \"status\": \"active\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/users/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "cfd7b7c2-4d2e-47a6-883b-11c0ed17ca27",
-									"key": "id",
-									"value": "529cde26-4c64-446f-b081-341850156d35"
-								}
-							]
-						}
-					},
-					"response": [
+					"item": [
 						{
-							"id": "be6d7e3a-e093-4b28-b35f-a0435c325120",
 							"name": "Update User",
-							"originalRequest": {
+							"id": "a668c9df-baf7-4d0c-bb9a-7e16dca555b6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -1777,58 +1746,95 @@
 									],
 									"variable": [
 										{
+											"id": "cfd7b7c2-4d2e-47a6-883b-11c0ed17ca27",
 											"key": "id",
 											"value": "529cde26-4c64-446f-b081-341850156d35"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "85"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"55-BvynQfReRLuSBdlSysxPI5ITnNc\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 24 Apr 2024 18:29:35 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "be6d7e3a-e093-4b28-b35f-a0435c325120",
+									"name": "Update User",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n    \"status\": \"active\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "529cde26-4c64-446f-b081-341850156d35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "85"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"55-BvynQfReRLuSBdlSysxPI5ITnNc\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:29:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated user\",\n    \"data\": {\n        \"status\": \"active\"\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated user\",\n    \"data\": {\n        \"status\": \"active\"\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "b993257a-6f87-4b68-b7b7-e262cac300b6"
 				}
 			],
 			"id": "f5d492cd-390c-4585-800f-08f84a19752a"
@@ -1836,6 +1842,16 @@
 		{
 			"name": "Workspaces",
 			"item": [
+				{
+					"name": "List Workspaces",
+					"item": [],
+					"id": "f1c00d1a-b201-4fe5-9cf5-bf6ec46a3ae2"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "e68ebe53-563c-4489-b2a5-6a67712daa53"
+				},
 				{
 					"name": "List Workspaces",
 					"event": [
