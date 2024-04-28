@@ -289,6 +289,28 @@
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYWMyMDI0LTg5M2QtNDEyOC1iNzBmLWU5ZjMyMWE4NmE2ZSIsImNvdW50IjowLCJpYXQiOjE3MTM3Njk2NTksImV4cCI6MTcxMzc3MDU1OX0.F_HutMZzxn6XwahU2CO8UfmPcWffTVChCgqUXGgmIbI\",\n        \"expiresIn\": 899\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Initialize Email Signup",
+					"id": "e266fbc3-c8c9-4cb2-b692-8d65e0cedabb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"adewunmiakinsanya@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/auth/signup"
+					},
+					"response": []
 				}
 			],
 			"id": "3bb86ebf-66ac-46dc-8d58-958eed29fc9e"
