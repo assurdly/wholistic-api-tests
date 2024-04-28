@@ -145,6 +145,10 @@
 									"    pm.response.to.have.status(201);",
 									"});",
 									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
 									"pm.test(\"Response body property\", function () {",
 									"    pm.expect(jsonData).to.be.an('object');",
 									"    pm.expect(jsonData.status).to.be.a('string');",
@@ -178,7 +182,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"code\": \"4%2F0AeaYSHAbFSVUrI-YkVDQu_iWihmrxWEQb4EEMKWdaJDAk3m9EPAQVMblew_GCFhntObBdw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent\"\n}",
+							"raw": "{\n    \"code\": \"4%2F0AeaYSHD3_zIn3VDSAyIqb8SKtyweWA04jG_Dm05ItNqfyXuxpPgZza-aK5BFYn46yhqz_w&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
