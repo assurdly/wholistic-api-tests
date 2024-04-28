@@ -145,6 +145,10 @@
 									"    pm.response.to.have.status(201);",
 									"});",
 									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
 									"pm.test(\"Response body property\", function () {",
 									"    pm.expect(jsonData).to.be.an('object');",
 									"    pm.expect(jsonData.status).to.be.a('string');",
@@ -178,7 +182,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"code\": \"4%2F0AeaYSHAbFSVUrI-YkVDQu_iWihmrxWEQb4EEMKWdaJDAk3m9EPAQVMblew_GCFhntObBdw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent\"\n}",
+							"raw": "{\n    \"code\": \"4%2F0AeaYSHD3_zIn3VDSAyIqb8SKtyweWA04jG_Dm05ItNqfyXuxpPgZza-aK5BFYn46yhqz_w&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1812,6 +1816,24 @@
 			"item": [
 				{
 					"name": "List Workspaces",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5d04c638-03e4-44b4-a20c-1117c343def6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a6cbb361-b50e-4563-85a4-79bbd1620a66",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1885,6 +1907,24 @@
 				},
 				{
 					"name": "Get Workspace",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f614fa80-5b71-4c2a-8835-e82a8fd69bd1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "2b55feac-91e5-47f3-9e58-eb64c92cf1e5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1909,9 +1949,8 @@
 							],
 							"variable": [
 								{
-									"id": "ebc00df8-01d5-45f4-b780-5a71075d6e91",
 									"key": "id",
-									"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+									"value": "5c948c86-13e9-4a7a-bcbb-6aef15612b53"
 								}
 							]
 						}
@@ -2159,6 +2198,24 @@
 				},
 				{
 					"name": "Create Role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "efabb25d-3670-49c9-beb6-50ff333ba84b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "51adbd4c-5f39-4e6d-8dc5-c19e3313afd2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2174,7 +2231,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Team Member\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
+							"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2250,6 +2307,24 @@
 				},
 				{
 					"name": "List Permissions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bddd55a5-f42d-47e7-9ab8-3865dfafe806",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "b1fab85b-52d1-41a6-a773-086a550be8a0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2323,6 +2398,24 @@
 				},
 				{
 					"name": "Get Role",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1ff70fa0-796e-489d-a28f-f10ddf45fff7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "278c827c-3462-46bb-a959-4c970301c19c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2347,9 +2440,8 @@
 							],
 							"variable": [
 								{
-									"id": "00a523dd-79b8-4c63-b2f9-d2479ea62f42",
 									"key": "id",
-									"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+									"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
 								}
 							]
 						}
@@ -2452,9 +2544,8 @@
 							],
 							"variable": [
 								{
-									"id": "9aed19e4-49f2-49c0-9b07-7f2537cad892",
 									"key": "id",
-									"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+									"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
 								}
 							]
 						}
