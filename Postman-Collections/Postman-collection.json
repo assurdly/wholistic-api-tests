@@ -406,12 +406,91 @@
 							"variable": [
 								{
 									"key": "token",
-									"value": "33d5c6014f489edd95f59cb5028bcebee9a55ed7"
+									"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "5829341e-203e-43f3-a0b9-b28722e52e5c",
+							"name": "Complete Email Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/setup/:token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"setup",
+										":token"
+									],
+									"variable": [
+										{
+											"key": "token",
+											"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 22:04:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "3bb86ebf-66ac-46dc-8d58-958eed29fc9e"
