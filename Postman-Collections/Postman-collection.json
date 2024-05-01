@@ -2235,6 +2235,24 @@
 					"item": [
 						{
 							"name": "Get Roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c35ce56f-6070-4135-9563-0e5cfa8a9e30",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "2a5dde88-a88a-4c06-927d-ffa2cf571cf7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2440,7 +2458,7 @@
 					"name": "Create Role",
 					"item": [
 						{
-							"name": "Create Role",
+							"name": "Create Role - Valid",
 							"event": [
 								{
 									"listen": "test",
@@ -2822,6 +2840,24 @@
 					"item": [
 						{
 							"name": "Get Role Permissions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5d8c5280-1a29-41d6-b8a1-a9440e81da27",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4b813467-45a4-4a56-869f-7c2341adae5a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
