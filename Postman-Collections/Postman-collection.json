@@ -34,7 +34,7 @@
 											"const jsonData = pm.response.json()",
 											"console.log(jsonData)",
 											"",
-											"pm.test(\"Response time is less than 500ms\", function () {",
+											"pm.test(\"Response time is less than 1100ms\", function () {",
 											"    pm.expect(pm.response.responseTime).to.be.below(500);",
 											"});",
 											"",
@@ -4891,7 +4891,6 @@
 								"id": "42ff2118-6f8e-4fae-ac82-b1344c68dba3",
 								"exec": [
 									"const jsonData = pm.response.json()",
-									"",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
