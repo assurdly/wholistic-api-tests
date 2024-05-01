@@ -185,7 +185,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"code\": \"4%2F0AeaYSHD3_zIn3VDSAyIqb8SKtyweWA04jG_Dm05ItNqfyXuxpPgZza-aK5BFYn46yhqz_w&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent\"\n}",
+									"raw": "{\n    \"code\": \"4%2F0AeaYSHCdN9YOUAP6XKDff4SEp7foQQodkjwlzqhQYn8QvB_EqBG8tkPStbo9awinZtpIkw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4619,6 +4619,39 @@
 			"item": [
 				{
 					"name": "Add Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01ce09a7-d422-4312-a251-b9acffc54b98",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"const createdClient = jsonData.data.id",
+									"pm.environment.set(\"createdClient\", createdClient)",
+									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Status code response is Created\", function () {",
+									"    pm.response.to.have.status('Created');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "d570382d-50fd-485e-ac5e-ecf094fbebe4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4628,7 +4661,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
+							"raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
