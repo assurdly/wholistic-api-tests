@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "f7a329a4-4c92-42db-b701-05ea93538965",
-		"name": "Wholistic APIs",
+		"name": "QA - Wholistic APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -405,9 +405,8 @@
 							],
 							"variable": [
 								{
-									"id": "0a745b58-d864-413d-b92a-c085b2d17f55",
 									"key": "token",
-									"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
+									"value": "f113b037b74bcd7c6aef0399c50634491c057895"
 								}
 							]
 						}
@@ -492,6 +491,28 @@
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Login",
+					"id": "eb57f1a6-9ad6-48bd-88cd-33ee2c5ce7db",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"adewunmi.akinsanya@gmail.com\",\n    \"password\": \"123456789!dD#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/auth/login"
+					},
+					"response": []
 				}
 			],
 			"id": "3bb86ebf-66ac-46dc-8d58-958eed29fc9e"
@@ -906,6 +927,328 @@
 						}
 					],
 					"id": "5331317b-bf22-465c-836c-c0093ba2cef7"
+				},
+				{
+					"name": "Generate 2FA",
+					"id": "891c1ec9-5dc4-4ca8-a4df-edb88261bbd3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{baseUrl}}/profile/two-fa"
+					},
+					"response": [
+						{
+							"id": "b09bf40e-e6df-400b-8932-0e41b6c16e68",
+							"name": "Generate 2FA",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/profile/two-fa"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2772"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad4-LxdZqrH0SehmuSkwcSty4UCr4Lg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 23:49:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully generated 2FA code\",\n    \"data\": {\n        \"otpAuthURL\": \"otpauth://totp/SecretKey?secret=GFZFC53MJMYDI23LKNLEOM3BMM2UCTD2\",\n        \"qrCodeImage\": \"data:image/png;base64,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\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Enable 2FA",
+					"id": "9e87c141-dfd9-4299-bf3c-d050972adedc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"509404\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/profile/two-fa"
+					},
+					"response": [
+						{
+							"id": "338a3535-4ca6-4b35-a439-4a3e3dc92bb3",
+							"name": "Enable 2FA",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"509404\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/two-fa"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ae-EAo4bcbGG4YdofPNTrjoMhunt8I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 23:51:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully enabled 2FA\",\n    \"data\": [\n        \"P2XTre\",\n        \"Wa3kAu\",\n        \"byFsXs\",\n        \"ZyTAOC\",\n        \"zWGr6n\",\n        \"c3jlaU\",\n        \"eFBLCz\",\n        \"Fgk5bZ\",\n        \"CukZok\",\n        \"zdcO26\",\n        \"1c8ips\",\n        \"JLKJuU\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Disable 2FA",
+					"id": "d2ffe2e3-b64a-4426-b17c-7b92bb4ee398",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"285034\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/profile/two-fa/disable"
+					},
+					"response": [
+						{
+							"id": "16f88b1f-23e0-436d-b452-a5253a5c3c0f",
+							"name": "Disable 2FA",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"285034\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/two-fa/disable"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-wFg4OVRtNAL6UUw7+6xApaNEwSM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 23:52:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully disabled 2FA\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Password",
+					"id": "af5851b2-1718-44c7-80a1-09b525bf26d8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/profile/password"
+					},
+					"response": [
+						{
+							"id": "43261fbd-fce6-4c52-9ccc-35286b9a5e00",
+							"name": "Change Password",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+						}
+					]
 				}
 			],
 			"id": "23628f28-ac17-4898-b321-a523d7e29a8e"
@@ -3053,8 +3396,644 @@
 		},
 		{
 			"name": "Audit Logs",
-			"item": [],
+			"item": [
+				{
+					"name": "List Audit Logs",
+					"id": "83480eb4-ed53-43e0-b023-cdccbca56880",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/audit-logs"
+					},
+					"response": [
+						{
+							"id": "3c7b5821-38a6-4053-91c6-73435b7d3d94",
+							"name": "List Audit Logs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/audit-logs"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "894"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37e-id8bhNeRJ1DYdNXBNtYfExod1Xw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:56:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit logs fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n            \"event\": \"auth.set-password\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n            \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"a0cb381b-3315-4ccf-b0c4-13f9951640a8\",\n            \"event\": \"profile.2fa.disable\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:52:47.666Z\",\n            \"updatedAt\": \"2024-04-28T22:52:47.666Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"49212b99-e8ca-4f98-9656-c8311e207fe6\",\n            \"event\": \"profile.2fa.verify\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:51:42.349Z\",\n            \"updatedAt\": \"2024-04-28T22:51:42.349Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"fb711a5e-91aa-4369-9e16-cffa640f1c26\",\n            \"event\": \"profile.2fa.generate\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:49:55.919Z\",\n            \"updatedAt\": \"2024-04-28T22:49:55.919Z\",\n            \"deletedAt\": null\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 4,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Audit Log",
+					"id": "375b8c92-ee0f-4d38-9d1f-b293e2803240",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/audit-logs/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"audit-logs",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "51f33274-ed6b-4362-876d-17d9e7b105a6",
+									"key": "id",
+									"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "71e9bfec-08f2-4010-ad87-5fe3d5c3ff5a",
+							"name": "Get Audit Log",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/audit-logs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"audit-logs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-01ZVXyUH8BviVVMgaBpqiGHHqck\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:57:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit log fetched successfully.\",\n    \"data\": {\n        \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n        \"event\": \"auth.set-password\",\n        \"details\": {},\n        \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n        \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n        \"deletedAt\": null\n    }\n}"
+						}
+					]
+				}
+			],
 			"id": "9c0d3120-2132-49e9-b622-45201fc3f60b"
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "List Clients",
+					"id": "d9161df0-1314-4e86-88a6-e732e61abe52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/clients"
+					},
+					"response": [
+						{
+							"id": "e0acf094-c271-4386-a847-51977546d2ba",
+							"name": "List Clients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/clients"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "450"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c2-5ticZBu0mmmKTqnP71P+pqZ1Gvw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 06:27:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched clients\",\n    \"data\": [\n        {\n            \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"pending\",\n            \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Client",
+					"id": "d570382d-50fd-485e-ac5e-ecf094fbebe4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/clients"
+					},
+					"response": [
+						{
+							"id": "594f4f82-2673-4e38-bef5-33c05e4da3b3",
+							"name": "Add Client",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/clients"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "361"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"169-rC9WhQtE6FsBiP1jas4cz7H4BFI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 06:27:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"pending\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Client",
+					"id": "a2ac3a34-f4bb-42d6-b3a4-9fc561fe97fa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null,\n    \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clients/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "74300fb0-31df-4fa6-8821-78d600968d9a",
+									"key": "id",
+									"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c3ef03a8-fef3-47dc-bb2f-c9957c4b8838",
+							"name": "Update Client",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null,\n    \"status\": \"active\" // active|pending|inactive\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/clients/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "360"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"168-4y33rCAz50znly9MrAxgQkZfLKA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 06:28:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Client",
+					"id": "cf61040d-7971-4d3c-9440-74ade389a710",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clients/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "94b4f2c1-5b9c-4356-9e75-f19eb3b651cb",
+									"key": "id",
+									"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f7af6741-87f2-4b58-b9d2-7d954328533d",
+							"name": "Get Client",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/clients/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "360"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"168-3ws2IkID2RhxO4ipM1osveVmWAM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 06:29:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Client",
+					"id": "9b39278e-80b1-4f47-9cdc-287d170a7c60",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clients/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "0fddb806-b9ff-4c3a-bdcd-556c7535fbaf",
+									"key": "id",
+									"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2e3240ec-985b-4ddf-b56c-d5672652b5fd",
+							"name": "Delete Client",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/clients/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-PI0Xsou6ya7m1ukblgbyWXqTQL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 06:30:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted client\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"id": "2b749e12-f19e-4f7b-a5bc-17a7e2f36dac"
 		}
 	],
 	"auth": {
