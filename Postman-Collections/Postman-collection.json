@@ -517,7 +517,7 @@
 											"const jsonData = pm.response.json();",
 											"",
 											"const accesstoken = jsonData.data.accessToken",
-											"const refreshtoken = jsonData.data.refreshToken;",
+											"// const refreshtoken = jsonData.data.refreshToken;",
 											"",
 											"pm.environment.set(\"accessToken\", accesstoken)",
 											"// pm.environment.set(\"refreshToken\", refreshtoken)",
@@ -3359,6 +3359,9 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/users"
