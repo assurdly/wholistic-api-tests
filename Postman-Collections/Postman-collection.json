@@ -4656,6 +4656,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -4768,6 +4774,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/clients"
@@ -4868,6 +4880,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -5115,11 +5133,51 @@
 				},
 				{
 					"name": "Delete Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6da5f304-bc93-4a89-a0b1-2eee9c339cdd",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"",
+									"",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "9b39278e-80b1-4f47-9cdc-287d170a7c60",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -5133,9 +5191,8 @@
 							],
 							"variable": [
 								{
-									"id": "0fddb806-b9ff-4c3a-bdcd-556c7535fbaf",
 									"key": "id",
-									"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+									"value": "{{createdClient}}"
 								}
 							]
 						}
