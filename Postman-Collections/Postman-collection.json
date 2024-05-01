@@ -3848,110 +3848,6 @@
 					"id": "5d782426-1c4d-4104-8154-55e1d9b6c838"
 				},
 				{
-					"name": "Delete User",
-					"item": [
-						{
-							"name": "Delete User",
-							"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/users/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"users",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "b3e2f5ed-dd46-4829-ad67-216edf0c4112",
-											"key": "id",
-											"value": "529cde26-4c64-446f-b081-341850156d35"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
-									"name": "Delete User",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/users/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"users",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "529cde26-4c64-446f-b081-341850156d35"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "70"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:29:54 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
-								}
-							]
-						}
-					],
-					"id": "43145aca-8ea3-4505-a4c3-1d0a73a5eca9"
-				},
-				{
 					"name": "Update User",
 					"item": [
 						{
@@ -3961,6 +3857,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -4072,6 +3974,116 @@
 						}
 					],
 					"id": "b993257a-6f87-4b68-b7b7-e262cac300b6"
+				},
+				{
+					"name": "Delete User",
+					"item": [
+						{
+							"name": "Delete User",
+							"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "b3e2f5ed-dd46-4829-ad67-216edf0c4112",
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
+									"name": "Delete User",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "529cde26-4c64-446f-b081-341850156d35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:29:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					],
+					"id": "43145aca-8ea3-4505-a4c3-1d0a73a5eca9"
 				}
 			],
 			"id": "f5d492cd-390c-4585-800f-08f84a19752a"
