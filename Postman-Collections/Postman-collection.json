@@ -1895,7 +1895,7 @@
 							]
 						},
 						{
-							"name": "Change Password - Mismatched Password Copy",
+							"name": "Change Password - Same as Old Password",
 							"event": [
 								{
 									"listen": "test",
@@ -1929,7 +1929,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@@\",\n    \"confirmPassword\": \"Password12@\"\n}",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2002,12 +2002,934 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
 								}
 							]
+						},
+						{
+							"name": "Change Password - Valid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf235ed9-59ab-4bf1-8f3d-a92dc5240979",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "6404e439-c6da-4121-bee9-e57203192f6b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@@\",\n    \"confirmPassword\": \"Password12@@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "ebbb9a39-92f0-4baa-af46-69a2fdd7f4a6",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Valid (Revert)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf235ed9-59ab-4bf1-8f3d-a92dc5240979",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "1fac4f1f-0074-48d7-a11d-92c6412625ba",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@@\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "030905d2-c9b0-49c1-835d-8a91d99db16a",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
 						}
 					],
 					"id": "0fb95fc8-e8d2-4764-b7fc-52fe8bc6c1d8"
 				}
 			],
 			"id": "23628f28-ac17-4898-b321-a523d7e29a8e"
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get Roles",
+					"item": [
+						{
+							"name": "Get Roles",
+							"id": "2a5dde88-a88a-4c06-927d-ffa2cf571cf7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/roles"
+							},
+							"response": [
+								{
+									"id": "e188b6d2-894b-450d-9a48-48b25e2a0fe5",
+									"name": "Get Roles",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/roles"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "315"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"13b-sjxsUhdq4AIdMRB/h2HXYdiSyGA\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:12:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "35156734-824a-4a3d-986c-79c0312efb98"
+				},
+				{
+					"name": "Get Role",
+					"item": [
+						{
+							"name": "Get Role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1ff70fa0-796e-489d-a28f-f10ddf45fff7",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "278c827c-3462-46bb-a959-4c970301c19c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "537de670-705d-4c98-8e71-9c2b31caf48b",
+									"name": "Get Role",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "227"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e3-g/uWjgyy2/KxC1T+JABKZNS+R/s\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:12:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "f7e3cf5d-6e03-4333-8cd5-da4622a6b07c"
+				},
+				{
+					"name": "Create Role",
+					"item": [
+						{
+							"name": "Create Role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "efabb25d-3670-49c9-beb6-50ff333ba84b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "51adbd4c-5f39-4e6d-8dc5-c19e3313afd2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/roles"
+							},
+							"response": [
+								{
+									"id": "0b25f70e-cc15-41e1-b897-4153984a10e3",
+									"name": "Create Role",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Team Member\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/roles"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "227"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e3-m90kjOQcOgMpuZyp+0coKYvUldY\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:12:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "56bf0c01-81e9-47e7-9db9-0657d77eb83c"
+				},
+				{
+					"name": "List Permissions",
+					"item": [
+						{
+							"name": "List Permissions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bddd55a5-f42d-47e7-9ab8-3865dfafe806",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b1fab85b-52d1-41a6-a773-086a550be8a0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/roles/permissions"
+							},
+							"response": [
+								{
+									"id": "c9413070-03e9-45e4-b47a-a639c53a2ee4",
+									"name": "List Permissions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/roles/permissions"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3392"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d40-GrT1uPHhNQ7DUWPjNMn+Lj+zL58\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:08:40 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched permissions\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"id": "215fbb2c-6bb5-457f-9548-42f3245c9dc5"
+				},
+				{
+					"name": "Delete Role",
+					"item": [
+						{
+							"name": "Delete Role",
+							"id": "8dc9a916-7e5c-40a2-8ab7-8604be652d9e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "23323b54-aa20-4a78-8507-a05344c9f3b7",
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "b7850534-fdfb-45cf-9a8f-a96392bfa2d4"
+				},
+				{
+					"name": "Update Role",
+					"item": [
+						{
+							"name": "Update Role",
+							"id": "ed4bf8cc-c39e-4eb8-b5bf-ff2bd683633c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "f1333713-206e-454a-acba-b1537a7d7f56",
+											"key": "id",
+											"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3adaa3a8-eed2-4da7-b195-38080f7c10b7",
+									"name": "Update Role",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/roles/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "235"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"eb-0Onk9un/wqugABny4ek4IbFPqhs\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:19:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"Member\",\n        \"status\": \"inactive\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "410dc93c-1b33-4bc6-ab39-d4b39ee9ce03"
+				},
+				{
+					"name": "Get Role Permissions",
+					"item": [
+						{
+							"name": "Get Role Permissions",
+							"id": "4b813467-45a4-4a56-869f-7c2341adae5a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id/permissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id",
+										"permissions"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "fd13473f-e5a0-4a77-bebd-dad4e9b416fc",
+									"name": "Get Role Permissions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/roles/:id/permissions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"roles",
+												":id",
+												"permissions"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3385"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d39-4SV9XQv2qWux+eGMYth6UKiniCE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:13:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"id": "931c44d8-1057-46fd-a201-69b1d3d816a1"
+				}
+			],
+			"id": "0d5efa06-f654-44c0-93fc-5ee465f0e941"
 		},
 		{
 			"name": "Users",
@@ -3445,710 +4367,6 @@
 				}
 			],
 			"id": "5a205488-15ab-4fab-aacf-2260a6e6408a"
-		},
-		{
-			"name": "Roles",
-			"item": [
-				{
-					"name": "Get Roles",
-					"item": [
-						{
-							"name": "Get Roles",
-							"id": "2a5dde88-a88a-4c06-927d-ffa2cf571cf7",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/roles"
-							},
-							"response": [
-								{
-									"id": "e188b6d2-894b-450d-9a48-48b25e2a0fe5",
-									"name": "Get Roles",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/roles"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "315"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"13b-sjxsUhdq4AIdMRB/h2HXYdiSyGA\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:12:30 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n            \"name\": \"Team Member\",\n            \"slug\": \"team-member\",\n            \"description\": \"\",\n            \"status\": \"active\",\n            \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "35156734-824a-4a3d-986c-79c0312efb98"
-				},
-				{
-					"name": "Get Role",
-					"item": [
-						{
-							"name": "Get Role",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "1ff70fa0-796e-489d-a28f-f10ddf45fff7",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "278c827c-3462-46bb-a959-4c970301c19c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/roles/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"roles",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "537de670-705d-4c98-8e71-9c2b31caf48b",
-									"name": "Get Role",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/roles/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"roles",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "227"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"e3-g/uWjgyy2/KxC1T+JABKZNS+R/s\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:12:58 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "f7e3cf5d-6e03-4333-8cd5-da4622a6b07c"
-				},
-				{
-					"name": "Create Role",
-					"item": [
-						{
-							"name": "Create Role",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "efabb25d-3670-49c9-beb6-50ff333ba84b",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "51adbd4c-5f39-4e6d-8dc5-c19e3313afd2",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/roles"
-							},
-							"response": [
-								{
-									"id": "0b25f70e-cc15-41e1-b897-4153984a10e3",
-									"name": "Create Role",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"name\": \"Team Member\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/roles"
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "227"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"e3-m90kjOQcOgMpuZyp+0coKYvUldY\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:12:19 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "56bf0c01-81e9-47e7-9db9-0657d77eb83c"
-				},
-				{
-					"name": "List Permissions",
-					"item": [
-						{
-							"name": "List Permissions",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "bddd55a5-f42d-47e7-9ab8-3865dfafe806",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "b1fab85b-52d1-41a6-a773-086a550be8a0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/roles/permissions"
-							},
-							"response": [
-								{
-									"id": "c9413070-03e9-45e4-b47a-a639c53a2ee4",
-									"name": "List Permissions",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/roles/permissions"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "3392"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"d40-GrT1uPHhNQ7DUWPjNMn+Lj+zL58\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:08:40 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched permissions\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
-								}
-							]
-						}
-					],
-					"id": "215fbb2c-6bb5-457f-9548-42f3245c9dc5"
-				},
-				{
-					"name": "Delete Role",
-					"item": [
-						{
-							"name": "Delete Role",
-							"id": "8dc9a916-7e5c-40a2-8ab7-8604be652d9e",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/roles/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"roles",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "23323b54-aa20-4a78-8507-a05344c9f3b7",
-											"key": "id",
-											"value": ""
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "b7850534-fdfb-45cf-9a8f-a96392bfa2d4"
-				},
-				{
-					"name": "Update Role",
-					"item": [
-						{
-							"name": "Update Role",
-							"id": "ed4bf8cc-c39e-4eb8-b5bf-ff2bd683633c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/roles/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"roles",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "f1333713-206e-454a-acba-b1537a7d7f56",
-											"key": "id",
-											"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "3adaa3a8-eed2-4da7-b195-38080f7c10b7",
-									"name": "Update Role",
-									"originalRequest": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/roles/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"roles",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "235"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"eb-0Onk9un/wqugABny4ek4IbFPqhs\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:19:22 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"Member\",\n        \"status\": \"inactive\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "410dc93c-1b33-4bc6-ab39-d4b39ee9ce03"
-				},
-				{
-					"name": "Get Role Permissions",
-					"item": [
-						{
-							"name": "Get Role Permissions",
-							"id": "4b813467-45a4-4a56-869f-7c2341adae5a",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/roles/:id/permissions",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"roles",
-										":id",
-										"permissions"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "fd13473f-e5a0-4a77-bebd-dad4e9b416fc",
-									"name": "Get Role Permissions",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/roles/:id/permissions",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"roles",
-												":id",
-												"permissions"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "3385"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"d39-4SV9XQv2qWux+eGMYth6UKiniCE\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:13:43 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched role\",\n    \"data\": [\n        {\n            \"id\": \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n            \"name\": \"add team member\",\n            \"slug\": \"add-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n            \"name\": \"list roles\",\n            \"slug\": \"list-roles\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n            \"name\": \"update profile\",\n            \"slug\": \"update-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n            \"name\": \"disable twofa\",\n            \"slug\": \"disable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\",\n            \"name\": \"view workspace\",\n            \"slug\": \"view-workspace\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n            \"name\": \"enable twofa\",\n            \"slug\": \"enable-twofa\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n            \"name\": \"list team members\",\n            \"slug\": \"list-team-members\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n            \"name\": \"view team member\",\n            \"slug\": \"view-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n            \"name\": \"activate team member\",\n            \"slug\": \"activate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n            \"name\": \"deactivate role\",\n            \"slug\": \"deactivate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"93a61401-4616-456a-8e13-eee8d673aabe\",\n            \"name\": \"view audit\",\n            \"slug\": \"view-audit\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n            \"name\": \"delete role\",\n            \"slug\": \"delete-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n            \"name\": \"activate role\",\n            \"slug\": \"activate-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n            \"name\": \"list workspaces\",\n            \"slug\": \"list-workspaces\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n            \"name\": \"change password\",\n            \"slug\": \"change-password\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n            \"name\": \"list audit logs\",\n            \"slug\": \"list-audit-logs\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n            \"name\": \"create role\",\n            \"slug\": \"create-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n            \"name\": \"update team member\",\n            \"slug\": \"update-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e228fb45-778b-479e-ae3c-37b263876596\",\n            \"name\": \"deactivate team member\",\n            \"slug\": \"deactivate-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n            \"name\": \"view profile\",\n            \"slug\": \"view-profile\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n            \"name\": \"delete team member\",\n            \"slug\": \"delete-team-member\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        },\n        {\n            \"id\": \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n            \"name\": \"update role\",\n            \"slug\": \"update-role\",\n            \"description\": \"\",\n            \"createdAt\": \"2024-04-24T17:06:22.642Z\"\n        }\n    ]\n}"
-								}
-							]
-						}
-					],
-					"id": "931c44d8-1057-46fd-a201-69b1d3d816a1"
-				}
-			],
-			"id": "0d5efa06-f654-44c0-93fc-5ee465f0e941"
 		},
 		{
 			"name": "Audit Logs",
