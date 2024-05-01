@@ -138,7 +138,6 @@
 											"const refreshtoken = jsonData.data.refreshToken;",
 											"",
 											"pm.environment.set(\"accessToken\", accesstoken)",
-											"// pm.environment.set(\"refreshToken\", refreshtoken)",
 											"",
 											"pm.test(\"Status code is 201\", function () {",
 											"    pm.response.to.have.status(201);",
@@ -4831,6 +4830,39 @@
 				},
 				{
 					"name": "Update Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cf7e1f5e-79a1-4aa2-8a36-3a195c78748c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"const createdClient = jsonData.data.id",
+									"pm.environment.set(\"createdClient\", createdClient)",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a2ac3a34-f4bb-42d6-b3a4-9fc561fe97fa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4840,7 +4872,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null,\n    \"status\": \"active\"\n}",
+							"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"{{$randomFirstName}}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomLastName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null,\n    \"status\": \"inactive\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4858,9 +4890,8 @@
 							],
 							"variable": [
 								{
-									"id": "74300fb0-31df-4fa6-8821-78d600968d9a",
 									"key": "id",
-									"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+									"value": "{{createdClient}}"
 								}
 							]
 						}
