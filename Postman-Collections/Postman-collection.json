@@ -3883,6 +3883,38 @@
 					"item": [
 						{
 							"name": "Update User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "04992147-6402-4a23-9fdf-2a3d222c46b5",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.environment.set('createdUser', jsonData.data.id)",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "a668c9df-baf7-4d0c-bb9a-7e16dca555b6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -3898,7 +3930,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"roleId\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n    \"status\": \"active\"\n}",
+									"raw": "{\n    \"roleId\": \"{{createdRole}}\",\n    \"status\": \"inactive\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3916,9 +3948,8 @@
 									],
 									"variable": [
 										{
-											"id": "cfd7b7c2-4d2e-47a6-883b-11c0ed17ca27",
 											"key": "id",
-											"value": "529cde26-4c64-446f-b081-341850156d35"
+											"value": "{{createdUser}}"
 										}
 									]
 								}
@@ -4011,6 +4042,37 @@
 					"item": [
 						{
 							"name": "Delete User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4deb5859-c383-410c-bccb-857cac411a1c",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -4035,9 +4097,8 @@
 									],
 									"variable": [
 										{
-											"id": "b3e2f5ed-dd46-4829-ad67-216edf0c4112",
 											"key": "id",
-											"value": "529cde26-4c64-446f-b081-341850156d35"
+											"value": "{{createdUser}}"
 										}
 									]
 								}
