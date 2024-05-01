@@ -1202,11 +1202,35 @@
 					"item": [
 						{
 							"name": "Generate 2FA",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "14b2e147-7259-4579-b75a-c9f998ece057",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "891c1ec9-5dc4-4ca8-a4df-edb88261bbd3",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"url": "{{baseUrl}}/profile/two-fa"
@@ -1214,6 +1238,94 @@
 							"response": [
 								{
 									"id": "b09bf40e-e6df-400b-8932-0e41b6c16e68",
+									"name": "Generate 2FA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": "{{baseUrl}}/profile/two-fa"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2772"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ad4-LxdZqrH0SehmuSkwcSty4UCr4Lg\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:49:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully generated 2FA code\",\n    \"data\": {\n        \"otpAuthURL\": \"otpauth://totp/SecretKey?secret=GFZFC53MJMYDI23LKNLEOM3BMM2UCTD2\",\n        \"qrCodeImage\": \"data:image/png;base64,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\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Generate 2FA - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "14b2e147-7259-4579-b75a-c9f998ece057",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b5aab660-4463-4468-9e58-14acdacbb3d3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/profile/two-fa"
+							},
+							"response": [
+								{
+									"id": "600a2594-e0fc-4f00-ac23-152da29a1a56",
 									"name": "Generate 2FA",
 									"originalRequest": {
 										"method": "POST",
