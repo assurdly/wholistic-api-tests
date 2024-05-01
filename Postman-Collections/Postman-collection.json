@@ -4415,11 +4415,44 @@
 			"item": [
 				{
 					"name": "List Audit Logs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fa3c77b1-8aa5-45e7-a9c3-5cf16f7e56a9",
+								"exec": [
+									"const jsonData = pm.response.json()",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Assert that the data array is not empty\", function () {",
+									"    pm.expect(jsonData.data).to.not.be.empty",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "83480eb4-ed53-43e0-b023-cdccbca56880",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/audit-logs"
@@ -4585,73 +4618,6 @@
 			"name": "Clients",
 			"item": [
 				{
-					"name": "List Clients",
-					"id": "d9161df0-1314-4e86-88a6-e732e61abe52",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/clients"
-					},
-					"response": [
-						{
-							"id": "e0acf094-c271-4386-a847-51977546d2ba",
-							"name": "List Clients",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/clients"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "450"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1c2-5ticZBu0mmmKTqnP71P+pqZ1Gvw\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 29 Apr 2024 06:27:35 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched clients\",\n    \"data\": [\n        {\n            \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"pending\",\n            \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
 					"name": "Add Client",
 					"id": "d570382d-50fd-485e-ac5e-ecf094fbebe4",
 					"protocolProfileBehavior": {
@@ -4733,6 +4699,100 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"pending\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Clients",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "42ff2118-6f8e-4fae-ac82-b1344c68dba3",
+								"exec": [
+									"const jsonData = pm.response.json()",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Assert that the data array is not empty\", function () {",
+									"    pm.expect(jsonData.data).to.not.be.empty",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "d9161df0-1314-4e86-88a6-e732e61abe52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/clients"
+					},
+					"response": [
+						{
+							"id": "e0acf094-c271-4386-a847-51977546d2ba",
+							"name": "List Clients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/clients"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "450"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c2-5ticZBu0mmmKTqnP71P+pqZ1Gvw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 06:27:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched clients\",\n    \"data\": [\n        {\n            \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"pending\",\n            \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 						}
 					]
 				},
