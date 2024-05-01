@@ -3093,8 +3093,7 @@
 										"id": "e8b6d16b-e8ee-4e3c-8452-0df09688ec75",
 										"exec": [
 											"var jsonData = pm.response.json();",
-											"// pm.environment.set(\"createdUser\", jsonData.data.id)",
-											"// pm.environment.set(\"createdUserEmailAddress\", jsonData.data.email)",
+											"",
 											"",
 											"pm.test(\"Status code is 401\", function () {",
 											"    pm.response.to.have.status(401);",
@@ -3127,6 +3126,9 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -4141,6 +4143,37 @@
 					"item": [
 						{
 							"name": "Delete Role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb4379dc-f2a0-45b8-a9b3-20cd7f852226",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "8dc9a916-7e5c-40a2-8ab7-8604be652d9e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -4165,9 +4198,8 @@
 									],
 									"variable": [
 										{
-											"id": "23323b54-aa20-4a78-8507-a05344c9f3b7",
 											"key": "id",
-											"value": ""
+											"value": "{{createdRole}}"
 										}
 									]
 								}
