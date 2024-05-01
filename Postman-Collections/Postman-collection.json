@@ -3472,6 +3472,8 @@
 									"script": {
 										"id": "e2acea02-54d1-4472-9a80-b26ad47d950c",
 										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
 											"});",
@@ -3479,8 +3481,6 @@
 											"pm.test(\"Status code response is OK\", function () {",
 											"    pm.response.to.have.status(\"OK\");",
 											"});",
-											"",
-											"var jsonData = pm.response.json();",
 											"",
 											"pm.test(\"Response body property\", function () {",
 											"    pm.expect(jsonData).to.be.an(\"object\");",
@@ -3531,7 +3531,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "9a78da94-36cb-4908-b62d-c6683f4367ae"
+											"value": "{{createdUser}}"
 										}
 									]
 								}
