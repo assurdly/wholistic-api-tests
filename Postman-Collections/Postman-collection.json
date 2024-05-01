@@ -4091,12 +4091,18 @@
 									"script": {
 										"id": "5d04c638-03e4-44b4-a20c-1117c343def6",
 										"exec": [
+											"const jsonData = pm.response.json()",
+											"const fetchedWorkspace = jsonData.data[0].id",
+											"pm.environment.set(\"fetchedWorkspace\", fetchedWorkspace)",
+											"",
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
 											"});",
 											"pm.test(\"Status code response is 'OK'\", function () {",
 											"    pm.response.to.have.status('OK');",
-											"});"
+											"});",
+											"",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4225,7 +4231,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "5c948c86-13e9-4a7a-bcbb-6aef15612b53"
+											"value": "{{fetchedWorkspace}}"
 										}
 									]
 								}
