@@ -1272,44 +1272,14 @@
 				},
 				{
 					"name": "Enable 2FA",
-					"item": [],
-					"id": "1dae7aa2-f301-4858-ad48-63f91da157ee"
-				},
-				{
-					"name": "Disable 2FA",
-					"item": [],
-					"id": "0718c219-50e6-4819-a25a-e3a611bebdeb"
-				},
-				{
-					"name": "Change Password",
-					"item": [],
-					"id": "0fb95fc8-e8d2-4764-b7fc-52fe8bc6c1d8"
-				},
-				{
-					"name": "Enable 2FA",
-					"id": "9e87c141-dfd9-4299-bf3c-d050972adedc",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"code\": \"509404\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/profile/two-fa"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "338a3535-4ca6-4b35-a439-4a3e3dc92bb3",
 							"name": "Enable 2FA",
-							"originalRequest": {
+							"id": "9e87c141-dfd9-4299-bf3c-d050972adedc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -1323,78 +1293,84 @@
 								},
 								"url": "{{baseUrl}}/profile/two-fa"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "174"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"ae-EAo4bcbGG4YdofPNTrjoMhunt8I\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Apr 2024 23:51:41 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "338a3535-4ca6-4b35-a439-4a3e3dc92bb3",
+									"name": "Enable 2FA",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"509404\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/two-fa"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "174"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ae-EAo4bcbGG4YdofPNTrjoMhunt8I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:51:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully enabled 2FA\",\n    \"data\": [\n        \"P2XTre\",\n        \"Wa3kAu\",\n        \"byFsXs\",\n        \"ZyTAOC\",\n        \"zWGr6n\",\n        \"c3jlaU\",\n        \"eFBLCz\",\n        \"Fgk5bZ\",\n        \"CukZok\",\n        \"zdcO26\",\n        \"1c8ips\",\n        \"JLKJuU\"\n    ]\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully enabled 2FA\",\n    \"data\": [\n        \"P2XTre\",\n        \"Wa3kAu\",\n        \"byFsXs\",\n        \"ZyTAOC\",\n        \"zWGr6n\",\n        \"c3jlaU\",\n        \"eFBLCz\",\n        \"Fgk5bZ\",\n        \"CukZok\",\n        \"zdcO26\",\n        \"1c8ips\",\n        \"JLKJuU\"\n    ]\n}"
+							]
 						}
-					]
+					],
+					"id": "1dae7aa2-f301-4858-ad48-63f91da157ee"
 				},
 				{
 					"name": "Disable 2FA",
-					"id": "d2ffe2e3-b64a-4426-b17c-7b92bb4ee398",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"code\": \"285034\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/profile/two-fa/disable"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "16f88b1f-23e0-436d-b452-a5253a5c3c0f",
 							"name": "Disable 2FA",
-							"originalRequest": {
+							"id": "d2ffe2e3-b64a-4426-b17c-7b92bb4ee398",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -1408,78 +1384,84 @@
 								},
 								"url": "{{baseUrl}}/profile/two-fa/disable"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "58"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"3a-wFg4OVRtNAL6UUw7+6xApaNEwSM\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Apr 2024 23:52:47 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "16f88b1f-23e0-436d-b452-a5253a5c3c0f",
+									"name": "Disable 2FA",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"285034\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/two-fa/disable"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3a-wFg4OVRtNAL6UUw7+6xApaNEwSM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:52:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully disabled 2FA\"\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully disabled 2FA\"\n}"
+							]
 						}
-					]
+					],
+					"id": "0718c219-50e6-4819-a25a-e3a611bebdeb"
 				},
 				{
 					"name": "Change Password",
-					"id": "af5851b2-1718-44c7-80a1-09b525bf26d8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/profile/password"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "43261fbd-fce6-4c52-9ccc-35286b9a5e00",
 							"name": "Change Password",
-							"originalRequest": {
+							"id": "af5851b2-1718-44c7-80a1-09b525bf26d8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -1493,52 +1475,73 @@
 								},
 								"url": "{{baseUrl}}/profile/password"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "62"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Apr 2024 23:55:15 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "43261fbd-fce6-4c52-9ccc-35286b9a5e00",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+							]
 						}
-					]
+					],
+					"id": "0fb95fc8-e8d2-4764-b7fc-52fe8bc6c1d8"
 				}
 			],
 			"id": "23628f28-ac17-4898-b321-a523d7e29a8e"
