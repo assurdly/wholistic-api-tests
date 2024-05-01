@@ -494,6 +494,45 @@
 				},
 				{
 					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "58f07815-f8ea-44b7-b155-6e4a8dbfa53d",
+								"exec": [
+									"const jsonData = pm.response.json();",
+									"",
+									"const accesstoken = jsonData.data.accessToken",
+									"const refreshtoken = jsonData.data.refreshToken;",
+									"",
+									"pm.environment.set(\"accessToken\", accesstoken)",
+									"// pm.environment.set(\"refreshToken\", refreshtoken)",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"    pm.expect(jsonData.data).to.be.an('object');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Message is Successfully logged in\", function () {",
+									"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "eb57f1a6-9ad6-48bd-88cd-33ee2c5ce7db",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -503,7 +542,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"adewunmi.akinsanya@gmail.com\",\n    \"password\": \"123456789!dD#\"\n}",
+							"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
