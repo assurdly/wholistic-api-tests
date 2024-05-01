@@ -2230,6 +2230,140 @@
 			"name": "Roles",
 			"item": [
 				{
+					"name": "Create Role",
+					"item": [
+						{
+							"name": "Create Role - Valid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "efabb25d-3670-49c9-beb6-50ff333ba84b",
+										"exec": [
+											"// const permisionIds = pm.environment.get(\"permisionIds\")",
+											"// console.log(permisionIds)",
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.environment.set('createdRole', jsonData.data.id)",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"pm.test(\"Status code response is 'Created'\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3333299d-7a5c-4fa5-8afa-589f3aa7ea07",
+										"exec": [
+											"const permisionIds = pm.environment.get(\"permisionIds\")",
+											"pm.variables.set(\"requestPermisionIds\", permisionIds);",
+											"// console.log(permisionIds)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "51adbd4c-5f39-4e6d-8dc5-c19e3313afd2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\"0612275d-caf2-477b-a408-cafe98c12a21\", \"110f06f4-995c-42ac-a3ef-3766741c1e41\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/roles"
+							},
+							"response": [
+								{
+									"id": "0b25f70e-cc15-41e1-b897-4153984a10e3",
+									"name": "Create Role",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Team Member\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/roles"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "227"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e3-m90kjOQcOgMpuZyp+0coKYvUldY\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:12:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "56bf0c01-81e9-47e7-9db9-0657d77eb83c"
+				},
+				{
 					"name": "Get Roles",
 					"item": [
 						{
@@ -2374,7 +2508,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
+											"value": "{{createdRole}}"
 										}
 									]
 								}
@@ -2452,140 +2586,6 @@
 						}
 					],
 					"id": "f7e3cf5d-6e03-4333-8cd5-da4622a6b07c"
-				},
-				{
-					"name": "Create Role",
-					"item": [
-						{
-							"name": "Create Role - Valid",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "efabb25d-3670-49c9-beb6-50ff333ba84b",
-										"exec": [
-											"// const permisionIds = pm.environment.get(\"permisionIds\")",
-											"// console.log(permisionIds)",
-											"const jsonData = pm.response.json()",
-											"",
-											"pm.environment.set('createdRole', jsonData.data.id)",
-											"",
-											"pm.test(\"Status code is 201\", function () {",
-											"    pm.response.to.have.status(201);",
-											"});",
-											"pm.test(\"Status code response is 'Created'\", function () {",
-											"    pm.response.to.have.status('Created');",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "3333299d-7a5c-4fa5-8afa-589f3aa7ea07",
-										"exec": [
-											"const permisionIds = pm.environment.get(\"permisionIds\")",
-											"pm.variables.set(\"requestPermisionIds\", permisionIds);",
-											"// console.log(permisionIds)"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "51adbd4c-5f39-4e6d-8dc5-c19e3313afd2",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\"0612275d-caf2-477b-a408-cafe98c12a21\", \"110f06f4-995c-42ac-a3ef-3766741c1e41\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/roles"
-							},
-							"response": [
-								{
-									"id": "0b25f70e-cc15-41e1-b897-4153984a10e3",
-									"name": "Create Role",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"name\": \"Team Member\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\n        \"aa554cde-63c2-4fc1-842d-d21a037b6162\",\n        \"5253f746-4ff6-46c3-a3c6-d1f0390de5c1\",\n        \"001ebed0-9125-4546-b2a9-009ff0cf4c6a\",\n        \"c6ac9190-8c93-454d-9b22-7451ab04f231\",\n        \"d5652084-0fe7-43b6-a3b1-56b6a2115d0b\",\n        \"8e995937-7130-452f-a6b9-f14fc807afc1\",\n        \"e228fb45-778b-479e-ae3c-37b263876596\",\n        \"9c128918-1126-40dc-81fe-f3b5e300f480\",\n        \"eda2e6c7-c0dd-4309-b14a-eba6ae29a0c4\",\n        \"1acbc1a6-6812-43cc-a653-9138c4a279b7\",\n        \"336e0c55-d271-451e-b2d0-f5c5c99dc58e\",\n        \"c8de7d26-95c8-441c-83a6-6c48d3075e8e\",\n        \"033a1767-ad3b-433d-9b65-16a3e41d60ad\",\n        \"34aea578-91a2-4c5d-a139-e97f1e8263ef\",\n        \"c510a88c-afb8-4c75-bf80-a10487041e77\",\n        \"16b860f6-ea1b-4c78-b4aa-6e4029fdc87b\",\n        \"fd01bc44-0921-4d95-968e-95d9367c0810\",\n        \"dd5f7607-35ea-4964-8992-d9168a87f135\",\n        \"93a61401-4616-456a-8e13-eee8d673aabe\",\n        \"e56a0054-381a-4152-8304-bd71a9f49acc\",\n        \"4f90c616-5f38-4d62-bd75-36ab0bde8b6b\",\n        \"1db5b7a5-29bd-488e-8daf-f7a8d4cb36d9\"\n    ]\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/roles"
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "227"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"e3-m90kjOQcOgMpuZyp+0coKYvUldY\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:12:19 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"\",\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "56bf0c01-81e9-47e7-9db9-0657d77eb83c"
 				},
 				{
 					"name": "List Permissions",
@@ -2694,47 +2694,6 @@
 						}
 					],
 					"id": "215fbb2c-6bb5-457f-9548-42f3245c9dc5"
-				},
-				{
-					"name": "Delete Role",
-					"item": [
-						{
-							"name": "Delete Role",
-							"id": "8dc9a916-7e5c-40a2-8ab7-8604be652d9e",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/roles/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"roles",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "23323b54-aa20-4a78-8507-a05344c9f3b7",
-											"key": "id",
-											"value": ""
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "b7850534-fdfb-45cf-9a8f-a96392bfa2d4"
 				},
 				{
 					"name": "Update Role",
@@ -4176,6 +4135,47 @@
 						}
 					],
 					"id": "43145aca-8ea3-4505-a4c3-1d0a73a5eca9"
+				},
+				{
+					"name": "Delete Role",
+					"item": [
+						{
+							"name": "Delete Role",
+							"id": "8dc9a916-7e5c-40a2-8ab7-8604be652d9e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/roles/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "23323b54-aa20-4a78-8507-a05344c9f3b7",
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "b7850534-fdfb-45cf-9a8f-a96392bfa2d4"
 				}
 			],
 			"id": "f5d492cd-390c-4585-800f-08f84a19752a"
