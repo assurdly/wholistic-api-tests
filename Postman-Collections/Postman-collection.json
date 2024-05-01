@@ -1207,11 +1207,11 @@
 									"script": {
 										"id": "14b2e147-7259-4579-b75a-c9f998ece057",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
 											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
+											"pm.test(\"Status code response is 'Created'\", function () {",
+											"    pm.response.to.have.status('Created');",
 											"});"
 										],
 										"type": "text/javascript",
