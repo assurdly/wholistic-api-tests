@@ -506,64 +506,180 @@
 				},
 				{
 					"name": "Login",
-					"event": [
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "58f07815-f8ea-44b7-b155-6e4a8dbfa53d",
-								"exec": [
-									"const jsonData = pm.response.json();",
-									"",
-									"const accesstoken = jsonData.data.accessToken",
-									"const refreshtoken = jsonData.data.refreshToken;",
-									"",
-									"pm.environment.set(\"accessToken\", accesstoken)",
-									"// pm.environment.set(\"refreshToken\", refreshtoken)",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.status).to.be.a('string');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"    pm.expect(jsonData.data).to.be.an('object');",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
-									"});",
-									"",
-									"",
-									"pm.test(\"Message is Successfully logged in\", function () {",
-									"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "58f07815-f8ea-44b7-b155-6e4a8dbfa53d",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"const accesstoken = jsonData.data.accessToken",
+											"const refreshtoken = jsonData.data.refreshToken;",
+											"",
+											"pm.environment.set(\"accessToken\", accesstoken)",
+											"// pm.environment.set(\"refreshToken\", refreshtoken)",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Message is Successfully logged in\", function () {",
+											"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "eb57f1a6-9ad6-48bd-88cd-33ee2c5ce7db",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Login - Empty Fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "58f07815-f8ea-44b7-b155-6e4a8dbfa53d",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"const accesstoken = jsonData.data.accessToken",
+											"const refreshtoken = jsonData.data.refreshToken;",
+											"",
+											"pm.environment.set(\"accessToken\", accesstoken)",
+											"// pm.environment.set(\"refreshToken\", refreshtoken)",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(`Message is \"Validation Error.\"`, function () {",
+											"    pm.expect(jsonData.message).to.include('Validation Error.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b367c0df-dfb8-42a1-85ab-e9e9dcdeec50",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/login"
+							},
+							"response": []
+						},
+						{
+							"name": "Login - Invalid Credentials",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "58f07815-f8ea-44b7-b155-6e4a8dbfa53d",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"const accesstoken = jsonData.data.accessToken",
+											"const refreshtoken = jsonData.data.refreshToken;",
+											"",
+											"pm.environment.set(\"accessToken\", accesstoken)",
+											"// pm.environment.set(\"refreshToken\", refreshtoken)",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(`Message is \"Validation Error.\"`, function () {",
+											"    pm.expect(jsonData.message).to.include('Validation Error.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "3bf93230-3750-44e9-ad91-0ae889efef05",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/login"
+							},
+							"response": []
 						}
 					],
-					"id": "eb57f1a6-9ad6-48bd-88cd-33ee2c5ce7db",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/auth/login"
-					},
-					"response": []
+					"id": "63663385-d7a2-4901-85ff-6f7e670f8815"
 				}
 			],
 			"id": "3bb86ebf-66ac-46dc-8d58-958eed29fc9e"
