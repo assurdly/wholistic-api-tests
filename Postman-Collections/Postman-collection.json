@@ -2466,6 +2466,9 @@
 										"exec": [
 											"// const permisionIds = pm.environment.get(\"permisionIds\")",
 											"// console.log(permisionIds)",
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.environment.set('createdRole', jsonData.data.id)",
 											"",
 											"pm.test(\"Status code is 201\", function () {",
 											"    pm.response.to.have.status(201);",
@@ -2595,6 +2598,17 @@
 									"script": {
 										"id": "bddd55a5-f42d-47e7-9ab8-3865dfafe806",
 										"exec": [
+											"const jsonData = pm.response.json()",
+											"const permisionIds = jsonData.data.map(item => item.id);",
+											"",
+											"// Ensure permisionIds is always stored as an array",
+											"const permisionIdsArray = Array.isArray(permisionIds) ? permisionIds : [permisionIds];",
+											"",
+											"pm.environment.set(\"permisionIds\", permisionIdsArray);",
+											"console.log(\"Your ID is\", permisionIdsArray);",
+											"",
+											"",
+											"",
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
 											"});",
@@ -2899,7 +2913,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "52545a52-59e2-4660-a4bc-b0d38c4174ba"
+											"value": "{{createdRole}}"
 										}
 									]
 								}
