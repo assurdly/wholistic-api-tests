@@ -1568,7 +1568,7 @@
 					"name": "Change Password",
 					"item": [
 						{
-							"name": "Change Password",
+							"name": "Change Password - Invalid Current Password",
 							"id": "af5851b2-1718-44c7-80a1-09b525bf26d8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1590,6 +1590,91 @@
 							"response": [
 								{
 									"id": "43261fbd-fce6-4c52-9ccc-35286b9a5e00",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password Copy",
+							"id": "fb0a9fc5-3ec1-435f-9983-2cd7abbe7242",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "7b7c7a05-b9a3-48b2-932b-7546fe5b3666",
 									"name": "Change Password",
 									"originalRequest": {
 										"method": "PATCH",
