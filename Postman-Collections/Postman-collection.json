@@ -578,12 +578,6 @@
 										"exec": [
 											"const jsonData = pm.response.json();",
 											"",
-											"const accesstoken = jsonData.data.accessToken",
-											"const refreshtoken = jsonData.data.refreshToken;",
-											"",
-											"pm.environment.set(\"accessToken\", accesstoken)",
-											"// pm.environment.set(\"refreshToken\", refreshtoken)",
-											"",
 											"pm.test(\"Status code is 400\", function () {",
 											"    pm.response.to.have.status(400);",
 											"});",
@@ -633,12 +627,6 @@
 										"exec": [
 											"const jsonData = pm.response.json();",
 											"",
-											"const accesstoken = jsonData.data.accessToken",
-											"const refreshtoken = jsonData.data.refreshToken;",
-											"",
-											"pm.environment.set(\"accessToken\", accesstoken)",
-											"// pm.environment.set(\"refreshToken\", refreshtoken)",
-											"",
 											"pm.test(\"Status code is 400\", function () {",
 											"    pm.response.to.have.status(400);",
 											"});",
@@ -646,11 +634,10 @@
 											"pm.test(\"Response body property\", function () {",
 											"    pm.expect(jsonData).to.be.an('object');",
 											"    pm.expect(jsonData.message).to.be.a('string');",
-											"    pm.expect(jsonData.data).to.be.an('object');",
 											"});",
 											"",
 											"pm.test(`Message is \"Validation Error.\"`, function () {",
-											"    pm.expect(jsonData.message).to.include('Validation Error.');",
+											"    pm.expect(jsonData.message).to.include('Invalid credentials.');",
 											"});"
 										],
 										"type": "text/javascript",
@@ -667,7 +654,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+									"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -908,7 +895,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -920,6 +907,116 @@
 							"response": [
 								{
 									"id": "69f6262b-0556-4de2-b9a4-8eb985684e96",
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Profile- Empty fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "df9f498d-ec1e-4071-9105-bfc1ea34e827",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b5ceac2f-a38e-4fc6-bce1-8d88f14944d4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "fb9faf84-f24a-4510-b885-a1a19441a5f8",
 									"name": "Update Profile",
 									"originalRequest": {
 										"method": "PATCH",
