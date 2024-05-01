@@ -2467,11 +2467,11 @@
 											"// const permisionIds = pm.environment.get(\"permisionIds\")",
 											"// console.log(permisionIds)",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
 											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
+											"pm.test(\"Status code response is 'Created'\", function () {",
+											"    pm.response.to.have.status('Created');",
 											"});"
 										],
 										"type": "text/javascript",
@@ -2484,7 +2484,7 @@
 										"id": "3333299d-7a5c-4fa5-8afa-589f3aa7ea07",
 										"exec": [
 											"const permisionIds = pm.environment.get(\"permisionIds\")",
-											"pm.variables.set(\"permisionIds\", permisionIds);",
+											"pm.variables.set(\"requestPermisionIds\", permisionIds);",
 											"// console.log(permisionIds)"
 										],
 										"type": "text/javascript",
@@ -2507,7 +2507,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [{{permisionIds}}]\n}",
+									"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"description\": \"\",\n    \"status\": \"active\",\n    \"permissions\": [\"0612275d-caf2-477b-a408-cafe98c12a21\", \"110f06f4-995c-42ac-a3ef-3766741c1e41\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
