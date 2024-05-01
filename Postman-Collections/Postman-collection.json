@@ -4872,7 +4872,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"{{$randomFirstName}}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomLastName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null,\n    \"status\": \"inactive\"\n}",
+							"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomLastName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4978,11 +4978,51 @@
 				},
 				{
 					"name": "Get Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65d0931c-16df-4e8d-95fa-6cb75c04f8be",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"    pm.expect(jsonData.data).to.be.a('object');",
+									"",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "cf61040d-7971-4d3c-9440-74ade389a710",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -4996,9 +5036,8 @@
 							],
 							"variable": [
 								{
-									"id": "94b4f2c1-5b9c-4356-9e75-f19eb3b651cb",
 									"key": "id",
-									"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+									"value": "{{createdClient}}"
 								}
 							]
 						}
