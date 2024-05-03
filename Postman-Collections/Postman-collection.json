@@ -5423,21 +5423,26 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1a48e48b-5a54-408f-a4fe-63d4f1438963",
+				"id": "3c00e485-c7c7-4f57-8865-5112c4d1ac63",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					""
+					"pm.request.headers.add({",
+					"    key: \"x-workspace-id\",",
+					"    value: \"0dc706da-90d0-4709-8024-ad61227602e7\"",
+					"})"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "98f96b53-e46d-4103-aa42-239bf3608c6a",
+				"id": "df25ce21-7e85-4d83-a9dc-3d5c6c920f6a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
+					"",
+					"",
 					""
 				]
 			}
