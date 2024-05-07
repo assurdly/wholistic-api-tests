@@ -4511,6 +4511,103 @@
 			"name": "Workspaces",
 			"item": [
 				{
+					"name": "Create Workspaces",
+					"item": [
+						{
+							"name": "Create Workspace",
+							"id": "3287825c-172b-4d18-a8ac-ddc01ec97350",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomWord}}\",\n    \"slug\": \"{{$randomWord}}\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/workspaces"
+							},
+							"response": [
+								{
+									"id": "3923e842-c892-4e13-aa71-124582d3dfd1",
+									"name": "Create Workspace",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Assurdly\",\n    \"slug\": \"assurdly\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/workspaces"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "365"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"16d-7HIB6CSOqlFFrHrvKvt5es5nYzA\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:40:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created workspace\",\n    \"data\": {\n        \"id\": \"6699b925-e48d-4b3b-9c17-2360af4570cf\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:40:09.412Z\",\n        \"primaryUser\": {\n            \"id\": \"3fac2024-893d-4128-b70f-e9f321a86a6e\",\n            \"email\": \"adewunmiakinsanya@gmail.com\"\n        }\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "bf503713-16b4-403e-adcf-ba20c2f7132d"
+				},
+				{
 					"name": "List Workspaces",
 					"item": [
 						{
@@ -4779,103 +4876,6 @@
 						}
 					],
 					"id": "e68ebe53-563c-4489-b2a5-6a67712daa53"
-				},
-				{
-					"name": "Create Workspaces",
-					"item": [
-						{
-							"name": "Create Workspace",
-							"id": "3287825c-172b-4d18-a8ac-ddc01ec97350",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Assurdly\",\n    \"slug\": \"assurdly\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/workspaces"
-							},
-							"response": [
-								{
-									"id": "3923e842-c892-4e13-aa71-124582d3dfd1",
-									"name": "Create Workspace",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"name\": \"Assurdly\",\n    \"slug\": \"assurdly\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/workspaces"
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "365"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"16d-7HIB6CSOqlFFrHrvKvt5es5nYzA\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 23 Apr 2024 10:40:09 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created workspace\",\n    \"data\": {\n        \"id\": \"6699b925-e48d-4b3b-9c17-2360af4570cf\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:40:09.412Z\",\n        \"primaryUser\": {\n            \"id\": \"3fac2024-893d-4128-b70f-e9f321a86a6e\",\n            \"email\": \"adewunmiakinsanya@gmail.com\"\n        }\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "bf503713-16b4-403e-adcf-ba20c2f7132d"
 				}
 			],
 			"id": "5a205488-15ab-4fab-aacf-2260a6e6408a"
