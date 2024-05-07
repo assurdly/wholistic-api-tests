@@ -6065,7 +6065,57 @@
 						"header": [],
 						"url": "{{baseUrl}}/billings/plans"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "2ba9f10d-5b5d-49e3-b64d-c104e1a0a835",
+							"name": "List Plans",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/billings/plans"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "310"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"136-VKn7G9nFd/jiGv3wk1gKIEwd6p0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 06:47:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched plan\",\n    \"data\": [\n        {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "List Subscriptions",
@@ -6078,7 +6128,57 @@
 						"header": [],
 						"url": "{{baseUrl}}/billings/subscriptions"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "249cba68-03d7-49b2-ad86-2a9397fd6950",
+							"name": "List Subscriptions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/billings/subscriptions"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "474"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1da-MbccLbIPmNydU7JW8g4c5JSkcFA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 07:11:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": [\n        {\n            \"id\": \"c967f82c-9f49-4853-8dcb-b9e2e60e2383\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"reference\": \"oo7dh5ub0n\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": 1000,\n                \"currency\": \"NGN\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-05-06T06:10:35.962Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "List Cards",
@@ -6091,7 +6191,264 @@
 						"header": [],
 						"url": "{{baseUrl}}/billings/cards"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "ee947894-3630-46a7-83ab-78d5cead74ff",
+							"name": "List Cards",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/billings/cards"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "374"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"176-iVSyb1i8PcDeLclQxX+HxLanVuU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 07:19:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched card\",\n    \"data\": [\n        {\n            \"id\": \"642e7093-3563-450a-808c-eebffcc4d888\",\n            \"name\": \"\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"currency\": \"NGN\",\n            \"type\": \"visa \",\n            \"last4\": \"4081\",\n            \"expiryMonth\": \"12\",\n            \"expiryYear\": \"2030\",\n            \"bin\": \"408408\",\n            \"processor\": \"paystack\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Subscribe to Plan",
+					"id": "33184fe4-2eca-4b62-963f-a13b2d9c3e3e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/billings/plans/:id/subscribe",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"billings",
+								"plans",
+								":id",
+								"subscribe"
+							],
+							"variable": [
+								{
+									"id": "71434c2f-3dae-4eb3-913c-6055892ef597",
+									"key": "id",
+									"value": "c1a53489-4297-4868-baed-1fc518892347"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "07f19841-f332-49c6-967d-1654fa2ea51d",
+							"name": "Subscribe to Plan",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans/:id/subscribe",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans",
+										":id",
+										"subscribe"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "c1a53489-4297-4868-baed-1fc518892347"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-8aU0Ugl75s+VK9bnaMA0wJDr0DQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 06:49:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully initialized subscription\",\n    \"data\": {\n        \"authorizationUrl\": \"https://checkout.paystack.com/ozjs0003bxy4pds\",\n        \"reference\": \"oo7dh5ub0n\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify Subscription",
+					"id": "98414991-f342-45c0-830a-19c559062ca6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/billings/plans/:id/subscribe/:reference",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"billings",
+								"plans",
+								":id",
+								"subscribe",
+								":reference"
+							],
+							"variable": [
+								{
+									"id": "456702af-d7f8-46c3-b75e-1c9b06a6144d",
+									"key": "id",
+									"value": "c1a53489-4297-4868-baed-1fc518892347"
+								},
+								{
+									"id": "efd4eb0a-38b0-4b99-90b4-17675227800d",
+									"key": "reference",
+									"value": "oo7dh5ub0n"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "06cdb79b-28c6-4b68-ba5f-4211dac2af24",
+							"name": "Verify Subscription",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans/:id/subscribe/:reference",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans",
+										":id",
+										"subscribe",
+										":reference"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "c1a53489-4297-4868-baed-1fc518892347"
+										},
+										{
+											"key": "reference",
+											"value": "oo7dh5ub0n"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-Idc283pZ+inlekH6N8YKTOn0v90\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 07:09:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": {\n        \"amount\": 1000,\n        \"currency\": \"NGN\",\n        \"reference\": \"oo7dh5ub0n\",\n        \"subscription\": {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "401bec84-0854-4186-b2b0-c659b945af76"
