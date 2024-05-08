@@ -6056,6 +6056,38 @@
 			"item": [
 				{
 					"name": "List Plans",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2588e499-b198-44b0-a1ec-c4f77165dfaf",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"    pm.environment.set('fetchedPlanId', data[0].id)",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"        pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
+									"",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "b0b2ae26-ea69-43fb-a890-aa1f8d2031aa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6119,6 +6151,38 @@
 				},
 				{
 					"name": "List Subscriptions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7a703d7b-33b0-44ba-b9d6-ffc744f94f34",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"    pm.environment.get('fetchedPlanId', data[0].id)",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"        pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
+									"",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "53f6787c-866b-48c3-a8ff-e407255d43d7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6182,6 +6246,38 @@
 				},
 				{
 					"name": "List Cards",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "67502a6c-e2a9-43d1-a38c-90da57b73d72",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"    pm.environment.get('fetchedPlanId', data[0].id)",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"        // pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
+									"",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "ee507efb-8635-4000-9ba8-656ad004aadb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
