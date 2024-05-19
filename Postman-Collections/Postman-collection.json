@@ -4678,6 +4678,34 @@
 					"item": [
 						{
 							"name": "Create Workspace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d0e1d6d7-49a5-429e-b14b-f01370322603",
+										"exec": [
+											"try{",
+											"",
+											"    const {status, message, data} = pm.response.json()",
+											"    pm.test('Message is successful', () => {",
+											"        pm.expect(message).to.eql('Successfully created workspace')",
+											"    })",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(201);",
+											"    });",
+											"    pm.test(\"Content-Type is present\", function () {",
+											"        pm.response.to.have.header(\"Content-Type\");",
+											"    });",
+											"",
+											"} catch (error){",
+											"    console.error(\"Errors from test are\", error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "3287825c-172b-4d18-a8ac-ddc01ec97350",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
