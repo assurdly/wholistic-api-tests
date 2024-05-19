@@ -5236,9 +5236,8 @@
 							],
 							"variable": [
 								{
-									"id": "51f33274-ed6b-4362-876d-17d9e7b105a6",
 									"key": "id",
-									"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
+									"value": "{{auditLogId}}"
 								}
 							]
 						}
