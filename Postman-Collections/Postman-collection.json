@@ -6831,6 +6831,34 @@
 				},
 				{
 					"name": "List Projects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "02a62a1b-0560-4612-a36d-36171cf0d5bc",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "13d1f6c0-e459-433d-97d9-579a32e6f2b0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6894,6 +6922,40 @@
 				},
 				{
 					"name": "Get Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "80d53dec-0773-41b0-86b8-51d95b9a8b73",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"    pm.expect(jsonData.data).to.be.a('object');",
+									"",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "63639463-b164-4a99-914d-7b13dc00715b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6912,9 +6974,8 @@
 							],
 							"variable": [
 								{
-									"id": "08467963-96be-4792-b51f-3f3a3d653a8d",
 									"key": "id",
-									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+									"value": "{{createdProject}}"
 								}
 							]
 						}
@@ -6988,6 +7049,37 @@
 				},
 				{
 					"name": "Update Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5cc933aa-ac62-4750-8ff2-c013cd48c555",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "2800d7a9-c4e2-4965-a33b-c4b80efc76f9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6997,7 +7089,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+							"raw": "{\n    \"name\": \"{{$randomCompanyName}}\",\n    \"description\": \"Redesign of the {{$randomProductName}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7015,9 +7107,8 @@
 							],
 							"variable": [
 								{
-									"id": "16c664a6-d6cb-4903-b207-5a15cfa49846",
 									"key": "id",
-									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+									"value": "{{createdProject}}"
 								}
 							]
 						}
