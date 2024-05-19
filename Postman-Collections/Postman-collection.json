@@ -7190,101 +7190,35 @@
 					]
 				},
 				{
-					"name": "Delete Project",
-					"id": "b933ab82-8b1d-4b07-a6b7-159e3ab67ae4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/projects/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"projects",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "d17c381b-70c7-47c8-8620-5ec73eee7ef4",
-									"key": "id",
-									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "1a6b5bbc-13f6-43b9-9d8e-026dd18877c8",
-							"name": "Delete Project",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/projects/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"projects",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "73"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"49-jl2KQYgGm0qTtiR5VAi6dCck8QE\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 14 May 2024 09:58:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted project\",\n    \"data\": null\n}"
-						}
-					]
-				},
-				{
 					"name": "List Project Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c579808e-1fd9-4ade-9a0b-900a0a464360",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "c3ebd080-1bee-4122-ad18-d4a4660b4a1b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -7304,9 +7238,8 @@
 							],
 							"variable": [
 								{
-									"id": "d02f087f-2e7a-4dc3-a53c-7071036dc7de",
 									"key": "id",
-									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+									"value": "{{createdProject}}"
 								}
 							]
 						}
@@ -7390,7 +7323,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"users\": [\"90c6c049-7241-44d9-9c86-2cfb967ba13a\"]\n}",
+							"raw": "{\n    \"users\": [\"{{createdUser}}\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7409,9 +7342,8 @@
 							],
 							"variable": [
 								{
-									"id": "6dd17ebc-a4f4-49b9-b489-1f0b3f393ba2",
 									"key": "id",
-									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+									"value": "{{createdProject}}"
 								}
 							]
 						}
@@ -7824,6 +7756,100 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Project",
+					"id": "b933ab82-8b1d-4b07-a6b7-159e3ab67ae4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "d17c381b-70c7-47c8-8620-5ec73eee7ef4",
+									"key": "id",
+									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1a6b5bbc-13f6-43b9-9d8e-026dd18877c8",
+							"name": "Delete Project",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-jl2KQYgGm0qTtiR5VAi6dCck8QE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 09:58:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted project\",\n    \"data\": null\n}"
 						}
 					]
 				}
