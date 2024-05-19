@@ -6132,6 +6132,32 @@
 			"item": [
 				{
 					"name": "List Integrations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "87101c82-616e-4d72-98dc-737b224b0fd0",
+								"exec": [
+									"const jsonData = pm.response.json()",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Assert that the data array is not empty\", function () {",
+									"    pm.expect(jsonData.data).to.not.be.empty",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a9e80615-1326-4f7e-9b23-9cf6cc4e8e15",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6288,14 +6314,56 @@
 				},
 				{
 					"name": "Delete Integration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64fd3bc1-2eb1-4bc2-b05f-a000908243ef",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});",
+									"",
+									"pm.test(\"Valid message is returned\", function () {",
+									"    pm.expect(jsonData.message).to.eql('Successfully deleted integration');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "8e788827-5cc1-440f-9901-6c9b675073fa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseUrl}}/integrations/slack"
+						"url": "{{baseUrl}}/integrations/google"
 					},
 					"response": [
 						{
