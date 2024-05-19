@@ -7434,7 +7434,23 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/projects/stats"
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id/stats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"stats"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdProject}}"
+								}
+							]
+						}
 					},
 					"response": [
 						{
@@ -7761,6 +7777,37 @@
 				},
 				{
 					"name": "Delete Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b97e35dc-711d-4731-ae4e-d61ad5e0b6f9",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "b933ab82-8b1d-4b07-a6b7-159e3ab67ae4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -7779,9 +7826,8 @@
 							],
 							"variable": [
 								{
-									"id": "d17c381b-70c7-47c8-8620-5ec73eee7ef4",
 									"key": "id",
-									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+									"value": "{{createdProject}}"
 								}
 							]
 						}
