@@ -5085,7 +5085,7 @@
 									"try {",
 									"",
 									"    const { data } = pm.response.json()",
-									"",
+									"    pm.environment.set(\"auditLogId\", data[0].id)",
 									"",
 									"    pm.test(\"Status code is 200\", function () {",
 									"        pm.response.to.have.status(200);",
@@ -6227,6 +6227,38 @@
 				},
 				{
 					"name": "Set Integration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "abf6c801-0ea3-4d61-9ff9-77e9ea0811f5",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"const createdIntegrationId = jsonData.data.id",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "7ee1e1a9-7678-4911-a39a-081679126a47",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6441,11 +6473,9 @@
 									"    });",
 									"",
 									"    pm.test(\"Response body property\", function () {",
-									"",
 									"        pm.expect(data).to.be.an('array');",
 									"        pm.expect(status).to.be.a('string');",
-									"        pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
-									"",
+									"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
 									"    });",
 									"",
 									"} catch (error) {",
@@ -6536,11 +6566,9 @@
 									"    });",
 									"",
 									"    pm.test(\"Response body property\", function () {",
-									"",
 									"        pm.expect(data).to.be.an('array');",
 									"        pm.expect(status).to.be.a('string');",
-									"        pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
-									"",
+									"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
 									"    });",
 									"",
 									"} catch (error) {",
@@ -6710,6 +6738,39 @@
 				},
 				{
 					"name": "Subscribe to Plan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d2faee1d-d2d8-4f72-baf0-9f99512aad6e",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"const createdClient = jsonData.data.id",
+									"pm.environment.set(\"createdClient\", createdClient)",
+									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Status code response is Created\", function () {",
+									"    pm.response.to.have.status('Created');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "33184fe4-2eca-4b62-963f-a13b2d9c3e3e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
