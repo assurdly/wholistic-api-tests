@@ -5218,6 +5218,36 @@
 				},
 				{
 					"name": "Get Audit Log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec049cec-183a-4003-b906-c2b35f3d0939",
+								"exec": [
+									"try {",
+									"",
+									"    const { data } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"    pm.test(\"Status code response is 'OK'\", function () {",
+									"        pm.response.to.have.status('OK');",
+									"    });",
+									"",
+									"    pm.test(\"Assert that the data object is not empty\", function () {",
+									"        pm.expect(data).to.not.be.empty",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from Tests', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "375b8c92-ee0f-4d38-9d1f-b293e2803240",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6032,6 +6062,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/clients/stats"
@@ -6101,6 +6137,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/integrations"
@@ -6164,6 +6206,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
