@@ -4507,6 +4507,165 @@
 						}
 					],
 					"id": "b7850534-fdfb-45cf-9a8f-a96392bfa2d4"
+				},
+				{
+					"name": "Get Users Stats",
+					"id": "2e4739b9-25a7-4cbc-aa7f-63dd58f0f405",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users/stats"
+					},
+					"response": [
+						{
+							"id": "1da0d740-2bb7-4a99-841a-f8b7784bf6ad",
+							"name": "Get Users Stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/users/stats"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ac-bfMkThCDkDXDu8YFWt/G9iP6G1w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 15:25:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clients stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"0\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"2\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Resend Invite",
+					"id": "89506c76-4fff-43d0-b307-a53c1b3fdac4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/resend",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"resend"
+							],
+							"variable": [
+								{
+									"id": "bc396c9b-140c-4041-b8b2-fa2cadc2e774",
+									"key": "id",
+									"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "62f7d440-d9e6-4ca7-85c3-44dc6ce787a4",
+							"name": "Resend Invite",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id/resend",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id",
+										"resend"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-6kbREy+n0RbCgWl7hza8rG0X8hI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 10:06:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully sent user invite\",\n    \"data\": {\n        \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n        \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"active\",\n        \"emailVerified\": true,\n        \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "f5d492cd-390c-4585-800f-08f84a19752a"
@@ -5838,6 +5997,69 @@
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted client\",\n    \"data\": null\n}"
 						}
 					]
+				},
+				{
+					"name": "Get Client Stats",
+					"id": "765ad516-3adc-4ecd-b7a5-e41475385254",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/clients/stats"
+					},
+					"response": [
+						{
+							"id": "287385ca-fd06-4b4a-a570-0d68cfa10318",
+							"name": "Get Client Stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/clients/stats"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ac-JlndrEs+GYA/TcGoJMtM4sOZISc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 15:21:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clients stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"1\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"id": "2b749e12-f19e-4f7b-a5bc-17a7e2f36dac"
@@ -6551,6 +6773,729 @@
 				}
 			],
 			"id": "401bec84-0854-4186-b2b0-c659b945af76"
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Create Project",
+					"id": "fefb6c9e-1cf1-4971-a8e1-8ffd578937aa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n    \"users\": [\"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/projects"
+					},
+					"response": [
+						{
+							"id": "49d34445-21d5-4b64-a140-edf96589195a",
+							"name": "Create Project",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/projects"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "417"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a1-nZu+wK6r0J3rGOaZqKjj8IDHDko\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 21:24:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created project\",\n    \"data\": {\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2024-01-01\",\n        \"endDate\": \"2024-06-01\",\n        \"daysSpent\": 30,\n        \"workDone\": 99,\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Projects",
+					"id": "13d1f6c0-e459-433d-97d9-579a32e6f2b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/projects"
+					},
+					"response": [
+						{
+							"id": "b7738117-607c-4963-b99a-e605c40afe73",
+							"name": "List Projects",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/projects"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "841"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"349-E8LJBf+srXqFPH19ApDM8KATrTw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 21:27:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched projects\",\n    \"data\": [\n        {\n            \"name\": \"Website Redesign\",\n            \"description\": \"Redesign of the Website\",\n            \"serviceType\": \"Product Development\",\n            \"status\": \"draft\",\n            \"startDate\": \"2023-12-31T23:00:00.000Z\",\n            \"endDate\": \"2024-05-31T23:00:00.000Z\",\n            \"daysSpent\": 30,\n            \"workDone\": \"99.00\",\n            \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"primaryUser\": {\n                \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n            },\n            \"client\": {\n                \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n                \"email\": \"hello@lendsqr.com\",\n                \"name\": \"LSQ\",\n                \"contactName\": \"Deji\",\n                \"contactPhone\": \"+2348012345678\",\n                \"contactEmail\": \"deji@lendsqr.com\",\n                \"contactName2\": null,\n                \"contactPhone2\": null,\n                \"contactEmail2\": null,\n                \"status\": \"active\",\n                \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Project",
+					"id": "63639463-b164-4a99-914d-7b13dc00715b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "08467963-96be-4792-b51f-3f3a3d653a8d",
+									"key": "id",
+									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "056fb863-8e7e-48b6-a6cf-617f949ff5f2",
+							"name": "Get Project",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "862"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35e-NRPTUK4gIgyYBuwdvvsp55fkmzE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 21:29:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\"\n            }\n        },\n        \"client\": {\n            \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Project",
+					"id": "2800d7a9-c4e2-4965-a33b-c4b80efc76f9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "16c664a6-d6cb-4903-b207-5a15cfa49846",
+									"key": "id",
+									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "79a3b41b-24b9-4b2b-bd80-ef166da93061",
+							"name": "Update Project",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "401"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"191-WUldaBsru9EglN6+3jds9LIulwU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 09:58:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Project",
+					"id": "b933ab82-8b1d-4b07-a6b7-159e3ab67ae4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "d17c381b-70c7-47c8-8620-5ec73eee7ef4",
+									"key": "id",
+									"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1a6b5bbc-13f6-43b9-9d8e-026dd18877c8",
+							"name": "Delete Project",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-jl2KQYgGm0qTtiR5VAi6dCck8QE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 09:58:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted project\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "List Project Users",
+					"id": "c3ebd080-1bee-4122-ad18-d4a4660b4a1b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"users"
+							],
+							"variable": [
+								{
+									"id": "d02f087f-2e7a-4dc3-a53c-7071036dc7de",
+									"key": "id",
+									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "81bbd36b-0583-41f7-8546-cb4243e58896",
+							"name": "List Project Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"users"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0b775a21-25e2-4b61-9370-92e423d9f875"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "823"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"337-mic55EKa7L/ERSHemo170AKWop8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 May 2024 14:20:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched users\",\n    \"data\": [\n        {\n            \"id\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n            \"email\": \"adewunmi.ak.insa.nya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"pending\",\n            \"emailVerified\": false,\n            \"profile\": {\n                \"id\": \"561b4ddf-332f-4812-b8f4-9cb12c566653\",\n                \"firstName\": \"\",\n                \"lastName\": \"\",\n                \"country\": null,\n                \"createdAt\": \"2024-05-18T13:15:32.621Z\"\n            },\n            \"createdAt\": \"2024-05-18T13:15:31.928Z\"\n        },\n        {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"profile\": {\n                \"id\": \"c7d5f0c0-7cde-479f-8505-e51892d301eb\",\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"country\": null,\n                \"createdAt\": \"2024-04-28T22:45:14.081Z\"\n            },\n            \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 2,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Project Users",
+					"id": "8959e6e7-326c-4130-a8c9-80f277e3103f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"users\": [\"90c6c049-7241-44d9-9c86-2cfb967ba13a\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"users"
+							],
+							"variable": [
+								{
+									"id": "6dd17ebc-a4f4-49b9-b489-1f0b3f393ba2",
+									"key": "id",
+									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b38095f3-09a6-40c3-8c3a-4e800ab9e4d8",
+							"name": "Update Project Users",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"users\": [\"90c6c049-7241-44d9-9c86-2cfb967ba13a\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"users"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-tltYZ/5BX3ypOlnQcCp0wyXITGc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 May 2024 14:37:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Succesfully update project users\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Project Stats",
+					"id": "c5c076f9-7156-4569-a1ed-02cbde133978",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/projects/stats"
+					},
+					"response": [
+						{
+							"id": "d3955d68-3a34-4523-8cf7-ba880f53a3a7",
+							"name": "Get Project Stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/projects/stats"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-LMuTZLnbBXoU84I+9cYd0D+898I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 15:15:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Projects stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"rejected\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"accepted\"\n        },\n        {\n            \"count\": \"6\",\n            \"value\": \"draft\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"ongoing\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"completed\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"blocked\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"id": "7a4e5ea2-cbec-46f9-b382-579e01632f43"
 		}
 	],
 	"auth": {
