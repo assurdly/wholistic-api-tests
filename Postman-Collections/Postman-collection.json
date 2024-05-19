@@ -4299,142 +4299,7 @@
 				},
 				{
 					"name": "Delete User",
-					"item": [
-						{
-							"name": "Delete User",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "4deb5859-c383-410c-bccb-857cac411a1c",
-										"exec": [
-											"var jsonData = pm.response.json();",
-											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
-											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
-											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/users/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"users",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "{{createdUser}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
-									"name": "Delete User",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/users/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"users",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "529cde26-4c64-446f-b081-341850156d35"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "70"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:29:54 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
-								}
-							]
-						}
-					],
+					"item": [],
 					"id": "43145aca-8ea3-4505-a4c3-1d0a73a5eca9"
 				},
 				{
@@ -4507,6 +4372,165 @@
 						}
 					],
 					"id": "b7850534-fdfb-45cf-9a8f-a96392bfa2d4"
+				},
+				{
+					"name": "Get Users Stats",
+					"id": "2e4739b9-25a7-4cbc-aa7f-63dd58f0f405",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users/stats"
+					},
+					"response": [
+						{
+							"id": "1da0d740-2bb7-4a99-841a-f8b7784bf6ad",
+							"name": "Get Users Stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/users/stats"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ac-bfMkThCDkDXDu8YFWt/G9iP6G1w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 15:25:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clients stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"0\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"2\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Resend Invite",
+					"id": "89506c76-4fff-43d0-b307-a53c1b3fdac4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/resend",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"resend"
+							],
+							"variable": [
+								{
+									"id": "bc396c9b-140c-4041-b8b2-fa2cadc2e774",
+									"key": "id",
+									"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "62f7d440-d9e6-4ca7-85c3-44dc6ce787a4",
+							"name": "Resend Invite",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id/resend",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id",
+										"resend"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-6kbREy+n0RbCgWl7hza8rG0X8hI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 10:06:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully sent user invite\",\n    \"data\": {\n        \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n        \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"active\",\n        \"emailVerified\": true,\n        \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "f5d492cd-390c-4585-800f-08f84a19752a"
@@ -4519,6 +4543,34 @@
 					"item": [
 						{
 							"name": "Create Workspace",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d0e1d6d7-49a5-429e-b14b-f01370322603",
+										"exec": [
+											"try{",
+											"",
+											"    const {status, message, data} = pm.response.json()",
+											"    pm.test('Message is successful', () => {",
+											"        pm.expect(message).to.eql('Successfully created workspace')",
+											"    })",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(201);",
+											"    });",
+											"    pm.test(\"Content-Type is present\", function () {",
+											"        pm.response.to.have.header(\"Content-Type\");",
+											"    });",
+											"",
+											"} catch (error){",
+											"    console.error(\"Errors from test are\", error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "3287825c-172b-4d18-a8ac-ddc01ec97350",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -4898,7 +4950,7 @@
 									"try {",
 									"",
 									"    const { data } = pm.response.json()",
-									"",
+									"    pm.environment.set(\"auditLogId\", data[0].id)",
 									"",
 									"    pm.test(\"Status code is 200\", function () {",
 									"        pm.response.to.have.status(200);",
@@ -5031,6 +5083,36 @@
 				},
 				{
 					"name": "Get Audit Log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec049cec-183a-4003-b906-c2b35f3d0939",
+								"exec": [
+									"try {",
+									"",
+									"    const { data } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"    pm.test(\"Status code response is 'OK'\", function () {",
+									"        pm.response.to.have.status('OK');",
+									"    });",
+									"",
+									"    pm.test(\"Assert that the data object is not empty\", function () {",
+									"        pm.expect(data).to.not.be.empty",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from Tests', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "375b8c92-ee0f-4d38-9d1f-b293e2803240",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -5049,9 +5131,8 @@
 							],
 							"variable": [
 								{
-									"id": "51f33274-ed6b-4362-876d-17d9e7b105a6",
 									"key": "id",
-									"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
+									"value": "{{auditLogId}}"
 								}
 							]
 						}
@@ -5703,42 +5784,8 @@
 					]
 				},
 				{
-					"name": "Delete Client",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "6da5f304-bc93-4a89-a0b1-2eee9c339cdd",
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code response is OK\", function () {",
-									"    pm.response.to.have.status('OK');",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.status).to.be.a('string');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"",
-									"",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "9b39278e-80b1-4f47-9cdc-287d170a7c60",
+					"name": "Get Client Stats",
+					"id": "765ad516-3adc-4ecd-b7a5-e41475385254",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -5749,48 +5796,18 @@
 								"token": "{{accessToken}}"
 							}
 						},
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/clients/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{createdClient}}"
-								}
-							]
-						}
+						"url": "{{baseUrl}}/clients/stats"
 					},
 					"response": [
 						{
-							"id": "2e3240ec-985b-4ddf-b56c-d5672652b5fd",
-							"name": "Delete Client",
+							"id": "287385ca-fd06-4b4a-a570-0d68cfa10318",
+							"name": "Get Client Stats",
 							"originalRequest": {
-								"method": "DELETE",
+								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/clients/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"clients",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
-										}
-									]
-								}
+								"url": "{{baseUrl}}/clients/stats"
 							},
 							"status": "OK",
 							"code": 200,
@@ -5805,24 +5822,20 @@
 									"value": "*"
 								},
 								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
 								{
 									"key": "Content-Length",
-									"value": "72"
+									"value": "172"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"48-PI0Xsou6ya7m1ukblgbyWXqTQL4\""
+									"value": "W/\"ac-JlndrEs+GYA/TcGoJMtM4sOZISc\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 29 Apr 2024 06:30:17 GMT"
+									"value": "Sun, 19 May 2024 15:21:28 GMT"
 								},
 								{
 									"key": "Connection",
@@ -5835,7 +5848,7 @@
 							],
 							"cookie": [],
 							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted client\",\n    \"data\": null\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clients stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"1\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -5847,11 +5860,43 @@
 			"item": [
 				{
 					"name": "List Integrations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "87101c82-616e-4d72-98dc-737b224b0fd0",
+								"exec": [
+									"const jsonData = pm.response.json()",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code response is 'OK'\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Assert that the data array is not empty\", function () {",
+									"    pm.expect(jsonData.data).to.not.be.empty",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a9e80615-1326-4f7e-9b23-9cf6cc4e8e15",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/integrations"
@@ -5910,11 +5955,49 @@
 				},
 				{
 					"name": "Set Integration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "abf6c801-0ea3-4d61-9ff9-77e9ea0811f5",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"const createdIntegrationId = jsonData.data.id",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "7ee1e1a9-7678-4911-a39a-081679126a47",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -5991,14 +6074,56 @@
 				},
 				{
 					"name": "Delete Integration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64fd3bc1-2eb1-4bc2-b05f-a000908243ef",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});",
+									"",
+									"pm.test(\"Valid message is returned\", function () {",
+									"    pm.expect(jsonData.message).to.eql('Successfully deleted integration');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "8e788827-5cc1-440f-9901-6c9b675073fa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseUrl}}/integrations/slack"
+						"url": "{{baseUrl}}/integrations/google"
 					},
 					"response": [
 						{
@@ -6076,11 +6201,9 @@
 									"    });",
 									"",
 									"    pm.test(\"Response body property\", function () {",
-									"",
 									"        pm.expect(data).to.be.an('array');",
 									"        pm.expect(status).to.be.a('string');",
-									"        pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
-									"",
+									"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
 									"    });",
 									"",
 									"} catch (error) {",
@@ -6171,11 +6294,9 @@
 									"    });",
 									"",
 									"    pm.test(\"Response body property\", function () {",
-									"",
 									"        pm.expect(data).to.be.an('array');",
 									"        pm.expect(status).to.be.a('string');",
-									"        pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
-									"",
+									"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
 									"    });",
 									"",
 									"} catch (error) {",
@@ -6345,6 +6466,39 @@
 				},
 				{
 					"name": "Subscribe to Plan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d2faee1d-d2d8-4f72-baf0-9f99512aad6e",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"const createdClient = jsonData.data.id",
+									"pm.environment.set(\"createdClient\", createdClient)",
+									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Status code response is Created\", function () {",
+									"    pm.response.to.have.status('Created');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "33184fe4-2eca-4b62-963f-a13b2d9c3e3e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6551,6 +6705,1202 @@
 				}
 			],
 			"id": "401bec84-0854-4186-b2b0-c659b945af76"
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Create Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd7d6b7c-810a-45af-8d89-a8b34a201383",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"const createdProject = jsonData.data.id",
+									"pm.environment.set(\"createdProject\", createdProject)",
+									"",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Status code response is Created\", function () {",
+									"    pm.response.to.have.status('Created');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "fefb6c9e-1cf1-4971-a8e1-8ffd578937aa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-02-01\",\n    \"endDate\": \"2024-01-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"{{createdUser}}\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/projects"
+					},
+					"response": [
+						{
+							"id": "49d34445-21d5-4b64-a140-edf96589195a",
+							"name": "Create Project",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/projects"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "417"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a1-nZu+wK6r0J3rGOaZqKjj8IDHDko\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 21:24:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created project\",\n    \"data\": {\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2024-01-01\",\n        \"endDate\": \"2024-06-01\",\n        \"daysSpent\": 30,\n        \"workDone\": 99,\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Projects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "02a62a1b-0560-4612-a36d-36171cf0d5bc",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "13d1f6c0-e459-433d-97d9-579a32e6f2b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/projects"
+					},
+					"response": [
+						{
+							"id": "b7738117-607c-4963-b99a-e605c40afe73",
+							"name": "List Projects",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/projects"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "841"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"349-E8LJBf+srXqFPH19ApDM8KATrTw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 21:27:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched projects\",\n    \"data\": [\n        {\n            \"name\": \"Website Redesign\",\n            \"description\": \"Redesign of the Website\",\n            \"serviceType\": \"Product Development\",\n            \"status\": \"draft\",\n            \"startDate\": \"2023-12-31T23:00:00.000Z\",\n            \"endDate\": \"2024-05-31T23:00:00.000Z\",\n            \"daysSpent\": 30,\n            \"workDone\": \"99.00\",\n            \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"primaryUser\": {\n                \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n            },\n            \"client\": {\n                \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n                \"email\": \"hello@lendsqr.com\",\n                \"name\": \"LSQ\",\n                \"contactName\": \"Deji\",\n                \"contactPhone\": \"+2348012345678\",\n                \"contactEmail\": \"deji@lendsqr.com\",\n                \"contactName2\": null,\n                \"contactPhone2\": null,\n                \"contactEmail2\": null,\n                \"status\": \"active\",\n                \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "80d53dec-0773-41b0-86b8-51d95b9a8b73",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"    pm.expect(jsonData.data).to.be.a('object');",
+									"",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "63639463-b164-4a99-914d-7b13dc00715b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdProject}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "056fb863-8e7e-48b6-a6cf-617f949ff5f2",
+							"name": "Get Project",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "862"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35e-NRPTUK4gIgyYBuwdvvsp55fkmzE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 21:29:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\"\n            }\n        },\n        \"client\": {\n            \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5cc933aa-ac62-4750-8ff2-c013cd48c555",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "2800d7a9-c4e2-4965-a33b-c4b80efc76f9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"{{$randomCompanyName}}\",\n    \"description\": \"Redesign of the {{$randomProductName}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdProject}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "79a3b41b-24b9-4b2b-bd80-ef166da93061",
+							"name": "Update Project",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "401"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"191-WUldaBsru9EglN6+3jds9LIulwU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 09:58:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Project Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c579808e-1fd9-4ade-9a0b-900a0a464360",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c3ebd080-1bee-4122-ad18-d4a4660b4a1b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdProject}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "81bbd36b-0583-41f7-8546-cb4243e58896",
+							"name": "List Project Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"users"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0b775a21-25e2-4b61-9370-92e423d9f875"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "823"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"337-mic55EKa7L/ERSHemo170AKWop8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 May 2024 14:20:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched users\",\n    \"data\": [\n        {\n            \"id\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n            \"email\": \"adewunmi.ak.insa.nya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"pending\",\n            \"emailVerified\": false,\n            \"profile\": {\n                \"id\": \"561b4ddf-332f-4812-b8f4-9cb12c566653\",\n                \"firstName\": \"\",\n                \"lastName\": \"\",\n                \"country\": null,\n                \"createdAt\": \"2024-05-18T13:15:32.621Z\"\n            },\n            \"createdAt\": \"2024-05-18T13:15:31.928Z\"\n        },\n        {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"profile\": {\n                \"id\": \"c7d5f0c0-7cde-479f-8505-e51892d301eb\",\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"country\": null,\n                \"createdAt\": \"2024-04-28T22:45:14.081Z\"\n            },\n            \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 2,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Project Users",
+					"id": "8959e6e7-326c-4130-a8c9-80f277e3103f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"users\": [\"{{createdUser}}\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdProject}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b38095f3-09a6-40c3-8c3a-4e800ab9e4d8",
+							"name": "Update Project Users",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"users\": [\"90c6c049-7241-44d9-9c86-2cfb967ba13a\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"users"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-tltYZ/5BX3ypOlnQcCp0wyXITGc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 May 2024 14:37:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Succesfully update project users\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Project Stats",
+					"id": "c5c076f9-7156-4569-a1ed-02cbde133978",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id/stats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"stats"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdProject}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d3955d68-3a34-4523-8cf7-ba880f53a3a7",
+							"name": "Get Project Stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/projects/stats"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-LMuTZLnbBXoU84I+9cYd0D+898I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 15:15:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Projects stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"rejected\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"accepted\"\n        },\n        {\n            \"count\": \"6\",\n            \"value\": \"draft\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"ongoing\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"completed\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"blocked\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6da5f304-bc93-4a89-a0b1-2eee9c339cdd",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"",
+									"",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "9b39278e-80b1-4f47-9cdc-287d170a7c60",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clients/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdClient}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2e3240ec-985b-4ddf-b56c-d5672652b5fd",
+							"name": "Delete Client",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/clients/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-PI0Xsou6ya7m1ukblgbyWXqTQL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 06:30:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted client\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4deb5859-c383-410c-bccb-857cac411a1c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdUser}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "529cde26-4c64-446f-b081-341850156d35"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 18:29:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b97e35dc-711d-4731-ae4e-d61ad5e0b6f9",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code response is OK\", function () {",
+									"    pm.response.to.have.status('OK');",
+									"});",
+									"",
+									"pm.test(\"Response body property\", function () {",
+									"    pm.expect(jsonData).to.be.an('object');",
+									"    pm.expect(jsonData.status).to.be.a('string');",
+									"    pm.expect(jsonData.message).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Status is success\", function () {",
+									"    pm.expect(jsonData.status).to.eql('success');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "b933ab82-8b1d-4b07-a6b7-159e3ab67ae4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{createdProject}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1a6b5bbc-13f6-43b9-9d8e-026dd18877c8",
+							"name": "Delete Project",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-jl2KQYgGm0qTtiR5VAi6dCck8QE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 09:58:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted project\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"id": "7a4e5ea2-cbec-46f9-b382-579e01632f43"
 		}
 	],
 	"auth": {
