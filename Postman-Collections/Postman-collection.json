@@ -7913,13 +7913,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f420b44c-d459-4623-aa26-3273ffda6814",
+				"id": "d30e8845-8082-41d2-a344-ec373b764617",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"x-workspace-id\",",
-					"    value: \"0dc706da-90d0-4709-8024-ad61227602e7\"",
+					"    value: \"9e0bc803-da81-431e-8001-64c825c46b75\"",
 					"})"
 				]
 			}
@@ -7927,7 +7927,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "efc30f42-30f6-46f6-b9be-0cd588a8ad05",
+				"id": "a793bd9d-3c17-4810-9519-ab1862f28685",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
