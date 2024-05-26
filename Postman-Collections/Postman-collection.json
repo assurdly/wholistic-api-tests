@@ -536,6 +536,10 @@
 											"",
 											"pm.test(\"Message is Successfully logged in\", function () {",
 											"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
+											"});",
+											"",
+											"pm.test(\"Message is Successfully logged in\", function () {",
+											"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
 											"});"
 										],
 										"type": "text/javascript",
