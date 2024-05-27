@@ -5335,35 +5335,22 @@
 					]
 				},
 				{
-					"name": "List Audit Logs Copy",
+					"name": "List Audit Logs - No Auth",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "fa3c77b1-8aa5-45e7-a9c3-5cf16f7e56a9",
 								"exec": [
-									"try {",
+									"const jsonData = pm.response.json()",
 									"",
-									"    const { data } = pm.response.json()",
-									"    pm.environment.set(\"auditLogId\", data[0].id)",
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
 									"",
-									"    pm.test(\"Status code is 200\", function () {",
-									"        pm.response.to.have.status(200);",
-									"    });",
-									"    pm.test(\"Status code response is 'OK'\", function () {",
-									"        pm.response.to.have.status('OK');",
-									"    });",
-									"",
-									"    pm.test(\"Assert that the data array is not empty\", function () {",
-									"        pm.expect(data).to.not.be.empty",
-									"    });",
-									"",
-									"} catch (error) {",
-									"    console.error('Error from Tests', error)",
-									"}",
-									"",
-									"",
-									""
+									"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+									"    pm.response.to.have.status('Unauthorized');",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5376,10 +5363,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -5535,6 +5519,127 @@
 					"response": [
 						{
 							"id": "71e9bfec-08f2-4010-ad87-5fe3d5c3ff5a",
+							"name": "Get Audit Log",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/audit-logs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"audit-logs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-01ZVXyUH8BviVVMgaBpqiGHHqck\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:57:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit log fetched successfully.\",\n    \"data\": {\n        \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n        \"event\": \"auth.set-password\",\n        \"details\": {},\n        \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n        \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n        \"deletedAt\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Audit Log - No Auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec049cec-183a-4003-b906-c2b35f3d0939",
+								"exec": [
+									"const jsonData = pm.response.json()",
+									"",
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});",
+									"",
+									"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+									"    pm.response.to.have.status('Unauthorized');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "89e89dfd-205b-4c81-9282-09465182b56b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/audit-logs/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"audit-logs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{auditLogId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c1dec30c-f6c9-47dd-beaa-83781aef6bb8",
 							"name": "Get Audit Log",
 							"originalRequest": {
 								"method": "GET",
