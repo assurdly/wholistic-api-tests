@@ -4805,6 +4805,136 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspaces\",\n    \"data\": [\n        {\n            \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n            \"name\": \"Assurdly\",\n            \"status\": \"active\",\n            \"slug\": \"assurdly\",\n            \"size\": \"1-10\",\n            \"purpose\": \"Testing\",\n            \"utmMedium\": \"Instagram\",\n            \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n            \"primaryUser\": {\n                \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n                \"email\": \"adewunmiakinsanya@gmail.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "List Workspaces - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5d04c638-03e4-44b4-a20c-1117c343def6",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e0680ea6-4287-4c17-9b88-e62d17d5f481",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/workspaces",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "20",
+											"disabled": true
+										},
+										{
+											"key": "filter[name]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][gt]",
+											"value": "2024-04-30T17:20:57.737Z",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][lt]",
+											"value": "2024-05-02T17:20:57.737Z",
+											"disabled": true
+										},
+										{
+											"key": "filter[status]",
+											"value": "active",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "215e5486-3b89-42f3-82e6-952305a7fd46",
+									"name": "List Workspaces",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/workspaces"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "454"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1c6-7QDcuVxZRlOJ7yE1CStFMplIn+w\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:44:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspaces\",\n    \"data\": [\n        {\n            \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n            \"name\": \"Assurdly\",\n            \"status\": \"active\",\n            \"slug\": \"assurdly\",\n            \"size\": \"1-10\",\n            \"purpose\": \"Testing\",\n            \"utmMedium\": \"Instagram\",\n            \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n            \"primaryUser\": {\n                \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n                \"email\": \"adewunmiakinsanya@gmail.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "f1c00d1a-b201-4fe5-9cf5-bf6ec46a3ae2"
@@ -4865,6 +4995,126 @@
 							"response": [
 								{
 									"id": "9c7462e7-6244-4dd0-9683-798c717661a3",
+									"name": "Get Workspace",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/workspaces/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"workspaces",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "441"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1b9-41hqW+JdMoNvyhfqhHZSEeuJ8As\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:44:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n        \"primaryUser\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Wunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null\n            }\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Workspace - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f614fa80-5b71-4c2a-8835-e82a8fd69bd1",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "883921bf-89dd-4cfa-b2af-d12941c25538",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/workspaces/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{fetchedWorkspace}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "90d5797f-7846-4922-8041-af8f5fec9200",
 									"name": "Get Workspace",
 									"originalRequest": {
 										"method": "GET",
@@ -5031,6 +5281,148 @@
 					"response": [
 						{
 							"id": "3c7b5821-38a6-4053-91c6-73435b7d3d94",
+							"name": "List Audit Logs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/audit-logs"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "894"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37e-id8bhNeRJ1DYdNXBNtYfExod1Xw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 12:56:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit logs fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n            \"event\": \"auth.set-password\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n            \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"a0cb381b-3315-4ccf-b0c4-13f9951640a8\",\n            \"event\": \"profile.2fa.disable\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:52:47.666Z\",\n            \"updatedAt\": \"2024-04-28T22:52:47.666Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"49212b99-e8ca-4f98-9656-c8311e207fe6\",\n            \"event\": \"profile.2fa.verify\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:51:42.349Z\",\n            \"updatedAt\": \"2024-04-28T22:51:42.349Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"fb711a5e-91aa-4369-9e16-cffa640f1c26\",\n            \"event\": \"profile.2fa.generate\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:49:55.919Z\",\n            \"updatedAt\": \"2024-04-28T22:49:55.919Z\",\n            \"deletedAt\": null\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 4,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Audit Logs Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fa3c77b1-8aa5-45e7-a9c3-5cf16f7e56a9",
+								"exec": [
+									"try {",
+									"",
+									"    const { data } = pm.response.json()",
+									"    pm.environment.set(\"auditLogId\", data[0].id)",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"    pm.test(\"Status code response is 'OK'\", function () {",
+									"        pm.response.to.have.status('OK');",
+									"    });",
+									"",
+									"    pm.test(\"Assert that the data array is not empty\", function () {",
+									"        pm.expect(data).to.not.be.empty",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from Tests', error)",
+									"}",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "47e8101d-fd1c-467a-91a5-b46ec4512c11",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/audit-logs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"audit-logs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "filter[event]",
+									"value": "role.view",
+									"disabled": true
+								},
+								{
+									"key": "filter[createdAt][gt]",
+									"value": "2024-04-30T17:20:57.737Z",
+									"disabled": true
+								},
+								{
+									"key": "filter[createdAt][lt]",
+									"value": "2024-05-02T17:20:57.737Z",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "435c4203-d02c-4a28-9870-ec31e4d2d8ce",
 							"name": "List Audit Logs",
 							"originalRequest": {
 								"method": "GET",
