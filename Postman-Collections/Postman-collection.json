@@ -5979,7 +5979,7 @@
 							]
 						},
 						{
-							"name": "Empty Fields - Add Client Copy",
+							"name": "Empty Fields - Existing client",
 							"event": [
 								{
 									"listen": "test",
