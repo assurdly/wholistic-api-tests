@@ -5745,6 +5745,10 @@
 											"",
 											"pm.test(\"Status is success\", function () {",
 											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"",
+											"pm.test(\"Valid success message is returned\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Successfully created client');",
 											"});"
 										],
 										"type": "text/javascript",
@@ -5779,6 +5783,134 @@
 							"response": [
 								{
 									"id": "594f4f82-2673-4e38-bef5-33c05e4da3b3",
+									"name": "Add Client",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/clients"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "361"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"169-rC9WhQtE6FsBiP1jas4cz7H4BFI\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 29 Apr 2024 06:27:23 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"pending\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Client - Valid Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "01ce09a7-d422-4312-a251-b9acffc54b98",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"const createdClient = jsonData.data.id",
+											"pm.environment.set(\"createdClient\", createdClient)",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Created\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"",
+											"pm.test(\"Valid success message is returned\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Successfully created client');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b1ed9bdc-cdce-47c7-ab0f-b9ed2ae47df1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": \"Azeez Ibrahim\",\n    \"contactEmail2\": \"azeez@assurdly.com\",\n    \"contactPhone2\": \"+23409055755671\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/clients"
+							},
+							"response": [
+								{
+									"id": "6172e28b-7f3d-488d-85e9-2436a6fea89d",
 									"name": "Add Client",
 									"originalRequest": {
 										"method": "POST",
