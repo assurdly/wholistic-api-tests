@@ -5846,7 +5846,7 @@
 							]
 						},
 						{
-							"name": "Add Client - Valid Copy",
+							"name": "Empty Fields - Add Client",
 							"event": [
 								{
 									"listen": "test",
@@ -5854,29 +5854,23 @@
 										"id": "01ce09a7-d422-4312-a251-b9acffc54b98",
 										"exec": [
 											"var jsonData = pm.response.json();",
-											"const createdClient = jsonData.data.id",
-											"pm.environment.set(\"createdClient\", createdClient)",
 											"",
-											"pm.test(\"Status code is 201\", function () {",
-											"    pm.response.to.have.status(201);",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
 											"});",
 											"",
-											"pm.test(\"Status code response is Created\", function () {",
-											"    pm.response.to.have.status('Created');",
+											"pm.test(\"Status code response is Bad Request\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
 											"});",
 											"",
 											"pm.test(\"Response body property\", function () {",
 											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
 											"    pm.expect(jsonData.message).to.be.a('string');",
 											"});",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
-											"",
-											"pm.test(\"Valid success message is returned\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Successfully created client');",
+											"pm.test(\"Valid error message is returned\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Validation Error.');",
 											"});"
 										],
 										"type": "text/javascript",
@@ -5899,7 +5893,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": \"Azeez Ibrahim\",\n    \"contactEmail2\": \"azeez@assurdly.com\",\n    \"contactPhone2\": \"+23409055755671\"\n}",
+									"raw": "{\n    \"name\": \"\",\n    \"email\": \"\",\n    \"contactName\": \"\",\n    \"contactEmail\": \"\",\n    \"contactPhone\": \"\",\n    \"contactName2\": \"\",\n    \"contactEmail2\": \"\",\n    \"contactPhone2\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
