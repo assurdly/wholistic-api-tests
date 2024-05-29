@@ -5718,7 +5718,7 @@
 					"name": "Add Client",
 					"item": [
 						{
-							"name": "Add Client",
+							"name": "Add Client - Valid",
 							"event": [
 								{
 									"listen": "test",
@@ -5767,7 +5767,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
+									"raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": \"Azeez Ibrahim\",\n    \"contactEmail2\": \"azeez@assurdly.com\",\n    \"contactPhone2\": \"+23409055755671\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
