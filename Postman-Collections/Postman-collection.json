@@ -5855,18 +5855,29 @@
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
 											"});",
 											"",
 											"pm.test(\"Status code response is Bad Request\", function () {",
 											"    pm.response.to.have.status('Bad Request');",
 											"});",
 											"",
-											"pm.test(\"Response body property\", function () {",
+											"pm.test(\"Response body property check\", function () {",
 											"    pm.expect(jsonData).to.be.an('object');",
 											"    pm.expect(jsonData.data).to.be.an('object');",
 											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Valid error message data is returned\", function () {",
+											"    pm.expect(jsonData.email).to.eql('Validation Error.');",
+											"    pm.expect(jsonData.name).to.eql('Validation Error.');",
+											"    pm.expect(jsonData.contactName).to.eql('contactName is required.');",
+											"    pm.expect(jsonData.contactEmail).to.eql('contactEmail is required.');",
+											"    pm.expect(jsonData.contactEmail2).to.eql('contactEmail2 is required.');",
+											"    pm.expect(jsonData.contactName2).to.eql('contactName2 is required.');",
+											"    pm.expect(jsonData.contactPhone).to.eql('contactPhone is required.');",
+											"    pm.expect(jsonData.contactPhone2).to.eql('contactPhone2 is required.');",
 											"});",
 											"",
 											"pm.test(\"Valid error message is returned\", function () {",
@@ -5905,6 +5916,139 @@
 							"response": [
 								{
 									"id": "6172e28b-7f3d-488d-85e9-2436a6fea89d",
+									"name": "Add Client",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/clients"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "361"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"169-rC9WhQtE6FsBiP1jas4cz7H4BFI\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 29 Apr 2024 06:27:23 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"pending\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Empty Fields - Add Client Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "01ce09a7-d422-4312-a251-b9acffc54b98",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Bad Request\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});",
+											"",
+											"pm.test(\"Response body property check\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Valid error message data is returned\", function () {",
+											"    pm.expect(jsonData.email).to.eql('Validation Error.');",
+											"    pm.expect(jsonData.name).to.eql('Validation Error.');",
+											"    pm.expect(jsonData.contactName).to.eql('contactName is required.');",
+											"    pm.expect(jsonData.contactEmail).to.eql('contactEmail is required.');",
+											"    pm.expect(jsonData.contactEmail2).to.eql('contactEmail2 is required.');",
+											"    pm.expect(jsonData.contactName2).to.eql('contactName2 is required.');",
+											"    pm.expect(jsonData.contactPhone).to.eql('contactPhone is required.');",
+											"    pm.expect(jsonData.contactPhone2).to.eql('contactPhone2 is required.');",
+											"});",
+											"",
+											"pm.test(\"Valid error message is returned\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Validation Error.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "7f91c0cc-ab96-449e-b959-4762bfefcbdd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"\",\n    \"email\": \"\",\n    \"contactName\": \"\",\n    \"contactEmail\": \"\",\n    \"contactPhone\": \"\",\n    \"contactName2\": \"\",\n    \"contactEmail2\": \"\",\n    \"contactPhone2\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/clients"
+							},
+							"response": [
+								{
+									"id": "56bb71eb-d3df-411e-a680-b43f7f211bcb",
 									"name": "Add Client",
 									"originalRequest": {
 										"method": "POST",
