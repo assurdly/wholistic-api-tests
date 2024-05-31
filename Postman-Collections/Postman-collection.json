@@ -6735,12 +6735,150 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Update Client - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cf7e1f5e-79a1-4aa2-8a36-3a195c78748c",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "db5e31b0-7b1b-4960-988a-12d0b7f8b5f7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"\",\n    \"email\": \"\",\n    \"contactName\": \"\",\n    \"contactEmail\": \"\",\n    \"contactPhone\": \"\",\n    \"contactName2\": \"\",\n    \"contactEmail2\": \"\",\n    \"contactPhone2\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/clients/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{createdClient}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "7b4c6614-8ea3-428e-99ef-72a3e6cbd204",
+									"name": "Update Client",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"LSQ\",\n    \"email\": \"hello@lendsqr.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"deji@lendsqr.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null,\n    \"status\": \"active\" // active|pending|inactive\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/clients/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clients",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "360"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"168-4y33rCAz50znly9MrAxgQkZfLKA\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 29 Apr 2024 06:28:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "70bb5c8b-2fdc-4aeb-8281-99e770b3e529"
 				},
 				{
-					"name": "Get Clients",
+					"name": "Get a Client",
 					"item": [
 						{
 							"name": "Get Client",
@@ -6751,7 +6889,6 @@
 										"id": "65d0931c-16df-4e8d-95fa-6cb75c04f8be",
 										"exec": [
 											"var jsonData = pm.response.json();",
-											"",
 											"",
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
@@ -6811,6 +6948,261 @@
 							"response": [
 								{
 									"id": "f7af6741-87f2-4b58-b9d2-7d954328533d",
+									"name": "Get Client",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/clients/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clients",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "360"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"168-3ws2IkID2RhxO4ipM1osveVmWAM\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 29 Apr 2024 06:29:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Client - Empty ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "65d0931c-16df-4e8d-95fa-6cb75c04f8be",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Client not found');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "328c63fc-722f-4774-9eef-4bee1e295690",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/clients/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f2841e42-7b58-4c5a-8f53-ee94bc5c530d",
+									"name": "Get Client",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/clients/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"clients",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "a277258e-7b33-4806-91a9-7a4d6dfcb7b5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "360"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"168-3ws2IkID2RhxO4ipM1osveVmWAM\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 29 Apr 2024 06:29:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched client\",\n    \"data\": {\n        \"id\": \"a277258e-7b33-4806-91a9-7a4d6dfcb7b5\",\n        \"email\": \"hello@lendsqr.com\",\n        \"name\": \"LSQ\",\n        \"contactName\": \"Deji\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactName2\": null,\n        \"contactPhone2\": null,\n        \"contactEmail2\": null,\n        \"status\": \"active\",\n        \"createdAt\": \"2024-04-29T05:27:22.840Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Client - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "65d0931c-16df-4e8d-95fa-6cb75c04f8be",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "92cf66de-f763-45b7-a81a-af5795236681",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/clients/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{createdClient}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "d470bd01-b053-4db0-8f1f-5504a5fe376e",
 									"name": "Get Client",
 									"originalRequest": {
 										"method": "GET",
