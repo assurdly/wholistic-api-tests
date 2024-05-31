@@ -6582,25 +6582,34 @@
 										"id": "cf7e1f5e-79a1-4aa2-8a36-3a195c78748c",
 										"exec": [
 											"var jsonData = pm.response.json();",
-											"const createdClient = jsonData.data.id",
-											"pm.environment.set(\"createdClient\", createdClient)",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
 											"});",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status('OK');",
+											"pm.test(\"Status code response is Bad Request\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
 											"});",
 											"",
-											"pm.test(\"Response body property\", function () {",
+											"pm.test(\"Response body property check\", function () {",
 											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
 											"    pm.expect(jsonData.message).to.be.a('string');",
 											"});",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
+											"pm.test(\"Valid error message data is returned\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Validation Error.');",
+											"    pm.expect(jsonData.data.name).to.eql('name value should have at least 2 characters.');",
+											"    pm.expect(jsonData.data.contactName).to.eql('contactName value should have at least 2 characters.');",
+											"    pm.expect(jsonData.data.contactEmail).to.eql('contactEmail must be an email');",
+											"    pm.expect(jsonData.data.contactEmail2).to.eql('contactEmail2 must be an email');",
+											"    pm.expect(jsonData.data.contactName2).to.eql('contactName2 value should have at least 2 characters.');",
+											"    pm.expect(jsonData.data.contactPhone).to.eql('phone value must be a valid phone number.');",
+											"    pm.expect(jsonData.data.contactPhone2).to.eql('phone value must be a valid phone number.');",
+											"});",
+											"",
+											"pm.test(\"Valid error message is returned\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Validation Error.');",
 											"});"
 										],
 										"type": "text/javascript",
@@ -6623,7 +6632,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomCompanyName}}\",\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"contactName\": \"Deji\",\n    \"contactEmail\": \"{{$randomLastName}}@mailinator.com\",\n    \"contactPhone\": \"+2348012345678\",\n    \"contactName2\": \"{{$randomFirstName}}\",\n    \"contactEmail2\": \"{{$randomEmail}}\",\n    \"contactPhone2\": \"+2349055755673\"\n}",
+									"raw": "{\n    \"name\": \"\",\n    \"email\": \"\",\n    \"contactName\": \"\",\n    \"contactEmail\": \"\",\n    \"contactPhone\": \"\",\n    \"contactName2\": \"\",\n    \"contactEmail2\": \"\",\n    \"contactPhone2\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6641,7 +6650,6 @@
 									],
 									"variable": [
 										{
-											"id": "c9001dac-5fb0-4440-be52-1802a16c18cd",
 											"key": "id",
 											"value": "{{createdClient}}"
 										}
