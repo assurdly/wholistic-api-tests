@@ -6278,18 +6278,12 @@
 										"exec": [
 											"const jsonData = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
 											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
-											"",
-											"pm.test(\"Assert that the data array is not empty\", function () {",
-											"    pm.expect(jsonData.data).to.not.be.empty",
-											"});",
-											"",
-											""
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6302,10 +6296,7 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [],
