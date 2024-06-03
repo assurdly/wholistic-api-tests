@@ -9415,6 +9415,33 @@
 					"item": [
 						{
 							"name": "Update Project Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7b89c9bd-4a5e-4835-bd51-ef1713f3fb2c",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "8959e6e7-326c-4130-a8c9-80f277e3103f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -9663,6 +9690,34 @@
 					"item": [
 						{
 							"name": "Get Project Stats",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "03df7336-d6e1-4b92-b32c-d944106b0cec",
+										"exec": [
+											"try {",
+											"",
+											"    const { status, data, meta, message } = pm.response.json()",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data).to.be.an('array');",
+											"        pm.expect(status).to.be.a('string');",
+											"    });",
+											"",
+											"} catch (error) {",
+											"    console.error('Error from test says:', error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "c5c076f9-7156-4569-a1ed-02cbde133978",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -9757,7 +9812,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n    \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\"\n}",
+									"raw": "{\n    \"itemId\": \"\",\n    \"userIntegrationId\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -9776,7 +9831,6 @@
 									],
 									"variable": [
 										{
-											"id": "0a8b37fa-c289-48c9-88ac-653b33aeaba6",
 											"key": "id",
 											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
 										}
