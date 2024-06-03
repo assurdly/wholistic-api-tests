@@ -9922,6 +9922,40 @@
 					"item": [
 						{
 							"name": "List Project Integrations",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0a23c25e-aed4-41a3-b2f5-63811027cf63",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.a('array');",
+											"",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "f650fb75-5ec7-4fdf-a179-34be8deffefd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
