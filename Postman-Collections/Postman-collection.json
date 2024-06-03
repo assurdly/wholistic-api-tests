@@ -8097,351 +8097,346 @@
 			"item": [
 				{
 					"name": "List Plans",
-					"event": [
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "2588e499-b198-44b0-a1ec-c4f77165dfaf",
-								"exec": [
-									"try {",
-									"",
-									"    const { status, data, meta, message } = pm.response.json()",
-									"    pm.environment.set('fetchedPlanId', data[0].id)",
-									"",
-									"    pm.test(\"Status code is 200\", function () {",
-									"        pm.response.to.have.status(200);",
-									"    });",
-									"",
-									"    pm.test(\"Response body property\", function () {",
-									"        pm.expect(data).to.be.an('array');",
-									"        pm.expect(status).to.be.a('string');",
-									"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
-									"    });",
-									"",
-									"} catch (error) {",
-									"    console.error('Error from test says:', error)",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "b0b2ae26-ea69-43fb-a890-aa1f8d2031aa",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/billings/plans"
-					},
-					"response": [
-						{
-							"id": "2ba9f10d-5b5d-49e3-b64d-c104e1a0a835",
 							"name": "List Plans",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2588e499-b198-44b0-a1ec-c4f77165dfaf",
+										"exec": [
+											"try {",
+											"",
+											"    const { status, data, meta, message } = pm.response.json()",
+											"    pm.environment.set('fetchedPlanId', data[0].id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data).to.be.an('array');",
+											"        pm.expect(status).to.be.a('string');",
+											"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
+											"    });",
+											"",
+											"} catch (error) {",
+											"    console.error('Error from test says:', error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b0b2ae26-ea69-43fb-a890-aa1f8d2031aa",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/billings/plans"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "310"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"136-VKn7G9nFd/jiGv3wk1gKIEwd6p0\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 06 May 2024 06:47:59 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "2ba9f10d-5b5d-49e3-b64d-c104e1a0a835",
+									"name": "List Plans",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/billings/plans"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "310"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"136-VKn7G9nFd/jiGv3wk1gKIEwd6p0\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 06:47:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched plan\",\n    \"data\": [\n        {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched plan\",\n    \"data\": [\n        {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "List Subscriptions",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7a703d7b-33b0-44ba-b9d6-ffc744f94f34",
-								"exec": [
-									"try {",
-									"",
-									"    const { status, data, meta, message } = pm.response.json()",
-									"    pm.environment.get('fetchedPlanId', data[0].id)",
-									"",
-									"    pm.test(\"Status code is 200\", function () {",
-									"        pm.response.to.have.status(200);",
-									"    });",
-									"",
-									"    pm.test(\"Response body property\", function () {",
-									"        pm.expect(data).to.be.an('array');",
-									"        pm.expect(status).to.be.a('string');",
-									"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
-									"    });",
-									"",
-									"} catch (error) {",
-									"    console.error('Error from test says:', error)",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
+							]
 						}
 					],
-					"id": "53f6787c-866b-48c3-a8ff-e407255d43d7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/billings/subscriptions"
-					},
-					"response": [
+					"id": "c4b300bf-8467-4da0-aae6-d544fa75d350"
+				},
+				{
+					"name": "List subscriptions",
+					"item": [
 						{
-							"id": "249cba68-03d7-49b2-ad86-2a9397fd6950",
 							"name": "List Subscriptions",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7a703d7b-33b0-44ba-b9d6-ffc744f94f34",
+										"exec": [
+											"try {",
+											"",
+											"    const { status, data, meta, message } = pm.response.json()",
+											"    pm.environment.get('fetchedPlanId', data[0].id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data).to.be.an('array');",
+											"        pm.expect(status).to.be.a('string');",
+											"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
+											"    });",
+											"",
+											"} catch (error) {",
+											"    console.error('Error from test says:', error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "53f6787c-866b-48c3-a8ff-e407255d43d7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/billings/subscriptions"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "474"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1da-MbccLbIPmNydU7JW8g4c5JSkcFA\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 06 May 2024 07:11:28 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "249cba68-03d7-49b2-ad86-2a9397fd6950",
+									"name": "List Subscriptions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/billings/subscriptions"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "474"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1da-MbccLbIPmNydU7JW8g4c5JSkcFA\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 07:11:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": [\n        {\n            \"id\": \"c967f82c-9f49-4853-8dcb-b9e2e60e2383\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"reference\": \"oo7dh5ub0n\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": 1000,\n                \"currency\": \"NGN\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-05-06T06:10:35.962Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": [\n        {\n            \"id\": \"c967f82c-9f49-4853-8dcb-b9e2e60e2383\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"reference\": \"oo7dh5ub0n\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": 1000,\n                \"currency\": \"NGN\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-05-06T06:10:35.962Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "b87e03f4-0d41-4ee5-829c-8040f26817b6"
 				},
 				{
 					"name": "List Cards",
-					"event": [
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "67502a6c-e2a9-43d1-a38c-90da57b73d72",
-								"exec": [
-									"try {",
-									"",
-									"    const { status, data, meta, message } = pm.response.json()",
-									"    pm.environment.get('fetchedPlanId', data[0].id)",
-									"",
-									"    pm.test(\"Status code is 200\", function () {",
-									"        pm.response.to.have.status(200);",
-									"    });",
-									"",
-									"    pm.test(\"Response body property\", function () {",
-									"",
-									"        pm.expect(data).to.be.an('array');",
-									"        pm.expect(status).to.be.a('string');",
-									"        // pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
-									"",
-									"    });",
-									"",
-									"} catch (error) {",
-									"    console.error('Error from test says:', error)",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "ee507efb-8635-4000-9ba8-656ad004aadb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/billings/cards"
-					},
-					"response": [
-						{
-							"id": "ee947894-3630-46a7-83ab-78d5cead74ff",
 							"name": "List Cards",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "67502a6c-e2a9-43d1-a38c-90da57b73d72",
+										"exec": [
+											"try {",
+											"",
+											"    const { status, data, meta, message } = pm.response.json()",
+											"    pm.environment.get('fetchedPlanId', data[0].id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"",
+											"        pm.expect(data).to.be.an('array');",
+											"        pm.expect(status).to.be.a('string');",
+											"        // pm.expect(data[0].amount).to.be.a('number') && pm.expect(data[0].amount).to.not.be.null;",
+											"",
+											"    });",
+											"",
+											"} catch (error) {",
+											"    console.error('Error from test says:', error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ee507efb-8635-4000-9ba8-656ad004aadb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/billings/cards"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "374"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"176-iVSyb1i8PcDeLclQxX+HxLanVuU\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 06 May 2024 07:19:31 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched card\",\n    \"data\": [\n        {\n            \"id\": \"642e7093-3563-450a-808c-eebffcc4d888\",\n            \"name\": \"\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"currency\": \"NGN\",\n            \"type\": \"visa \",\n            \"last4\": \"4081\",\n            \"expiryMonth\": \"12\",\n            \"expiryYear\": \"2030\",\n            \"bin\": \"408408\",\n            \"processor\": \"paystack\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Subscribe to Plan",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d2faee1d-d2d8-4f72-baf0-9f99512aad6e",
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"const createdClient = jsonData.data.id",
-									"pm.environment.set(\"createdClient\", createdClient)",
-									"",
-									"pm.test(\"Status code is 201\", function () {",
-									"    pm.response.to.have.status(201);",
-									"});",
-									"",
-									"pm.test(\"Status code response is Created\", function () {",
-									"    pm.response.to.have.status('Created');",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.status).to.be.a('string');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "33184fe4-2eca-4b62-963f-a13b2d9c3e3e",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/billings/plans/:id/subscribe",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"billings",
-								"plans",
-								":id",
-								"subscribe"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "c1a53489-4297-4868-baed-1fc518892347"
+									"id": "ee947894-3630-46a7-83ab-78d5cead74ff",
+									"name": "List Cards",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/billings/cards"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "374"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"176-iVSyb1i8PcDeLclQxX+HxLanVuU\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 07:19:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched card\",\n    \"data\": [\n        {\n            \"id\": \"642e7093-3563-450a-808c-eebffcc4d888\",\n            \"name\": \"\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"currency\": \"NGN\",\n            \"type\": \"visa \",\n            \"last4\": \"4081\",\n            \"expiryMonth\": \"12\",\n            \"expiryYear\": \"2030\",\n            \"bin\": \"408408\",\n            \"processor\": \"paystack\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "1fc884b7-41a9-4fd9-a4aa-db2d491c907e"
+				},
+				{
+					"name": "Subscribe to Plan",
+					"item": [
 						{
-							"id": "07f19841-f332-49c6-967d-1654fa2ea51d",
 							"name": "Subscribe to Plan",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d2faee1d-d2d8-4f72-baf0-9f99512aad6e",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"const createdClient = jsonData.data.id",
+											"pm.environment.set(\"createdClient\", createdClient)",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Created\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "33184fe4-2eca-4b62-963f-a13b2d9c3e3e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"url": {
@@ -8463,89 +8458,88 @@
 									]
 								}
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "171"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"ab-8aU0Ugl75s+VK9bnaMA0wJDr0DQ\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 06 May 2024 06:49:47 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully initialized subscription\",\n    \"data\": {\n        \"authorizationUrl\": \"https://checkout.paystack.com/ozjs0003bxy4pds\",\n        \"reference\": \"oo7dh5ub0n\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Verify Subscription",
-					"id": "98414991-f342-45c0-830a-19c559062ca6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/billings/plans/:id/subscribe/:reference",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"billings",
-								"plans",
-								":id",
-								"subscribe",
-								":reference"
-							],
-							"variable": [
-								{
-									"id": "456702af-d7f8-46c3-b75e-1c9b06a6144d",
-									"key": "id",
-									"value": "c1a53489-4297-4868-baed-1fc518892347"
-								},
-								{
-									"id": "efd4eb0a-38b0-4b99-90b4-17675227800d",
-									"key": "reference",
-									"value": "oo7dh5ub0n"
+									"id": "07f19841-f332-49c6-967d-1654fa2ea51d",
+									"name": "Subscribe to Plan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/billings/plans/:id/subscribe",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"billings",
+												"plans",
+												":id",
+												"subscribe"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "c1a53489-4297-4868-baed-1fc518892347"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "171"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ab-8aU0Ugl75s+VK9bnaMA0wJDr0DQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 06:49:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully initialized subscription\",\n    \"data\": {\n        \"authorizationUrl\": \"https://checkout.paystack.com/ozjs0003bxy4pds\",\n        \"reference\": \"oo7dh5ub0n\"\n    }\n}"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "bcc3e0e5-7685-4977-be31-15aefe699160"
+				},
+				{
+					"name": "Verify Subscriptions",
+					"item": [
 						{
-							"id": "06cdb79b-28c6-4b68-ba5f-4211dac2af24",
 							"name": "Verify Subscription",
-							"originalRequest": {
+							"id": "98414991-f342-45c0-830a-19c559062ca6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"url": {
@@ -8562,58 +8556,94 @@
 									],
 									"variable": [
 										{
+											"id": "456702af-d7f8-46c3-b75e-1c9b06a6144d",
 											"key": "id",
 											"value": "c1a53489-4297-4868-baed-1fc518892347"
 										},
 										{
+											"id": "efd4eb0a-38b0-4b99-90b4-17675227800d",
 											"key": "reference",
 											"value": "oo7dh5ub0n"
 										}
 									]
 								}
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "303"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"12f-Idc283pZ+inlekH6N8YKTOn0v90\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 06 May 2024 07:09:36 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "06cdb79b-28c6-4b68-ba5f-4211dac2af24",
+									"name": "Verify Subscription",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/billings/plans/:id/subscribe/:reference",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"billings",
+												"plans",
+												":id",
+												"subscribe",
+												":reference"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "c1a53489-4297-4868-baed-1fc518892347"
+												},
+												{
+													"key": "reference",
+													"value": "oo7dh5ub0n"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "303"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"12f-Idc283pZ+inlekH6N8YKTOn0v90\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 07:09:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": {\n        \"amount\": 1000,\n        \"currency\": \"NGN\",\n        \"reference\": \"oo7dh5ub0n\",\n        \"subscription\": {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": {\n        \"amount\": 1000,\n        \"currency\": \"NGN\",\n        \"reference\": \"oo7dh5ub0n\",\n        \"subscription\": {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "214aa977-46ae-4a1f-83b0-1affe5b76a79"
 				}
 			],
 			"id": "401bec84-0854-4186-b2b0-c659b945af76"
@@ -8623,73 +8653,58 @@
 			"item": [
 				{
 					"name": "Create Project",
-					"event": [
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "dd7d6b7c-810a-45af-8d89-a8b34a201383",
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"const createdProject = jsonData.data.id",
-									"pm.environment.set(\"createdProject\", createdProject)",
-									"",
-									"pm.test(\"Status code is 201\", function () {",
-									"    pm.response.to.have.status(201);",
-									"});",
-									"",
-									"pm.test(\"Status code response is Created\", function () {",
-									"    pm.response.to.have.status('Created');",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.status).to.be.a('string');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "fefb6c9e-1cf1-4971-a8e1-8ffd578937aa",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-02-01\",\n    \"endDate\": \"2024-01-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"{{createdUser}}\"]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/projects"
-					},
-					"response": [
-						{
-							"id": "49d34445-21d5-4b64-a140-edf96589195a",
 							"name": "Create Project",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dd7d6b7c-810a-45af-8d89-a8b34a201383",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"const createdProject = jsonData.data.id",
+											"pm.environment.set(\"createdProject\", createdProject)",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Created\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "fefb6c9e-1cf1-4971-a8e1-8ffd578937aa",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+									"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-02-01\",\n    \"endDate\": \"2024-01-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"{{createdUser}}\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8698,191 +8713,112 @@
 								},
 								"url": "{{baseUrl}}/projects"
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "417"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1a1-nZu+wK6r0J3rGOaZqKjj8IDHDko\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 12 May 2024 21:24:34 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created project\",\n    \"data\": {\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2024-01-01\",\n        \"endDate\": \"2024-06-01\",\n        \"daysSpent\": 30,\n        \"workDone\": 99,\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "List Projects",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02a62a1b-0560-4612-a36d-36171cf0d5bc",
-								"exec": [
-									"try {",
-									"",
-									"    const { status, data, meta, message } = pm.response.json()",
-									"",
-									"    pm.test(\"Status code is 200\", function () {",
-									"        pm.response.to.have.status(200);",
-									"    });",
-									"",
-									"    pm.test(\"Response body property\", function () {",
-									"        pm.expect(data).to.be.an('array');",
-									"        pm.expect(status).to.be.a('string');",
-									"    });",
-									"",
-									"} catch (error) {",
-									"    console.error('Error from test says:', error)",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "13d1f6c0-e459-433d-97d9-579a32e6f2b0",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/projects",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"projects"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": "20",
-									"disabled": true
-								},
-								{
-									"key": "filter[name]",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "filter[createdAt][gt]",
-									"value": "2024-01-01",
-									"disabled": true
-								},
-								{
-									"key": "filter[createdAt][lt]",
-									"value": "2024-12-01",
-									"disabled": true
-								},
-								{
-									"key": "filter[status]",
-									"value": "active",
-									"disabled": true
-								},
-								{
-									"key": "filter[primaryUserId][not]",
-									"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a",
-									"disabled": true
+									"id": "49d34445-21d5-4b64-a140-edf96589195a",
+									"name": "Create Project",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/projects"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "417"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1a1-nZu+wK6r0J3rGOaZqKjj8IDHDko\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 21:24:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created project\",\n    \"data\": {\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2024-01-01\",\n        \"endDate\": \"2024-06-01\",\n        \"daysSpent\": 30,\n        \"workDone\": 99,\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n        }\n    }\n}"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "678f6b6c-1e23-4c50-8477-df06423c53cd"
+				},
+				{
+					"name": "List Projects",
+					"item": [
 						{
-							"id": "b7738117-607c-4963-b99a-e605c40afe73",
 							"name": "List Projects",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/projects"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"event": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "841"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"349-E8LJBf+srXqFPH19ApDM8KATrTw\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 12 May 2024 21:27:44 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"listen": "test",
+									"script": {
+										"id": "02a62a1b-0560-4612-a36d-36171cf0d5bc",
+										"exec": [
+											"try {",
+											"",
+											"    const { status, data, meta, message } = pm.response.json()",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data).to.be.an('array');",
+											"        pm.expect(status).to.be.a('string');",
+											"    });",
+											"",
+											"} catch (error) {",
+											"    console.error('Error from test says:', error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
 								}
 							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched projects\",\n    \"data\": [\n        {\n            \"name\": \"Website Redesign\",\n            \"description\": \"Redesign of the Website\",\n            \"serviceType\": \"Product Development\",\n            \"status\": \"draft\",\n            \"startDate\": \"2023-12-31T23:00:00.000Z\",\n            \"endDate\": \"2024-05-31T23:00:00.000Z\",\n            \"daysSpent\": 30,\n            \"workDone\": \"99.00\",\n            \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"primaryUser\": {\n                \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n            },\n            \"client\": {\n                \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n                \"email\": \"hello@lendsqr.com\",\n                \"name\": \"LSQ\",\n                \"contactName\": \"Deji\",\n                \"contactPhone\": \"+2348012345678\",\n                \"contactEmail\": \"deji@lendsqr.com\",\n                \"contactName2\": null,\n                \"contactPhone2\": null,\n                \"contactEmail2\": null,\n                \"status\": \"active\",\n                \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						},
-						{
-							"id": "36473c37-d5f0-4539-bef8-a8d93642c9e8",
-							"name": "List Projects Requests",
-							"originalRequest": {
+							"id": "13d1f6c0-e459-433d-97d9-579a32e6f2b0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/projects?filter[primaryUserId][not]=90c6c049-7241-44d9-9c86-2cfb967ba13a",
+									"raw": "{{baseUrl}}/projects",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -8922,119 +8858,204 @@
 										},
 										{
 											"key": "filter[primaryUserId][not]",
-											"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a"
+											"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a",
+											"disabled": true
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
+									"id": "b7738117-607c-4963-b99a-e605c40afe73",
+									"name": "List Projects",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/projects"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "841"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"349-E8LJBf+srXqFPH19ApDM8KATrTw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 21:27:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched projects\",\n    \"data\": [\n        {\n            \"name\": \"Website Redesign\",\n            \"description\": \"Redesign of the Website\",\n            \"serviceType\": \"Product Development\",\n            \"status\": \"draft\",\n            \"startDate\": \"2023-12-31T23:00:00.000Z\",\n            \"endDate\": \"2024-05-31T23:00:00.000Z\",\n            \"daysSpent\": 30,\n            \"workDone\": \"99.00\",\n            \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"primaryUser\": {\n                \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n            },\n            \"client\": {\n                \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n                \"email\": \"hello@lendsqr.com\",\n                \"name\": \"LSQ\",\n                \"contactName\": \"Deji\",\n                \"contactPhone\": \"+2348012345678\",\n                \"contactEmail\": \"deji@lendsqr.com\",\n                \"contactName2\": null,\n                \"contactPhone2\": null,\n                \"contactEmail2\": null,\n                \"status\": \"active\",\n                \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								},
 								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "158"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"9e-NQDx28B4hX396AxLHseE7ZbPBI4\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 26 May 2024 07:23:22 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched projects\",\n    \"data\": [],\n    \"meta\": {\n        \"totalNumberOfRecords\": 0,\n        \"totalNumberOfPages\": 0,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Project",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "80d53dec-0773-41b0-86b8-51d95b9a8b73",
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code response is OK\", function () {",
-									"    pm.response.to.have.status('OK');",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.status).to.be.a('string');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"    pm.expect(jsonData.data).to.be.a('object');",
-									"",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "63639463-b164-4a99-914d-7b13dc00715b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/projects/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"projects",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{createdProject}}"
+									"id": "36473c37-d5f0-4539-bef8-a8d93642c9e8",
+									"name": "List Projects Requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects?filter[primaryUserId][not]=90c6c049-7241-44d9-9c86-2cfb967ba13a",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "limit",
+													"value": "20",
+													"disabled": true
+												},
+												{
+													"key": "filter[name]",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "filter[createdAt][gt]",
+													"value": "2024-01-01",
+													"disabled": true
+												},
+												{
+													"key": "filter[createdAt][lt]",
+													"value": "2024-12-01",
+													"disabled": true
+												},
+												{
+													"key": "filter[status]",
+													"value": "active",
+													"disabled": true
+												},
+												{
+													"key": "filter[primaryUserId][not]",
+													"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "158"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"9e-NQDx28B4hX396AxLHseE7ZbPBI4\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 26 May 2024 07:23:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched projects\",\n    \"data\": [],\n    \"meta\": {\n        \"totalNumberOfRecords\": 0,\n        \"totalNumberOfPages\": 0,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "1aeede24-222e-4e4c-a3bc-b17e66ea839a"
+				},
+				{
+					"name": "New Folder Copy 2",
+					"item": [
 						{
-							"id": "056fb863-8e7e-48b6-a6cf-617f949ff5f2",
 							"name": "Get Project",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "80d53dec-0773-41b0-86b8-51d95b9a8b73",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.a('object');",
+											"",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "63639463-b164-4a99-914d-7b13dc00715b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -9049,53 +9070,120 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+											"value": "{{createdProject}}"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "862"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"35e-NRPTUK4gIgyYBuwdvvsp55fkmzE\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 12 May 2024 21:29:01 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "056fb863-8e7e-48b6-a6cf-617f949ff5f2",
+									"name": "Get Project",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "862"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"35e-NRPTUK4gIgyYBuwdvvsp55fkmzE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 21:29:01 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\"\n            }\n        },\n        \"client\": {\n            \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n        }\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\"\n            }\n        },\n        \"client\": {\n            \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n        }\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "8227da48-ee89-4d64-b1e4-a0a73251c17a"
+				},
+				{
+					"name": "New Folder Copy",
+					"item": [],
+					"id": "72684421-e3a1-41fd-a27e-a96fffc7e409"
+				},
+				{
+					"name": "New Folder Copy 2",
+					"item": [],
+					"id": "7400a06c-5312-4d85-8dd2-7ae049035c21"
+				},
+				{
+					"name": "New Folder Copy 2",
+					"item": [],
+					"id": "aa088e99-ed28-4969-9210-774fa9cef5ee"
+				},
+				{
+					"name": "New Folder Copy 3",
+					"item": [],
+					"id": "2e8f5d06-3dea-4beb-91fa-e9380043835b"
+				},
+				{
+					"name": "New Folder Copy",
+					"item": [],
+					"id": "08e3b40a-ee1e-4372-921e-ca54ff5929ee"
+				},
+				{
+					"name": "New Folder Copy 2",
+					"item": [],
+					"id": "e5b957c6-0151-4e4b-b222-4fbae8ab222c"
+				},
+				{
+					"name": "New Folder Copy 2",
+					"item": [],
+					"id": "77341206-5ff2-4812-aa40-56d30ef78583"
+				},
+				{
+					"name": "New Folder Copy 3",
+					"item": [],
+					"id": "ae8f0458-e0cf-4209-af5b-95717a93bb1a"
 				},
 				{
 					"name": "Update Project",
