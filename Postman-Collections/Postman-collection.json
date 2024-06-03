@@ -8821,7 +8821,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-02-01\",\n    \"endDate\": \"2024-01-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"{{createdUser}}\"]\n}",
+									"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-06-15\",\n    \"endDate\": \"2025-06-15\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"{{createdUser}}\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
