@@ -6888,7 +6888,7 @@
 									"script": {
 										"id": "65d0931c-16df-4e8d-95fa-6cb75c04f8be",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"const jsonData = pm.response.json();",
 											"",
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
@@ -7410,6 +7410,39 @@
 					"item": [
 						{
 							"name": "Get Client Stats",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "17d0be8b-1584-4cd5-bf83-acbe457be59e",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.a('array');",
+											"",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "765ad516-3adc-4ecd-b7a5-e41475385254",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -7476,6 +7509,92 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clients stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"1\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
 								}
 							]
+						},
+						{
+							"name": "Get Client Stats -  No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c5bc2943-aefc-4b67-a414-9e72b1b066ec",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "2d82fc49-efeb-48d0-883e-2689560e848a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/clients/stats"
+							},
+							"response": [
+								{
+									"id": "43f0be8c-11f7-4137-a645-f6adab8fea9e",
+									"name": "Get Client Stats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/clients/stats"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "172"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ac-JlndrEs+GYA/TcGoJMtM4sOZISc\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 19 May 2024 15:21:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clients stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"1\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
+								}
+							]
 						}
 					],
 					"id": "c9b4246f-328c-45eb-9d37-23d820c1c30f"
@@ -7488,98 +7607,104 @@
 			"item": [
 				{
 					"name": "List Integrations",
-					"event": [
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "87101c82-616e-4d72-98dc-737b224b0fd0",
-								"exec": [
-									"const jsonData = pm.response.json()",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"pm.test(\"Status code response is 'OK'\", function () {",
-									"    pm.response.to.have.status('OK');",
-									"});",
-									"",
-									"pm.test(\"Assert that the data array is not empty\", function () {",
-									"    pm.expect(jsonData.data).to.not.be.empty",
-									"});",
-									"",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "a9e80615-1326-4f7e-9b23-9cf6cc4e8e15",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/integrations"
-					},
-					"response": [
-						{
-							"id": "e311c36f-79a3-44ed-84f6-8a53decdb368",
 							"name": "List Integrations",
-							"originalRequest": {
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "87101c82-616e-4d72-98dc-737b224b0fd0",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Assert that the data array is not empty\", function () {",
+											"    pm.expect(jsonData.data).to.not.be.empty",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "a9e80615-1326-4f7e-9b23-9cf6cc4e8e15",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/integrations"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "739"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2e3-LVPfFriKVkv3W31RU1UYDauD61Y\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 05 May 2024 18:54:27 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "e311c36f-79a3-44ed-84f6-8a53decdb368",
+									"name": "List Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/integrations"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "739"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2e3-LVPfFriKVkv3W31RU1UYDauD61Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 05 May 2024 18:54:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched integration\",\n    \"data\": [\n        {\n            \"id\": \"0ae13260-c7b1-4ab7-8d17-3c5c7f7b5dfa\",\n            \"name\": \"Clickup\",\n            \"slug\": \"clickup\",\n            \"description\": \"For agile project management and issue tracking.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.526Z\"\n        },\n        {\n            \"id\": \"798ab3d2-c68a-42f3-a7cc-c922bcc749b0\",\n            \"name\": \"Slack\",\n            \"slug\": \"slack\",\n            \"description\": \"For team communication and real-time collaboration.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.353Z\"\n        },\n        {\n            \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n            \"name\": \"Google\",\n            \"slug\": \"google\",\n            \"description\": \"For Google Workspaces\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 3,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched integration\",\n    \"data\": [\n        {\n            \"id\": \"0ae13260-c7b1-4ab7-8d17-3c5c7f7b5dfa\",\n            \"name\": \"Clickup\",\n            \"slug\": \"clickup\",\n            \"description\": \"For agile project management and issue tracking.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.526Z\"\n        },\n        {\n            \"id\": \"798ab3d2-c68a-42f3-a7cc-c922bcc749b0\",\n            \"name\": \"Slack\",\n            \"slug\": \"slack\",\n            \"description\": \"For team communication and real-time collaboration.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.353Z\"\n        },\n        {\n            \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n            \"name\": \"Google\",\n            \"slug\": \"google\",\n            \"description\": \"For Google Workspaces\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 3,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "543b3ec5-c0a4-40b4-bfef-def374dd3279"
 				},
 				{
 					"name": "Set Integration",
