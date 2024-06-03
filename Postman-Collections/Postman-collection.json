@@ -4302,7 +4302,124 @@
 				},
 				{
 					"name": "Delete User",
-					"item": [],
+					"item": [
+						{
+							"name": "Delete User Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4deb5859-c383-410c-bccb-857cac411a1c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "15bb65ec-801d-4b36-a214-e9bbce85ce8d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "be44e6c7-02e6-4620-a569-58adde5757c8",
+									"name": "Delete User",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "529cde26-4c64-446f-b081-341850156d35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Apr 2024 18:29:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					],
 					"id": "43145aca-8ea3-4505-a4c3-1d0a73a5eca9"
 				},
 				{
@@ -9013,7 +9130,7 @@
 					"id": "1aeede24-222e-4e4c-a3bc-b17e66ea839a"
 				},
 				{
-					"name": "Update Project",
+					"name": "Get Project",
 					"item": [
 						{
 							"name": "Get Project",
@@ -9146,7 +9263,7 @@
 					"id": "8227da48-ee89-4d64-b1e4-a0a73251c17a"
 				},
 				{
-					"name": "New Folder Copy",
+					"name": "Update Project",
 					"item": [
 						{
 							"name": "Update Project",
@@ -9292,6 +9409,125 @@
 						}
 					],
 					"id": "72684421-e3a1-41fd-a27e-a96fffc7e409"
+				},
+				{
+					"name": "Update Project Users",
+					"item": [
+						{
+							"name": "Update Project Users",
+							"id": "8959e6e7-326c-4130-a8c9-80f277e3103f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"users\": [\"{{createdUser}}\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"users"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{createdProject}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "b38095f3-09a6-40c3-8c3a-4e800ab9e4d8",
+									"name": "Update Project Users",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"users\": [\"90c6c049-7241-44d9-9c86-2cfb967ba13a\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"users"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "65"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"41-tltYZ/5BX3ypOlnQcCp0wyXITGc\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 18 May 2024 14:37:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Succesfully update project users\"\n}"
+								}
+							]
+						}
+					],
+					"id": "08e3b40a-ee1e-4372-921e-ca54ff5929ee"
 				},
 				{
 					"name": "List Project Users",
@@ -9508,226 +9744,6 @@
 					"id": "aa088e99-ed28-4969-9210-774fa9cef5ee"
 				},
 				{
-					"name": "List Project Integrations",
-					"item": [
-						{
-							"name": "List Project Integrations",
-							"id": "f650fb75-5ec7-4fdf-a179-34be8deffefd",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/projects/:id/integrations",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"projects",
-										":id",
-										"integrations"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "53c5cbcd-0198-45a0-b12f-53d22649884e"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "0a4b41b2-2080-41ee-8f05-b4476627bc5f",
-									"name": "List Project Integrations",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/projects/:id/integrations",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"projects",
-												":id",
-												"integrations"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "244"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"f4-8YDXLetpUeeEZSSq0ZgVcrAguag\""
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 27 May 2024 07:47:47 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"256d19c6-9abc-4a15-a8c8-f48049eacee4\",\n            \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "2e8f5d06-3dea-4beb-91fa-e9380043835b"
-				},
-				{
-					"name": "Update Project Users",
-					"item": [
-						{
-							"name": "Update Project Users",
-							"id": "8959e6e7-326c-4130-a8c9-80f277e3103f",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"users\": [\"{{createdUser}}\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/projects/:id/users",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"projects",
-										":id",
-										"users"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "{{createdProject}}"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "b38095f3-09a6-40c3-8c3a-4e800ab9e4d8",
-									"name": "Update Project Users",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"users\": [\"90c6c049-7241-44d9-9c86-2cfb967ba13a\"]\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/projects/:id/users",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"projects",
-												":id",
-												"users"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "65"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"41-tltYZ/5BX3ypOlnQcCp0wyXITGc\""
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 18 May 2024 14:37:41 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Succesfully update project users\"\n}"
-								}
-							]
-						}
-					],
-					"id": "08e3b40a-ee1e-4372-921e-ca54ff5929ee"
-				},
-				{
 					"name": "Add Project Integrations",
 					"item": [
 						{
@@ -9848,12 +9864,108 @@
 					"id": "e5b957c6-0151-4e4b-b222-4fbae8ab222c"
 				},
 				{
-					"name": "New Folder Copy 3",
-					"item": [],
-					"id": "ae8f0458-e0cf-4209-af5b-95717a93bb1a"
+					"name": "List Project Integrations",
+					"item": [
+						{
+							"name": "List Project Integrations",
+							"id": "f650fb75-5ec7-4fdf-a179-34be8deffefd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/integrations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"integrations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "53c5cbcd-0198-45a0-b12f-53d22649884e"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "0a4b41b2-2080-41ee-8f05-b4476627bc5f",
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "244"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f4-8YDXLetpUeeEZSSq0ZgVcrAguag\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 May 2024 07:47:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"256d19c6-9abc-4a15-a8c8-f48049eacee4\",\n            \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "2e8f5d06-3dea-4beb-91fa-e9380043835b"
 				},
 				{
-					"name": "Delete User",
+					"name": "Delete User - oo -",
 					"event": [
 						{
 							"listen": "test",
@@ -9987,7 +10099,7 @@
 					]
 				},
 				{
-					"name": "Delete Project",
+					"name": "Delete Project -oo-",
 					"event": [
 						{
 							"listen": "test",
