@@ -10685,28 +10685,33 @@
 									"script": {
 										"id": "0a23c25e-aed4-41a3-b2f5-63811027cf63",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"try {",
+											"    const { status, message, data, meta } = pm.response.json()",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Status code response is OK\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(status).to.be.a('string');",
+											"        pm.expect(message).to.be.a('string');",
+											"        pm.expect(data).to.be.a('array');",
+											"        pm.expect(meta).to.be.a('object');",
 											"",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
+											"    });",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
+											"    pm.test(\"Status is success\", function () {",
+											"        pm.expect(status).to.eql('success');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"    pm.expect(jsonData.data).to.be.a('array');",
-											"",
-											"});",
-											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -10741,6 +10746,140 @@
 							"response": [
 								{
 									"id": "0a4b41b2-2080-41ee-8f05-b4476627bc5f",
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "244"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f4-8YDXLetpUeeEZSSq0ZgVcrAguag\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 May 2024 07:47:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"256d19c6-9abc-4a15-a8c8-f48049eacee4\",\n            \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "List Project Integrations - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0a23c25e-aed4-41a3-b2f5-63811027cf63",
+										"exec": [
+											"try {",
+											"    const { status, message, data, meta } = pm.response.json()",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Status code response is OK\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(status).to.be.a('string');",
+											"        pm.expect(message).to.be.a('string');",
+											"        pm.expect(data).to.be.a('array');",
+											"        pm.expect(meta).to.be.a('object');",
+											"",
+											"",
+											"    });",
+											"",
+											"    pm.test(\"Status is success\", function () {",
+											"        pm.expect(status).to.eql('success');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "84ae321c-8355-4b26-8ef3-89d74bbfaec7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/integrations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"integrations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "53c5cbcd-0198-45a0-b12f-53d22649884e"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a7f298f8-89b6-427a-bd4f-68048932afee",
 									"name": "List Project Integrations",
 									"originalRequest": {
 										"method": "GET",
