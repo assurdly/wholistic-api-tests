@@ -8878,6 +8878,488 @@
 			"id": "401bec84-0854-4186-b2b0-c659b945af76"
 		},
 		{
+			"name": "Templates",
+			"item": [
+				{
+					"name": "Create Report Template",
+					"id": "e4c9b162-3eff-4be1-b2da-fc325fe0f27f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Daily Report\",\n    \"slug\": \"daily-report\",\n    \"body\": \"<></>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/report-templates"
+					},
+					"response": [
+						{
+							"id": "50fc0ae2-dbb0-4571-b74b-b8aeb64463e5",
+							"name": "Create Report Template",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Daily Report\",\n    \"slug\": \"daily-report\",\n    \"body\": \"<></>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/report-templates"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dd-YxVvkalaIRhHupBIJPo/7B9xFYo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 03:01:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Report Templates",
+					"id": "8a6afb9a-1867-431f-b4b3-291e10490269",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/report-templates"
+					},
+					"response": [
+						{
+							"id": "4c9a3eac-7fec-4188-a49f-a64877c17667",
+							"name": "List Report Templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/report-templates"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"126-wqWlGLU2pzYNfabZbKsJYARJCY0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 03:01:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": [\n        {\n            \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n            \"title\": \"Daily Report\",\n            \"slug\": \"daily-report\",\n            \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Report Template",
+					"id": "31517a71-4e9b-4acd-9d17-da7a33a171c4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report-templates/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report-templates",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "14d8a8f8-7085-4df1-96a7-6ffefaaa74ce",
+									"key": "id",
+									"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1c9a6261-cc86-4fb4-8584-0796ff66baa4",
+							"name": "Get Report Template",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report-templates/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report-templates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dd-8CgraVNpE59VlnO/+sCQsPlZ//0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 03:02:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Email Template",
+					"id": "ade7fc19-9f44-4403-94b8-273c259ab49d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/email-templates"
+					},
+					"response": [
+						{
+							"id": "6a65828d-9f48-420d-ac51-4824710c001b",
+							"name": "Create Email Template",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/email-templates"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "226"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e2-qSrrPGEuYglaC7xCFll2TFs5T5c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 03:02:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created email template\",\n    \"data\": {\n        \"id\": \"6fd16564-32a2-4225-aa37-81903878d8b2\",\n        \"title\": \"Sample Template\",\n        \"slug\": \"sample-template\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:02:52.920Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Email Templates",
+					"id": "b2eaa1bf-d43d-4c61-90e9-48d7f5664741",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/email-templates"
+					},
+					"response": [
+						{
+							"id": "6731247c-cfb5-4e46-8ffb-c24f20cc1da9",
+							"name": "List Email Templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/email-templates"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1375"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55f-v/5bOPRNb7RL82olu3uvfPnC61Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 02:56:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": [\n        {\n            \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n            \"title\": \"Change Password\",\n            \"slug\": \"set-password\",\n            \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n        },\n        {\n            \"id\": \"c7631114-41b5-4235-b645-1c201ea91a12\",\n            \"title\": \"Disabled 2FA\",\n            \"slug\": \"disabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.732Z\"\n        },\n        {\n            \"id\": \"55fca074-4b5a-432d-9eb6-a6aa0bac84d9\",\n            \"title\": \"Enabled 2FA\",\n            \"slug\": \"enabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.482Z\"\n        },\n        {\n            \"id\": \"265ddde3-4180-468d-8937-28c6f3554d63\",\n            \"title\": \"Team Member Invitation\",\n            \"slug\": \"user-invite\",\n            \"createdAt\": \"2024-05-22T09:08:01.213Z\"\n        },\n        {\n            \"id\": \"71aae8e3-3c1d-44f1-baba-897cfbce4a79\",\n            \"title\": \"Password Reset Attempt\",\n            \"slug\": \"reset-password\",\n            \"createdAt\": \"2024-05-22T09:08:00.937Z\"\n        },\n        {\n            \"id\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n            \"title\": \"Password Reset Link\",\n            \"slug\": \"reset-password-request\",\n            \"createdAt\": \"2024-05-22T09:08:00.677Z\"\n        },\n        {\n            \"id\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n            \"title\": \"Login\",\n            \"slug\": \"login-alert\",\n            \"createdAt\": \"2024-05-22T09:08:00.402Z\"\n        },\n        {\n            \"id\": \"01353ceb-e8e6-44db-9d9e-0a16d840ef64\",\n            \"title\": \"Verify Email\",\n            \"slug\": \"verify-email\",\n            \"createdAt\": \"2024-05-22T09:07:59.935Z\"\n        },\n        {\n            \"id\": \"b6e25ad4-5376-4ae9-a846-66bc0c666339\",\n            \"title\": \"Welcome Message\",\n            \"slug\": \"completed-onboarding\",\n            \"createdAt\": \"2024-05-22T09:07:59.662Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 9,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Email Template",
+					"id": "c844f3c6-37ab-4e5a-9517-6139ec51181a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/email-templates/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"email-templates",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "50f08ee4-8b63-44a9-a900-48ed10b75e32",
+									"key": "id",
+									"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a0e39354-fc34-492d-bdf0-fd170c8585f4",
+							"name": "Get Email Template",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/email-templates/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"email-templates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4366"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"110e-hgL0ngamJ7ainuHEb1OxqLpZFp8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 02:58:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": {\n        \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n        \"title\": \"Change Password\",\n        \"slug\": \"set-password\",\n        \"body\": \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n\\n<head>\\n  <meta charset=\\\"UTF-8\\\">\\n  <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\">\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n  <title>Your Password Has Been Changed</title>\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.googleapis.com\\\">\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.gstatic.com\\\" crossorigin>\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap\\\"\\n    rel=\\\"stylesheet\\\">\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\\\" rel=\\\"stylesheet\\\">\\n  <style>\\n    html,\\n    body {\\n      margin: 0;\\n      padding: 0;\\n      font-family: 'Outfit', sans-serif;\\n    }\\n\\n    table {\\n      border: 0;\\n      border-spacing: 0;\\n      border-collapse: collapse\\n    }\\n  </style>\\n</head>\\n\\n<body width=\\\"100%\\\" style=\\\"width: 100%; background: #FAFAFA\\\" bgcolor=\\\"#FAFAFA\\\">\\n  <center style=\\\"background: #FAFAFA;\\\" bgcolor=\\\"#FAFAFA\\\">\\n    <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n      style=\\\"width: 100%; max-width: 640px;\\\">\\n      <tr>\\n        <!-- email container -->\\n        <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px;\\\">\\n          <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n            <tr>\\n              <!-- White bg -->\\n              <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px; background: #FFFFFF;\\\"\\n                bgcolor=\\\"#FFFFFF\\\">\\n                <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n                  style=\\\"width: 85%; max-width: 560px;\\\">\\n                  <!-- Logo: BEGIN -->\\n                  <!-- Logo: END -->\\n                  <!-- Main: BEGIN -->\\n\\n                  <tr>\\n                    <td\\n                      style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; font-size: 16px; line-height: 24px; color: #262626;\\\">\\n                      <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                        <!-- Header: BEGIN -->\\n                        <tr>\\n                          <td\\n                            style=\\\"font-weight: 500; font-family: 'Outfit', sans-serif; font-size: 48px; line-height: 56px; letter-spacing: -0.05em; color: #000000;\\\">\\n                            Your Password Has Been Changed\\n                          </td>\\n                        </tr>\\n                        <!-- Header: END -->\\n                        <!-- Body Text: BEGIN -->\\n                        <tr>\\n                          <td style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; padding-top: 56px;\\\">\\n                            <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Hi {{firstName}}</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Your password was changed successfully.</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">If you did not make this change, please contact our customer support on {{supportNumber}} or send an email to {{supportEmail}}</td>\\n                              </tr>\\n\\n                              <!-- Footer: END -->\\n                            </table>\\n                          </td>\\n                        </tr>\\n                        <!-- Main: END -->\\n                      </table>\\n                    </td>\\n                    <!-- White bg -->\\n                  </tr>\\n                </table>\\n              </td>\\n              <!-- email container -->\\n            </tr>\\n          </table>\\n  </center>\\n</body>\\n\\n</html>\",\n        \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "dc139a67-7af1-4a85-afcc-91837cae673c"
+		},
+		{
 			"name": "Projects",
 			"item": [
 				{
@@ -9914,7 +10396,31 @@
 					"name": "Add Project Integrations",
 					"item": [
 						{
-							"name": "Add Project Integrations",
+							"name": "Add Project Integrations - Empty Fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2f5ce3be-74b7-4d8c-8edb-e48eac67d045",
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.test('Tests on empty fields', () => {",
+											"        pm.expect(data.itemId).to.eql('itemId should not be empty')",
+											"        pm.expect(data.userIntegrationId).to.eql('userIntegrationId should not be empty')",
+											"    })",
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4924cb26-c3ab-4f1f-b66a-15e6b0ccef18",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -9952,6 +10458,145 @@
 							"response": [
 								{
 									"id": "1080499f-baba-4f5f-9eb6-0194c73370ef",
+									"name": "Add Project Integrations",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n    \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "227"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e3-ql6z8d2gBCc2vstE4/90SFIGFR8\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 May 2024 07:46:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": {\n        \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n        \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n        \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Project Integrations - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2f5ce3be-74b7-4d8c-8edb-e48eac67d045",
+										"exec": [
+											"try {",
+											"    const { message } = pm.response.json()",
+											"    pm.test('Tests on no Auth passed', () => {",
+											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"    })",
+											"    pm.test(\"Status code is 401\", function () {",
+											"        pm.response.to.have.status(401);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "76bc0f82-bfaa-495b-8a24-198cf2bfd1ac",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"itemId\": \"\",\n    \"userIntegrationId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/integrations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"integrations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a252b1b0-9e9d-4a8d-81ea-db4494ba7137",
 									"name": "Add Project Integrations",
 									"originalRequest": {
 										"method": "POST",
@@ -10798,488 +11443,6 @@
 				}
 			],
 			"id": "7a4e5ea2-cbec-46f9-b382-579e01632f43"
-		},
-		{
-			"name": "Templates",
-			"item": [
-				{
-					"name": "Create Report Template",
-					"id": "e4c9b162-3eff-4be1-b2da-fc325fe0f27f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\": \"Daily Report\",\n    \"slug\": \"daily-report\",\n    \"body\": \"<></>\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/report-templates"
-					},
-					"response": [
-						{
-							"id": "50fc0ae2-dbb0-4571-b74b-b8aeb64463e5",
-							"name": "Create Report Template",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"title\": \"Daily Report\",\n    \"slug\": \"daily-report\",\n    \"body\": \"<></>\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/report-templates"
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "221"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"dd-YxVvkalaIRhHupBIJPo/7B9xFYo\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 03:01:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "List Report Templates",
-					"id": "8a6afb9a-1867-431f-b4b3-291e10490269",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/report-templates"
-					},
-					"response": [
-						{
-							"id": "4c9a3eac-7fec-4188-a49f-a64877c17667",
-							"name": "List Report Templates",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/report-templates"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "294"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"126-wqWlGLU2pzYNfabZbKsJYARJCY0\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 03:01:58 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": [\n        {\n            \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n            \"title\": \"Daily Report\",\n            \"slug\": \"daily-report\",\n            \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Report Template",
-					"id": "31517a71-4e9b-4acd-9d17-da7a33a171c4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/report-templates/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"report-templates",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "14d8a8f8-7085-4df1-96a7-6ffefaaa74ce",
-									"key": "id",
-									"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "1c9a6261-cc86-4fb4-8584-0796ff66baa4",
-							"name": "Get Report Template",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/report-templates/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"report-templates",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "221"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"dd-8CgraVNpE59VlnO/+sCQsPlZ//0\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 03:02:20 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Create Email Template",
-					"id": "ade7fc19-9f44-4403-94b8-273c259ab49d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/email-templates"
-					},
-					"response": [
-						{
-							"id": "6a65828d-9f48-420d-ac51-4824710c001b",
-							"name": "Create Email Template",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/email-templates"
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "226"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"e2-qSrrPGEuYglaC7xCFll2TFs5T5c\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 03:02:53 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created email template\",\n    \"data\": {\n        \"id\": \"6fd16564-32a2-4225-aa37-81903878d8b2\",\n        \"title\": \"Sample Template\",\n        \"slug\": \"sample-template\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:02:52.920Z\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "List Email Templates",
-					"id": "b2eaa1bf-d43d-4c61-90e9-48d7f5664741",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/email-templates"
-					},
-					"response": [
-						{
-							"id": "6731247c-cfb5-4e46-8ffb-c24f20cc1da9",
-							"name": "List Email Templates",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/email-templates"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1375"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"55f-v/5bOPRNb7RL82olu3uvfPnC61Q\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 02:56:02 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": [\n        {\n            \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n            \"title\": \"Change Password\",\n            \"slug\": \"set-password\",\n            \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n        },\n        {\n            \"id\": \"c7631114-41b5-4235-b645-1c201ea91a12\",\n            \"title\": \"Disabled 2FA\",\n            \"slug\": \"disabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.732Z\"\n        },\n        {\n            \"id\": \"55fca074-4b5a-432d-9eb6-a6aa0bac84d9\",\n            \"title\": \"Enabled 2FA\",\n            \"slug\": \"enabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.482Z\"\n        },\n        {\n            \"id\": \"265ddde3-4180-468d-8937-28c6f3554d63\",\n            \"title\": \"Team Member Invitation\",\n            \"slug\": \"user-invite\",\n            \"createdAt\": \"2024-05-22T09:08:01.213Z\"\n        },\n        {\n            \"id\": \"71aae8e3-3c1d-44f1-baba-897cfbce4a79\",\n            \"title\": \"Password Reset Attempt\",\n            \"slug\": \"reset-password\",\n            \"createdAt\": \"2024-05-22T09:08:00.937Z\"\n        },\n        {\n            \"id\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n            \"title\": \"Password Reset Link\",\n            \"slug\": \"reset-password-request\",\n            \"createdAt\": \"2024-05-22T09:08:00.677Z\"\n        },\n        {\n            \"id\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n            \"title\": \"Login\",\n            \"slug\": \"login-alert\",\n            \"createdAt\": \"2024-05-22T09:08:00.402Z\"\n        },\n        {\n            \"id\": \"01353ceb-e8e6-44db-9d9e-0a16d840ef64\",\n            \"title\": \"Verify Email\",\n            \"slug\": \"verify-email\",\n            \"createdAt\": \"2024-05-22T09:07:59.935Z\"\n        },\n        {\n            \"id\": \"b6e25ad4-5376-4ae9-a846-66bc0c666339\",\n            \"title\": \"Welcome Message\",\n            \"slug\": \"completed-onboarding\",\n            \"createdAt\": \"2024-05-22T09:07:59.662Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 9,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Email Template",
-					"id": "c844f3c6-37ab-4e5a-9517-6139ec51181a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/email-templates/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"email-templates",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "50f08ee4-8b63-44a9-a900-48ed10b75e32",
-									"key": "id",
-									"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "a0e39354-fc34-492d-bdf0-fd170c8585f4",
-							"name": "Get Email Template",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/email-templates/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"email-templates",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "4366"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"110e-hgL0ngamJ7ainuHEb1OxqLpZFp8\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 02:58:32 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": {\n        \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n        \"title\": \"Change Password\",\n        \"slug\": \"set-password\",\n        \"body\": \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n\\n<head>\\n  <meta charset=\\\"UTF-8\\\">\\n  <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\">\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n  <title>Your Password Has Been Changed</title>\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.googleapis.com\\\">\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.gstatic.com\\\" crossorigin>\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap\\\"\\n    rel=\\\"stylesheet\\\">\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\\\" rel=\\\"stylesheet\\\">\\n  <style>\\n    html,\\n    body {\\n      margin: 0;\\n      padding: 0;\\n      font-family: 'Outfit', sans-serif;\\n    }\\n\\n    table {\\n      border: 0;\\n      border-spacing: 0;\\n      border-collapse: collapse\\n    }\\n  </style>\\n</head>\\n\\n<body width=\\\"100%\\\" style=\\\"width: 100%; background: #FAFAFA\\\" bgcolor=\\\"#FAFAFA\\\">\\n  <center style=\\\"background: #FAFAFA;\\\" bgcolor=\\\"#FAFAFA\\\">\\n    <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n      style=\\\"width: 100%; max-width: 640px;\\\">\\n      <tr>\\n        <!-- email container -->\\n        <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px;\\\">\\n          <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n            <tr>\\n              <!-- White bg -->\\n              <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px; background: #FFFFFF;\\\"\\n                bgcolor=\\\"#FFFFFF\\\">\\n                <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n                  style=\\\"width: 85%; max-width: 560px;\\\">\\n                  <!-- Logo: BEGIN -->\\n                  <!-- Logo: END -->\\n                  <!-- Main: BEGIN -->\\n\\n                  <tr>\\n                    <td\\n                      style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; font-size: 16px; line-height: 24px; color: #262626;\\\">\\n                      <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                        <!-- Header: BEGIN -->\\n                        <tr>\\n                          <td\\n                            style=\\\"font-weight: 500; font-family: 'Outfit', sans-serif; font-size: 48px; line-height: 56px; letter-spacing: -0.05em; color: #000000;\\\">\\n                            Your Password Has Been Changed\\n                          </td>\\n                        </tr>\\n                        <!-- Header: END -->\\n                        <!-- Body Text: BEGIN -->\\n                        <tr>\\n                          <td style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; padding-top: 56px;\\\">\\n                            <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Hi {{firstName}}</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Your password was changed successfully.</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">If you did not make this change, please contact our customer support on {{supportNumber}} or send an email to {{supportEmail}}</td>\\n                              </tr>\\n\\n                              <!-- Footer: END -->\\n                            </table>\\n                          </td>\\n                        </tr>\\n                        <!-- Main: END -->\\n                      </table>\\n                    </td>\\n                    <!-- White bg -->\\n                  </tr>\\n                </table>\\n              </td>\\n              <!-- email container -->\\n            </tr>\\n          </table>\\n  </center>\\n</body>\\n\\n</html>\",\n        \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n    }\n}"
-						}
-					]
-				}
-			],
-			"id": "dc139a67-7af1-4a85-afcc-91837cae673c"
 		}
 	],
 	"auth": {
