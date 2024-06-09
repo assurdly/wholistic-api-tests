@@ -888,12 +888,21 @@
 									"script": {
 										"id": "d2e922c0-5a41-480e-b02b-1c9968eec174",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});"
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"loggedInUserId\", data.user.id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -9914,7 +9923,31 @@
 					"name": "Add Project Integrations",
 					"item": [
 						{
-							"name": "Add Project Integrations",
+							"name": "Add Project Integrations - Empty Fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2f5ce3be-74b7-4d8c-8edb-e48eac67d045",
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.test('Tests on empty fields', () => {",
+											"        pm.expect(data.itemId).to.eql('itemId should not be empty')",
+											"        pm.expect(data.userIntegrationId).to.eql('userIntegrationId should not be empty')",
+											"    })",
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4924cb26-c3ab-4f1f-b66a-15e6b0ccef18",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -10025,6 +10058,145 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": {\n        \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n        \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n        \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Add Project Integrations - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2f5ce3be-74b7-4d8c-8edb-e48eac67d045",
+										"exec": [
+											"try {",
+											"    const { message } = pm.response.json()",
+											"    pm.test('Tests on no Auth passed', () => {",
+											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"    })",
+											"    pm.test(\"Status code is 401\", function () {",
+											"        pm.response.to.have.status(401);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "76bc0f82-bfaa-495b-8a24-198cf2bfd1ac",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"itemId\": \"\",\n    \"userIntegrationId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/integrations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"integrations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a252b1b0-9e9d-4a8d-81ea-db4494ba7137",
+									"name": "Add Project Integrations",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n    \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "227"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e3-ql6z8d2gBCc2vstE4/90SFIGFR8\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 May 2024 07:46:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": {\n        \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n        \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n        \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "e5b957c6-0151-4e4b-b222-4fbae8ab222c"
@@ -10040,28 +10212,33 @@
 									"script": {
 										"id": "0a23c25e-aed4-41a3-b2f5-63811027cf63",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"try {",
+											"    const { status, message, data, meta } = pm.response.json()",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Status code response is OK\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(status).to.be.a('string');",
+											"        pm.expect(message).to.be.a('string');",
+											"        pm.expect(data).to.be.a('array');",
+											"        pm.expect(meta).to.be.a('object');",
 											"",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
+											"    });",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
+											"    pm.test(\"Status is success\", function () {",
+											"        pm.expect(status).to.eql('success');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"    pm.expect(jsonData.data).to.be.a('array');",
-											"",
-											"});",
-											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -10096,6 +10273,127 @@
 							"response": [
 								{
 									"id": "0a4b41b2-2080-41ee-8f05-b4476627bc5f",
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "244"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f4-8YDXLetpUeeEZSSq0ZgVcrAguag\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 May 2024 07:47:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"256d19c6-9abc-4a15-a8c8-f48049eacee4\",\n            \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "List Project Integrations - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0a23c25e-aed4-41a3-b2f5-63811027cf63",
+										"exec": [
+											"try {",
+											"    const { message } = pm.response.json()",
+											"    pm.test('Tests on no Auth passed', () => {",
+											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"    })",
+											"    pm.test(\"Status code is 401\", function () {",
+											"        pm.response.to.have.status(401);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "84ae321c-8355-4b26-8ef3-89d74bbfaec7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/integrations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"integrations"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "53c5cbcd-0198-45a0-b12f-53d22649884e"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a7f298f8-89b6-427a-bd4f-68048932afee",
 									"name": "List Project Integrations",
 									"originalRequest": {
 										"method": "GET",
@@ -10256,6 +10554,30 @@
 					"item": [
 						{
 							"name": "Add Project Report",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7daf033e-8b4b-4079-ae92-f308adcdc49d",
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"createdProjectId\", data.id)",
+											"",
+											"",
+											"    pm.test(\"Status code is 201\", function () {",
+											"        pm.response.to.have.status(201);",
+											"    });",
+											"",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "309a3863-f7dd-477b-891f-84255d5b8471",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -10265,7 +10587,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\"\n}",
+									"raw": "{\n    \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\"\n}      \n\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -10284,9 +10606,8 @@
 									],
 									"variable": [
 										{
-											"id": "8323506c-b0e8-4049-9546-e4f204489672",
 											"key": "id",
-											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+											"value": "{{createdProject}}"
 										}
 									]
 								}
@@ -10803,6 +11124,431 @@
 			"name": "Templates",
 			"item": [
 				{
+					"name": "List Report Template",
+					"item": [
+						{
+							"name": "List Report Templates",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "445e5bb5-925b-4546-8c79-f70dc40c60f1",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"pm.environment.set('fetchedTemplateId', jsonData.data[0].id)",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "8a6afb9a-1867-431f-b4b3-291e10490269",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/report-templates"
+							},
+							"response": [
+								{
+									"id": "4c9a3eac-7fec-4188-a49f-a64877c17667",
+									"name": "List Report Templates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/report-templates"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "294"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"126-wqWlGLU2pzYNfabZbKsJYARJCY0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 03:01:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": [\n        {\n            \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n            \"title\": \"Daily Report\",\n            \"slug\": \"daily-report\",\n            \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "List Report Templates - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "445e5bb5-925b-4546-8c79-f70dc40c60f1",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "277930d3-b755-4c9c-80a9-ad368e3b5cc6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/report-templates"
+							},
+							"response": [
+								{
+									"id": "898b4cb8-e8ff-4677-a28d-c89be0184b9f",
+									"name": "List Report Templates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/report-templates"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "294"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"126-wqWlGLU2pzYNfabZbKsJYARJCY0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 03:01:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": [\n        {\n            \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n            \"title\": \"Daily Report\",\n            \"slug\": \"daily-report\",\n            \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "c9f1538d-aaf0-4a88-a872-544b5527b9f2"
+				},
+				{
+					"name": "Get Report Template",
+					"item": [
+						{
+							"name": "Get Report Template",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0a2dfc2-843f-41c4-b509-9cc8820b47bb",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "31517a71-4e9b-4acd-9d17-da7a33a171c4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report-templates/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report-templates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{fetchedTemplateId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "1c9a6261-cc86-4fb4-8584-0796ff66baa4",
+									"name": "Get Report Template",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/report-templates/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"report-templates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "221"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"dd-8CgraVNpE59VlnO/+sCQsPlZ//0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 03:02:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Report Template - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0a2dfc2-843f-41c4-b509-9cc8820b47bb",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('Unauthorized');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "73cce1ee-2dc0-4432-963c-84a4630598c2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report-templates/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report-templates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{fetchedTemplateId}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "17a1b546-062a-40bc-b827-e5f8db9f0670",
+									"name": "Get Report Template",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/report-templates/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"report-templates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "221"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"dd-8CgraVNpE59VlnO/+sCQsPlZ//0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 03:02:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "7d8d0ecb-515e-4ce4-8d16-4f40bf8a0bde"
+				},
+				{
 					"name": "Create Report Template",
 					"id": "e4c9b162-3eff-4be1-b2da-fc325fe0f27f",
 					"protocolProfileBehavior": {
@@ -10880,163 +11626,6 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "List Report Templates",
-					"id": "8a6afb9a-1867-431f-b4b3-291e10490269",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/report-templates"
-					},
-					"response": [
-						{
-							"id": "4c9a3eac-7fec-4188-a49f-a64877c17667",
-							"name": "List Report Templates",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/report-templates"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "294"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"126-wqWlGLU2pzYNfabZbKsJYARJCY0\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 03:01:58 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": [\n        {\n            \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n            \"title\": \"Daily Report\",\n            \"slug\": \"daily-report\",\n            \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Report Template",
-					"id": "31517a71-4e9b-4acd-9d17-da7a33a171c4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/report-templates/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"report-templates",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "14d8a8f8-7085-4df1-96a7-6ffefaaa74ce",
-									"key": "id",
-									"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "1c9a6261-cc86-4fb4-8584-0796ff66baa4",
-							"name": "Get Report Template",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/report-templates/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"report-templates",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "221"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"dd-8CgraVNpE59VlnO/+sCQsPlZ//0\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 03:02:20 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
 						}
 					]
 				},
@@ -11292,7 +11881,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "af59d3db-6137-41c7-872a-44131bb78a6a",
+				"id": "84f39d61-678b-4e8e-800b-bb1a8fd439b3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -11306,7 +11895,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c9cde581-b600-43d6-9ddd-97ce9ef4beea",
+				"id": "4ff4a458-6c61-4e50-bc29-4d5ed1c43622",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
