@@ -888,12 +888,21 @@
 									"script": {
 										"id": "d2e922c0-5a41-480e-b02b-1c9968eec174",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});"
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"loggedInUserId\", data.user.id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
