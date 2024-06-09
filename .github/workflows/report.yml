@@ -1,6 +1,9 @@
 name: Postman Test and Allure Report
 
 on:
+  push:
+    branches:
+      - draft-vendor
   schedule:
     - cron: '30 18 * * 3' # Runs every Wednesday at 7:30pm
     - cron: '30 18 * * 5' # Runs every Friday at 7:30pm
@@ -8,7 +11,7 @@ on:
 
 jobs:
   run_tests:
-    if: github.event_name == 'schedule'
+    if: github.event_name == 'schedule' || github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
