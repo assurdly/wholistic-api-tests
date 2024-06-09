@@ -11881,13 +11881,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8dcd7ec3-a033-498e-b58f-f6ad9cf05e10",
+				"id": "84f39d61-678b-4e8e-800b-bb1a8fd439b3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"x-workspace-id\",",
-					"    value: \"fb2b8b65-2dc5-4092-b9cd-4dddacf734ed\"",
+					"    value: \"0dc706da-90d0-4709-8024-ad61227602e7\"",
 					"})"
 				]
 			}
@@ -11895,7 +11895,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "afad908a-51f6-4d98-939f-d0e01dee6787",
+				"id": "4ff4a458-6c61-4e50-bc29-4d5ed1c43622",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
