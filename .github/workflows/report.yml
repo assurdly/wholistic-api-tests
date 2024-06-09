@@ -1,9 +1,6 @@
 name: Postman Test and Allure Report
 
 on:
-  push:
-    branches:
-      - organization
   schedule:
     - cron: '30 18 * * 3' # Runs every Wednesday at 7:30pm
     - cron: '30 18 * * 5' # Runs every Friday at 7:30pm
@@ -11,22 +8,11 @@ on:
 
 jobs:
   run_tests:
-    if: github.event_name == 'schedule' || github.event_name == 'push'
+    if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Get current latest folder in gh-pages
-        id: get_current_latest
-        run: |
-          git fetch origin gh-pages:gh-pages
-          mkdir -p gh-pages
-          git clone --depth 1 --branch gh-pages https://github.com/${{ github.repository }} gh-pages
-          current_latest=$(find gh-pages -mindepth 1 -maxdepth 1 -type d -name '[0-9]*' | sort -n | tail -n 1)
-          current_latest_number=$(basename $current_latest)
-          echo "Current Latest Folder Number: $current_latest_number"
-          echo "::set-output name=current_latest_number::$current_latest_number"
 
       - name: Install newman and newman-reporter-allure
         run: |
@@ -45,6 +31,7 @@ jobs:
         if: always()
         continue-on-error: true
         with:
+          repository: ${{ github.repository }}
           ref: gh-pages
           path: gh-pages
 
@@ -80,59 +67,24 @@ jobs:
         continue-on-error: true
         run: sleep 30
 
-      - name: Find new folder in gh-pages
+      - name: Find latest folder in gh-pages
         id: new_folder
         run: |
-          new_folder=$(find gh-pages -mindepth 1 -maxdepth 1 -type d -name '[0-9]*' | sort -n | tail -n 1)
-          new_folder_number=$(basename $new_folder)
-          new_folder_number=$((new_folder_number + 1))
-          mkdir -p gh-pages/$new_folder_number
-          echo "New Folder Number: $new_folder_number"
-          echo "::set-output name=new_folder_number::$new_folder_number"
+          latest_folder=$(find allure-history -mindepth 1 -maxdepth 1 -type d -name '[0-9]*' | sort -n | tail -n 1)
+          latest_folder_number=$(basename $latest_folder)
+          echo "Latest Folder Number: $latest_folder_number"
+          echo "::set-output name=latest_folder_number::$latest_folder_number"
 
-      - name: Verify new folder exists
+      - name: Parse latest summary.json
+        id: parse_latest_json
         run: |
-          new_folder_number=${{ steps.new_folder.outputs.new_folder_number }}
-          if [ -d "gh-pages/$new_folder_number" ]; then
-            echo "New folder gh-pages/$new_folder_number created successfully."
-          else
-            echo "Error: New folder gh-pages/$new_folder_number was not created."
-            exit 1
-          fi
-
-      - name: Copy Allure report to new and previous folder
-        run: |
-          new_folder_number=${{ steps.new_folder.outputs.new_folder_number }}
-          current_latest_number=${{ steps.get_current_latest.outputs.current_latest_number }}
-          cp -r allure-report/* gh-pages/$new_folder_number/
-          cp -r allure-report/* gh-pages/$current_latest_number/
-          echo "Allure report copied to gh-pages/$new_folder_number and gh-pages/$current_latest_number"
-
-      - name: Update Allure Report Widget Title in new folder
-        continue-on-error: true
-        run: |
-          new_folder_number=${{ steps.new_folder.outputs.new_folder_number }}
-          summary_path="gh-pages/$new_folder_number/widgets/summary.json"
-          echo "Summary Path: $summary_path"
-          if [[ -e "$summary_path" ]]; then
-            cat "$summary_path"  # Print content before
-            sed -i 's/Allure Report/Organization - API Quality Readiness/' "$summary_path"
-            cat "$summary_path"  # Print content after
-          else
-            echo "Error: summary.json not found in the new folder."
-            exit 1
-          fi
-
-      - name: Parse new summary.json
-        id: parse_new_json
-        run: |
-          current_latest_number=${{ steps.get_current_latest.outputs.current_latest_number }}
-          new_summary_path="gh-pages/${current_latest_number}/widgets/summary.json"
-          echo "New Summary Path: $new_summary_path"
-          if [ -f "$new_summary_path" ]; then
-            cat "$new_summary_path"
-            passed_tests=$(jq -r '.statistic.passed' "$new_summary_path")
-            failed_tests=$(jq -r '.statistic.failed' "$new_summary_path")
+          latest_folder_number=${{ steps.new_folder.outputs.latest_folder_number }}
+          latest_summary_path="allure-history/${latest_folder_number}/widgets/summary.json"
+          echo "Latest Summary Path: $latest_summary_path"
+          if [ -f "$latest_summary_path" ]; then
+            cat "$latest_summary_path"
+            passed_tests=$(jq -r '.statistic.passed' "$latest_summary_path")
+            failed_tests=$(jq -r '.statistic.failed' "$latest_summary_path")
             total_tests=$((passed_tests + failed_tests))
             if [ "$total_tests" -gt 0 ]; then
               passing_percentage=$(( passed_tests * 100 / total_tests ))
