@@ -113,18 +113,18 @@ jobs:
           fi
         
         
-      # - name: Notify Slack
-      #   if: always()
-      #   uses: rtCamp/action-slack-notify@v2
-      #   env:
-      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      #     SLACK_CHANNEL: 'C070KUKPDLZ'
-      #     SLACK_MESSAGE: |
-      #       *Eatcheffie Vendor - API Quality Readiness*
-      #       *Contributors - Azeez*
-      #       Status: ${{ job.status }}
-      #       Passing Tests: ${{ steps.parse_new_json.outputs.passing_percentage }}%
-      #       Failing Tests: ${{ steps.parse_new_json.outputs.failing_percentage }}%
-      #       Total Passed: ${{ steps.parse_new_json.outputs.passed_tests }}
-      #       Total Failed: ${{ steps.parse_new_json.outputs.failed_tests }}
-      #       GitHub Pages URL: ${{ secrets.PAGES_URL }}/${{ steps.new_folder.outputs.new_folder_number }}
+      - name: Notify Slack
+        if: github.event_name == 'schedule'
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_CHANNEL: 'C070KUKPDLZ'
+          SLACK_MESSAGE: |
+            *Eatcheffie Vendor - API Quality Readiness*
+            *Contributors - Azeez*
+            Status: ${{ job.status }}
+            Passing Tests: ${{ steps.parse_new_json.outputs.passing_percentage }}%
+            Failing Tests: ${{ steps.parse_new_json.outputs.failing_percentage }}%
+            Total Passed: ${{ steps.parse_new_json.outputs.passed_tests }}
+            Total Failed: ${{ steps.parse_new_json.outputs.failed_tests }}
+            GitHub Pages URL: ${{ secrets.PAGES_URL }}/${{ steps.new_folder.outputs.new_folder_number }}
