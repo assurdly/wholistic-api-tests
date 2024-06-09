@@ -10545,6 +10545,30 @@
 					"item": [
 						{
 							"name": "Add Project Report",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7daf033e-8b4b-4079-ae92-f308adcdc49d",
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"createdProjectId\", data.id)",
+											"",
+											"",
+											"    pm.test(\"Status code is 201\", function () {",
+											"        pm.response.to.have.status(201);",
+											"    });",
+											"",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "309a3863-f7dd-477b-891f-84255d5b8471",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
