@@ -2506,6 +2506,185 @@
 						}
 					],
 					"id": "0fb95fc8-e8d2-4764-b7fc-52fe8bc6c1d8"
+				},
+				{
+					"name": "List Email Settings",
+					"id": "f97acfd3-4385-419d-9fe3-90fc94c6dd6d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/profile/email-settings"
+					},
+					"response": [
+						{
+							"id": "8a3bebd6-4ec6-4836-be32-31bc0281bde0",
+							"name": "List Email Settings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile/email-settings"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4df-1u2GOADXM2xjVd/pwZGzvjlBwkc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Jun 2024 22:21:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"01353ceb-e8e6-44db-9d9e-0a16d840ef64\",\n            \"slug\": \"verify-email\",\n            \"title\": \"Verify Email\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n            \"slug\": \"login-alert\",\n            \"title\": \"Login\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n            \"slug\": \"set-password\",\n            \"title\": \"Change Password\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"265ddde3-4180-468d-8937-28c6f3554d63\",\n            \"slug\": \"user-invite\",\n            \"title\": \"Team Member Invitation\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"55fca074-4b5a-432d-9eb6-a6aa0bac84d9\",\n            \"slug\": \"enabled-2fa\",\n            \"title\": \"Enabled 2FA\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"6fd16564-32a2-4225-aa37-81903878d8b2\",\n            \"slug\": \"sample-template\",\n            \"title\": \"Sample Template\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"71aae8e3-3c1d-44f1-baba-897cfbce4a79\",\n            \"slug\": \"reset-password\",\n            \"title\": \"Password Reset Attempt\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"b6e25ad4-5376-4ae9-a846-66bc0c666339\",\n            \"slug\": \"completed-onboarding\",\n            \"title\": \"Welcome Message\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"c7631114-41b5-4235-b645-1c201ea91a12\",\n            \"slug\": \"disabled-2fa\",\n            \"title\": \"Disabled 2FA\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n            \"slug\": \"reset-password-request\",\n            \"title\": \"Password Reset Link\",\n            \"enabled\": true\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 10,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Email Settings",
+					"id": "e4eb8640-949c-47be-bc19-1db4c5315961",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"templateId\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n    \"enabled\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/profile/email-settings"
+					},
+					"response": [
+						{
+							"id": "ab928d48-fc09-430c-b75b-5fde1e4dfe99",
+							"name": "Set Email Settings",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"templateId\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n    \"enabled\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/email-settings"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-W4wHJ6kdxa//yxzM1IOUFvqbO4c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Jun 2024 22:23:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfull\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List Notification Settings",
+					"id": "347d583e-64f4-4a86-8934-644689b9b708",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/profile/notification-settings"
+					},
+					"response": []
+				},
+				{
+					"name": "Set Notification Settings",
+					"id": "c2af50a5-2587-469a-a247-c4476038f6dd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"templateId\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n    \"enabled\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/profile/notification-settings"
+					},
+					"response": []
 				}
 			],
 			"id": "23628f28-ac17-4898-b321-a523d7e29a8e"
@@ -4776,7 +4955,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomWord}}\",\n    \"slug\": \"{{$randomWord}}\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false\n}",
+									"raw": "{\n    \"name\": \"{{$randomWord}}\",\n    \"slug\": \"{{$randomWord}}\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5384,7 +5563,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+							"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5402,7 +5581,6 @@
 							],
 							"variable": [
 								{
-									"id": "8d6d47b3-d23b-4c3c-a8be-101ed16581ab",
 									"key": "id",
 									"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
 								}
@@ -5484,6 +5662,19 @@
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Get Workspace Stats",
+					"id": "f22f7be3-d402-4bc3-916f-f6d5a63d5f17",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/workspaces/stats"
+					},
+					"response": []
 				}
 			],
 			"id": "5a205488-15ab-4fab-aacf-2260a6e6408a"
@@ -8436,7 +8627,24 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}/billings/plans"
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans"
+									],
+									"query": [
+										{
+											"key": "interval",
+											"value": "monhtly",
+											"description": "monthly|yearly",
+											"disabled": true
+										}
+									]
+								}
 							},
 							"response": [
 								{
@@ -8943,6 +9151,613 @@
 						}
 					],
 					"id": "214aa977-46ae-4a1f-83b0-1affe5b76a79"
+				},
+				{
+					"name": "List Features",
+					"id": "a1b85973-b21c-4f52-b3e2-804cbffafe18",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/billings/features"
+					},
+					"response": [
+						{
+							"id": "0bf68ef8-9df9-4838-a286-ae791e9e11c0",
+							"name": "List Features",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/billings/features"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admind.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "993"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e1-3FYP6BXEWH8j8XdAobei0Z4VoDc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Jun 2024 14:35:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Features fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"275387e5-6b01-465d-bf6d-e0ab398c0583\",\n            \"name\": \"Report\",\n            \"slug\": \"report\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"2d75b05e-499a-4e5a-8b81-52d71e9a7ef8\",\n            \"name\": \"Create project\",\n            \"slug\": \"create-project\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"9b607e93-fae4-454a-8a03-96aadd638f51\",\n            \"name\": \"Invite Team Members\",\n            \"slug\": \"invite-team-members\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"a5536323-b787-4c2c-be8c-38d6bfe05294\",\n            \"name\": \"Integrate applications\",\n            \"slug\": \"integrate-applications\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"c6e95ac1-0042-468e-abe9-37e139f973c3\",\n            \"name\": \"Schedule report\",\n            \"slug\": \"schedule-report\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"eab74561-2fec-4d8f-8043-abc9fe465ff5\",\n            \"name\": \"Create client\",\n            \"slug\": \"create-client\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Subscription Plan",
+					"id": "f8107fa2-df04-4ed3-bc44-0ff22a92b2f9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/billings/plans"
+					},
+					"response": [
+						{
+							"id": "4d4f9f2c-f751-47bb-b72e-4f712210e3fb",
+							"name": "Create Subscription Plan",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/billings/plans"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admin.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "232"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e8-Lkz1mLppmUi/YA28quQdqJSNZr8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Jun 2024 14:40:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan created successfully\",\n    \"data\": {\n        \"id\": \"fad79164-bc02-4118-a70a-2f713879c792\",\n        \"name\": \"Premium\",\n        \"description\": \"Premium features!\",\n        \"amount\": 5000,\n        \"currency\": \"NGN\",\n        \"createdAt\": \"2024-06-14T13:40:30.330Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Subscription Plan",
+					"id": "92ea8dc5-e82a-4706-94ac-690638c47f05",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\" //monthly|yearly\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/billings/plans/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"billings",
+								"plans",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "eac625b0-0165-466b-9644-3103798e18ea",
+									"key": "id",
+									"value": "fad79164-bc02-4118-a70a-2f713879c792"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f5e0af8b-8636-4526-b21e-52c6d1b9da93",
+							"name": "Update Subscription Plan",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\" //monthly|yearly\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "fad79164-bc02-4118-a70a-2f713879c792"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admin.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "193"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c1-eUMjR7pAuZnydWk7boHdfJ5JP+E\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Jun 2024 14:41:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan updated successfully\",\n    \"data\": {\n        \"id\": \"fad79164-bc02-4118-a70a-2f713879c792\",\n        \"name\": \"Premium\",\n        \"description\": \"Premium features!\",\n        \"amount\": 5000,\n        \"currency\": \"NGN\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Plan Features",
+					"id": "8b30fda4-72a6-42ec-aef5-f628f37477ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"features\": [\"2d75b05e-499a-4e5a-8b81-52d71e9a7ef8\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/billings/plans/:id/features",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"billings",
+								"plans",
+								":id",
+								"features"
+							],
+							"variable": [
+								{
+									"id": "4150ec3a-82c8-4de4-acf6-a883b701569a",
+									"key": "id",
+									"value": "fad79164-bc02-4118-a70a-2f713879c792"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "4789e302-27d7-4162-8b69-ffb59754e179",
+							"name": "Set Plan Features",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"features\": [\"2d75b05e-499a-4e5a-8b81-52d71e9a7ef8\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans/:id/features",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans",
+										":id",
+										"features"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "fad79164-bc02-4118-a70a-2f713879c792"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admin.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-YL7sYgHRhESnlOoi4OFcrONs3P4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Jun 2024 14:43:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan features updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List Transactions",
+					"id": "ba415429-45d4-4063-abc8-c115159e3ded",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/billings/transactions"
+					},
+					"response": [
+						{
+							"id": "6ebf3bae-a90c-4a58-9eec-2e7070b69706",
+							"name": "List Transactions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/billings/transactions"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admin.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "657"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"291-3UswAq0BjQVN6JCEGkQ66IxKEUc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Jun 2024 16:36:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Transactions fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"351a1616-f578-4b33-8f45-e75271933381\",\n            \"amount\": \"1000.00\",\n            \"currency\": \"NGN\",\n            \"status\": \"pending\",\n            \"reference\": \"1onex89lne\",\n            \"workspace\": {\n                \"id\": \"162a4aff-3153-4487-90ec-bb15bc5d7354\",\n                \"name\": \"Admin\",\n                \"status\": \"active\",\n                \"slug\": \"admin\",\n                \"domain\": \"admin.wholistic.work\",\n                \"size\": null,\n                \"purpose\": null,\n                \"requireTwoFA\": false,\n                \"logoUrl\": null,\n                \"requiredEmailDomains\": [\n                    \"wholistic.work\",\n                    \"gmail.com\"\n                ],\n                \"serviceTypes\": null,\n                \"utmMedium\": null,\n                \"createdAt\": \"2024-06-09T14:38:06.629Z\"\n            },\n            \"createdAt\": \"2024-06-14T15:34:30.504Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "View Transaction",
+					"id": "1cc37db6-43d7-4eb2-8fe1-97498762fdf7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/billings/transactions/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"billings",
+								"transactions",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "a914473a-4108-4b51-bcde-1a91cc4d59df",
+									"key": "id",
+									"value": "351a1616-f578-4b33-8f45-e75271933381"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "86c07b19-0b4e-4e20-96c0-9d342fd78055",
+							"name": "View Transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/transactions/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "351a1616-f578-4b33-8f45-e75271933381"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admin.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "928"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a0-POYcP2uH4pkffDB4ix7a958lYA4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Jun 2024 16:39:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Transactions fetched successfully\",\n    \"data\": {\n        \"id\": \"351a1616-f578-4b33-8f45-e75271933381\",\n        \"amount\": \"1000.00\",\n        \"currency\": \"NGN\",\n        \"status\": \"success\",\n        \"reference\": \"1onex89lne\",\n        \"subscription\": {\n            \"id\": \"8a99c9ac-75ad-440f-af7d-c16acd5ba4d5\",\n            \"amount\": \"1000.00\",\n            \"currency\": \"NGN\",\n            \"reference\": \"1onex89lne\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": \"1000.00\",\n                \"currency\": \"NGN\",\n                \"interval\": \"monthly\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-06-14T15:38:50.648Z\"\n        },\n        \"workspace\": {\n            \"id\": \"162a4aff-3153-4487-90ec-bb15bc5d7354\",\n            \"name\": \"Admin\",\n            \"status\": \"active\",\n            \"slug\": \"admin\",\n            \"domain\": \"admin.wholistic.work\",\n            \"size\": null,\n            \"purpose\": null,\n            \"requireTwoFA\": false,\n            \"logoUrl\": null,\n            \"requiredEmailDomains\": [\n                \"wholistic.work\",\n                \"gmail.com\"\n            ],\n            \"serviceTypes\": null,\n            \"utmMedium\": null,\n            \"createdAt\": \"2024-06-09T14:38:06.629Z\"\n        },\n        \"createdAt\": \"2024-06-14T15:34:30.504Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Subscription Stats",
+					"id": "8244ba85-ed26-4a9b-84dc-f53be20f1321",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/billings/subscriptions/stats"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transactions Stats",
+					"id": "4087d3a4-5f3c-49e6-a8be-757e04b10ea7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/billings/transactions/stats"
+					},
+					"response": []
 				}
 			],
 			"id": "401bec84-0854-4186-b2b0-c659b945af76"
@@ -10052,7 +10867,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n    \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\"\n}",
+											"raw": "{\n    \"items\": [\"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\"],\n    \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -10555,7 +11370,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"workspaceId\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n    \"client\": {\n        \"name\": \"LSQ\",\n        \"email\": \"hello@lendsqr.com\",\n        \"contactName\": \"Deji\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactName2\": null,\n        \"contactEmail2\": null,\n        \"contactPhone2\": null\n    }\n}",
+											"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"client\": {\n        \"name\": \"LSQ\",\n        \"email\": \"hello@lendsqr.com\",\n        \"contactName\": \"Deji\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactName2\": null,\n        \"contactEmail2\": null,\n        \"contactPhone2\": null\n    }\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -10915,10 +11730,183 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"id": "fb579088-2dac-4964-943e-aaa2bf38c5f4",
+									"name": "List Project Reports",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/reports",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"reports"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "444"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1bc-D/50e3zKvv+Zdd74TDGrL0BQTTI\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Jun 2024 08:35:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"537c2abe-2fb9-4415-b027-c215de727039\",\n            \"title\": \"Random Report\",\n            \"status\": \"pending\",\n            \"body\": \"<body>Hey!</body>\",\n            \"startDate\": \"2024-01-01T23:00:00.000Z\",\n            \"endDate\": \"2024-01-03T23:00:00.000Z\",\n            \"reviewerUserId\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n            \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "8b965d04-ad79-42d7-82e4-b7435f7be620"
+				},
+				{
+					"name": "Delete Project Report",
+					"id": "b4f64d97-7153-413d-a592-7dae955276d8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":projectId",
+								"reports",
+								":reportId"
+							],
+							"variable": [
+								{
+									"id": "d9757a4d-9e64-4415-9e04-fafcbb7ef5b6",
+									"key": "projectId",
+									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+								},
+								{
+									"id": "7e3985f7-70b1-423e-b114-4e9633bdc7dc",
+									"key": "reportId",
+									"value": "537c2abe-2fb9-4415-b027-c215de727039"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "27eb70ca-38f0-40fb-bf38-59bbe06083f4",
+							"name": "Delete Project Report",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":reportId"
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"key": "reportId",
+											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Jun 2024 08:38:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete User - oo -",
@@ -11053,6 +12041,443 @@
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
 						}
 					]
+				},
+				{
+					"name": "List Project Comments",
+					"id": "948402c8-f6e3-49d3-b827-7079ddc4e4b5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:projectId/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":projectId",
+								"comments"
+							],
+							"variable": [
+								{
+									"id": "d96cd865-a583-45d6-a2c7-9602e18d95da",
+									"key": "projectId",
+									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2dcc05a0-4bf1-4e0b-9ea9-18c4ba48b851",
+							"name": "List Project Comments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/comments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"comments"
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "629"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"275-WO7ta+ktDxMew5yHgUvXIlqqPig\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2024 16:56:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"3cba9491-c400-4844-87cd-56c04484065f\",\n            \"comment\": \"Hello World!\",\n            \"replyId\": null,\n            \"repliesCount\": 0,\n            \"user\": {\n                \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n                \"twofaEnabled\": false,\n                \"status\": \"active\",\n                \"emailVerified\": true,\n                \"profile\": {\n                    \"id\": \"c7d5f0c0-7cde-479f-8505-e51892d301eb\",\n                    \"firstName\": \"Adewunmi\",\n                    \"lastName\": \"Akinsanya\",\n                    \"country\": null,\n                    \"createdAt\": \"2024-04-28T22:45:14.081Z\"\n                },\n                \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n            },\n            \"createdAt\": \"2024-06-10T15:37:39.185Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Project Comment",
+					"id": "fc6795f9-c8e6-4692-86d9-23968bfa8b2b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"Replying to: Hello World! Again!\",\n    \"replyId\": \"3cba9491-c400-4844-87cd-56c04484065f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:projectId/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":projectId",
+								"comments"
+							],
+							"variable": [
+								{
+									"id": "5ed90286-3302-47be-a2cd-cfd5e4bedb3d",
+									"key": "projectId",
+									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "86bfaa33-0760-4e5b-ab83-db98d29d5862",
+							"name": "Add Project Comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\": \"Hello World!\",\n    \"replyId\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/comments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"comments"
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-wXfRKSVHZ0SiK36TX5TvBRnJzDI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2024 16:37:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": {\n        \"comment\": \"Hello World!\",\n        \"replyId\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "View Project Comment",
+					"id": "2b556b67-fac5-4431-9e7e-8cfe45220034",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:projectId/comments/:commentId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":projectId",
+								"comments",
+								":commentId"
+							],
+							"variable": [
+								{
+									"id": "e2900eaf-3f1c-4b1e-8ff7-1020a3a45901",
+									"key": "projectId",
+									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+								},
+								{
+									"id": "303722d0-2a65-4483-a8a2-0078ffbf5892",
+									"key": "commentId",
+									"value": "3cba9491-c400-4844-87cd-56c04484065f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6bf4de66-e97f-477f-8610-b26e9d435db4",
+							"name": "View Project Comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/comments/:commentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"comments",
+										":commentId"
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"key": "commentId",
+											"value": "3cba9491-c400-4844-87cd-56c04484065f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1236"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d4-YernuS5oeY9Mqtfhp06Owa7Yad0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2024 17:05:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": {\n        \"id\": \"3cba9491-c400-4844-87cd-56c04484065f\",\n        \"comment\": \"Hello World!\",\n        \"replyId\": null,\n        \"replies\": [\n            {\n                \"id\": \"8a993a7e-5bab-4375-9637-e09443c133a3\",\n                \"comment\": \"Replying to: Hello World! Again!\",\n                \"replyId\": \"3cba9491-c400-4844-87cd-56c04484065f\",\n                \"user\": {\n                    \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                    \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n                    \"twofaEnabled\": false,\n                    \"status\": \"active\",\n                    \"emailVerified\": true,\n                    \"profile\": {\n                        \"id\": \"c7d5f0c0-7cde-479f-8505-e51892d301eb\",\n                        \"firstName\": \"Adewunmi\",\n                        \"lastName\": \"Akinsanya\",\n                        \"country\": null,\n                        \"createdAt\": \"2024-04-28T22:45:14.081Z\"\n                    },\n                    \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n                },\n                \"createdAt\": \"2024-06-10T15:57:45.877Z\"\n            },\n            {\n                \"id\": \"bb717b12-3e87-4913-ab64-f2ac1201d655\",\n                \"comment\": \"Replying to: Hello World!\",\n                \"replyId\": \"3cba9491-c400-4844-87cd-56c04484065f\",\n                \"user\": {\n                    \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                    \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n                    \"twofaEnabled\": false,\n                    \"status\": \"active\",\n                    \"emailVerified\": true,\n                    \"profile\": {\n                        \"id\": \"c7d5f0c0-7cde-479f-8505-e51892d301eb\",\n                        \"firstName\": \"Adewunmi\",\n                        \"lastName\": \"Akinsanya\",\n                        \"country\": null,\n                        \"createdAt\": \"2024-04-28T22:45:14.081Z\"\n                    },\n                    \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n                },\n                \"createdAt\": \"2024-06-10T15:57:38.616Z\"\n            }\n        ],\n        \"createdAt\": \"2024-06-10T15:37:39.185Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Project Comment",
+					"id": "deb5eea7-26b6-4135-8f69-f7dd70ede46d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:projectId/comments/:commentId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":projectId",
+								"comments",
+								":commentId"
+							],
+							"variable": [
+								{
+									"id": "02541526-fa86-4542-b9d3-a7e57759d7fd",
+									"key": "projectId",
+									"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+								},
+								{
+									"id": "a89c438f-b1cd-4746-bd62-dcf5ddeb0df7",
+									"key": "commentId",
+									"value": "3cba9491-c400-4844-87cd-56c04484065f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f286a97f-456c-4e46-8f48-b9b746b69502",
+							"name": "Delete Project Comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/comments/:commentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"comments",
+										":commentId"
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"key": "commentId",
+											"value": "3cba9491-c400-4844-87cd-56c04484065f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2024 17:06:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "List Project Requests",
+					"id": "5ab9ca9d-d253-4bcc-bf64-f43bfda9eb2a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/projects/requests"
+					},
+					"response": []
 				},
 				{
 					"name": "Delete Project -oo-",
@@ -11942,7 +13367,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "84f39d61-678b-4e8e-800b-bb1a8fd439b3",
+				"id": "fd3331e2-6084-471d-a356-ac2ebd56fbf5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -11956,7 +13381,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4ff4a458-6c61-4e50-bc29-4d5ed1c43622",
+				"id": "f009d8f0-2612-42fd-9cd8-33da4227f5e7",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
