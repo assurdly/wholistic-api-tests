@@ -552,10 +552,71 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en,en-US;q=0.9"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZjBkNTBmLWE2MmEtNDAyMC05NzAyLWE3YmI5NjBjNGNmZSIsImNvdW50IjowLCJpYXQiOjE3MTgzODIwMzksImV4cCI6MTcxODQ2ODQzOX0.kY3SL2dWvxUqEg9URfLDP6qsOxej8RyB_FN-udHJLqg"
+									},
+									{
+										"key": "Connection",
+										"value": "keep-alive"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Cookie",
+										"value": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZjBkNTBmLWE2MmEtNDAyMC05NzAyLWE3YmI5NjBjNGNmZSIsImNvdW50IjowLCJpYXQiOjE3MTgzODIxMDQsImV4cCI6MTcxODQ2ODUwNH0.X2SeuNi9ApcVv7j24vDRP43Ja5kIEFpPtVkrn3Jd600.MHSxcNJ7iTBabgGasE4TGAGkIi2a5X3Er8eDIQ%2B7GFE"
+									},
+									{
+										"key": "Origin",
+										"value": "https://demo.wholistic.work"
+									},
+									{
+										"key": "Referer",
+										"value": "https://demo.wholistic.work/"
+									},
+									{
+										"key": "Sec-Fetch-Dest",
+										"value": "empty"
+									},
+									{
+										"key": "Sec-Fetch-Mode",
+										"value": "cors"
+									},
+									{
+										"key": "Sec-Fetch-Site",
+										"value": "same-site"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+									},
+									{
+										"key": "sec-ch-ua",
+										"value": "\"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\""
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0"
+									},
+									{
+										"key": "sec-ch-ua-platform",
+										"value": "\"macOS\""
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@\"\n}",
+									"raw": "{\"email\":\"azeez@assurdly.com\",\"password\":\"Password12@@\"}",
 									"options": {
 										"raw": {
 											"language": "json"
