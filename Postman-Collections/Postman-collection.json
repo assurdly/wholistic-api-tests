@@ -19,7 +19,7 @@
 									"script": {
 										"id": "0deb16dd-d3d4-4f86-b928-b39578b98e3c",
 										"exec": [
-											"pm.environment.set('baseUrl', 'https://platform-api.wholistic.work')",
+											"pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')",
 											""
 										],
 										"type": "text/javascript",
@@ -616,7 +616,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"email\":\"azeez@assurdly.com\",\"password\":\"Password12@@\"}",
+									"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -13367,21 +13367,26 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fd3331e2-6084-471d-a356-ac2ebd56fbf5",
+				"id": "b91bb6c9-e992-4ac4-b1a2-cffd63e3a86d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"x-workspace-id\",",
 					"    value: \"0dc706da-90d0-4709-8024-ad61227602e7\"",
-					"})"
+					"})",
+					"",
+					"pm.request.headers.add({",
+					"  key: \"origin\",",
+					"  value: \"https://\" + \"azeez.wholistic.work\"",
+					"});"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "f009d8f0-2612-42fd-9cd8-33da4227f5e7",
+				"id": "072fc229-c22c-4c9a-9319-ceacd62fb5e6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
