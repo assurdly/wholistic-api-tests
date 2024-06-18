@@ -11712,20 +11712,20 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/projects/:id/reports",
+									"raw": "{{baseUrl}}/projects/:id/reports/",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"projects",
 										":id",
-										"reports"
+										"reports",
+										""
 									],
 									"variable": [
 										{
-											"id": "17b6bc30-1195-45b2-a42b-b5392fda93b9",
 											"key": "id",
-											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+											"value": "88b2368f-87cd-4e63-9d60-115d6c021be3"
 										}
 									]
 								}
@@ -11733,6 +11733,106 @@
 							"response": [
 								{
 									"id": "fb579088-2dac-4964-943e-aaa2bf38c5f4",
+									"name": "List Project Reports",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/reports",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"reports"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "444"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1bc-D/50e3zKvv+Zdd74TDGrL0BQTTI\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Jun 2024 08:35:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"537c2abe-2fb9-4415-b027-c215de727039\",\n            \"title\": \"Random Report\",\n            \"status\": \"pending\",\n            \"body\": \"<body>Hey!</body>\",\n            \"startDate\": \"2024-01-01T23:00:00.000Z\",\n            \"endDate\": \"2024-01-03T23:00:00.000Z\",\n            \"reviewerUserId\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n            \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Project Report",
+							"id": "454c0e02-c3fe-4807-b5c2-43b1fb693be4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id/reports/:rportId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id",
+										"reports",
+										":rportId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "88b2368f-87cd-4e63-9d60-115d6c021be3"
+										},
+										{
+											"key": "rportId",
+											"value": "b91809a6-56a4-4623-97c4-7115bc172cfe"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ec3783e8-073f-4f0e-bbf4-131aa814fc37",
 									"name": "List Project Reports",
 									"originalRequest": {
 										"method": "GET",
