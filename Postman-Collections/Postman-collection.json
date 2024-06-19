@@ -13467,18 +13467,18 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fa23b0e1-65b2-44b2-8c25-f0b80f1b5f5e",
+				"id": "0c8f8215-2fe0-4966-b1cf-9f8f525b9908",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"x-workspace-id\",",
-					"    value: \"be0b4edd-d181-46e0-954f-a34789081c30\"",
+					"    value: \"3beb99fa-7349-480d-9016-4dec463040e3\"",
 					"})",
 					"",
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"isle.wholistic.work\"",
+					"  value: \"https://\" + \"brainer.wholistic.work\"",
 					"});"
 				]
 			}
@@ -13486,7 +13486,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2ab02561-cfc8-41bf-a7a9-2edb251e62c2",
+				"id": "f93c75d5-45dc-4139-9e15-866055051a80",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
