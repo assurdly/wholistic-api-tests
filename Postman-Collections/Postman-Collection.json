@@ -2396,7 +2396,7 @@
 							]
 						},
 						{
-							"name": "Change Password - Valid (Revert)",
+							"name": "Change Password - Revert",
 							"event": [
 								{
 									"listen": "test",
@@ -2509,6 +2509,32 @@
 				},
 				{
 					"name": "List Email Settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe5217df-4f3f-46f3-bd7f-6a5cddcc27c4",
+								"exec": [
+									"try {",
+									"    const { data } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"    pm.test(\"Status code response is 'OK'\", function () {",
+									"        pm.response.to.have.status('OK');",
+									"    });",
+									"} catch (errors) {",
+									"    console.error(errors)",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "f97acfd3-4385-419d-9fe3-90fc94c6dd6d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2653,6 +2679,32 @@
 				},
 				{
 					"name": "List Notification Settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f6931031-7f2b-4de8-9ec8-53cf9b572e3f",
+								"exec": [
+									"try {",
+									"    const { data } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"    pm.test(\"Status code response is 'OK'\", function () {",
+									"        pm.response.to.have.status('OK');",
+									"    });",
+									"} catch (errors) {",
+									"    console.error(errors)",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "347d583e-64f4-4a86-8934-644689b9b708",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
