@@ -13467,18 +13467,18 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0c8f8215-2fe0-4966-b1cf-9f8f525b9908",
+				"id": "32feb271-f7fc-401f-985a-a90a9a47dce3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"x-workspace-id\",",
-					"    value: \"3beb99fa-7349-480d-9016-4dec463040e3\"",
+					"    value: \"0dc706da-90d0-4709-8024-ad61227602e7\"",
 					"})",
 					"",
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"brainer.wholistic.work\"",
+					"  value: \"https://\" + \"azeez.wholistic.work\"",
 					"});"
 				]
 			}
@@ -13486,7 +13486,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f93c75d5-45dc-4139-9e15-866055051a80",
+				"id": "e3d3b561-e688-458f-8281-7cf0ef35e4ad",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
