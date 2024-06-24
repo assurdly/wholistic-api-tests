@@ -6486,7 +6486,8 @@
 									"script": {
 										"id": "01ce09a7-d422-4312-a251-b9acffc54b98",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"const jsonData = pm.response.json();",
+											"const createdClientEmail = pm.environment.get(\"createdClientEmail\")",
 											"",
 											"pm.test(\"Status code is 400\", function () {",
 											"    pm.response.to.have.status(400);",
@@ -6502,7 +6503,7 @@
 											"});",
 											"",
 											"pm.test(\"Valid error message data is returned\", function () {",
-											"    pm.expect(jsonData.message).to.eql(`A client with email 'Hassie@mailinator.com' already exists.`);",
+											"    pm.expect(jsonData.message).to.eql(`A client with email '${createdClientEmail}' already exists.`);",
 											"",
 											"});",
 											"",
