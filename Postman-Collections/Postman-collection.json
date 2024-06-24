@@ -6349,36 +6349,40 @@
 									"script": {
 										"id": "01ce09a7-d422-4312-a251-b9acffc54b98",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"try {",
+											"    const { data, message } = pm.response.json();",
 											"",
-											"pm.test(\"Status code is 400\", function () {",
-											"    pm.response.to.have.status(400);",
-											"});",
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
 											"",
-											"pm.test(\"Status code response is Bad Request\", function () {",
-											"    pm.response.to.have.status('Bad Request');",
-											"});",
+											"    pm.test(\"Status code response is Bad Request\", function () {",
+											"        pm.response.to.have.status('Bad Request');",
+											"    });",
 											"",
-											"pm.test(\"Response body property check\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.data).to.be.an('object');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
+											"    pm.test(\"Response body property check\", function () {",
+											"        pm.expect(data).to.be.an('object');",
+											"        pm.expect(message).to.be.a('string');",
+											"    });",
 											"",
-											"pm.test(\"Valid error message data is returned\", function () {",
-											"    pm.expect(jsonData.email).to.eql('Validation Error.');",
-											"    pm.expect(jsonData.name).to.eql('Validation Error.');",
-											"    pm.expect(jsonData.contactName).to.eql('contactName is required.');",
-											"    pm.expect(jsonData.contactEmail).to.eql('contactEmail is required.');",
-											"    pm.expect(jsonData.contactEmail2).to.eql('contactEmail2 is required.');",
-											"    pm.expect(jsonData.contactName2).to.eql('contactName2 is required.');",
-											"    pm.expect(jsonData.contactPhone).to.eql('contactPhone is required.');",
-											"    pm.expect(jsonData.contactPhone2).to.eql('contactPhone2 is required.');",
-											"});",
+											"    pm.test(\"Valid error message data is returned\", function () {",
+											"        pm.expect(data.email).to.eql('email is required.');",
+											"        pm.expect(data.name).to.eql('name is required.');",
+											"        pm.expect(data.contactName).to.eql('contactName is required.');",
+											"        pm.expect(data.contactEmail).to.eql('contactEmail is required.');",
+											"        pm.expect(data.contactEmail2).to.eql('contactEmail2 must be an email');",
+											"        pm.expect(data.contactName2).to.eql('contactName2 value should have at least 2 characters.');",
+											"        pm.expect(data.contactPhone).to.eql('contactPhone is required.');",
+											"        pm.expect(data.contactPhone2).to.eql('phone value must be a valid phone number.');",
+											"    });",
 											"",
-											"pm.test(\"Valid error message is returned\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Validation Error.');",
-											"});"
+											"    pm.test(\"Valid error message is returned\", function () {",
+											"        pm.expect(message).to.eql('Validation Error.');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6482,7 +6486,8 @@
 									"script": {
 										"id": "01ce09a7-d422-4312-a251-b9acffc54b98",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"const jsonData = pm.response.json();",
+											"const createdClientEmail = pm.environment.get(\"createdClientEmail\")",
 											"",
 											"pm.test(\"Status code is 400\", function () {",
 											"    pm.response.to.have.status(400);",
@@ -6498,7 +6503,7 @@
 											"});",
 											"",
 											"pm.test(\"Valid error message data is returned\", function () {",
-											"    pm.expect(jsonData.message).to.eql(`A client with email 'Hassie@mailinator.com' already exists.`);",
+											"    pm.expect(jsonData.message).to.eql(`A client with email '${createdClientEmail}' already exists.`);",
 											"",
 											"});",
 											"",
@@ -9818,7 +9823,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-06-15\",\n    \"endDate\": \"2025-06-15\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"{{createdUser}}\"]\n}",
+									"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-06-15\",\n    \"endDate\": \"2025-06-15\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"330e090f-e65a-4c08-b3c9-91b83450d13b\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -10192,6 +10197,125 @@
 							"response": [
 								{
 									"id": "056fb863-8e7e-48b6-a6cf-617f949ff5f2",
+									"name": "Get Project",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "862"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"35e-NRPTUK4gIgyYBuwdvvsp55fkmzE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 21:29:01 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Adewunmi\",\n                \"lastName\": \"Akinsanya\"\n            }\n        },\n        \"client\": {\n            \"id\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n            \"email\": \"hello@lendsqr.com\",\n            \"name\": \"LSQ\",\n            \"contactName\": \"Deji\",\n            \"contactPhone\": \"+2348012345678\",\n            \"contactEmail\": \"deji@lendsqr.com\",\n            \"contactName2\": null,\n            \"contactPhone2\": null,\n            \"contactEmail2\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2024-05-12T11:56:34.680Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Project - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "80d53dec-0773-41b0-86b8-51d95b9a8b73",
+										"exec": [
+											"try {",
+											"    const { message } = pm.response.json()",
+											"    pm.test('Tests on no Auth passed', () => {",
+											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"    })",
+											"    pm.test(\"Status code is 401\", function () {",
+											"        pm.response.to.have.status(401);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "524b4160-61a6-4e2f-bf63-ac1d4429ed08",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{createdProject}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3cda93bf-21cb-49ab-9b39-99ef56d5106c",
 									"name": "Get Project",
 									"originalRequest": {
 										"method": "GET",
@@ -10722,27 +10846,100 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/projects/:id/stats",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"projects",
-										":id",
-										"stats"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "{{createdProject}}"
-										}
-									]
-								}
+								"url": "{{baseUrl}}/projects/stats"
 							},
 							"response": [
 								{
 									"id": "d3955d68-3a34-4523-8cf7-ba880f53a3a7",
+									"name": "Get Project Stats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/projects/stats"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "303"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"12f-LMuTZLnbBXoU84I+9cYd0D+898I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 19 May 2024 15:15:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Projects stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"rejected\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"accepted\"\n        },\n        {\n            \"count\": \"6\",\n            \"value\": \"draft\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"ongoing\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"completed\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"blocked\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Project Stats - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "03df7336-d6e1-4b92-b32c-d944106b0cec",
+										"exec": [
+											"try {",
+											"    const { message } = pm.response.json()",
+											"    pm.test('Tests on no Auth passed', () => {",
+											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"    })",
+											"    pm.test(\"Status code is 401\", function () {",
+											"        pm.response.to.have.status(401);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c1bf218f-e6e3-456a-b0dc-2809670c9659",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/projects/stats"
+							},
+							"response": [
+								{
+									"id": "eb1e4da9-29f7-4e61-b8a3-fd669de7853f",
 									"name": "Get Project Stats",
 									"originalRequest": {
 										"method": "GET",
@@ -10809,7 +11006,7 @@
 											"try {",
 											"    const { data } = pm.response.json()",
 											"    pm.test('Tests on empty fields', () => {",
-											"        pm.expect(data.itemId).to.eql('itemId should not be empty')",
+											"        pm.expect(data.items).to.eql('each value in items should not be empty')",
 											"        pm.expect(data.userIntegrationId).to.eql('userIntegrationId should not be empty')",
 											"    })",
 											"    pm.test(\"Status code is 400\", function () {",
