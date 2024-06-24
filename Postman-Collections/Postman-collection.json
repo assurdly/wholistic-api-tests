@@ -10257,7 +10257,7 @@
 							]
 						},
 						{
-							"name": "Get Project Copy",
+							"name": "Get Project - No Auth",
 							"event": [
 								{
 									"listen": "test",
@@ -10841,27 +10841,100 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/projects/:id/stats",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"projects",
-										":id",
-										"stats"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "{{createdProject}}"
-										}
-									]
-								}
+								"url": "{{baseUrl}}/projects/stats"
 							},
 							"response": [
 								{
 									"id": "d3955d68-3a34-4523-8cf7-ba880f53a3a7",
+									"name": "Get Project Stats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/projects/stats"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "303"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"12f-LMuTZLnbBXoU84I+9cYd0D+898I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 19 May 2024 15:15:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Projects stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"0\",\n            \"value\": \"pending\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"rejected\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"accepted\"\n        },\n        {\n            \"count\": \"6\",\n            \"value\": \"draft\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"ongoing\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"completed\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"blocked\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Project Stats - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "03df7336-d6e1-4b92-b32c-d944106b0cec",
+										"exec": [
+											"try {",
+											"    const { message } = pm.response.json()",
+											"    pm.test('Tests on no Auth passed', () => {",
+											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"    })",
+											"    pm.test(\"Status code is 401\", function () {",
+											"        pm.response.to.have.status(401);",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c1bf218f-e6e3-456a-b0dc-2809670c9659",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/projects/stats"
+							},
+							"response": [
+								{
+									"id": "eb1e4da9-29f7-4e61-b8a3-fd669de7853f",
 									"name": "Get Project Stats",
 									"originalRequest": {
 										"method": "GET",
