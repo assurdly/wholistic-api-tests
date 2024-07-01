@@ -8722,7 +8722,7 @@
 					]
 				},
 				{
-					"name": "Resend Invite- Inactive user Copy",
+					"name": "Resend Invite- Invalid user ID",
 					"event": [
 						{
 							"listen": "test",
