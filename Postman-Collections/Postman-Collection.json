@@ -8847,6 +8847,133 @@
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully sent user invite\",\n    \"data\": {\n        \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n        \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"active\",\n        \"emailVerified\": true,\n        \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Resend Invite- Invalid user ID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b66ea041-efb6-4ca2-aa21-14b791058d95",
+								"exec": [
+									"try{\r",
+									"const { data, message } = pm.response.json()\r",
+									"\r",
+									"    pm.test('Verify a valid message is returned', () => {\r",
+									"        pm.expect(message).eql(\"Cannot resend invite to a inactive user\")\r",
+									"    })\r",
+									"pm.test(\"Response body property\", function () {\r",
+									"        const jsonData = pm.response.json(); // Fixed reference error by defining jsonData\r",
+									"        pm.expect(jsonData).to.be.a(\"object\");\r",
+									"    });\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"} catch (errors){\r",
+									"    console.error (errors)\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "33b22e30-37bd-45f8-87aa-bdcfcd778704",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id/resend",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"resend"
+							],
+							"variable": [
+								{
+									"id": "c2651d28-7a16-47dc-b45d-1865e5b9d5e2",
+									"key": "id",
+									"value": "e2b479bb-7ef4-4724-8bad-0774f6157de4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2f6fca4e-9a92-4f4e-ad7d-03b6c0816392",
+							"name": "Resend Invite",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id/resend",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id",
+										"resend"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "90c6c049-7241-44d9-9c86-2cfb967ba13a"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-6kbREy+n0RbCgWl7hza8rG0X8hI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 May 2024 10:06:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully sent user invite\",\n    \"data\": {\n        \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n        \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n        \"twofaEnabled\": false,\n        \"status\": \"active\",\n        \"emailVerified\": true,\n        \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "f5d492cd-390c-4585-800f-08f84a19752a",
