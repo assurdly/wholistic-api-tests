@@ -12428,6 +12428,12 @@
 											"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
 											"    });",
 											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data).to.be.an('array');",
+											"        pm.expect(status).to.be.a('string');",
+											"        pm.expect(data[0].amount).to.be.a('string') && pm.expect(data[0].amount).to.not.be.null;",
+											"    });",
+											"",
 											"} catch (error) {",
 											"    console.error('Error from test says:', error)",
 											"}"
@@ -12558,6 +12564,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/billings/subscriptions"
