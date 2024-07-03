@@ -7399,7 +7399,7 @@
 							]
 						},
 						{
-							"name": "Update User-no ID",
+							"name": "Update User - Empty ID",
 							"event": [
 								{
 									"listen": "test",
@@ -8012,13 +8012,12 @@
 									"script": {
 										"id": "4deb5859-c383-410c-bccb-857cac411a1c",
 										"exec": [
-											"try{\r",
+											"try {\r",
 											"    const jsonData = pm.response.json();\r",
 											"    pm.test('Verify a valid message is returned', () => {\r",
 											"        pm.expect(pm.response.json().message).eql(\"User not found.\")\r",
 											"    })\r",
 											"    pm.test(\"Response body property\", function () {\r",
-											"        const jsonData = pm.response.json(); // Fixed reference error by defining jsonData\r",
 											"        pm.expect(jsonData).to.be.a(\"object\");\r",
 											"    });\r",
 											"\r",
@@ -8028,8 +8027,8 @@
 											"    pm.test(\"Status code name has string\", function () {\r",
 											"        pm.response.to.have.status(\"Not Found\");\r",
 											"    });\r",
-											"} catch (errors){\r",
-											"    console.error (errors)\r",
+											"} catch (errors) {\r",
+											"    console.error(errors)\r",
 											"}\r",
 											""
 										],
@@ -8156,24 +8155,23 @@
 									"script": {
 										"id": "4deb5859-c383-410c-bccb-857cac411a1c",
 										"exec": [
-											"try{\r",
-											"const { data, message } = pm.response.json()\r",
+											"try {\r",
+											"    const { data, message } = pm.response.json()\r",
 											"\r",
 											"    pm.test('Verify a valid message is returned', () => {\r",
 											"        pm.expect(message).eql(\"User not found.\")\r",
 											"    })\r",
-											"pm.test(\"Status code is 404\", function () {\r",
-											"    pm.response.to.have.status(404);\r",
-											"});\r",
-											" pm.test(\"Response body property\", function () {\r",
-											"        const jsonData = pm.response.json(); // Fixed reference error by defining jsonData\r",
-											"        pm.expect(jsonData).to.be.a(\"object\");\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"        pm.response.to.have.status(404);\r",
 											"    });\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Not Found\");\r",
-											"});\r",
-											"} catch (errors){\r",
-											"    console.error (errors)\r",
+											"    pm.test(\"Response body property\", function () {\r",
+											"        pm.expect(message).to.be.a(\"string\");\r",
+											"    });\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"        pm.response.to.have.status(\"Not Found\");\r",
+											"    });\r",
+											"} catch (errors) {\r",
+											"    console.error(errors)\r",
 											"}"
 										],
 										"type": "text/javascript",
