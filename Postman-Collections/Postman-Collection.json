@@ -7406,24 +7406,23 @@
 									"script": {
 										"id": "04992147-6402-4a23-9fdf-2a3d222c46b5",
 										"exec": [
-											"try{",
-											"const { data, message } = pm.response.json()",
+											"try {",
+											"    const { data, message } = pm.response.json()",
 											"",
 											"    pm.test('Verify a valid message is returned', () => {",
 											"        pm.expect(message).eql(\"User not found.\")",
 											"    })",
-											"pm.test(\"Response body property\", function () {",
-											"        const jsonData = pm.response.json(); // Fixed reference error by defining jsonData",
-											"        pm.expect(jsonData).to.be.a(\"object\");",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(message).to.be.a(\"string\");",
 											"    });",
-											"pm.test(\"Status code is 404\", function () {",
-											"    pm.response.to.have.status(404);",
-											"});",
-											"pm.test(\"Status code name has string\", function () {",
-											"    pm.response.to.have.status(\"Not Found\");",
-											"});",
-											"} catch (errors){",
-											"    console.error (errors)",
+											"    pm.test(\"Status code is 404\", function () {",
+											"        pm.response.to.have.status(404);",
+											"    });",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Not Found\");",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
 											"}"
 										],
 										"type": "text/javascript",
@@ -7551,7 +7550,7 @@
 							]
 						},
 						{
-							"name": "Update User no Auth",
+							"name": "Update User - no Auth",
 							"event": [
 								{
 									"listen": "test",
@@ -7592,10 +7591,7 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"type": "noauth"
 								},
 								"method": "PATCH",
 								"header": [],
@@ -7620,7 +7616,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "{{createdUser}}"
+											"value": ""
 										}
 									]
 								}
@@ -7706,7 +7702,7 @@
 							]
 						},
 						{
-							"name": "Update User-Empty fields",
+							"name": "Update User - Empty fields",
 							"event": [
 								{
 									"listen": "test",
