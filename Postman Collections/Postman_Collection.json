@@ -258,11 +258,17 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{adminAccessToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Daily Report\",\n    \"slug\": \"daily-report\",\n    \"body\": \"<></>\"\n}",
+							"raw": "{\n    \"title\": \"\",\n    \"slug\": \"\",\n    \"body\": \"<></>\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
