@@ -8722,10 +8722,9 @@
 									"    pm.test('Verify a valid message is returned', () => {\r",
 									"        pm.expect(message).eql(\"Cannot resend invite to a inactive user\")\r",
 									"    })\r",
-									"pm.test(\"Response body property\", function () {\r",
-									"        const jsonData = pm.response.json(); // Fixed reference error by defining jsonData\r",
-									"        pm.expect(jsonData).to.be.a(\"object\");\r",
-									"    });\r",
+									"pm.test(\"Response body is an object\", function () {\r",
+									"    pm.expect(pm.response.json()).to.be.a(\"object\");\r",
+									"});\r",
 									"pm.test(\"Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
 									"});\r",
@@ -8760,7 +8759,6 @@
 							],
 							"variable": [
 								{
-									"id": "c2651d28-7a16-47dc-b45d-1865e5b9d5e2",
 									"key": "id",
 									"value": "e2b479bb-7ef4-4724-8bad-0774f6157de4"
 								}
