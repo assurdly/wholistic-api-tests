@@ -7543,7 +7543,7 @@
 							]
 						},
 						{
-							"name": "Update User - no Auth",
+							"name": "Update User - No Auth",
 							"event": [
 								{
 									"listen": "test",
@@ -7994,7 +7994,7 @@
 							]
 						},
 						{
-							"name": "Delete User No ID",
+							"name": "Delete User-Empty ID",
 							"event": [
 								{
 									"listen": "test",
