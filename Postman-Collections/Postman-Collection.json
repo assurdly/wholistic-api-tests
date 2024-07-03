@@ -12867,9 +12867,19 @@
 									],
 									"query": [
 										{
-											"key": "interval",
+											"key": "filter[interval]",
 											"value": "monhtly",
 											"description": "monthly|yearly",
+											"disabled": true
+										},
+										{
+											"key": "filter[currency]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[processor]",
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -12978,7 +12988,43 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}/billings/subscriptions"
+								"url": {
+									"raw": "{{baseUrl}}/billings/subscriptions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"subscriptions"
+									],
+									"query": [
+										{
+											"key": "filter[currency]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[reference]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[status]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][gt]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][lt]",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
 							},
 							"response": [
 								{
@@ -14819,7 +14865,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"itemId\": \"\",\n    \"userIntegrationId\": \"\"\n}",
+									"raw": "{\n    \"items\": [\"1U42u5nZt9UbEvaReAIj_2l21NMOfeYTzJXS0aLyeEbk\"],\n    \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -14839,7 +14885,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+											"value": "0c41ea4e-ad7c-4c1b-88c0-22e35742ecf6"
 										}
 									]
 								}
