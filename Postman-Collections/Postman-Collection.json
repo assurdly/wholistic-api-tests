@@ -9648,49 +9648,19 @@
 				},
 				{
 					"name": "Update Workspace",
-					"id": "b3b0ac45-2c62-4e8f-8fc1-74fde5a68e8a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/workspaces/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"workspaces",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
-								}
-							]
-						}
-					},
-					"response": [
+					"item": [
 						{
-							"id": "8e002527-4ecc-4f82-a49c-9261d2e5d199",
 							"name": "Update Workspace",
-							"originalRequest": {
+							"id": "b3b0ac45-2c62-4e8f-8fc1-74fde5a68e8a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -9714,119 +9684,166 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "153"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"99-aDClWUFuYHB36cTaoMdgQ55fEu8\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 30 May 2024 13:54:28 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "8e002527-4ecc-4f82-a49c-9261d2e5d199",
+									"name": "Update Workspace",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/workspaces/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"workspaces",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "153"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"99-aDClWUFuYHB36cTaoMdgQ55fEu8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 30 May 2024 13:54:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "3bd433dc-2e32-4fb9-ac3a-2955e4e5aaa0"
 				},
 				{
 					"name": "Get Workspace Stats",
-					"id": "f22f7be3-d402-4bc3-916f-f6d5a63d5f17",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/workspaces/stats"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "9a59c985-21b8-4fc8-bca8-2bdbbd1ef2b4",
 							"name": "Get Workspace Stats",
-							"originalRequest": {
+							"id": "f22f7be3-d402-4bc3-916f-f6d5a63d5f17",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/workspaces/stats"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "https://admin.wholistic.work"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "144"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"90-dzb+T+hYjWM4ZA9FvB4HMWI1cP8\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 16 Jun 2024 13:36:02 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "9a59c985-21b8-4fc8-bca8-2bdbbd1ef2b4",
+									"name": "Get Workspace Stats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/workspaces/stats"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "144"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"90-dzb+T+hYjWM4ZA9FvB4HMWI1cP8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jun 2024 13:36:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Workspaces stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"55\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Workspaces stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"55\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
+							]
 						}
-					]
+					],
+					"id": "3e620394-b908-4786-9dde-aebb89b14a75"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "f51d38c7-a772-448d-afb6-a63ac90f9ce3"
 				},
 				{
 					"name": "Delete Workspace",
