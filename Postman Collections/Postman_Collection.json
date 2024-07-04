@@ -2220,7 +2220,7 @@
 							]
 						},
 						{
-							"name": "Get Email Template - Valid ID Copy",
+							"name": "Get Email Template - No ID",
 							"event": [
 								{
 									"listen": "test",
