@@ -2446,7 +2446,37 @@
 							]
 						}
 					],
-					"id": "3dd0e05c-26be-4df8-bc5f-352402fd8b70"
+					"id": "3dd0e05c-26be-4df8-bc5f-352402fd8b70",
+					"auth": {
+						"type": "bearer",
+						"bearer": {
+							"token": "{{adminAccessToken}}"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "83f1fae3-9f19-4d86-9f62-264f9ada42c9",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5b494d84-8f93-4e9c-a4fc-56352265a924",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
 				},
 				{
 					"name": "Get Subscription Plan",
@@ -3265,7 +3295,37 @@
 					"id": "88413dab-1f33-4f6c-b60d-1010dc705b2f"
 				}
 			],
-			"id": "1fd1471c-362a-4f61-94ba-dbb4be64a1a3"
+			"id": "1fd1471c-362a-4f61-94ba-dbb4be64a1a3",
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "{{adminAccessToken}}"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0ee8f7a7-cedb-48ee-ab47-5822b424b9ce",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "eec4c0d6-4647-457d-97ac-4f4f2e153a47",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	],
 	"auth": {
