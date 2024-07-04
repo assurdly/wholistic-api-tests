@@ -1761,19 +1761,17 @@
 											"const response = pm.response.json();\r",
 											"const {message, data} = response;\r",
 											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
-											"     pm.response.to.have.status(200);\r",
+											"pm.test(\"Status code is 401\", function () {\r",
+											"     pm.response.to.have.status(401);\r",
 											" });\r",
 											"pm.test(\"Status code response is 'OK'\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
+											"    pm.response.to.have.status('Unauthorized');\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Response body is correct\", function () {\r",
+											"pm.test(\"Error Response is Valid\", function () {\r",
 											"    pm.expect(pm.response.json()).to.be.an('object')\r",
-											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().data).to.be.an('array')\r",
-											"})\r",
+											"    pm.expect(pm.response.json().message).to.be.eql(\"You must provide an access token to access this resource.\")\r",
+											"});\r",
 											"} catch (errors){\r",
 											"    console.error (errors)\r",
 											"}"
@@ -1788,6 +1786,9 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/email-templates"
