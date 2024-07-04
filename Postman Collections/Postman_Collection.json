@@ -1652,10 +1652,42 @@
 					"id": "a2eea14c-5d12-4fa9-9594-3479ad122a62"
 				},
 				{
-					"name": "List Email Template",
+					"name": "List Email Templates",
 					"item": [
 						{
 							"name": "List Email Templates",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a50a930-b625-4435-b181-ac576b1df691",
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"     pm.response.to.have.status(200);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'OK'\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().data).to.be.an('array')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "fdac8d47-9c0e-41ac-afaa-b25910cbd7ed",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
