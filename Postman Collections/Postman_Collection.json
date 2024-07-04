@@ -1652,72 +1652,73 @@
 					"id": "a2eea14c-5d12-4fa9-9594-3479ad122a62"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "26052bc4-2a80-49e3-8f1d-be389a212696"
-				},
-				{
-					"name": "List Email Templates",
-					"id": "fdac8d47-9c0e-41ac-afaa-b25910cbd7ed",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/email-templates"
-					},
-					"response": [
+					"name": "List Email Template",
+					"item": [
 						{
-							"id": "2e072068-0c84-41e6-96a4-9af992149b44",
 							"name": "List Email Templates",
-							"originalRequest": {
+							"id": "fdac8d47-9c0e-41ac-afaa-b25910cbd7ed",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/email-templates"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1375"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"55f-v/5bOPRNb7RL82olu3uvfPnC61Q\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 02:56:02 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "2e072068-0c84-41e6-96a4-9af992149b44",
+									"name": "List Email Templates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/email-templates"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1375"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"55f-v/5bOPRNb7RL82olu3uvfPnC61Q\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 02:56:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": [\n        {\n            \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n            \"title\": \"Change Password\",\n            \"slug\": \"set-password\",\n            \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n        },\n        {\n            \"id\": \"c7631114-41b5-4235-b645-1c201ea91a12\",\n            \"title\": \"Disabled 2FA\",\n            \"slug\": \"disabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.732Z\"\n        },\n        {\n            \"id\": \"55fca074-4b5a-432d-9eb6-a6aa0bac84d9\",\n            \"title\": \"Enabled 2FA\",\n            \"slug\": \"enabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.482Z\"\n        },\n        {\n            \"id\": \"265ddde3-4180-468d-8937-28c6f3554d63\",\n            \"title\": \"Team Member Invitation\",\n            \"slug\": \"user-invite\",\n            \"createdAt\": \"2024-05-22T09:08:01.213Z\"\n        },\n        {\n            \"id\": \"71aae8e3-3c1d-44f1-baba-897cfbce4a79\",\n            \"title\": \"Password Reset Attempt\",\n            \"slug\": \"reset-password\",\n            \"createdAt\": \"2024-05-22T09:08:00.937Z\"\n        },\n        {\n            \"id\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n            \"title\": \"Password Reset Link\",\n            \"slug\": \"reset-password-request\",\n            \"createdAt\": \"2024-05-22T09:08:00.677Z\"\n        },\n        {\n            \"id\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n            \"title\": \"Login\",\n            \"slug\": \"login-alert\",\n            \"createdAt\": \"2024-05-22T09:08:00.402Z\"\n        },\n        {\n            \"id\": \"01353ceb-e8e6-44db-9d9e-0a16d840ef64\",\n            \"title\": \"Verify Email\",\n            \"slug\": \"verify-email\",\n            \"createdAt\": \"2024-05-22T09:07:59.935Z\"\n        },\n        {\n            \"id\": \"b6e25ad4-5376-4ae9-a846-66bc0c666339\",\n            \"title\": \"Welcome Message\",\n            \"slug\": \"completed-onboarding\",\n            \"createdAt\": \"2024-05-22T09:07:59.662Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 9,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": [\n        {\n            \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n            \"title\": \"Change Password\",\n            \"slug\": \"set-password\",\n            \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n        },\n        {\n            \"id\": \"c7631114-41b5-4235-b645-1c201ea91a12\",\n            \"title\": \"Disabled 2FA\",\n            \"slug\": \"disabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.732Z\"\n        },\n        {\n            \"id\": \"55fca074-4b5a-432d-9eb6-a6aa0bac84d9\",\n            \"title\": \"Enabled 2FA\",\n            \"slug\": \"enabled-2fa\",\n            \"createdAt\": \"2024-05-22T09:08:01.482Z\"\n        },\n        {\n            \"id\": \"265ddde3-4180-468d-8937-28c6f3554d63\",\n            \"title\": \"Team Member Invitation\",\n            \"slug\": \"user-invite\",\n            \"createdAt\": \"2024-05-22T09:08:01.213Z\"\n        },\n        {\n            \"id\": \"71aae8e3-3c1d-44f1-baba-897cfbce4a79\",\n            \"title\": \"Password Reset Attempt\",\n            \"slug\": \"reset-password\",\n            \"createdAt\": \"2024-05-22T09:08:00.937Z\"\n        },\n        {\n            \"id\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n            \"title\": \"Password Reset Link\",\n            \"slug\": \"reset-password-request\",\n            \"createdAt\": \"2024-05-22T09:08:00.677Z\"\n        },\n        {\n            \"id\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n            \"title\": \"Login\",\n            \"slug\": \"login-alert\",\n            \"createdAt\": \"2024-05-22T09:08:00.402Z\"\n        },\n        {\n            \"id\": \"01353ceb-e8e6-44db-9d9e-0a16d840ef64\",\n            \"title\": \"Verify Email\",\n            \"slug\": \"verify-email\",\n            \"createdAt\": \"2024-05-22T09:07:59.935Z\"\n        },\n        {\n            \"id\": \"b6e25ad4-5376-4ae9-a846-66bc0c666339\",\n            \"title\": \"Welcome Message\",\n            \"slug\": \"completed-onboarding\",\n            \"createdAt\": \"2024-05-22T09:07:59.662Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 9,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "26052bc4-2a80-49e3-8f1d-be389a212696"
 				},
 				{
 					"name": "Get Email Template",
