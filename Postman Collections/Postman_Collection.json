@@ -2107,17 +2107,16 @@
 											"try {\r",
 											"    const response = pm.response.json();\r",
 											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 200\", function () {\r",
-											"        pm.response.to.have.status(200)\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"        pm.response.to.have.status(404)\r",
 											"    });\r",
-											"    pm.test(\"Status code response is 'OK'\", function () {\r",
-											"        pm.response.to.have.status('OK')\r",
+											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
+											"        pm.response.to.have.status('Not Found')\r",
 											"    });\r",
-											"    pm.test(\" Response body is valid\", function () {\r",
+											"    pm.test(\"Error Response is Valid\", function () {\r",
 											"        pm.expect(pm.response.json()).to.be.an('object')\r",
-											"        pm.expect(pm.response.json().status).to.be.eql(\"success\")\r",
-											"        pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"        pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"\r",
+											"        pm.expect(pm.response.json().message).to.be.eql(\"Template '1f8c3e8a-657b-40d2-bb1e-9c6017' does not exist\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
 											"    console.error(errors)}"
@@ -2145,9 +2144,8 @@
 									],
 									"variable": [
 										{
-											"id": "b863750f-9fd2-4a03-9383-4527394b0041",
 											"key": "id",
-											"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
+											"value": "1f8c3e8a-657b-40d2-bb1e-9c6017"
 										}
 									]
 								}
@@ -2230,17 +2228,16 @@
 											"try {\r",
 											"    const response = pm.response.json();\r",
 											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 200\", function () {\r",
-											"        pm.response.to.have.status(200)\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"        pm.response.to.have.status(404)\r",
 											"    });\r",
-											"    pm.test(\"Status code response is 'OK'\", function () {\r",
-											"        pm.response.to.have.status('OK')\r",
+											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
+											"        pm.response.to.have.status('Not Found')\r",
 											"    });\r",
-											"    pm.test(\" Response body is valid\", function () {\r",
+											"    pm.test(\"Error Response is Valid\", function () {\r",
 											"        pm.expect(pm.response.json()).to.be.an('object')\r",
-											"        pm.expect(pm.response.json().status).to.be.eql(\"success\")\r",
-											"        pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"        pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"\r",
+											"        pm.expect(pm.response.json().message).to.be.eql(\"Template ':id' does not exist\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
 											"    console.error(errors)}"
@@ -2268,9 +2265,8 @@
 									],
 									"variable": [
 										{
-											"id": "7ae79a4b-80bb-46e7-82b3-b8bc2bbcca49",
 											"key": "id",
-											"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
+											"value": ""
 										}
 									]
 								}
