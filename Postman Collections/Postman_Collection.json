@@ -2566,6 +2566,92 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan created successfully\",\n    \"data\": {\n        \"id\": \"fad79164-bc02-4118-a70a-2f713879c792\",\n        \"name\": \"Premium\",\n        \"description\": \"Premium features!\",\n        \"amount\": 5000,\n        \"currency\": \"NGN\",\n        \"createdAt\": \"2024-06-14T13:40:30.330Z\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Get Subscription Plan - No Auth",
+							"id": "d82ec260-1b74-4f64-9765-3b332d9fe065",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/billings/plans"
+							},
+							"response": [
+								{
+									"id": "6f12385e-fd47-4107-932e-10bf2165fe7c",
+									"name": "Create Subscription Plan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/billings/plans"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "232"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e8-Lkz1mLppmUi/YA28quQdqJSNZr8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 14:40:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan created successfully\",\n    \"data\": {\n        \"id\": \"fad79164-bc02-4118-a70a-2f713879c792\",\n        \"name\": \"Premium\",\n        \"description\": \"Premium features!\",\n        \"amount\": 5000,\n        \"currency\": \"NGN\",\n        \"createdAt\": \"2024-06-14T13:40:30.330Z\"\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "c901d543-45a3-4afe-b0e6-b84828673ecb"
