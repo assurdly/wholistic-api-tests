@@ -794,6 +794,33 @@
 						},
 						{
 							"name": "Get Report Template - Invalid ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7b7de94d-cc1f-4652-b1a5-0468b629fd6a",
+										"exec": [
+											"try {\r",
+											"    const response = pm.response.json();\r",
+											"    const { message, data } = response;\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"        pm.response.to.have.status(404)\r",
+											"    });\r",
+											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
+											"        pm.response.to.have.status('Not Found')\r",
+											"    });\r",
+											"    pm.test(\"Error Response is valid\", function () {\r",
+											"        pm.expect(pm.response.json().message).to.be.eql(\"Template '2f4c8424-eeb7-4e4e-91d0-dee35' does not exist\")\r",
+											"    })\r",
+											"} catch (errors) {\r",
+											"    console.error(errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4f333e50-75d8-47c4-91a8-8cb999fee429",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -812,9 +839,8 @@
 									],
 									"variable": [
 										{
-											"id": "2d5d6473-86a5-4a0c-a455-de6a4bbc43b1",
 											"key": "id",
-											"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+											"value": "2f4c8424-eeb7-4e4e-91d0-dee35"
 										}
 									]
 								}
@@ -887,7 +913,7 @@
 							]
 						},
 						{
-							"name": "Get Report Template Copy",
+							"name": "Get Report Template- No ID",
 							"id": "319f3e7b-02f2-4c41-ad04-33a47a7e1d9b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
