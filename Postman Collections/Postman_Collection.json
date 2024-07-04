@@ -1273,6 +1273,168 @@
 					]
 				},
 				{
+					"name": "Create Email Template Copy",
+					"id": "7970fb81-170f-430f-a0cd-061b745edb4f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/email-templates"
+					},
+					"response": [
+						{
+							"id": "9069f8da-12c1-4fe5-9225-8a5a794fbe4c",
+							"name": "Create Email Template",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/email-templates"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "226"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e2-qSrrPGEuYglaC7xCFll2TFs5T5c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 03:02:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created email template\",\n    \"data\": {\n        \"id\": \"6fd16564-32a2-4225-aa37-81903878d8b2\",\n        \"title\": \"Sample Template\",\n        \"slug\": \"sample-template\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:02:52.920Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Email Template Copy",
+					"id": "e8101ab2-501e-4358-8960-195c5eacdc0f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/email-templates"
+					},
+					"response": [
+						{
+							"id": "4e613ce2-a457-43a4-b910-cac0b22bbda5",
+							"name": "Create Email Template",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/email-templates"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "226"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e2-qSrrPGEuYglaC7xCFll2TFs5T5c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 03:02:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created email template\",\n    \"data\": {\n        \"id\": \"6fd16564-32a2-4225-aa37-81903878d8b2\",\n        \"title\": \"Sample Template\",\n        \"slug\": \"sample-template\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:02:52.920Z\"\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "List Email Templates",
 					"id": "fdac8d47-9c0e-41ac-afaa-b25910cbd7ed",
 					"protocolProfileBehavior": {
