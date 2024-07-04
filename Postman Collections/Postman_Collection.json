@@ -1676,7 +1676,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6387c2c1-510a-46cb-8eb8-7610ae60bbe4",
+				"id": "e5b9cf02-12c7-4f02-8389-0d5fbc5dd69e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1690,7 +1690,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "93121927-9881-4e7d-8c90-b4c409ae0cff",
+				"id": "f31821e1-5af9-4d1f-9543-5ff730ce039f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1701,9 +1701,9 @@
 	],
 	"variable": [
 		{
-			"key": "{{adminaccessToken}}",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmOGFmZGY1LTFiNmEtNDg3Yi05ODU1LTIxZTdmOWI4MTIxZSIsImNvdW50IjowLCJpYXQiOjE3MjAwODI4MDAsImV4cCI6MTcyMDE2OTIwMH0.4aJiBsjgKouq6bAkb3xFeP-dHha4QKI5goZaBuDfJXQ",
-			"type": "string"
+			"value": "",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
