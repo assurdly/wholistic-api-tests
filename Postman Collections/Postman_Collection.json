@@ -2569,16 +2569,40 @@
 						},
 						{
 							"name": "Get Subscription Plan - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "adb5849c-8589-4b2e-b04a-3d33e20e5f6e",
+										"exec": [
+											"try {\r",
+											"    const response = pm.response.json();\r",
+											"    const { message, data } = response;\r",
+											"    pm.test(\"Status code is 401\", function () {\r",
+											"        pm.response.to.have.status(401)\r",
+											"    });\r",
+											"    pm.test(\"Status code response is 'Unauthorized'\", function () {\r",
+											"        pm.response.to.have.status('Unauthorized')\r",
+											"    });\r",
+											"    pm.test(\"Error Response is valid\", function () {\r",
+											"        pm.expect(pm.response.json().message).to.be.eql(\"You must provide an access token to access this resource.\")\r",
+											"    \r",
+											"    })\r",
+											"} catch (errors) {\r",
+											"    console.error(errors)}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "d82ec260-1b74-4f64-9765-3b332d9fe065",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{adminAccessToken}}"
-									}
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [],
