@@ -1423,6 +1423,37 @@
 						},
 						{
 							"name": "Create Email Template - Empty required fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cc9bebc5-44b0-4363-a367-2ab5f28c04fd",
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"     pm.response.to.have.status(400);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error Response is Valid\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"     pm.expect(pm.response.json().message).to.be.eql(\"Validation Error.\")\r",
+											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "7970fb81-170f-430f-a0cd-061b745edb4f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1432,7 +1463,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+									"raw": "{\n    \"title\": \"\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1503,7 +1534,7 @@
 							]
 						},
 						{
-							"name": "Create Report Template Copy",
+							"name": "Create Report Template - No Auth",
 							"event": [
 								{
 									"listen": "test",
