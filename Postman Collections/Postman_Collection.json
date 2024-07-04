@@ -2940,11 +2940,17 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
 								"method": "PATCH",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\" //monthly|yearly\n}",
+									"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\" //monthly|yearly\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2963,9 +2969,8 @@
 									],
 									"variable": [
 										{
-											"id": "eac625b0-0165-466b-9644-3103798e18ea",
 											"key": "id",
-											"value": "fad79164-bc02-4118-a70a-2f713879c792"
+											"value": "2d75b05e-499a-4e5a-8b81-52d71e9a7ef8"
 										}
 									]
 								}
