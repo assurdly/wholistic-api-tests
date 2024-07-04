@@ -1545,18 +1545,17 @@
 											"const response = pm.response.json();\r",
 											"const {message, data} = response;\r",
 											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"     pm.response.to.have.status(201);\r",
+											"pm.test(\"Status code is 401\", function () {\r",
+											"     pm.response.to.have.status(401);\r",
 											" });\r",
-											"pm.test(\"Status code response is 'Created'\", function () {\r",
-											"    pm.response.to.have.status('Created');\r",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {\r",
+											"    pm.response.to.have.status('Unauthorized');\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response body is correct\", function () {\r",
 											"    pm.expect(pm.response.json()).to.be.an('object')\r",
-											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().message).to.be.eql('You must provide an access token to access this resource.')\r",
 											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
 											"})\r",
 											"} catch (errors){\r",
 											"    console.error (errors)\r",
@@ -1573,10 +1572,7 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{adminAccessToken}}"
-									}
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [],
@@ -1654,6 +1650,11 @@
 						}
 					],
 					"id": "a2eea14c-5d12-4fa9-9594-3479ad122a62"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "26052bc4-2a80-49e3-8f1d-be389a212696"
 				},
 				{
 					"name": "List Email Templates",
