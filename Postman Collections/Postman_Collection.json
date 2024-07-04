@@ -1849,6 +1849,11 @@
 					"id": "26052bc4-2a80-49e3-8f1d-be389a212696"
 				},
 				{
+					"name": "New Folder",
+					"item": [],
+					"id": "e44bf62b-7e31-408d-bd87-d18e93d8675b"
+				},
+				{
 					"name": "Get Email Template",
 					"id": "49b0f86f-caa7-45c5-8d31-d2e3815126dd",
 					"protocolProfileBehavior": {
