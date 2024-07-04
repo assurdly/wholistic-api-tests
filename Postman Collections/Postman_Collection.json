@@ -1503,42 +1503,80 @@
 							]
 						},
 						{
-							"name": "Create Email Template Copy",
-							"id": "e8101ab2-501e-4358-8960-195c5eacdc0f",
+							"name": "Create Report Template Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "378473cb-7043-4761-a4b6-b89673dbcab6",
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"     pm.response.to.have.status(201);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'Created'\", function () {\r",
+											"    pm.response.to.have.status('Created');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "046ac66e-de26-4982-9c41-de99408fd245",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+									"raw": "{\n    \"title\": \"Month 3 Report Template\",\n    \"slug\": \"\",\n    \"body\": \"<>Wholistic Month 1 Report</>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseUrl}}/email-templates"
+								"url": "{{baseUrl}}/report-templates"
 							},
 							"response": [
 								{
-									"id": "4e613ce2-a457-43a4-b910-cac0b22bbda5",
-									"name": "Create Email Template",
+									"id": "a3217e60-f973-44a0-8bb4-5f05002f7138",
+									"name": "Create Report Template",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"title\": \"Sample Template\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<></>\"\n}",
+											"raw": "{\n    \"title\": \"Daily Report\",\n    \"slug\": \"daily-report\",\n    \"body\": \"<></>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/email-templates"
+										"url": "{{baseUrl}}/report-templates"
 									},
 									"status": "Created",
 									"code": 201,
@@ -1558,15 +1596,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "226"
+											"value": "221"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"e2-qSrrPGEuYglaC7xCFll2TFs5T5c\""
+											"value": "W/\"dd-YxVvkalaIRhHupBIJPo/7B9xFYo\""
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 28 May 2024 03:02:53 GMT"
+											"value": "Tue, 28 May 2024 03:01:43 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1579,7 +1617,7 @@
 									],
 									"cookie": [],
 									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created email template\",\n    \"data\": {\n        \"id\": \"6fd16564-32a2-4225-aa37-81903878d8b2\",\n        \"title\": \"Sample Template\",\n        \"slug\": \"sample-template\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:02:52.920Z\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
 								}
 							]
 						}
