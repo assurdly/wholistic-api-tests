@@ -9841,38 +9841,39 @@
 					"id": "3e620394-b908-4786-9dde-aebb89b14a75"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "f51d38c7-a772-448d-afb6-a63ac90f9ce3"
-				},
-				{
 					"name": "Delete Workspace",
-					"id": "c99fd207-4559-4118-b83c-67689080cc9e",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/workspaces/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"workspaces",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "f3ef1077-de9e-4dce-8592-c727d2609960",
-									"key": "id",
-									"value": ""
+					"item": [
+						{
+							"name": "Delete Workspace",
+							"id": "c99fd207-4559-4118-b83c-67689080cc9e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/workspaces/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "f3ef1077-de9e-4dce-8592-c727d2609960",
+											"key": "id",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"id": "f51d38c7-a772-448d-afb6-a63ac90f9ce3"
 				}
 			],
 			"id": "5a205488-15ab-4fab-aacf-2260a6e6408a"
