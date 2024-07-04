@@ -490,6 +490,38 @@
 				},
 				{
 					"name": "List Report Templates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "13050b0b-b2e1-41cb-9e7a-45a0d41e297a",
+								"exec": [
+									"try{\r",
+									"const response = pm.response.json();\r",
+									"const {message, data} = response;\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									" });\r",
+									"pm.test(\"Status code response is 'OK'\", function () {\r",
+									"    pm.response.to.have.status('OK');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is correct\", function () {\r",
+									"    pm.expect(pm.response.json()).to.be.an('object')\r",
+									"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+									"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+									"    pm.expect(pm.response.json().data).to.be.an('array')\r",
+									"})\r",
+									"} catch (errors){\r",
+									"    console.error (errors)\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "964f3b6f-97b5-4d01-8200-236ff6e4090a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -508,6 +540,107 @@
 					"response": [
 						{
 							"id": "ef313748-cc3c-4045-b12f-53f208ad9d49",
+							"name": "List Report Templates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/report-templates"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"126-wqWlGLU2pzYNfabZbKsJYARJCY0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 May 2024 03:01:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": [\n        {\n            \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n            \"title\": \"Daily Report\",\n            \"slug\": \"daily-report\",\n            \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Report Templates - No Auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "13050b0b-b2e1-41cb-9e7a-45a0d41e297a",
+								"exec": [
+									"try{\r",
+									"const response = pm.response.json();\r",
+									"const {message, data} = response;\r",
+									"\r",
+									"pm.test(\"Status code is 401\", function () {\r",
+									"     pm.response.to.have.status(401);\r",
+									" });\r",
+									"pm.test(\"Status code response is 'OK'\", function () {\r",
+									"    pm.response.to.have.status('Unauthorised');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Error Response is Valid\", function () {\r",
+									"    pm.expect(pm.response.json()).to.be.an('object')\r",
+									"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+									"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+									"    pm.expect(pm.response.json().data).to.be.an('array')\r",
+									"})\r",
+									"} catch (errors){\r",
+									"    console.error (errors)\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "bf1eaccd-2da8-4f43-8a0a-c49e5885d283",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "digest",
+							"digest": {
+								"algorithm": "MD5"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/report-templates"
+					},
+					"response": [
+						{
+							"id": "6bad3583-d677-4eae-b88d-352ec370ce90",
 							"name": "List Report Templates",
 							"originalRequest": {
 								"method": "GET",
