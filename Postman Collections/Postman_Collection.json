@@ -1305,7 +1305,7 @@
 					]
 				},
 				{
-					"name": "Create Email Template Copy",
+					"name": "Create Email Template - Empty required fields",
 					"id": "7970fb81-170f-430f-a0cd-061b745edb4f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
