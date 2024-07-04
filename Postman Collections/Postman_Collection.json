@@ -1849,42 +1849,15 @@
 					"id": "26052bc4-2a80-49e3-8f1d-be389a212696"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "e44bf62b-7e31-408d-bd87-d18e93d8675b"
-				},
-				{
 					"name": "Get Email Template",
-					"id": "49b0f86f-caa7-45c5-8d31-d2e3815126dd",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/email-templates/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"email-templates",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "288b9161-43be-4800-a2f8-480c81295327",
-									"key": "id",
-									"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
-								}
-							]
-						}
-					},
-					"response": [
+					"item": [
 						{
-							"id": "bc1fd0ec-4dd7-4dec-b565-0f638d3559cc",
-							"name": "Get Email Template",
-							"originalRequest": {
+							"name": "Get Email Template - Valid ID",
+							"id": "49b0f86f-caa7-45c5-8d31-d2e3815126dd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -1898,54 +1871,82 @@
 									],
 									"variable": [
 										{
+											"id": "288b9161-43be-4800-a2f8-480c81295327",
 											"key": "id",
 											"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "4366"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"110e-hgL0ngamJ7ainuHEb1OxqLpZFp8\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 May 2024 02:58:32 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "bc1fd0ec-4dd7-4dec-b565-0f638d3559cc",
+									"name": "Get Email Template",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/email-templates/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"email-templates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "4366"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"110e-hgL0ngamJ7ainuHEb1OxqLpZFp8\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 02:58:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": {\n        \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n        \"title\": \"Change Password\",\n        \"slug\": \"set-password\",\n        \"body\": \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n\\n<head>\\n  <meta charset=\\\"UTF-8\\\">\\n  <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\">\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n  <title>Your Password Has Been Changed</title>\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.googleapis.com\\\">\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.gstatic.com\\\" crossorigin>\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap\\\"\\n    rel=\\\"stylesheet\\\">\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\\\" rel=\\\"stylesheet\\\">\\n  <style>\\n    html,\\n    body {\\n      margin: 0;\\n      padding: 0;\\n      font-family: 'Outfit', sans-serif;\\n    }\\n\\n    table {\\n      border: 0;\\n      border-spacing: 0;\\n      border-collapse: collapse\\n    }\\n  </style>\\n</head>\\n\\n<body width=\\\"100%\\\" style=\\\"width: 100%; background: #FAFAFA\\\" bgcolor=\\\"#FAFAFA\\\">\\n  <center style=\\\"background: #FAFAFA;\\\" bgcolor=\\\"#FAFAFA\\\">\\n    <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n      style=\\\"width: 100%; max-width: 640px;\\\">\\n      <tr>\\n        <!-- email container -->\\n        <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px;\\\">\\n          <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n            <tr>\\n              <!-- White bg -->\\n              <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px; background: #FFFFFF;\\\"\\n                bgcolor=\\\"#FFFFFF\\\">\\n                <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n                  style=\\\"width: 85%; max-width: 560px;\\\">\\n                  <!-- Logo: BEGIN -->\\n                  <!-- Logo: END -->\\n                  <!-- Main: BEGIN -->\\n\\n                  <tr>\\n                    <td\\n                      style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; font-size: 16px; line-height: 24px; color: #262626;\\\">\\n                      <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                        <!-- Header: BEGIN -->\\n                        <tr>\\n                          <td\\n                            style=\\\"font-weight: 500; font-family: 'Outfit', sans-serif; font-size: 48px; line-height: 56px; letter-spacing: -0.05em; color: #000000;\\\">\\n                            Your Password Has Been Changed\\n                          </td>\\n                        </tr>\\n                        <!-- Header: END -->\\n                        <!-- Body Text: BEGIN -->\\n                        <tr>\\n                          <td style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; padding-top: 56px;\\\">\\n                            <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Hi {{firstName}}</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Your password was changed successfully.</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">If you did not make this change, please contact our customer support on {{supportNumber}} or send an email to {{supportEmail}}</td>\\n                              </tr>\\n\\n                              <!-- Footer: END -->\\n                            </table>\\n                          </td>\\n                        </tr>\\n                        <!-- Main: END -->\\n                      </table>\\n                    </td>\\n                    <!-- White bg -->\\n                  </tr>\\n                </table>\\n              </td>\\n              <!-- email container -->\\n            </tr>\\n          </table>\\n  </center>\\n</body>\\n\\n</html>\",\n        \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched email template\",\n    \"data\": {\n        \"id\": \"1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4\",\n        \"title\": \"Change Password\",\n        \"slug\": \"set-password\",\n        \"body\": \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n\\n<head>\\n  <meta charset=\\\"UTF-8\\\">\\n  <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\">\\n  <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n  <title>Your Password Has Been Changed</title>\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.googleapis.com\\\">\\n  <link rel=\\\"preconnect\\\" href=\\\"https://fonts.gstatic.com\\\" crossorigin>\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap\\\"\\n    rel=\\\"stylesheet\\\">\\n  <link href=\\\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\\\" rel=\\\"stylesheet\\\">\\n  <style>\\n    html,\\n    body {\\n      margin: 0;\\n      padding: 0;\\n      font-family: 'Outfit', sans-serif;\\n    }\\n\\n    table {\\n      border: 0;\\n      border-spacing: 0;\\n      border-collapse: collapse\\n    }\\n  </style>\\n</head>\\n\\n<body width=\\\"100%\\\" style=\\\"width: 100%; background: #FAFAFA\\\" bgcolor=\\\"#FAFAFA\\\">\\n  <center style=\\\"background: #FAFAFA;\\\" bgcolor=\\\"#FAFAFA\\\">\\n    <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n      style=\\\"width: 100%; max-width: 640px;\\\">\\n      <tr>\\n        <!-- email container -->\\n        <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px;\\\">\\n          <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n            <tr>\\n              <!-- White bg -->\\n              <td class=\\\"email-container\\\" style=\\\"padding-top: 40px; padding-bottom: 40px; background: #FFFFFF;\\\"\\n                bgcolor=\\\"#FFFFFF\\\">\\n                <table align=\\\"center\\\" border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\"\\n                  style=\\\"width: 85%; max-width: 560px;\\\">\\n                  <!-- Logo: BEGIN -->\\n                  <!-- Logo: END -->\\n                  <!-- Main: BEGIN -->\\n\\n                  <tr>\\n                    <td\\n                      style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; font-size: 16px; line-height: 24px; color: #262626;\\\">\\n                      <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                        <!-- Header: BEGIN -->\\n                        <tr>\\n                          <td\\n                            style=\\\"font-weight: 500; font-family: 'Outfit', sans-serif; font-size: 48px; line-height: 56px; letter-spacing: -0.05em; color: #000000;\\\">\\n                            Your Password Has Been Changed\\n                          </td>\\n                        </tr>\\n                        <!-- Header: END -->\\n                        <!-- Body Text: BEGIN -->\\n                        <tr>\\n                          <td style=\\\"font-weight: 400; font-family: 'Outfit', sans-serif; padding-top: 56px;\\\">\\n                            <table border=\\\"0\\\" cellpadding=\\\"0\\\" cellspacing=\\\"0\\\" role=\\\"presentation\\\" style=\\\"width: 100%;\\\">\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Hi {{firstName}}</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">Your password was changed successfully.</td>\\n                              </tr>\\n                              <tr>\\n                                <td style=\\\"padding-top: 14px\\\">If you did not make this change, please contact our customer support on {{supportNumber}} or send an email to {{supportEmail}}</td>\\n                              </tr>\\n\\n                              <!-- Footer: END -->\\n                            </table>\\n                          </td>\\n                        </tr>\\n                        <!-- Main: END -->\\n                      </table>\\n                    </td>\\n                    <!-- White bg -->\\n                  </tr>\\n                </table>\\n              </td>\\n              <!-- email container -->\\n            </tr>\\n          </table>\\n  </center>\\n</body>\\n\\n</html>\",\n        \"createdAt\": \"2024-05-22T09:08:01.982Z\"\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "e44bf62b-7e31-408d-bd87-d18e93d8675b"
 				}
 			],
 			"id": "04722b6c-2118-48a8-ae7f-6d8890d2226b"
