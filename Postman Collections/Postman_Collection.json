@@ -793,6 +793,100 @@
 							]
 						},
 						{
+							"name": "Get Report Template - No Auth",
+							"id": "cfec4ab7-1d66-49ca-9120-5c771b03c63a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report-templates/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report-templates",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "2d5d6473-86a5-4a0c-a455-de6a4bbc43b1",
+											"key": "id",
+											"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "aac4f673-b06f-4925-8464-76a25fa6f699",
+									"name": "Get Report Template",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/report-templates/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"report-templates",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "221"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"dd-8CgraVNpE59VlnO/+sCQsPlZ//0\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 May 2024 03:02:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched report template\",\n    \"data\": {\n        \"id\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n        \"title\": \"Daily Report\",\n        \"slug\": \"daily-report\",\n        \"body\": \"<></>\",\n        \"createdAt\": \"2024-05-28T02:01:43.594Z\"\n    }\n}"
+								}
+							]
+						},
+						{
 							"name": "Get Report Template - Invalid ID",
 							"event": [
 								{
@@ -914,6 +1008,32 @@
 						},
 						{
 							"name": "Get Report Template- No ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2b9007ab-4e5f-44f5-ad1d-8ab03fd4a4e8",
+										"exec": [
+											"try {\r",
+											"    const response = pm.response.json();\r",
+											"    const { message, data } = response;\r",
+											"    pm.test(\"Status code is 404\", function () {\r",
+											"        pm.response.to.have.status(404)\r",
+											"    });\r",
+											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
+											"        pm.response.to.have.status('Not Found')\r",
+											"    });\r",
+											"    pm.test(\"Error Response is valid\", function () {\r",
+											"        pm.expect(pm.response.json().message).to.be.eql(\"Template ':id' does not exist\")\r",
+											"    })\r",
+											"} catch (errors) {\r",
+											"    console.error(errors)}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "319f3e7b-02f2-4c41-ad04-33a47a7e1d9b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -932,9 +1052,8 @@
 									],
 									"variable": [
 										{
-											"id": "2d5d6473-86a5-4a0c-a455-de6a4bbc43b1",
 											"key": "id",
-											"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+											"value": ""
 										}
 									]
 								}
