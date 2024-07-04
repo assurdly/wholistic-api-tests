@@ -253,6 +253,38 @@
 			"item": [
 				{
 					"name": "Create Report Template",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "378473cb-7043-4761-a4b6-b89673dbcab6",
+								"exec": [
+									"try{\r",
+									"const response = pm.response.json();\r",
+									"const {message, data} = response;\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"     pm.response.to.have.status(201);\r",
+									" });\r",
+									"pm.test(\"Status code response is 'Created'\", function () {\r",
+									"    pm.response.to.have.status('Created');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is correct\", function () {\r",
+									"    pm.expect(pm.response.json()).to.be.an('object')\r",
+									"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+									"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+									"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+									"})\r",
+									"} catch (errors){\r",
+									"    console.error (errors)\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "fac70eae-6f9f-4f0c-b678-eeb6da1758fd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -268,7 +300,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"\",\n    \"slug\": \"\",\n    \"body\": \"<></>\"\n}",
+							"raw": "{\n    \"title\": \"Month 3 Report Template\",\n    \"slug\": \"\",\n    \"body\": \"<>Wholistic Month 1 Report</>\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
