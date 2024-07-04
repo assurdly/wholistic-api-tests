@@ -371,7 +371,38 @@
 					]
 				},
 				{
-					"name": "Create Report Template - Missing rqeuired fields",
+					"name": "Create Report Template - Empty required fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d0ac4f5c-46ec-4f12-842e-1c77a8dbf9d2",
+								"exec": [
+									"try{\r",
+									"const response = pm.response.json();\r",
+									"const {message, data} = response;\r",
+									"\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"     pm.response.to.have.status(400);\r",
+									" });\r",
+									"pm.test(\"Status code response is 'Bad Request'\", function () {\r",
+									"    pm.response.to.have.status('Bad Request');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body is correct\", function () {\r",
+									"    pm.expect(pm.response.json()).to.be.an('object')\r",
+									"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+									"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+									"})\r",
+									"} catch (errors){\r",
+									"    console.error (errors)\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "814aea81-740d-4ff6-9caa-a3a3cc852daf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -458,7 +489,7 @@
 					]
 				},
 				{
-					"name": "Create Report Template Copy 2",
+					"name": "Create Report Template -",
 					"id": "6c672eb7-a100-49dd-ae66-0d128537979e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
