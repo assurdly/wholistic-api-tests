@@ -2685,6 +2685,38 @@
 					"item": [
 						{
 							"name": "List Features",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "67204542-d4f6-45be-a846-8b69d3855681",
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"     pm.response.to.have.status(200);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'OK'\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().data).to.be.an('array')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "86211d36-8a59-4a9b-bc4d-09fd59e64f93",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2698,11 +2730,146 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}/billings/features"
+								"url": {
+									"raw": "{{baseUrl}}/billings/features",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"features"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"description": " ",
+											"disabled": true
+										}
+									]
+								}
 							},
 							"response": [
 								{
 									"id": "ff0d72c1-649e-4434-805f-c7271d968e91",
+									"name": "List Features",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/billings/features"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "993"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e1-3FYP6BXEWH8j8XdAobei0Z4VoDc\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 14:35:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Features fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"275387e5-6b01-465d-bf6d-e0ab398c0583\",\n            \"name\": \"Report\",\n            \"slug\": \"report\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"2d75b05e-499a-4e5a-8b81-52d71e9a7ef8\",\n            \"name\": \"Create project\",\n            \"slug\": \"create-project\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"9b607e93-fae4-454a-8a03-96aadd638f51\",\n            \"name\": \"Invite Team Members\",\n            \"slug\": \"invite-team-members\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"a5536323-b787-4c2c-be8c-38d6bfe05294\",\n            \"name\": \"Integrate applications\",\n            \"slug\": \"integrate-applications\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"c6e95ac1-0042-468e-abe9-37e139f973c3\",\n            \"name\": \"Schedule report\",\n            \"slug\": \"schedule-report\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        },\n        {\n            \"id\": \"eab74561-2fec-4d8f-8043-abc9fe465ff5\",\n            \"name\": \"Create client\",\n            \"slug\": \"create-client\",\n            \"description\": null,\n            \"createdAt\": \"2024-06-14T13:34:29.435Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "List Features - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "67204542-d4f6-45be-a846-8b69d3855681",
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 401\", function () {\r",
+											"     pm.response.to.have.status(401);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'Unauthorized'\", function () {\r",
+											"    pm.response.to.have.status('Unauthorized');\r",
+											"});\r",
+											"pm.test(\"Error response is Valid\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.be.eql(\"You must provide an access token to access this resource.\");\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "74df0953-6613-4acf-804a-f9d0d6d8d28f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/features",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"features"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "db51929d-9098-4fbe-a258-492331610891",
 									"name": "List Features",
 									"originalRequest": {
 										"method": "GET",
