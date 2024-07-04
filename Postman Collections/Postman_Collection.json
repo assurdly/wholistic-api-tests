@@ -1666,11 +1666,17 @@
 			"id": "1fd1471c-362a-4f61-94ba-dbb4be64a1a3"
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{adminAccessToken}}"
+		}
+	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1fb63712-0890-470e-bac5-1ad20b8fb81a",
+				"id": "6387c2c1-510a-46cb-8eb8-7610ae60bbe4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1684,13 +1690,20 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7678748f-0ec6-45c7-a640-b2210b367828",
+				"id": "93121927-9881-4e7d-8c90-b4c409ae0cff",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "{{adminaccessToken}}",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmOGFmZGY1LTFiNmEtNDg3Yi05ODU1LTIxZTdmOWI4MTIxZSIsImNvdW50IjowLCJpYXQiOjE3MjAwODI4MDAsImV4cCI6MTcyMDE2OTIwMH0.4aJiBsjgKouq6bAkb3xFeP-dHha4QKI5goZaBuDfJXQ",
+			"type": "string"
 		}
 	]
 }
