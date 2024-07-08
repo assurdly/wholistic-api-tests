@@ -1,0 +1,18 @@
+{
+    "name": "",
+    "description": "",
+    "serviceType": "",
+    "startDate": "",
+    "estimatedDuration": "",
+    "workspaceId": "",
+    "client": {
+        "name": "",
+        "email": "",
+        "contactName": "",
+        "contactEmail": "",
+        "contactPhone": "",
+        "contactName2": "",
+        "contactEmail2": "",
+        "contactPhone2":""
+    }
+}
