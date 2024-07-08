@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created role","data":{"id":"c6054f67-a41c-4ead-854f-16db94a93c94","name":"Hazel Dietrich","slug":"hazel-dietrich","description":"","status":"active","createdAt":"2024-07-08T05:43:08.074Z"}}

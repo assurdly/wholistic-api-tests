@@ -1,0 +1,10 @@
+{
+    "name": "Yundt, Ryan and Auer",
+    "email": "Alfreda@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Bergnaum@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Lucile",
+    "contactEmail2": "Kaycee.Corkery20@yahoo.com",
+    "contactPhone2": "+2349055755673"
+}
