@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created role","data":{"id":"4764e301-d550-4519-a430-be7a52193408","name":"Reginald Hagenes","slug":"reginald-hagenes","description":"","status":"active","createdAt":"2024-07-08T05:55:56.290Z"}}

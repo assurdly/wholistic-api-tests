@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully sent user invite","data":{"id":"5e5dd20a-ce68-4f11-b023-683bf401dbce","email":"brain@yopmail.com","twofaEnabled":false,"status":"active","emailVerified":true,"createdAt":"2024-06-19T11:49:05.266Z"}}
