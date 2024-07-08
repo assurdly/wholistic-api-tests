@@ -1,0 +1,11 @@
+{
+    "origin": "https://berkshire.wholistic.work",
+    "Authorization": "Bearer {{accessToken}}",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "9af69a31-3dd8-4d37-8c3f-a1cf0e4db3ef",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

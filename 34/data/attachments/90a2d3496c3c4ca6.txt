@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully fetched report template","data":{"id":"0370bc61-98a3-450c-9a90-f14b6cdbd4c3","title":"Month 3 Report Template","slug":"month-3-report-template","body":"<>Wholistic Month 1 Report</>","createdAt":"2024-07-04T12:16:20.808Z"}}

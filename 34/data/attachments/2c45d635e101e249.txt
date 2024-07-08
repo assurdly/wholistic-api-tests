@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created role","data":{"id":"e5b5d100-4a32-416a-811f-12d1e0a474ef","name":"Ella Johns","slug":"ella-johns","description":"","status":"1234#@@","createdAt":"2024-07-08T06:01:10.426Z"}}
