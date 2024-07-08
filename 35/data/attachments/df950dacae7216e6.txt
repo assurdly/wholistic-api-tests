@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created role","data":{"id":"66651b1a-aabf-42c9-8446-df21316a182e","name":"Aubrey Roberts III","slug":"aubrey-roberts-iii","description":"","status":"active","createdAt":"2024-07-08T06:19:19.940Z"}}

@@ -1,0 +1,10 @@
+{
+    "name": "Rosenbaum - Roob",
+    "email": "Barbara@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Thiel@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Seamus",
+    "contactEmail2": "Adolfo.Effertz@gmail.com",
+    "contactPhone2": "+2349055755673"
+}

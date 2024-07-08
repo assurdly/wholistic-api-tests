@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully fetched role","data":[{"id":"0612275d-caf2-477b-a408-cafe98c12a21","name":"delete team member","slug":"delete-team-member","description":"","createdAt":"2024-04-28T23:43:53.224Z"},{"id":"110f06f4-995c-42ac-a3ef-3766741c1e41","name":"change password","slug":"change-password","description":"","createdAt":"2024-04-28T23:43:53.224Z"}]}
