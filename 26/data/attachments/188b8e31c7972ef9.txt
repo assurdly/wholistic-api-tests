@@ -1,0 +1,9 @@
+pm.request.headers.add({
+    key: "x-workspace-id",
+    value: "0dc706da-90d0-4709-8024-ad61227602e7"
+})
+
+pm.request.headers.add({
+  key: "origin",
+  value: "https://" + "azeez.wholistic.work"
+});
