@@ -1,0 +1,4 @@
+{
+    "purpose": "Testing",
+    "requireTwoFA": false
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Langosh - Cassin",
+    "email": "Brenden@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Feest@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Amari",
+    "contactEmail2": "Danial_Rogahn27@yahoo.com",
+    "contactPhone2": "+2349055755673"
+}
