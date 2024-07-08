@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully updated client","data":{"email":"Newton@mailinator.com","name":"Murray - Kirlin","contactName":"Deji","contactPhone":"+2348012345678","contactEmail":"Vandervort@mailinator.com","contactName2":"Tatum","contactPhone2":"+2349055755673","contactEmail2":"Hayden_Bayer@yahoo.com"}}

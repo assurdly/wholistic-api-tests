@@ -1,0 +1,1 @@
+{"status":"success","message":"Successful","data":[{"id":"b91809a6-56a4-4623-97c4-7115bc172cfe","title":null,"status":"declined","body":null,"startDate":null,"endDate":null,"reviewerUserId":"bbf0d50f-a62a-4020-9702-a7bb960c4cfe","reportTemplateId":"2f4c8424-eeb7-4e4e-91d0-dee3553e097a"}],"meta":{"totalNumberOfRecords":1,"totalNumberOfPages":1,"pageNumber":1,"pageSize":20}}
