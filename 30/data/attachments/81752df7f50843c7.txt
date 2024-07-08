@@ -1,5 +1,0 @@
-
-event: message
-id: 1
-data: {"senderId":"assistant","recipientId":"86766059-163e-4474-abad-b6624579f743","sessionId":"1234567890","messageId":"chatcmpl-9ibe1U6f5Eb47Q5I53jHyGDrHsHvy","message":"I don't have the information needed to summarize notification templates."}
-

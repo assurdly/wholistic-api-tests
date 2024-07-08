@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully fetched role","data":{"id":"3aa6eeff-9bdf-4788-aec8-2df01a82f98a","name":"Otis Treutel","slug":"otis-treutel","description":"","status":"1234#@@","createdAt":"2024-07-08T05:55:56.368Z"}}
