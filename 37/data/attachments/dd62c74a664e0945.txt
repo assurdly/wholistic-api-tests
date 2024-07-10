@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created role","data":{"id":"5c6dcd6a-17cf-4f0a-9046-a5cd4b816041","name":"Dixie Crooks","slug":"dixie-crooks","description":"","status":"active","createdAt":"2024-07-10T18:35:48.553Z"}}

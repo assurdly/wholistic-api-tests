@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully updated role","data":{"id":"ec21efc2-2620-4518-8d0a-a2dd39dff069","name":"Nicole Rosenbaum","slug":"nicole-rosenbaum","description":"Member","status":"inactive","createdAt":"2024-06-30T12:32:01.582Z"}}

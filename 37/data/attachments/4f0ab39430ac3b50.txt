@@ -1,0 +1,10 @@
+{
+    "name": "Huels LLC",
+    "email": "Citlalli@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Hahn@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Kevon",
+    "contactEmail2": "Rocio99@hotmail.com",
+    "contactPhone2": "+2349055755673"
+}
