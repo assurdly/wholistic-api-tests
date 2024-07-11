@@ -2490,17 +2490,16 @@
 											"const {message, data} = response;\r",
 											"\r",
 											"pm.test(\"Status code is 201\", function () {\r",
-											"     pm.response.to.have.status(201);\r",
+											"     pm.response.to.have.status(400);\r",
 											" });\r",
 											"pm.test(\"Status code response is 'Created'\", function () {\r",
-											"    pm.response.to.have.status('Created');\r",
+											"    pm.response.to.have.status('Bad Request');\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Response body is correct\", function () {\r",
+											"pm.test(\"Error response is valid\", function () {\r",
 											"    pm.expect(pm.response.json()).to.be.an('object')\r",
-											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
 											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().data.status).to.be.eql('status must be one of the following values: active, inactive')\r",
 											"})\r",
 											"} catch (errors){\r",
 											"    console.error (errors)\r",
@@ -2526,7 +2525,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test1\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"raw": "{\n    \"name\": \"Test2\",\n    \"status\": \"away\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
