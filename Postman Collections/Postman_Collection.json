@@ -2476,6 +2476,133 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan created successfully\",\n    \"data\": {\n        \"id\": \"fad79164-bc02-4118-a70a-2f713879c792\",\n        \"name\": \"Premium\",\n        \"description\": \"Premium features!\",\n        \"amount\": 5000,\n        \"currency\": \"NGN\",\n        \"createdAt\": \"2024-06-14T13:40:30.330Z\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Create Subscription Plan -Wrong Status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "eb762db0-ac45-40d6-886b-06dab5d92131",
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"     pm.response.to.have.status(201);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'Created'\", function () {\r",
+											"    pm.response.to.have.status('Created');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "94d3b793-8be4-4ea0-8911-546708d89df2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test1\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/billings/plans"
+							},
+							"response": [
+								{
+									"id": "abd75dac-cff4-4df4-a368-e18c23c30c27",
+									"name": "Create Subscription Plan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/billings/plans"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "232"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e8-Lkz1mLppmUi/YA28quQdqJSNZr8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 14:40:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan created successfully\",\n    \"data\": {\n        \"id\": \"fad79164-bc02-4118-a70a-2f713879c792\",\n        \"name\": \"Premium\",\n        \"description\": \"Premium features!\",\n        \"amount\": 5000,\n        \"currency\": \"NGN\",\n        \"createdAt\": \"2024-06-14T13:40:30.330Z\"\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "3dd0e05c-26be-4df8-bc5f-352402fd8b70",
