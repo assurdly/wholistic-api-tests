@@ -2352,6 +2352,38 @@
 					"item": [
 						{
 							"name": "Create Subscription Plan",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "eb762db0-ac45-40d6-886b-06dab5d92131",
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"     pm.response.to.have.status(201);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'Created'\", function () {\r",
+											"    pm.response.to.have.status('Created');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "f8107fa2-df04-4ed3-bc44-0ff22a92b2f9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2367,7 +2399,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"raw": "{\n    \"name\": \"Test1\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
