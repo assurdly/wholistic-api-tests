@@ -3579,7 +3579,23 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}/billings/transactions"
+								"url": {
+									"raw": "{{baseUrl}}/billings/transactions?activeWorkspace=6cb80e0a-a70a-4493-a2c8-0ffe09b1def7",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "activeWorkspace",
+											"value": "6cb80e0a-a70a-4493-a2c8-0ffe09b1def7",
+											"type": "text"
+										}
+									]
+								}
 							},
 							"response": [
 								{
