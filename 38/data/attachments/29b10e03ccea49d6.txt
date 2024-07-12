@@ -1,0 +1,10 @@
+{
+    "name": "Stokes - Gerhold",
+    "email": "Germaine@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Beer@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Lavonne",
+    "contactEmail2": "Willard86@gmail.com",
+    "contactPhone2": "+2349055755673"
+}
