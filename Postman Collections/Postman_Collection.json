@@ -3370,10 +3370,9 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "",
-										"value": "",
-										"type": "text",
-										"disabled": true
+										"key": "Workspace",
+										"value": "{{activeWorkspace}}",
+										"type": "text"
 									}
 								],
 								"url": "{{baseUrl}}/billings/transactions/daily-stats"
