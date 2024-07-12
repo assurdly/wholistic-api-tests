@@ -3368,7 +3368,13 @@
 									}
 								},
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "workspace",
+										"value": "{{activeWorkspace}}",
+										"type": "text"
+									}
+								],
 								"url": "{{baseUrl}}/billings/transactions/daily-stats"
 							},
 							"response": [
