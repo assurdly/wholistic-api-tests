@@ -3370,12 +3370,31 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "Workspace",
-										"value": "{{activeWorkspace}}",
-										"type": "text"
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
 									}
 								],
-								"url": "{{baseUrl}}/billings/transactions/daily-stats"
+								"url": {
+									"raw": "{{baseUrl}}/billings/transactions/daily-stats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"transactions",
+										"daily-stats"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
 							},
 							"response": [
 								{
