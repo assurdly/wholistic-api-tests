@@ -94,7 +94,8 @@
 							},
 							{
 								"key": "Cookie",
-								"value": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZjBkNTBmLWE2MmEtNDAyMC05NzAyLWE3YmI5NjBjNGNmZSIsImNvdW50IjowLCJpYXQiOjE3MTgzODIxMDQsImV4cCI6MTcxODQ2ODUwNH0.X2SeuNi9ApcVv7j24vDRP43Ja5kIEFpPtVkrn3Jd600.MHSxcNJ7iTBabgGasE4TGAGkIi2a5X3Er8eDIQ%2B7GFE"
+								"value": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZjBkNTBmLWE2MmEtNDAyMC05NzAyLWE3YmI5NjBjNGNmZSIsImNvdW50IjowLCJpYXQiOjE3MTgzODIxMDQsImV4cCI6MTcxODQ2ODUwNH0.X2SeuNi9ApcVv7j24vDRP43Ja5kIEFpPtVkrn3Jd600.MHSxcNJ7iTBabgGasE4TGAGkIi2a5X3Er8eDIQ%2B7GFE",
+								"disabled": true
 							},
 							{
 								"key": "Origin",
@@ -2711,7 +2712,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2f2441be-530c-4456-8a07-3e505205a465"
+									"value": "245b2332-6dfe-4491-bd1e-ec89bf7f7835"
 								}
 							]
 						}
@@ -5220,7 +5221,7 @@
 				"exec": [
 					"pm.request.headers.add({\r",
 					"  key: \"origin\",\r",
-					"  value: \"https://\" + \"berkshire.wholistic.work\"\r",
+					"  value: \"https://\" + \"account.wholistic.work\"\r",
 					"});"
 				]
 			}
