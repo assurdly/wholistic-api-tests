@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully fetched report template","data":{"id":"2f4c8424-eeb7-4e4e-91d0-dee3553e097a","title":"Daily Report","slug":"daily-report","body":"<></>","createdAt":"2024-05-28T03:01:43.594Z"}}
