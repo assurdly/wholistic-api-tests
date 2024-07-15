@@ -2407,6 +2407,37 @@
 					"item": [
 						{
 							"name": "Create Subscription Plan",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"     pm.response.to.have.status(201);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'Created'\", function () {\r",
+											"    pm.response.to.have.status('Created');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body is correct\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -2422,7 +2453,148 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"raw": "{\n    \"name\": \"Test1\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Subscription Plan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/billings/plans",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"billings",
+												"plans"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "232"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e8-Lkz1mLppmUi/YA28quQdqJSNZr8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Jun 2024 14:40:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Plan created successfully\",\n    \"data\": {\n        \"id\": \"fad79164-bc02-4118-a70a-2f713879c792\",\n        \"name\": \"Premium\",\n        \"description\": \"Premium features!\",\n        \"amount\": 5000,\n        \"currency\": \"NGN\",\n        \"createdAt\": \"2024-06-14T13:40:30.330Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Subscription Plan -Wrong Status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"try{\r",
+											"const response = pm.response.json();\r",
+											"const {message, data} = response;\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"     pm.response.to.have.status(400);\r",
+											" });\r",
+											"pm.test(\"Status code response is 'Created'\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error response is valid\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('object')\r",
+											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"    pm.expect(pm.response.json().data.status).to.be.eql('status must be one of the following values: active, inactive')\r",
+											"})\r",
+											"} catch (errors){\r",
+											"    console.error (errors)\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test2\",\n    \"status\": \"away\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3304,7 +3476,14 @@
 									]
 								},
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"url": {
 									"raw": "{{baseUrl}}/billings/transactions/daily-stats",
 									"host": [
@@ -3314,6 +3493,13 @@
 										"billings",
 										"transactions",
 										"daily-stats"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -3524,13 +3710,19 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/billings/transactions",
+									"raw": "{{baseUrl}}/billings/transactions?activeWorkspace=6cb80e0a-a70a-4493-a2c8-0ffe09b1def7",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"billings",
 										"transactions"
+									],
+									"query": [
+										{
+											"key": "activeWorkspace",
+											"value": "6cb80e0a-a70a-4493-a2c8-0ffe09b1def7"
+										}
 									]
 								}
 							},
