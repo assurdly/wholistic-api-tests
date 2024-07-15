@@ -1,0 +1,10 @@
+{
+    "name": "Ruecker, Bernhard and Homenick",
+    "email": "Charley@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Schaefer@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Gerardo",
+    "contactEmail2": "Lenna34@yahoo.com",
+    "contactPhone2": "+2349055755673"
+}
