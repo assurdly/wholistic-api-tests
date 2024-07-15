@@ -1,0 +1,11 @@
+{
+    "name": "Awesome Granite Mouse",
+    "description": "District",
+    "serviceType": "Product Development",
+    "startDate": "2024-06-15",
+    "endDate": "2025-06-15",
+    "daysSpent": 30,
+    "workDone": 99.9,
+    "clientId": "{{createdClient}}",
+    "users": ["{{createdUser}}"]
+}
