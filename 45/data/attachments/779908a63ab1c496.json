@@ -1,0 +1,12 @@
+{
+    "origin": "https://berkshire.wholistic.work",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "f85a8c63-6882-4d9c-bd06-f7a5e925dca5",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Cookie": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2NzY2MDU5LTE2M2UtNDQ3NC1hYmFkLWI2NjI0NTc5Zjc0MyIsImNvdW50IjowLCJpYXQiOjE3MjEyNDEzMTMsImV4cCI6MTcyMTMyNzcxM30.gcDMW4jlG8sUoNn4jSTMYNCFEvhU6rAM88P3j9bnigw.Ms7XjPhvqXec6wZgdoHjCeMfXq9vuCGqjLTN3azEwMs",
+    "Content-Length": "0"
+}

@@ -1,0 +1,22 @@
+{
+    "Accept": "application/json",
+    "Accept-Language": "en,en-US;q=0.9",
+    "Connection": "keep-alive",
+    "Content-Type": "application/json",
+    "Origin": "https://demo.wholistic.work",
+    "Referer": "https://demo.wholistic.work/",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-site",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "origin": "https://berkshire.wholistic.work",
+    "Authorization": "Bearer {{accessToken}}",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "d475f9de-804b-4127-a320-ab4c4576ce8d",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Length": "71"
+}

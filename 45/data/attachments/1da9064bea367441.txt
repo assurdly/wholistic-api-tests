@@ -1,0 +1,10 @@
+{
+    "name": "Trantow and Sons",
+    "email": "Rosalind@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Beahan@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Myrtis",
+    "contactEmail2": "Kali.Stiedemann@hotmail.com",
+    "contactPhone2": "+2349055755673"
+}
