@@ -1,4 +1,0 @@
-{
-    "roleId": "c6054f67-a41c-4ead-854f-16db94a93c94",
-    "status": "inactive"
-}

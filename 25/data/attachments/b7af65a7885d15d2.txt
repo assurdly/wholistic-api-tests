@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully updated profile","data":{"id":"d2785883-0fc0-45c3-995f-961173aef929","firstName":"June","lastName":"Kertzmann","country":"NGA","createdAt":"2024-04-29T13:15:42.925Z"}}
