@@ -1,0 +1,14 @@
+{
+    "api-key": "",
+    "origin": "https://berkshire.wholistic.work",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2NzY2MDU5LTE2M2UtNDQ3NC1hYmFkLWI2NjI0NTc5Zjc0MyIsImNvdW50IjowLCJpYXQiOjE3MjE1OTIyNTYsImV4cCI6MTcyMTY3ODY1Nn0.YmJn_kxTkUtUXxB3zX2xhSLUxSblSI_XWqiVi8RzJlY",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "fc5a98a2-5d44-49b2-ab5c-2cca077c4c65",
+    "Host": "wholistic.openai.azure.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "547"
+}

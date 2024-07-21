@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully created role","data":{"id":"d9f6701f-54a4-4f40-ba97-e4f6a9300e53","name":"Thomas Hermann","slug":"thomas-hermann","description":"","status":"active","createdAt":"2024-07-08T05:37:48.458Z"}}

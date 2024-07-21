@@ -1,4 +1,0 @@
-{
-    "email": "Elenor@mailinator.com",
-    "roleId": "155799f2-08b8-4e6f-b1f6-0f6e09af4275"
-}

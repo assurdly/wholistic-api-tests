@@ -1,1 +1,0 @@
-{"message":"Validation Error.","data":{"items":"each value in items should not be empty","userIntegrationId":"userIntegrationId should not be empty"}}
