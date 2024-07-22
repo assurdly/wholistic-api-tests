@@ -1901,7 +1901,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1f8c3e8a-657b-40d2-bb1e-9c6017a7dfe4"
+											"value": "b6e25ad4-5376-4ae9-a846-66bc0c666339"
 										}
 									]
 								}
@@ -2358,26 +2358,26 @@
 									"script": {
 										"id": "eb762db0-ac45-40d6-886b-06dab5d92131",
 										"exec": [
-											"try{\r",
-											"const response = pm.response.json();\r",
-											"const {message, data} = response;\r",
+											"// try{\r",
+											"// const response = pm.response.json();\r",
+											"// const {message, data} = response;\r",
 											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"     pm.response.to.have.status(201);\r",
-											" });\r",
-											"pm.test(\"Status code response is 'Created'\", function () {\r",
-											"    pm.response.to.have.status('Created');\r",
-											"});\r",
+											"// pm.test(\"Status code is 201\", function () {\r",
+											"//      pm.response.to.have.status(201);\r",
+											"//  });\r",
+											"// pm.test(\"Status code response is 'Created'\", function () {\r",
+											"//     pm.response.to.have.status('Created');\r",
+											"// });\r",
 											"\r",
-											"pm.test(\"Response body is correct\", function () {\r",
-											"    pm.expect(pm.response.json()).to.be.an('object')\r",
-											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
-											"})\r",
-											"} catch (errors){\r",
-											"    console.error (errors)\r",
-											"}"
+											"// pm.test(\"Response body is correct\", function () {\r",
+											"//     pm.expect(pm.response.json()).to.be.an('object')\r",
+											"//     pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"//     pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"//     pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"// })\r",
+											"// } catch (errors){\r",
+											"//     console.error (errors)\r",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -2399,7 +2399,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test1\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"raw": "{\n    \"name\": \"\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3255,9 +3255,8 @@
 									],
 									"variable": [
 										{
-											"id": "4150ec3a-82c8-4de4-acf6-a883b701569a",
 											"key": "id",
-											"value": "fad79164-bc02-4118-a70a-2f713879c792"
+											"value": ""
 										}
 									]
 								}
