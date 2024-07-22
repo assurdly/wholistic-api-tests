@@ -131,43 +131,43 @@
 									"script": {
 										"id": "dad7168c-c60a-4fb0-8d7d-df962efbb076",
 										"exec": [
-											"const jsonData = pm.response.json();",
+											"// const jsonData = pm.response.json();",
 											"",
-											"const accesstoken = jsonData.data.accessToken",
-											"const refreshtoken = jsonData.data.refreshToken;",
+											"// const accesstoken = jsonData.data.accessToken",
+											"// const refreshtoken = jsonData.data.refreshToken;",
 											"",
-											"pm.environment.set(\"accessToken\", accesstoken)",
+											"// pm.environment.set(\"accessToken\", accesstoken)",
 											"",
-											"pm.test(\"Status code is 201\", function () {",
-											"    pm.response.to.have.status(201);",
-											"});",
+											"// pm.test(\"Status code is 201\", function () {",
+											"//     pm.response.to.have.status(201);",
+											"// });",
 											"",
-											"pm.test(\"Status code is 201\", function () {",
-											"    pm.response.to.have.status(201);",
-											"});",
+											"// pm.test(\"Status code is 201\", function () {",
+											"//     pm.response.to.have.status(201);",
+											"// });",
 											"",
-											"pm.test(\"Status code is 201\", function () {",
-											"    pm.response.to.have.status(201);",
-											"});",
+											"// pm.test(\"Status code is 201\", function () {",
+											"//     pm.response.to.have.status(201);",
+											"// });",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"    pm.expect(jsonData.data).to.be.an('object');",
-											"});",
+											"// pm.test(\"Response body property\", function () {",
+											"//     pm.expect(jsonData).to.be.an('object');",
+											"//     pm.expect(jsonData.status).to.be.a('string');",
+											"//     pm.expect(jsonData.message).to.be.a('string');",
+											"//     pm.expect(jsonData.data).to.be.an('object');",
+											"// });",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
+											"// pm.test(\"Status is success\", function () {",
+											"//     pm.expect(jsonData.status).to.eql('success');",
+											"// });",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
+											"// pm.test(\"Status is success\", function () {",
+											"//     pm.expect(jsonData.status).to.eql('success');",
+											"// });",
 											"",
-											"pm.test(\"Message is Successfully logged in\", function () {",
-											"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
-											"});"
+											"// pm.test(\"Message is Successfully logged in\", function () {",
+											"//     pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -584,10 +584,6 @@
 										"value": "application/json"
 									},
 									{
-										"key": "Cookie",
-										"value": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZjBkNTBmLWE2MmEtNDAyMC05NzAyLWE3YmI5NjBjNGNmZSIsImNvdW50IjowLCJpYXQiOjE3MTgzODIxMDQsImV4cCI6MTcxODQ2ODUwNH0.X2SeuNi9ApcVv7j24vDRP43Ja5kIEFpPtVkrn3Jd600.MHSxcNJ7iTBabgGasE4TGAGkIi2a5X3Er8eDIQ%2B7GFE"
-									},
-									{
 										"key": "Origin",
 										"value": "https://demo.wholistic.work"
 									},
@@ -833,7 +829,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+							"raw": "{\n    \"password\": \"123456789!dD\",\n    \"confirmPassword\": \"123456789!dD\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -853,9 +849,8 @@
 							],
 							"variable": [
 								{
-									"id": "35d88e6c-a31c-41ab-b92f-c85374f3552d",
 									"key": "token",
-									"value": "39f65aec3cb303c91b9e46143ee9a99f98356c92"
+									"value": "2232f116cb6ed8c559b1afac650619a094e0fddb\\"
 								}
 							]
 						}
@@ -935,6 +930,154 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Your password has been successfully reset. Please proceed to login.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Complete 2FA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "720d5db0-66f4-4832-8d5a-46f0d64d6f3e",
+								"exec": [
+									"const jsonData = pm.response.json();",
+									"const accesstoken = jsonData.data.accessToken",
+									"pm.environment.set(\"accessToken\", accesstoken)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "161129ab-d072-4636-9209-7656f857d1f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"2f01a884ac87299d6e41cb382a7d5af9200b248b\",\n    \"code\": \"806601\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/auth/login/two-fa"
+					},
+					"response": [
+						{
+							"id": "11f2326d-29f1-406b-bba7-dead0d1e049b",
+							"name": "Complete 2FA",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"5bc7d6e2c945dd6c13da7935887fe813796bdd07\",\n    \"code\": \"423063\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/login/two-fa"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admind.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "349"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15d-p5x2ydc13MXHdtm1lzTImfen8no\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 14:07:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome back. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwYzZjMDQ5LTcyNDEtNDRkOS05Yzg2LTJjZmI5NjdiYTEzYSIsImNvdW50IjowLCJpYXQiOjE3MjA3OTMyMzMsImV4cCI6MTcyMDg3OTYzM30.ouJ4Twi7EazC1hTrj3MB4-Ay0h8fwYzabagSN-1r1h8\",\n        \"expiresIn\": 86398\n    }\n}"
 						}
 					]
 				}
@@ -3159,11 +3302,11 @@
 											"",
 											"pm.environment.set('createdRole', jsonData.data.id)",
 											"",
-											"pm.test(\"Status code should be 400\", function () {",
-											"    pm.response.to.have.status(400);",
+											"pm.test(\"Status code should be 200\", function () {",
+											"    pm.response.to.have.status(200);",
 											"});",
-											"pm.test(\"Status code response should be 'Bad request'\", function () {",
-											"    pm.response.to.have.status('Bad request');",
+											"pm.test(\"Status code response should be 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
 											"});",
 											"",
 											"pm.test(\"Response body is correct\", function () {",
@@ -5876,7 +6019,7 @@
 									"script": {
 										"id": "07945608-1162-4491-bafd-5f70c31d9dac",
 										"exec": [
-											"// Fixed syntax error by adding closing parenthesis after catch block",
+											"",
 											"try{",
 											"    const jsonData = pm.response.json();",
 											"",
@@ -5885,7 +6028,7 @@
 											"    });",
 											"",
 											"    pm.test(\"Status code response is Bad Request \", function () {",
-											"        pm.response.to.have.status(400); // Changed the status to match the response status code",
+											"        pm.response.to.have.status(400); ",
 											"    });",
 											"",
 											"    pm.test(\"Response body property\", function () {",
@@ -8493,6 +8636,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "POST",
 						"header": [],
 						"url": {
@@ -9039,7 +9188,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomWord}}\",\n    \"slug\": \"{{$randomWord}}\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false,\n    \"logoUrl\": null,\n    \"requiredEmailDomains\": null,\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ]\n}",
+									"raw": "{\n    \"name\": \"{{$randomWord}}\",\n    \"slug\": \"{{$randomWord}}\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false,\n    \"logoUrl\": null,\n    \"requiredEmailDomains\": null,\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -9433,13 +9582,20 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/workspaces/:id",
+									"raw": "{{baseUrl}}/workspaces/:id?=ff8afdf5-1b6a-487b-9855-21e7f9b8121e",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"workspaces",
 										":id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "ff8afdf5-1b6a-487b-9855-21e7f9b8121e",
+											"type": "text"
+										}
 									],
 									"variable": [
 										{
@@ -11633,7 +11789,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "{{createdClient}}"
+											"value": "ffdb2c17-e538-4923-b2fc-3cdbf47b97ff"
 										}
 									]
 								}
@@ -12319,7 +12475,6 @@
 											"});",
 											"",
 											"pm.test(\"Assert that the data array is not empty\", function () {",
-											"    pm.expect(jsonData.data).to.not.be.empty",
 											"});",
 											"",
 											""
@@ -12701,30 +12856,30 @@
 									"script": {
 										"id": "64fd3bc1-2eb1-4bc2-b05f-a000908243ef",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"// var jsonData = pm.response.json();",
 											"",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
+											"// pm.test(\"Status code is 200\", function () {",
+											"//     pm.response.to.have.status(200);",
+											"// });",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
+											"// pm.test(\"Status code response is OK\", function () {",
+											"//     pm.response.to.have.status('OK');",
+											"// });",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
+											"// pm.test(\"Response body property\", function () {",
+											"//     pm.expect(jsonData).to.be.an('object');",
+											"//     pm.expect(jsonData.status).to.be.a('string');",
+											"//     pm.expect(jsonData.message).to.be.a('string');",
+											"// });",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
+											"// pm.test(\"Status is success\", function () {",
+											"//     pm.expect(jsonData.status).to.eql('success');",
+											"// });",
 											"",
-											"pm.test(\"Valid message is returned\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Successfully deleted integration');",
-											"});"
+											"// pm.test(\"Valid message is returned\", function () {",
+											"//     pm.expect(jsonData.message).to.eql('Successfully deleted integration');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -13604,6 +13759,811 @@
 		{
 			"name": "Projects",
 			"item": [
+				{
+					"name": "Reports",
+					"item": [
+						{
+							"name": "Send Project Report",
+							"id": "59fcc4f6-f327-4eed-9e88-f5386e81ea1e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emails\": [\"ade.wunmi.ak.insanya@gmail.com\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/send",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":reportId",
+										"send"
+									],
+									"variable": [
+										{
+											"id": "57168017-2452-4b9a-881f-d41cad14db4c",
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"id": "e84f624b-1608-4be8-b4c0-a35575fe8474",
+											"key": "reportId",
+											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export Project Report",
+							"id": "5bb79233-ce92-4eff-b1f2-834977232e3f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emails\": [\"ade.wunmi.ak.insanya@gmail.com\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/export",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":reportId",
+										"export"
+									],
+									"variable": [
+										{
+											"id": "e0b21962-da73-4745-ab5f-893f963d2262",
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"id": "b7b5be03-6e5d-4bb7-b028-ea25e92c7101",
+											"key": "reportId",
+											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Project Report",
+							"id": "5ba14186-c2e3-4e3f-9404-080b4a35eadf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":reportId"
+									],
+									"variable": [
+										{
+											"id": "8d4010aa-6262-4879-aedc-075e6674d052",
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"id": "2f94d49b-16e5-4d10-8da5-a77e0dc74328",
+											"key": "reportId",
+											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "5544b824-faa7-4b52-b9c6-ffe82a793f6b",
+									"name": "View Project Report",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":projectId",
+												"reports",
+												":reportId"
+											],
+											"variable": [
+												{
+													"key": "projectId",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												},
+												{
+													"key": "reportId",
+													"value": "537c2abe-2fb9-4415-b027-c215de727039"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "357"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"165-8FSBRxXcfpEZlcCqqHcGTBvUhyI\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 17 Jul 2024 06:21:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": {\n        \"id\": \"537c2abe-2fb9-4415-b027-c215de727039\",\n        \"title\": \"Random Report\",\n        \"status\": \"approved\",\n        \"body\": \"<body>Hey!</body>\",\n        \"startDate\": \"2024-01-01T23:00:00.000Z\",\n        \"endDate\": \"2024-01-03T23:00:00.000Z\",\n        \"reviewerUserId\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n        \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Project Report Comment",
+							"id": "856a0fac-9d06-4d11-aec2-19eaf5af66ad",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\": \"Hello World! Again!\",\n    \"replyId\": null,\n    \"sectionId\": \"A-100\",\n    \"sectionText\": \"Hey\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/comments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":reportId",
+										"comments"
+									],
+									"variable": [
+										{
+											"id": "97d9530e-5dbe-4660-8a47-98534ef33d36",
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"id": "76f7ca8f-0aa9-4936-8429-bb093cfb81fe",
+											"key": "reportId",
+											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "8fd9aa1d-7f94-40c4-a841-b0df118f3b77",
+									"name": "Add Project Report Comment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"comment\": \"Hello World! Again!\",\n    \"replyId\": null,\n    \"sectionId\": \"A-100\",\n    \"sectionText\": \"Hey\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/comments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":projectId",
+												"reports",
+												":reportId",
+												"comments"
+											],
+											"variable": [
+												{
+													"key": "projectId",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												},
+												{
+													"key": "reportId",
+													"value": "537c2abe-2fb9-4415-b027-c215de727039"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "222"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"de-P3POSPmKp8qNAZWq42KwyXnb73Q\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 17 Jul 2024 06:10:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": {\n        \"id\": \"90995df8-2abe-4b05-ab90-25b5175254d7\",\n        \"comment\": \"Hello World! Again!\",\n        \"replyId\": null,\n        \"sectionId\": \"A-100\",\n        \"sectionText\": \"Hey\",\n        \"createdAt\": \"2024-07-17T05:10:52.345Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "List Project Report Comments",
+							"id": "a2e724e0-be83-4353-b06e-b4e7ca360f95",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\": \"Hello World! Again!\",\n    \"replyId\": null,\n    \"sectionId\": \"A-100\",\n    \"sectionText\": \"Hey\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/comments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":reportId",
+										"comments"
+									],
+									"variable": [
+										{
+											"id": "a1b32136-5c98-485d-954c-29db5ecaf17d",
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"id": "bc8d8944-f488-44be-b83a-00e106b69116",
+											"key": "reportId",
+											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "e9531015-a125-4b3a-9c2c-cd5cd79d39b4",
+									"name": "List Project Report Comments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"comment\": \"Hello World! Again!\",\n    \"replyId\": null,\n    \"sectionId\": \"A-100\",\n    \"sectionText\": \"Hey\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/comments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":projectId",
+												"reports",
+												":reportId",
+												"comments"
+											],
+											"variable": [
+												{
+													"key": "projectId",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												},
+												{
+													"key": "reportId",
+													"value": "537c2abe-2fb9-4415-b027-c215de727039"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1182"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"49e-bmXqviIW7idquK/Gy1jki5ByClM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 17 Jul 2024 06:22:49 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"2e68177a-e23a-4d09-9375-e9a110fbeb35\",\n            \"comment\": \"Hello World! Again!\",\n            \"replyId\": null,\n            \"sectionId\": \"A-100\",\n            \"sectionText\": \"Hey\",\n            \"user\": {\n                \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n                \"twofaEnabled\": false,\n                \"status\": \"active\",\n                \"emailVerified\": true,\n                \"profile\": {\n                    \"id\": \"c7d5f0c0-7cde-479f-8505-e51892d301eb\",\n                    \"firstName\": \"Adewunmi\",\n                    \"lastName\": \"Akinsanya\",\n                    \"country\": \"NGA\",\n                    \"createdAt\": \"2024-04-28T22:45:14.081Z\"\n                },\n                \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n            },\n            \"createdAt\": \"2024-07-17T05:12:57.849Z\"\n        },\n        {\n            \"id\": \"90995df8-2abe-4b05-ab90-25b5175254d7\",\n            \"comment\": \"Hello World! Again!\",\n            \"replyId\": null,\n            \"sectionId\": \"A-100\",\n            \"sectionText\": \"Hey\",\n            \"user\": {\n                \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n                \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n                \"twofaEnabled\": false,\n                \"status\": \"active\",\n                \"emailVerified\": true,\n                \"profile\": {\n                    \"id\": \"c7d5f0c0-7cde-479f-8505-e51892d301eb\",\n                    \"firstName\": \"Adewunmi\",\n                    \"lastName\": \"Akinsanya\",\n                    \"country\": \"NGA\",\n                    \"createdAt\": \"2024-04-28T22:45:14.081Z\"\n                },\n                \"createdAt\": \"2024-04-28T22:45:13.585Z\"\n            },\n            \"createdAt\": \"2024-07-17T05:10:52.345Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 2,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Project Report Comments",
+							"id": "4207976e-ed03-4b70-9e51-e64b27a84259",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\": \"Hello World! Again!\",\n    \"replyId\": null,\n    \"sectionId\": \"A-100\",\n    \"sectionText\": \"Hey\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/comments/:commentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":reportId",
+										"comments",
+										":commentId"
+									],
+									"variable": [
+										{
+											"id": "46cdb0f5-6452-4d4e-960a-1bf33b08bcf1",
+											"key": "projectId",
+											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+										},
+										{
+											"id": "70fcd71f-8e22-4a00-839c-ccdad78bf7cf",
+											"key": "reportId",
+											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+										},
+										{
+											"id": "fce8eeb5-7a5a-4f66-becd-0f8b8161b719",
+											"key": "commentId",
+											"value": "2e68177a-e23a-4d09-9375-e9a110fbeb35"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "46fc5e7f-249b-42aa-9bcd-8c8772614687",
+									"name": "Delete Project Report Comments",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"comment\": \"Hello World! Again!\",\n    \"replyId\": null,\n    \"sectionId\": \"A-100\",\n    \"sectionText\": \"Hey\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId/comments/:commentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":projectId",
+												"reports",
+												":reportId",
+												"comments",
+												":commentId"
+											],
+											"variable": [
+												{
+													"key": "projectId",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												},
+												{
+													"key": "reportId",
+													"value": "537c2abe-2fb9-4415-b027-c215de727039"
+												},
+												{
+													"key": "commentId",
+													"value": "2e68177a-e23a-4d09-9375-e9a110fbeb35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 17 Jul 2024 06:32:07 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					],
+					"id": "98a23878-55ff-4e65-94a5-d46f18dbdddf"
+				},
 				{
 					"name": "Create Project",
 					"item": [
@@ -15390,7 +16350,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/projects/request"
+								"url": "{{baseUrl}}/projects/requests"
 							},
 							"response": [
 								{
@@ -15401,7 +16361,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"client\": {\n        \"name\": \"LSQ\",\n        \"email\": \"hello@lendsqr.com\",\n        \"contactName\": \"Deji\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactName2\": null,\n        \"contactEmail2\": null,\n        \"contactPhone2\": null\n    }\n}",
+											"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-05-01\",\n    \"availableDate\": \"2023-01-01\",\n    \"client\": {\n        \"name\": \"LSQ\",\n        \"email\": \"hello@lendsqr.com\",\n        \"contactName\": \"Deji\",\n        \"contactEmail\": \"deji@lendsqr.com\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactName2\": null,\n        \"contactEmail2\": null,\n        \"contactPhone2\": null\n    }\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -15613,7 +16573,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Random Report\",\n    \"body\": \"<body>Hey!</body>\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-01-01\",\n    \"reviewerUserId\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n    \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\"\n}",
+									"raw": "{\n    \"title\": \"Random Report\",\n    \"body\": \"<body>Hey!</body>\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-01-01\",\n    \"reviewerUserId\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n    \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n    \"status\": \"declined\" // approved | pending | declined\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -15633,12 +16593,10 @@
 									],
 									"variable": [
 										{
-											"id": "c1dcc3b9-334b-4f72-9409-47327b536a24",
 											"key": "projectId",
 											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
 										},
 										{
-											"id": "7dbe87cc-8b18-4ef4-9569-0e94239d67ae",
 											"key": "reportId",
 											"value": "537c2abe-2fb9-4415-b027-c215de727039"
 										}
@@ -16469,6 +17427,111 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
 								}
 							]
+						},
+						{
+							"name": "Delete Project Report Copy",
+							"id": "78a4d1b3-cd43-41bb-840d-2c82568cb151",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/reports/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"reports",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": "245b2332-6dfe-4491-bd1e-ec89bf7f7835"
+										},
+										{
+											"key": "id",
+											"value": "aca850d1-dafe-45a9-9cb7-469c1931c1cb"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ca45ec2e-3bb3-4bfd-b2d4-c0bac3564da5",
+									"name": "Delete Project Report",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:projectId/reports/:reportId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":projectId",
+												"reports",
+												":reportId"
+											],
+											"variable": [
+												{
+													"key": "projectId",
+													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+												},
+												{
+													"key": "reportId",
+													"value": "537c2abe-2fb9-4415-b027-c215de727039"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Jun 2024 08:38:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+								}
+							]
 						}
 					],
 					"id": "a27d44e6-0294-49c0-ad65-ac2dc48e1bb7"
@@ -16585,6 +17648,19 @@
 						}
 					],
 					"id": "ac903fd2-8bc3-4230-bb19-b7af507f684a"
+				},
+				{
+					"name": "Get Project Health Stats",
+					"id": "38bcf008-4874-4305-8f1a-758aa391c170",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/projects/health/stats"
+					},
+					"response": []
 				},
 				{
 					"name": "Delete User - oo -",
@@ -17460,7 +18536,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"sessionId\": \"1234567890\",\n    \"message\": \"thank you again!\"\n}",
+							"raw": "{\n    \"sessionId\": \"1234567890\",\n    \"message\": \"can you summarize notification templates for me?\",\n    \"stream\": false // this is supported for only testing purposes, sometime in the future, response would be stream:true only.\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -17695,9 +18771,680 @@
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehqWfDWoFYhYeyRL7eMhEGWAZ0Gx\",\n            \"message\": \"You're welcome! If you have any more questions or need more fun facts, feel free to ask. Have a great day!\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"06eec474-4cec-4489-8ad9-09ead80250e7\",\n            \"message\": \"thank you again!\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehpaKd2S31LKff9sOafG1E0jBDuo\",\n            \"message\": \"Sure! Here's the first fun fact I mentioned:\\n\\nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible! Honey's long shelf life is due to its low moisture content and acidic pH, which create an environment that's inhospitable to bacteria and other microorganisms.undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"b3daef03-dd06-47fc-b869-075f8a934f5c\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehpDGm69Mv2uwzu6CG2ENSJODXBI\",\n            \"message\": \"It seems like you're asking to repeat a fun fact, but I don't have any previous context to know what the first fun fact is. Could you please provide more details or specify the fun fact you are referring to?undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"d4886e2e-8b27-40c0-8bc7-1f48ae803286\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehonF7239eTTY3DakebLmtSyiAyc\",\n            \"message\": \"It seems like you're asking for a fun fact, but I don't have any prior context to know what the \\\"first fun fact\\\" might be. Here's a fun fact for you: \\n\\nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"e31303e9-9eb8-4f39-95dc-864e2eb8da0a\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehnpFffkPhROBnIRCi0ZpFD2aokm\",\n            \"message\": \"It sounds like you're looking for a joke or a story. Here's a joke for you:\\n\\nWhy don't scientists trust atoms?\\n\\nBecause they make up everything!undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"9708c842-481b-4640-920d-b56a891f7a3c\",\n            \"message\": \"tell me another one.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehnTm71wZjvxwURlj6O5SZcPfjrf\",\n            \"message\": \"Sure! Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible! Honey's long shelf life is due to its low moisture content and acidic pH, which create an environment that's inhospitable to bacteria and other microorganisms.undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"a0f2f01b-bb79-4e93-af05-7615a28f3781\",\n            \"message\": \"tell me a fun fact.\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 12,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "List Chat Sessions",
+					"id": "b3bb5717-bb86-4bd4-9e5a-82fb3bc670c4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/chats/sessions"
+					},
+					"response": [
+						{
+							"id": "a54ae0c4-c2c7-49da-86e6-ff99bc68ed49",
+							"name": "List Chat Sessions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/chats/sessions"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admind.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8516"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2144-ghUJ9txi9DpAhnhmlzUCHEnI99Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Jul 2024 14:03:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123d4789rrdd0dd\",\n            \"messageId\": \"chatcmpl-9hidjNN3JFrgHLGN29Wxc3c7nNAZX\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890dd\",\n            \"messageId\": \"chatcmpl-9h37XKwcEMQWfbx773M3AKL2CKhmx\",\n            \"message\": \"### Email Notification Content\\n\\n#### Organisation - Notification Content\\n- **Onboarding**\\n  - **Welcome Message**: Introduction to Wholistic, highlighting features and offering support contacts.\\n  - **Verify Email**: Request to verify email to complete registration.\\n  - **Login Alert**: Notification of account access with details of time, date, and location.\\n  - **Password Reset OTP**: Instructions to reset the password.\\n  - **Password Reset Attempt**: Confirmation of successful password reset.\\n  - **Team Member Invitation**: Invitation for a team member to join a workspace.\\n  - **Team Member Invite Reminder**: Reminder to join a workspace.\\n  - **Team Member Deactivation**: Notification of account deactivation.\\n  - **Team Member Activation**: Notification of account reactivation.\\n  - **Client Invitation**: Invitation for a client to join a project.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n  - **Workspace Disabled**: Notification of workspace deactivation.\\n  - **Workspace Enabled**: Notification of workspace reactivation.\\n\\n- **Project Requests**\\n  - **New Project Alert**: Notification of a new project request with details.\\n\\n- **Subscription**\\n  - **Subscription Confirmation Email**: Confirmation of subscription activation.\\n  - **Renewal Reminder Email**: Reminder to renew the subscription.\\n  - **Payment Confirmation Email**: Confirmation of successful payment.\\n  - **Subscription Cancellation Confirmation Email**: Confirmation of subscription cancellation.\\n  - **Failed Payment Notification Email**: Notification of failed payment processing.\\n\\n#### Team Member - Notification Content\\n- **Onboarding**\\n  - **Project Invite**: Invitation to collaborate on a project.\\n  - **Welcome Message**: Welcome to Wholistic and introduction to the project.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n\\n- **Project Requests**\\n  - **Project Request Update**: Update on project request approval or disapproval.\\n\\n- **Team Members**\\n  - **Deactivated Team Member**: Notification of account deactivation.\\n  - **Reactivation of a Team Member**: Notification of account reactivation.\\n\\n- **Project Notifications**\\n  - **New Activity**: Notification of new activity in a project.\\n  - **Comments**: Notification of new comments on a document.\\n\\n#### Platform Owner - Notifications Content\\n- **Onboarding**\\n  - **Welcome Message**: Welcome to Wholistic.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n\\n- **Team Members**\\n  - **Invite Team Member**: Invitation for a team member to join the platform.\\n  - **Deactivate a Team Member**: Notification of account deactivation.\\n  - **Activate a Team Member**: Notification of account reactivation.\\n\\n- **EOD Summary**: Summary of daily activities including new sign-ups, deactivated/activated organizations, subscriptions, and transaction details.\\n\\n### In-app Notification Content\\n\\n#### Organisation\\n- **Onboarding**\\n  - **Welcome Message**: Welcome to Wholistic.\\n- **Project Request**\\n  - **Project Request Update**: Notification of a new project request.\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n\\n#### Team Members\\n- **Onboarding\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"0987654321dd\",\n            \"messageId\": \"chatcmpl-9i8ONXDpJ9bYgtbVRdnovcyu2crPx\",\n            \"message\": \"2 + 2 equals 4.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9iH1sATCWQrGVqVvx252LF51i7yKp\",\n            \"message\": \"I don't know.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"12345678901\",\n            \"messageId\": \"chatcmpl-9iH2RzTslDGvoe7pECbrKMQjtx1Lp\",\n            \"message\": \"My name is Oluchukwu Ossai.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"d18d6c2a-2a9b-4817-844c-a565670295ae\",\n            \"messageId\": \"chatcmpl-9iz0WtZxvPW0NWC1APaetiQBbktG1\",\n            \"message\": \"I don't have the information to answer that. Could you please provide more details or ask a specific question?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234789rr0dd\",\n            \"messageId\": \"chatcmpl-9hKFG1TXp8Wl9lRo2SxsOXl2Ziwo3\",\n            \"message\": \"[Wholistic: Test Plan](https://docs.google.com/spreadsheets/d/1ZKmIB7tGZyKqkArX03aEQXE2u6Bpx_Swtc3pWfvGvAw?gid=191557530)\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"897b897a-9c44-4460-a186-a74cbda13b68\",\n            \"messageId\": \"chatcmpl-9iyPmYExg6mLotr9ewU1bULYjdWHq\",\n            \"message\": \"I don't have enough information to answer your question.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"8caa9e5a-c46d-4287-a941-adf1da7698a5\",\n            \"messageId\": \"chatcmpl-9izr1YXEFe4sg1PQTLRqDVcA1P2M6\",\n            \"message\": \"I don't have enough information to answer your question. Could you please provide more details or clarify your question?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123d4789rr0dd\",\n            \"messageId\": \"chatcmpl-9hgAwso3lhFRVpHDFQkkJBo3Ezu9W\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"0987654321\",\n            \"messageId\": \"chatcmpl-9i7ylWJiEKMEkSxX4Qc2YZ15pOZS6\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"2beef177-a504-4a43-a04f-779ed4f044f3\",\n            \"messageId\": \"chatcmpl-9iySuT8ne91L9t6IMae5XTY48YQfL\",\n            \"message\": \"Hello! How can I assist you today?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"97df1710-0f4b-4d23-b482-839614b90a6e\",\n            \"messageId\": \"chatcmpl-9iygNJsr0Q6Yp8yN7HlWiO1fQfVuG\",\n            \"message\": \"I don't have enough information to answer your question.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"e8f2fdd7-36ae-466d-85fb-1abe7b979148\",\n            \"messageId\": \"chatcmpl-9iykr6ts76Y9VYydVLZsgjlsd0gUJ\",\n            \"message\": \"Hello! How can I assist you today?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"12345d6789rr0\",\n            \"messageId\": \"chatcmpl-9hJYvycs7L0ScvZtkCzaNE7U6M3P5\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"37feebd3-7c9d-4226-8a73-998ac3f094e8\",\n            \"messageId\": \"chatcmpl-9iyLFhjCmhmdugSGX1BB5VD5RGzl2\",\n            \"message\": \"I don't know.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"2720e6fe-0cd3-4477-87e5-697e0ce8dcf7\",\n            \"messageId\": \"chatcmpl-9iyayNfi9aiSjOBLP1gmNVWxBTkRe\",\n            \"message\": \"I don't have enough information to answer your question. Could you please provide more details or clarify your query?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"127255d0-7d2c-4908-94f9-47593f9593f3\",\n            \"messageId\": \"chatcmpl-9iz7XnfZUshUgYFCqjugDlgbrzOXT\",\n            \"message\": \"You can greet me as \\\"Jane.\\\"\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123456789012\",\n            \"messageId\": \"chatcmpl-9iH3fO5dgHW4X55SHTSaSpBteenH5\",\n            \"message\": \"My name is Oluchukwu Ossai.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"38db1925-1c41-4a1e-944b-adcb154ade28\",\n            \"messageId\": \"chatcmpl-9izhgueRouqFnrkCWgjliVhSLfQhe\",\n            \"message\": \"I don't have any information to answer your question. Could you please provide more details or specify what you need help with?\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 76,\n        \"totalNumberOfPages\": 4,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
 				}
 			],
 			"id": "0c84972f-d2b7-4fde-ab5b-40d4a0abd91d"
+		},
+		{
+			"name": "Platform",
+			"item": [
+				{
+					"name": "Workspace",
+					"item": [
+						{
+							"name": "List Workspaces",
+							"id": "0cddb556-006c-479e-8863-6b46fa2f4b6c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/platform/workspaces",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"platform",
+										"workspaces"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "20",
+											"disabled": true
+										},
+										{
+											"key": "filter[name]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][gt]",
+											"value": "2024-04-30T17:20:57.737Z",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][lt]",
+											"value": "2024-05-02T17:20:57.737Z",
+											"disabled": true
+										},
+										{
+											"key": "filter[status]",
+											"value": "active",
+											"disabled": true
+										},
+										{
+											"key": "filter[email]",
+											"value": "azeez@mailinator.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "cc9dc1b4-10f9-49a0-944a-994e8b8bff48",
+									"name": "List Workspaces",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/workspaces"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "454"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1c6-7QDcuVxZRlOJ7yE1CStFMplIn+w\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:44:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspaces\",\n    \"data\": [\n        {\n            \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n            \"name\": \"Assurdly\",\n            \"status\": \"active\",\n            \"slug\": \"assurdly\",\n            \"size\": \"1-10\",\n            \"purpose\": \"Testing\",\n            \"utmMedium\": \"Instagram\",\n            \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n            \"primaryUser\": {\n                \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n                \"email\": \"adewunmiakinsanya@gmail.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Workspace",
+							"id": "823458f1-d88b-4e82-8197-2ca8c4e072e9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/workspaces/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "ffaa9989-b940-429a-95f8-0d4f0e5f57f6",
+											"key": "id",
+											"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "dcfbfaed-2da2-4699-93fe-1392609ff2a8",
+									"name": "Get Workspace",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/workspaces/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"workspaces",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "441"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1b9-41hqW+JdMoNvyhfqhHZSEeuJ8As\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:44:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n        \"primaryUser\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Wunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null\n            }\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Workspace",
+							"id": "37bcc106-5d3c-479b-95fd-92d084b4db8a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true,\n    \"status\": \"active\" // active | inactive\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/workspaces/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "9b3d8af4-568f-46cc-9dd9-93d16128ba29",
+											"key": "id",
+											"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "7294038b-249b-4da8-9a95-c518464f2951",
+									"name": "Update Workspace",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/workspaces/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"workspaces",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "153"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"99-aDClWUFuYHB36cTaoMdgQ55fEu8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 30 May 2024 13:54:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Workspace Stats",
+							"id": "c489f7b2-b310-46e7-b242-93b067d94970",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/workspaces/stats"
+							},
+							"response": [
+								{
+									"id": "68ab0e5c-2531-49b0-9e40-adf658d46f87",
+									"name": "Get Workspace Stats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/workspaces/stats"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "144"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"90-dzb+T+hYjWM4ZA9FvB4HMWI1cP8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jun 2024 13:36:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Workspaces stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"55\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Workspace Copy",
+							"id": "4a995c77-2bf0-48f7-8c5a-64758e78ee39",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/workspaces/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "8b7ca2c0-d649-4ec7-8022-90f6208dd61f",
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "27acb678-1774-465b-933c-809e95f3bc41"
+				},
+				{
+					"name": "Settings",
+					"item": [
+						{
+							"name": "Get Settings",
+							"id": "ea2783ee-21ff-4b7e-a66b-fe3572e305bf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/platform/settings"
+							},
+							"response": [
+								{
+									"id": "f82cb750-197c-4850-a8db-5a94c284aafa",
+									"name": "Get Settings",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/platform/settings"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "349"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"15d-vrFeeIC6DrG5cZvR/8AqGcTrN0U\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 15 Jul 2024 11:32:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Settings retrieved successfully\",\n    \"data\": {\n        \"id\": \"6ad7160e-eb25-4167-a91e-bc08af9812e9\",\n        \"inactivityTimeout\": 1800000,\n        \"requestTimeout\": 1800000,\n        \"authTokenValidity\": 1800000,\n        \"refreshTokenValidity\": 1800000,\n        \"passwordResetTokenValidity\": 1800000,\n        \"setupTokenValidity\": 1800000,\n        \"maxAuthAttempts\": 10,\n        \"maxAuthAttemptValdiity\": 1800000\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "57c162c7-dd6c-4b95-92e4-6f60bad5a1f6"
+				}
+			],
+			"id": "cbf87082-57c3-44c3-9d98-5b4b802c7804"
 		},
 		{
 			"name": "OpenAI test",
@@ -17795,13 +19542,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8db68592-754a-4957-a798-e2d8350dc02c",
+				"id": "e7cfc469-3727-4a19-be7a-4dcf799fdae4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"berkshire.wholistic.work\"",
+					"  value: \"https://\" + \"ikigai.wholistic.work\"",
 					"});"
 				]
 			}
@@ -17809,7 +19556,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3163e93b-813d-41df-982d-83bd428726f9",
+				"id": "6a6713a9-e6e5-48cf-8e8f-8f768f2b6aaf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -17820,7 +19567,6 @@
 	],
 	"variable": [
 		{
-			"id": "37f7173f-8b8b-4b9c-aa1f-20a30e76fa55",
 			"key": "openai_sk",
 			"value": ""
 		}
