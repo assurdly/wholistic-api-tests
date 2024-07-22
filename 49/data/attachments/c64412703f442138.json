@@ -1,0 +1,13 @@
+{
+    "origin": "https://ikigai.wholistic.work",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {{teamAccessToken}}",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "ec3f00a4-ec47-4966-92b8-125e79fd5cca",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "49"
+}
