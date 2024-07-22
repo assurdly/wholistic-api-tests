@@ -1,0 +1,14 @@
+{
+    "origin": "https://ikigai.wholistic.work",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5YzI1MDE1LWZlYTktNGExZS04NGQzLWE5ZDM0ZGZkOWY4ZiIsImNvdW50IjowLCJpYXQiOjE3MjE2MjUyODMsImV4cCI6MTcyMTcxMTY4M30.Cn2KBzRZtLU9xKJVx3C-vfjWNS7_YREJ12w6yCynR7k",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "bbf16797-51b2-4c00-9d2b-237f9fd2505d",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "546",
+    "Cookie": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5YzI1MDE1LWZlYTktNGExZS04NGQzLWE5ZDM0ZGZkOWY4ZiIsImNvdW50IjowLCJpYXQiOjE3MjE2MjUyODMsImV4cCI6MTcyMTcxMTY4M30.Cn2KBzRZtLU9xKJVx3C-vfjWNS7_YREJ12w6yCynR7k.NFgVeefHvyjY9SO%2BZknlPr3XWmE07scFAOxudEuM06I"
+}
