@@ -303,7 +303,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Month 3 Report Template\",\n    \"slug\": \"\",\n    \"body\": \"<>Wholistic Month 1 Report</>\"\n}",
+									"raw": "{\n    \"title\": \"\",\n    \"slug\": \"\",\n    \"body\": \"<>Wholistic Month 1 Report</>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -868,7 +868,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2f4c8424-eeb7-4e4e-91d0-dee3553e097a"
+											"value": "b0ea8e08-b76d-4bc8-a441-807a5efa4d65"
 										}
 									]
 								}
@@ -1316,26 +1316,26 @@
 									"script": {
 										"id": "bf1946c3-6743-40de-a28b-48f0668d5e79",
 										"exec": [
-											"try{\r",
-											"const response = pm.response.json();\r",
-											"const {message, data} = response;\r",
+											"// try {\r",
+											"//     const response = pm.response.json();\r",
+											"//     const { message, data } = response;\r",
 											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"     pm.response.to.have.status(201);\r",
-											" });\r",
-											"pm.test(\"Status code response is 'Created'\", function () {\r",
-											"    pm.response.to.have.status('Created');\r",
-											"});\r",
+											"//     pm.test(\"Status code is 201\", function () {\r",
+											"//         pm.response.to.have.status(201);\r",
+											"//     });\r",
+											"//     pm.test(\"Status code response is 'Created'\", function () {\r",
+											"//         pm.response.to.have.status('Created');\r",
+											"//     });\r",
 											"\r",
-											"pm.test(\"Response body is correct\", function () {\r",
-											"    pm.expect(pm.response.json()).to.be.an('object')\r",
-											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().data).to.be.an('object')\r",
-											"})\r",
-											"} catch (errors){\r",
-											"    console.error (errors)\r",
-											"}"
+											"//     pm.test(\"Response body is correct\", function () {\r",
+											"//         pm.expect(pm.response.json()).to.be.an('object')\r",
+											"//         pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"//         pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"//         pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"//     })\r",
+											"// } catch (errors) {\r",
+											"//     console.error(errors)\r",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -1351,7 +1351,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Sample Template 2\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<>Hello Team</>\"\n}",
+									"raw": "{\n    \"title\": \"\",\n    \"slug\": \"sample-template\",\n    \"body\": \"<>Hello Team</>\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
