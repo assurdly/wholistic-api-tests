@@ -1,0 +1,9 @@
+{
+    "name": "Test1",
+    "status": "active", 
+    "description": "Test features!",
+    "amount": 5000,
+    "currency": "NGN",
+    "interval": "yearly", 
+    "features": ["275387e5-6b01-465d-bf6d-e0ab398c0583"]
+}

@@ -1,0 +1,5 @@
+{
+    "title": "Sample Template 2",
+    "slug": "sample-template",
+    "body": "<>Hello Team</>"
+}
