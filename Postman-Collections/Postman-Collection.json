@@ -136,7 +136,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"azeez@mailinator.com\",\n    \"password\": \"Password12@@\"\n}",
+							"raw": "{\n    \"email\": \"abisola4@mailinator.com\",\n    \"password\": \"@Password1\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5221,7 +5221,7 @@
 				"exec": [
 					"pm.request.headers.add({\r",
 					"  key: \"origin\",\r",
-					"  value: \"https://\" + \"account.wholistic.work\"\r",
+					"  value: \"https://\" + \"ikigai.wholistic.work\"\r",
 					"});"
 				]
 			}
