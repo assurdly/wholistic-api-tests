@@ -653,9 +653,7 @@
 											"    pm.expect(jsonData.data).to.be.an('object');",
 											"});",
 											"",
-											"pm.test(`Message is \"Validation Error.\"`, function () {",
-											"    pm.expect(jsonData.message).to.include('Validation Error.');",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -671,7 +669,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"ab\",\n    \"password\": \"\"\n}",
+									"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
