@@ -1325,7 +1325,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\",\n    \"photoUrl\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3103,6 +3103,422 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"5b57b0b3-c731-4b88-b008-155fba62f829\",\n        \"name\": \"Workspace Manager\",\n        \"slug\": \"workspace-manager\",\n        \"description\": \"Workspace Manager role\",\n        \"status\": \"active\",\n        \"permissions\": [\n            {\n                \"id\": \"013784d6-4a8c-4902-812e-8c604764f06f\",\n                \"name\": \"view email template\",\n                \"slug\": \"view-email-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"01d7ed1e-8422-49bd-acbf-a33b4e84b238\",\n                \"name\": \"list subscriptions\",\n                \"slug\": \"list-subscriptions\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"0612275d-caf2-477b-a408-cafe98c12a21\",\n                \"name\": \"delete team member\",\n                \"slug\": \"delete-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"08fe3e54-b50e-4c56-8e4c-400b1adbff33\",\n                \"name\": \"list project reports\",\n                \"slug\": \"list-project-reports\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"0a7c6031-6b82-48ea-aad6-100c7de08f25\",\n                \"name\": \"list email templates\",\n                \"slug\": \"list-email-templates\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"110f06f4-995c-42ac-a3ef-3766741c1e41\",\n                \"name\": \"change password\",\n                \"slug\": \"change-password\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1ac1c791-b4e0-4edb-b39c-025f4ecbb52f\",\n                \"name\": \"list team members\",\n                \"slug\": \"list-team-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1b4ed25e-e178-46f9-b9b6-dd14460d9f5b\",\n                \"name\": \"disable twofa\",\n                \"slug\": \"disable-twofa\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1dd03657-23b2-42c2-8196-76bc835f9749\",\n                \"name\": \"update project\",\n                \"slug\": \"update-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"2267c76a-9400-4603-b162-b0cf8a788879\",\n                \"name\": \"view team member\",\n                \"slug\": \"view-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"2a7057d2-454f-4fde-869a-805e05f1791e\",\n                \"name\": \"update role\",\n                \"slug\": \"update-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"2d620db3-35fa-492f-8cc5-b9ba55287b18\",\n                \"name\": \"list project integrations\",\n                \"slug\": \"list-project-integrations\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"308759f8-0c25-44ad-851b-718be1e7632b\",\n                \"name\": \"update team member\",\n                \"slug\": \"update-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"31947ffa-8fdc-4683-b9e5-d452387774f3\",\n                \"name\": \"list integrations\",\n                \"slug\": \"list-integrations\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"470f190c-0e6b-4824-a477-dd8dc7956126\",\n                \"name\": \"view profile\",\n                \"slug\": \"view-profile\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"541258eb-368c-42bb-bc29-75f2d8905300\",\n                \"name\": \"view client\",\n                \"slug\": \"view-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"55c3123e-a7ac-4419-827e-ec0eb9a32295\",\n                \"name\": \"list projects requests\",\n                \"slug\": \"list-projects-requests\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"58261bda-4817-4184-ad4f-14e58428bf5e\",\n                \"name\": \"add client\",\n                \"slug\": \"add-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"58e724c0-2ad5-4361-910a-b4a8a98b73bc\",\n                \"name\": \"view audit\",\n                \"slug\": \"view-audit\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"5d8daaf1-5cb8-4895-9f00-da59f9e3a519\",\n                \"name\": \"view project members\",\n                \"slug\": \"view-project-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"5eabbacc-3bf6-43c8-a377-6486881925f7\",\n                \"name\": \"list cards\",\n                \"slug\": \"list-cards\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"5ec61b46-4321-42a2-a36a-c0ba0b282980\",\n                \"name\": \"update profile\",\n                \"slug\": \"update-profile\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"616d82a3-62a3-49b7-ab04-59366e9f6781\",\n                \"name\": \"delete integration\",\n                \"slug\": \"delete-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"676d09dc-681a-4b4e-88e4-32e5c0e0ff61\",\n                \"name\": \"delete workspace\",\n                \"slug\": \"delete-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"6b181afe-391d-429d-99dc-e65fbf6698ba\",\n                \"name\": \"create workspace\",\n                \"slug\": \"create-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7aa12c09-d85a-472a-92c6-8e15307cbbbe\",\n                \"name\": \"set integration\",\n                \"slug\": \"set-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7b5c1836-50b1-426a-b067-b409a53f1dd2\",\n                \"name\": \"list projects\",\n                \"slug\": \"list-projects\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7ec2674f-6552-406c-8b41-48339dd51882\",\n                \"name\": \"list audit logs\",\n                \"slug\": \"list-audit-logs\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"7fbffb3d-55dd-4d5e-b090-ce20a92682e9\",\n                \"name\": \"deactivate team member\",\n                \"slug\": \"deactivate-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"81c13d1d-14c3-450e-9654-6f9c7a590a7f\",\n                \"name\": \"activate role\",\n                \"slug\": \"activate-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"8d86243a-5c83-4acd-b38d-1cc3ed831658\",\n                \"name\": \"view workspace\",\n                \"slug\": \"view-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"8f88cc74-037d-4343-bcfa-2bfc5a8744db\",\n                \"name\": \"list report templates\",\n                \"slug\": \"list-report-templates\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"912c2bb0-a019-43d9-8fa0-e3ed83a10eba\",\n                \"name\": \"create project\",\n                \"slug\": \"create-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"96b84514-786a-4ddb-977d-9bc95e3ce49f\",\n                \"name\": \"view project\",\n                \"slug\": \"view-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"986589bb-fabb-441e-88d9-7ab942c1d600\",\n                \"name\": \"enable twofa\",\n                \"slug\": \"enable-twofa\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"9dafdcd5-74d8-47c6-9f70-9fbe6b515ad0\",\n                \"name\": \"add project integration\",\n                \"slug\": \"add-project-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a1e4d72c-60e4-414b-a07f-f6e087348166\",\n                \"name\": \"update workspace\",\n                \"slug\": \"update-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a447bfc5-d8c5-44a0-8bef-d43f05df31e8\",\n                \"name\": \"update client\",\n                \"slug\": \"update-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a521bf6d-7ece-461e-9862-e86449d4763e\",\n                \"name\": \"deactivate role\",\n                \"slug\": \"deactivate-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"a6a70143-7745-4d05-b72f-4414e9b30859\",\n                \"name\": \"list subscription plans\",\n                \"slug\": \"list-subscription-plans\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a878d6b3-3d61-4b53-95aa-f0301f9cc8eb\",\n                \"name\": \"add project report\",\n                \"slug\": \"add-project-report\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a879b6b4-2b9e-42be-b9dd-8ef4c81c5ab0\",\n                \"name\": \"create report template\",\n                \"slug\": \"create-report-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"aaf7f2bc-33de-4018-b86e-fb3865259b64\",\n                \"name\": \"create role\",\n                \"slug\": \"create-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"bea8fe13-5db1-4d0f-ac9f-670d110dcc85\",\n                \"name\": \"list clients\",\n                \"slug\": \"list-clients\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"c32793a9-77d0-47d4-8588-49ad46f81c8e\",\n                \"name\": \"delete role\",\n                \"slug\": \"delete-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"c367090b-d9b6-44b9-b591-40bdf85445e3\",\n                \"name\": \"subscribe to subscription plan\",\n                \"slug\": \"subscribe-to-subscription-plan\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"c63a5814-9247-437a-a709-c3fe7a6550eb\",\n                \"name\": \"view report template\",\n                \"slug\": \"view-report-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"d36e111b-3770-4008-bee7-2b742dc2127b\",\n                \"name\": \"delete client\",\n                \"slug\": \"delete-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"d5e70c38-d093-4bfc-9bec-de684498d4c9\",\n                \"name\": \"activate team member\",\n                \"slug\": \"activate-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d66960bf-aeb6-4f2b-94ee-16931b4943d3\",\n                \"name\": \"list workspaces\",\n                \"slug\": \"list-workspaces\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d740a7b8-d9ba-4fa6-b258-20440b53617c\",\n                \"name\": \"add team member\",\n                \"slug\": \"add-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d753d633-1b16-442a-9c07-f005533fdb30\",\n                \"name\": \"list roles\",\n                \"slug\": \"list-roles\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d7c92c49-8dd2-4e01-82bf-9b8958ae7cae\",\n                \"name\": \"create email template\",\n                \"slug\": \"create-email-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"e41e317b-2ace-4cbd-839d-fd8176574a51\",\n                \"name\": \"update project report\",\n                \"slug\": \"update-project-report\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"e75eb445-231e-4751-96b1-aa603441cbde\",\n                \"name\": \"delete project\",\n                \"slug\": \"delete-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"ecbd3588-d1f2-4489-b9d3-6e82e7f85acc\",\n                \"name\": \"set project members\",\n                \"slug\": \"set-project-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            }\n        ],\n        \"createdAt\": \"2024-06-10T05:42:47.766Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Device",
+					"id": "3f6c062d-793a-4cf4-9864-716d075e5167",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"notificationToken\": \"firebaseNotificationToken\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/profile/device/:deviceId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profile",
+								"device",
+								":deviceId"
+							],
+							"variable": [
+								{
+									"id": "83bb9a87-1b8e-413f-8331-a581367fdd76",
+									"key": "deviceId",
+									"value": "1234567890"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c48ea079-64f9-4c50-a1e0-51bb97bb4ed1",
+							"name": "Set Device",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"notificationToken\": \"firebaseNotificationToken\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/device/:deviceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"device",
+										":deviceId"
+									],
+									"variable": [
+										{
+											"key": "deviceId",
+											"value": "1234567890"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admind.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Jul 2024 17:24:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "List Notifications",
+					"id": "fe3ccfa5-79e4-4e31-9fb6-2a95c1e70973",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/profile/notifications"
+					},
+					"response": [
+						{
+							"id": "2bd65f75-ae07-4c93-aa1d-b1c922feaea1",
+							"name": "List Notifications",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile/notifications"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admind.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "284"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11c-u7F+I7QcGioXaf7srhkSqDA4Y00\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2024 05:56:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"42800ccb-8af6-44db-a411-14dc42c2e093\",\n            \"title\": \"Project Request Update\",\n            \"body\": \"A new project request has been submitted for your review.\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload File",
+					"id": "42cd3e94-5be5-47ca-84b5-5acea0668585",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/thewunmi/Documents/Screenshot 2023-07-06 at 10.09.59.png"
+								}
+							]
+						},
+						"url": "{{baseUrl}}/profile/uploads"
+					},
+					"response": [
+						{
+							"id": "4706119d-d41e-4dda-b2c5-0124176d38f6",
+							"name": "Upload File",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/thewunmi/Documents/Screenshot 2023-07-06 at 10.09.59.png"
+										}
+									]
+								},
+								"url": "{{baseUrl}}/profile/uploads"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://admind.wholistic.work"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-OfqG8Ez3odNBrMvhxQCr/tEuB98\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2024 09:34:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": {\n        \"url\": \"https://wholistic.blob.core.windows.net/app/90c6c049-7241-44d9-9c86-2cfb967ba13a%2FScreenshot%202023-07-06%20at%2010.09.59.png?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2024-07-24T16:54:13Z&st=2024-07-24T08:54:13Z&spr=https&sig=71J4TtM86AgTyIlU9UNS1XKT4MBBAD4u9SgCsorEdlA%3D\"\n    }\n}"
 						}
 					]
 				}
@@ -15220,7 +15636,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomCompanyName}}\",\n    \"description\": \"Redesign of the {{$randomProductName}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+									"raw": "{\n    \"name\": \"{{$randomCompanyName}}\",\n    \"description\": \"Redesign of the {{$randomProductName}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -16127,6 +16543,13 @@
 										":id",
 										"integrations"
 									],
+									"query": [
+										{
+											"key": "filter[parentId]",
+											"value": "25c1a387-f1a3-4867-a2a0-daa7c773700f",
+											"disabled": true
+										}
+									],
 									"variable": [
 										{
 											"key": "id",
@@ -16137,7 +16560,7 @@
 							},
 							"response": [
 								{
-									"id": "0a4b41b2-2080-41ee-8f05-b4476627bc5f",
+									"id": "b51ae6a3-bc96-432d-9446-425b725bb219",
 									"name": "List Project Integrations",
 									"originalRequest": {
 										"method": "GET",
@@ -16152,10 +16575,17 @@
 												":id",
 												"integrations"
 											],
+											"query": [
+												{
+													"key": "filter[parentId]",
+													"value": "07687334-1539-4726-8d3a-3bf9aebbc30e",
+													"disabled": true
+												}
+											],
 											"variable": [
 												{
 													"key": "id",
-													"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+													"value": "0c41ea4e-ad7c-4c1b-88c0-22e35742ecf6"
 												}
 											]
 										}
@@ -16165,12 +16595,64 @@
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
-											"key": "X-Powered-By",
-											"value": "Express"
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
-											"value": "*"
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
 										},
 										{
 											"key": "Content-Type",
@@ -16178,15 +16660,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "244"
+											"value": "2768"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"f4-8YDXLetpUeeEZSSq0ZgVcrAguag\""
+											"value": "W/\"ad0-v7P4Vi1TijjMZhH0ZqcSznlAy2M\""
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 27 May 2024 07:47:47 GMT"
+											"value": "Sun, 21 Jul 2024 03:53:00 GMT"
 										},
 										{
 											"key": "Connection",
@@ -16199,7 +16681,130 @@
 									],
 									"cookie": [],
 									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"256d19c6-9abc-4a15-a8c8-f48049eacee4\",\n            \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"25c1a387-f1a3-4867-a2a0-daa7c773700f\",\n            \"name\": \"Payaza - NIBSS Integration\",\n            \"url\": \"https://drive.google.com/drive/folders/1og0PtGm5HpckLvP2SLXjwU0iS4mDOrrf\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                \"name\": \"Google Drive\",\n                \"slug\": \"google-drive\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": [\n                {\n                    \"id\": \"68746932-cf86-42f6-9b75-25a864da9dd6\",\n                    \"name\": \"Product Delivery\",\n                    \"url\": \"https://drive.google.com/drive/folders/1ANWsnlncVftaIKssUcKENCPSBg7nudbN\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": \"427e37f7-3f09-4077-8b83-df0540b6b1bc\",\n            \"name\": \"Adewunmi Akinsanya\",\n            \"url\": \"https://groups.google.com/a/assurdly.com/g/wunmi\",\n            \"integration\": {\n                \"id\": \"d9d97dfe-68e1-4789-8814-9a5bc2fda66b\",\n                \"name\": \"Google Groups\",\n                \"slug\": \"google-groups\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=P7UIlhbpWzZm&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-07-05T11:14:13.403Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"07687334-1539-4726-8d3a-3bf9aebbc30e\",\n            \"name\": \"Payaza - NIBSS Integration\",\n            \"url\": \"https://drive.google.com/drive/folders/1og0PtGm5HpckLvP2SLXjwU0iS4mDOrrf\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"1212d82a-15cc-4c92-9c08-1e5ac6dabffb\",\n            \"name\": \"OBN\",\n            \"url\": \"https://drive.google.com/drive/folders/1VcgqNpm3mD4lXi-KOSx03_TeYQj3awjI\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"9ed44243-90b9-43c7-b59f-a4526ad0bfca\",\n            \"name\": \"Wholistic: Test Plan\",\n            \"url\": \"https://docs.google.com/spreadsheets/d/1ZKmIB7tGZyKqkArX03aEQXE2u6Bpx_Swtc3pWfvGvAw\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 5,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								},
+								{
+									"id": "090fba14-0ab6-447e-9611-032503ecf518",
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations?filter[parentId]=25c1a387-f1a3-4867-a2a0-daa7c773700f",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"query": [
+												{
+													"key": "filter[parentId]",
+													"value": "25c1a387-f1a3-4867-a2a0-daa7c773700f"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "0c41ea4e-ad7c-4c1b-88c0-22e35742ecf6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3549"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ddd-3QeykReGJgR+Ph6u8XSqX0E1HY8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 21 Jul 2024 03:57:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"68746932-cf86-42f6-9b75-25a864da9dd6\",\n            \"name\": \"Product Delivery\",\n            \"url\": \"https://drive.google.com/drive/folders/1ANWsnlncVftaIKssUcKENCPSBg7nudbN\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                \"name\": \"Google Drive\",\n                \"slug\": \"google-drive\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": [\n                {\n                    \"id\": \"1d10babf-be92-481f-87b9-00dea7dcd4a2\",\n                    \"name\": \"NIBSS Submissions\",\n                    \"url\": \"https://drive.google.com/drive/folders/1PYbDH_R3tAazn_ephfSfp2Fpjdd9SAkW\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"62689577-f224-44e7-a66f-2b8544d4d22c\",\n                    \"name\": \"Postman Collection\",\n                    \"url\": \"https://drive.google.com/drive/folders/1I7O6DaXOV-ZBlTI05F_IX89EwN0X8cgr\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"69d34694-ebf2-47ed-9d56-1afe97b463a5\",\n                    \"name\": \"NIBBS Signed Documents\",\n                    \"url\": \"https://drive.google.com/drive/folders/149fba1a9yDs2re-5W1iYFO1L4U1skdkr\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"7a12ab72-375c-4351-a8d7-f1dfa0c417fc\",\n                    \"name\": \"Production\",\n                    \"url\": \"https://drive.google.com/drive/folders/1EUnBlGpqKFUYeev2QzzkGrVvsiv50Q1H\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"7dd285af-cb5e-4e92-bb42-c7d6e84b451b\",\n                    \"name\": \"Project Management\",\n                    \"url\": \"https://drive.google.com/drive/folders/1nZCcZh5OF3CyUzNRZwTVfTigJdDbvCiQ\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"dc718119-ec98-4b05-bf9e-91ddd4101de7\",\n                    \"name\": \"NIBSS Guides\",\n                    \"url\": \"https://drive.google.com/drive/folders/1yvnLicdTFlOqONtUBgoDHLXKQeXJAdj4\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"ea99d770-f71b-408d-840e-a06e58917853\",\n                    \"name\": \"NIBBS Templates\",\n                    \"url\": \"https://drive.google.com/drive/folders/1M6xgtf7LDMvbBEjhBgFkzvjkUXM3AbIT\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
 							]
 						},
@@ -18946,6 +19551,11 @@
 										{
 											"key": "filter[email]",
 											"value": "azeez@mailinator.com",
+											"disabled": true
+										},
+										{
+											"key": "filter[planId]",
+											"value": "c1a53489-4297-4868-baed-1fc518892347",
 											"disabled": true
 										}
 									]
