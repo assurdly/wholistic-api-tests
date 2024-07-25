@@ -2750,11 +2750,17 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"templateId\": \"ec95f75f-7588-460e-82ef-47bfe08d36f3\",\n    \"enabled\": false\n}",
+							"raw": "{\n    \"templateId\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n    \"enabled\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
