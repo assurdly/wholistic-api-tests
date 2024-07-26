@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully created role","data":{"id":"63645c68-c746-488d-9a1b-05c324f56408","name":"Lois Homenick","slug":"lois-homenick","description":"","status":"active","createdAt":"2024-07-08T06:01:10.345Z"}}
