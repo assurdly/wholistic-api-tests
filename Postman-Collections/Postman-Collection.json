@@ -20156,21 +20156,21 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "566ae0d7-6397-4db8-a80a-6bd23da572e5",
+				"id": "403ceb08-2e74-4e3a-9b79-a4900bb2ecb1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					"// pm.request.headers.add({",
-					"//   key: \"origin\",",
-					"//   value: \"https://\" + \"Account.wholistic.work\"",
-					"// });"
+					"pm.request.headers.add({",
+					"  key: \"origin\",",
+					"  value: \"https://\" + \"Account.wholistic.work\"",
+					"});"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "1ae73ea8-23ed-4ed8-b1d2-f3f7c7adb5f6",
+				"id": "f067fd03-b318-42ce-8fd5-d43a55909861",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
