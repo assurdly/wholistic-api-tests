@@ -1,1 +1,0 @@
-{"status":"success","message":"Clients stats fetched successfully","data":[{"count":"1","value":"active"},{"count":"10","value":"pending"},{"count":"1","value":"inactive"}]}

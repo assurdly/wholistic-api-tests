@@ -1,0 +1,10 @@
+{
+    "name": "Bauch Inc",
+    "email": "Rita@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Shields@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Leo",
+    "contactEmail2": "Lucienne5@gmail.com",
+    "contactPhone2": "+2349055755673"
+}

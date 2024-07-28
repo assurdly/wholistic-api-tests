@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully fetched role","data":{"id":"e9686ed9-45be-4305-bda8-5411c2c44801","name":"Sue Paucek","slug":"sue-paucek","description":"","status":"1234#@@","createdAt":"2024-07-08T06:19:20.074Z"}}
