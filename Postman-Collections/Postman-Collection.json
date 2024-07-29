@@ -540,6 +540,12 @@
 											"    pm.expect(jsonData.status).to.eql('success');",
 											"});",
 											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
 											"pm.test(\"Message is Successfully logged in\", function () {",
 											"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
 											"});",
@@ -573,10 +579,6 @@
 									{
 										"key": "Accept-Language",
 										"value": "en,en-US;q=0.9"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZjBkNTBmLWE2MmEtNDAyMC05NzAyLWE3YmI5NjBjNGNmZSIsImNvdW50IjowLCJpYXQiOjE3MTgwMjg5MjgsImV4cCI6MTcxODExNTMyOH0.3jIH6371a1Xma2GYhBkQvCefVWI121qKrnjU1rP7pLQ"
 									},
 									{
 										"key": "Connection",
@@ -664,6 +666,18 @@
 											"    pm.expect(jsonData.data).to.be.an('object');",
 											"});",
 											"",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"    pm.expect(jsonData.data).to.be.an('object');",
+											"});",
 											""
 										],
 										"type": "text/javascript",
