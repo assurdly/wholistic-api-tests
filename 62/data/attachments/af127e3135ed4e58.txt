@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created role","data":{"id":"d485e55e-4316-400f-a8b8-019b5d6afa87","name":"Christian Kovacek","slug":"christian-kovacek","description":"","status":"active","createdAt":"2024-07-29T08:39:24.233Z"}}

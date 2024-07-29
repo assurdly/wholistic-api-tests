@@ -1,0 +1,7 @@
+{
+    "firstName": "Kaycee",
+    "lastName": "Wunsch",
+    "phone": "+2348089722636",
+    "country": "NGA",
+    "photoUrl": ""
+}

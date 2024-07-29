@@ -1,0 +1,1 @@
+{"status":"success","message":"Successful","data":{"id":"aca850d1-dafe-45a9-9cb7-469c1931c1cb","title":"Weekly Report","status":"pending","body":"<p></p>","startDate":"2024-07-17T00:00:00.000Z","endDate":"2024-07-21T00:00:00.000Z","reviewerUserId":null,"reportTemplateId":"b0ea8e08-b76d-4bc8-a441-807a5efa4d65"}}

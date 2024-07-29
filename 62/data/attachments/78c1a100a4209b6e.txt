@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully updated client","data":{"email":"Dale@mailinator.com","name":"Feest - Klocko","contactName":"Deji","contactPhone":"+2348012345678","contactEmail":"Balistreri@mailinator.com","contactName2":"Jeramie","contactPhone2":"+2349055755673","contactEmail2":"Stewart_Pfannerstill@yahoo.com"}}

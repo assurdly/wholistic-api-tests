@@ -1,0 +1,11 @@
+{
+    "Content-Length": "171",
+    "Content-Type": "application/json",
+    "x-ms-client-request-id": "Not-Set",
+    "apim-request-id": "407ca81c-c71c-4d36-b244-61ab9bbeae55",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "x-content-type-options": "nosniff",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Expose-Headers": "Operation-Location,Location,Apim-Request-Id",
+    "Date": "Mon, 29 Jul 2024 08:39:40 GMT"
+}

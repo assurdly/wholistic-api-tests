@@ -1,0 +1,6 @@
+{
+    "name": "Mr. Dora Marquardt",
+    "description": "",
+    "status": "active",
+    "permissions": ["0612275d-caf2-477b-a408-cafe98c1221", "110f06f4-995c-42ac-a3ef-3766741c1e41"]
+}
