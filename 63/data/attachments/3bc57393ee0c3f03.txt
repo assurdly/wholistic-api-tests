@@ -1,0 +1,10 @@
+{
+    "name": "Gottlieb, Strosin and Parker",
+    "email": "Eloise@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Dickinson@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Kathryne",
+    "contactEmail2": "Ida.Keeling93@yahoo.com",
+    "contactPhone2": "+2349055755673"
+}

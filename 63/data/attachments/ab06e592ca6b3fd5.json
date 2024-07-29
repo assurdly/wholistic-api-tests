@@ -1,0 +1,22 @@
+{
+    "Content-Length": "349",
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Mon, 29 Jul 2024 08:40:07 GMT",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Allow-Origin": "https://Account.wholistic.work",
+    "ETag": "W/\"15d-4bDUmd+s2oqpfyxQjUXyTflwg3U\"",
+    "Set-Cookie": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2NzY2MDU5LTE2M2UtNDQ3NC1hYmFkLWI2NjI0NTc5Zjc0MyIsImNvdW50IjowLCJpYXQiOjE3MjIyNDI0MDYsImV4cCI6MTcyMjMyODgwNn0.SDJTHee16cm2dpzeJQSC74jlCufXsGbukVBmrxleces.Ft0s4Xv8Z8ngMxEr1nxMATpIbvAtcb4ZrQghcPJWGrE; Max-Age=86398; Domain=.wholistic.work; Path=/; Expires=Tue, 30 Jul 2024 08:40:05 GMT; HttpOnly; Secure; SameSite=Strict",
+    "Vary": "Origin",
+    "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+    "Content-Security-Policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Resource-Policy": "same-origin",
+    "Origin-Agent-Cluster": "?1",
+    "Referrer-Policy": "no-referrer",
+    "X-Content-Type-Options": "nosniff",
+    "X-DNS-Prefetch-Control": "off",
+    "X-Download-Options": "noopen",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Permitted-Cross-Domain-Policies": "none",
+    "X-XSS-Protection": "0"
+}
