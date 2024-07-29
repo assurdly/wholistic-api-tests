@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created role","data":{"id":"e636df71-60fb-4173-b5f6-cbd995dbac6b","name":"Ken Boyer","slug":"ken-boyer","description":"","status":"active","createdAt":"2024-07-29T08:24:59.984Z"}}

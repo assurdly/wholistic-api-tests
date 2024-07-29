@@ -1,0 +1,7 @@
+{
+    "firstName": "Alysson",
+    "lastName": "Stanton",
+    "phone": "+2348089722636",
+    "country": "NGA",
+    "photoUrl": ""
+}

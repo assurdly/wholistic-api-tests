@@ -1,6 +1,0 @@
-{
-    "firstName": "Ben",
-    "lastName": "Volkman",
-    "phone": "+2348089722636",
-    "country": "NGA"
-}
