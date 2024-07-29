@@ -1,0 +1,9 @@
+{
+    "name": "Premium",
+    "status": "active", 
+    "description": "Premium features!",
+    "amount": 5000,
+    "currency": "NGN",
+    "interval": "monthly", 
+    "features": ["275387e5-6b01-465d-bf6d-e0ab398c0583"]
+}
