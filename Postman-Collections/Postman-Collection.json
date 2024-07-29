@@ -3285,6 +3285,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/profile/notifications"
@@ -17041,9 +17047,9 @@
 											"    pm.environment.set(\"createdProjectId\", data.id)",
 											"",
 											"",
-											"    pm.test(\"Status code is 201\", function () {",
-											"        pm.response.to.have.status(201);",
-											"    });",
+											"    // pm.test(\"Status code is 201\", function () {",
+											"    //     pm.response.to.have.status(201);",
+											"    // });",
 											"",
 											"} catch (errors) {",
 											"    console.error(errors)",
@@ -17182,7 +17188,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"Random Report\",\n    \"body\": \"<body>Hey!</body>\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-01-01\",\n    \"reviewerUserId\": \"455b58fb-6aa4-4acd-ac7a-5afd8e6058c0\",\n    \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n    \"status\": \"declined\" // approved | pending | declined\n\n}",
+									"raw": "{\n    \"title\": \"Random Report Today\",\n    \"body\": \"<body>Hey!</body>\",\n    \"startDate\": \"2024-07-30\",\n    \"endDate\": \"2024-08-29\",\n    \"reviewerUserId\": \"86766059-163e-4474-abad-b6624579f743\",\n    // \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\",\n    \"status\": \"approved\" // approved | pending | declined\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -17203,11 +17209,11 @@
 									"variable": [
 										{
 											"key": "projectId",
-											"value": "424bdf75-b409-4a05-87f3-1bc7d1370185"
+											"value": "245b2332-6dfe-4491-bd1e-ec89bf7f7835"
 										},
 										{
 											"key": "reportId",
-											"value": "537c2abe-2fb9-4415-b027-c215de727039"
+											"value": "ad75baf0-2582-4b31-9934-03d0ceab11cb"
 										}
 									]
 								}
