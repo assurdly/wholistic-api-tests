@@ -1,0 +1,5 @@
+{
+    "title": "Daily Report",
+    "slug": "daily-report",
+    "body": "<></>"
+}

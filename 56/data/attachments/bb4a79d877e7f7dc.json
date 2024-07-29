@@ -1,0 +1,12 @@
+{
+    "x-workspace-id": "0dc706da-90d0-4709-8024-ad61227602e7",
+    "origin": "https://azeez.wholistic.work",
+    "Authorization": "Bearer null",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "1724894c-3c7c-4774-b374-a9a32ce7dc58",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

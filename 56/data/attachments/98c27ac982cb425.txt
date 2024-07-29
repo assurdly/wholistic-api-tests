@@ -1,0 +1,20 @@
+{
+    "name": "backing",
+    "slug": "Account",
+    "size": "1-10",
+    "purpose": "Testing",
+    "utmMedium": "Instagram",
+    "integrations": [
+        "slack",
+        "google"
+    ],
+    "requireTwoFA": false,
+    "logoUrl": "",
+    "requiredEmailDomains": [
+        "wholistic.work"
+    ],
+    "serviceTypes": [
+        "vibes",
+        "inshallah"
+    ]
+}

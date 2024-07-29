@@ -1,0 +1,10 @@
+{
+    "name": "Kunze - Denesik",
+    "email": "Curtis@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Hartmann@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Dereck",
+    "contactEmail2": "Delbert.Ledner@hotmail.com",
+    "contactPhone2": "+2349055755673"
+}
