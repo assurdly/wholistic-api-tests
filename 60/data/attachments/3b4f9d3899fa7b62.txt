@@ -1,0 +1,10 @@
+{
+    "name": "Haag, Dicki and Beier",
+    "email": "Genevieve@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Keeling@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Salma",
+    "contactEmail2": "Tess40@gmail.com",
+    "contactPhone2": "+2349055755673"
+}

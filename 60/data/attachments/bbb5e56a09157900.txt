@@ -1,0 +1,6 @@
+{
+    "firstName": "Lowell",
+    "lastName": "Windler",
+    "phone": "+2348089722636",
+    "country": "NGA"
+}
