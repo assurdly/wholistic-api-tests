@@ -20176,13 +20176,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3604fcfe-37bf-4ce4-a98c-3d874d465ecc",
+				"id": "0f31b9ed-821b-4f71-b930-d0774e776227",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"ikigai.wholistic.work\"",
+					"  value: \"https://\" + \"Account.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20190,7 +20190,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e2ce2111-9378-4507-8f66-c39482797f1e",
+				"id": "946cc23a-890d-4315-9f6a-af08ebf6665b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
