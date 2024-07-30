@@ -3778,16 +3778,105 @@
 					"name": "List Plans",
 					"item": [
 						{
-							"name": "New Request",
-							"id": "7b8500a3-916e-47ea-8f74-1043f6eb4ab2",
+							"name": "List Plans Copy",
+							"id": "16ad6575-05a8-4f47-80d5-52ec9f50cc6d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans"
+									],
+									"query": [
+										{
+											"key": "filter[currency]",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "filter[processor]",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "filter[interval]",
+											"value": "monthly",
+											"disabled": true
+										},
+										{
+											"key": "filter[name]",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "filter[status]",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
 							},
-							"response": []
+							"response": [
+								{
+									"id": "17b72af1-1bda-42f0-854b-b30f9f55186e",
+									"name": "List Plans",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/billings/plans"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "310"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"136-VKn7G9nFd/jiGv3wk1gKIEwd6p0\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 06:47:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched plan\",\n    \"data\": [\n        {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "6b8d701e-a463-4af5-888d-a3cb5f8799cc"
