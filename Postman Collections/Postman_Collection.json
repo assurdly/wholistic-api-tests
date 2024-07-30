@@ -3776,7 +3776,20 @@
 				},
 				{
 					"name": "List Plans",
-					"item": [],
+					"item": [
+						{
+							"name": "New Request",
+							"id": "7b8500a3-916e-47ea-8f74-1043f6eb4ab2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
 					"id": "6b8d701e-a463-4af5-888d-a3cb5f8799cc"
 				},
 				{
