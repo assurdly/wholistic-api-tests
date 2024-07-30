@@ -20164,6 +20164,121 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Public Workspace Details Copy",
+			"id": "319be7b4-a0f9-4857-9c21-6f6e7cc30d5e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/workspaces/public"
+			},
+			"response": [
+				{
+					"id": "cc62c015-ae04-455a-bbd3-a4b700510a23",
+					"name": "Get Public Workspace Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/workspaces/public"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "https://admind.wholistic.work"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "340"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"154-/wOvjo4nSSQ6atQS3WJStXmadPg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 30 Jul 2024 00:03:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"name\": \"Assurdly-342dd\",\n        \"status\": \"active\",\n        \"slug\": \"admind\",\n        \"domain\": \"admind.wholistic.work\",\n        \"logoUrl\": null,\n        \"serviceTypes\": [\n            \"Compliance\",\n            \"Product Management\",\n            \"Product, Delivery\"\n        ],\n        \"createdAt\": \"2024-04-28T22:46:22.274Z\"\n    }\n}"
+				}
+			]
 		}
 	],
 	"auth": {
@@ -20176,13 +20291,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fee83317-e717-4dea-9dc8-33d9052daab8",
+				"id": "05752b10-e14f-4a03-a548-80d31937a166",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"ikigai.wholistic.work\"",
+					"  value: \"https://\" + \"account.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20190,7 +20305,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b5a2dfbe-6650-4c7e-a4d9-fbb342eb20dd",
+				"id": "8cf39521-6f7a-4d35-a8ac-09cffeb77352",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
