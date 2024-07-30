@@ -20176,13 +20176,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a57731d3-05f3-4128-9ec1-ed33c88565fe",
+				"id": "6c4abb04-3b18-4a81-8d1b-257dda66c318",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"okiki.wholistic.work\"",
+					"  value: \"https://\" + \"ikigai.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20190,7 +20190,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a3735e21-8069-44b9-b23d-6d6ed7b8b649",
+				"id": "d040b06d-60c8-4c7b-8c74-a870055eecc6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
