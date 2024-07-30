@@ -7082,6 +7082,373 @@
 				}
 			],
 			"id": "de28a402-be5f-440a-afb0-f69ba54397b3"
+		},
+		{
+			"name": "Integrations",
+			"item": [
+				{
+					"name": "List Integrations",
+					"id": "eed23778-0b99-43dc-b620-fc2a542d5a9a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/integrations?filter[integrated]=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"integrations"
+							],
+							"query": [
+								{
+									"key": "filter[integrated]",
+									"value": "true"
+								},
+								{
+									"key": "filter[authorized]",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "72d20754-7ba9-46bc-ab8a-c5b21059ac29",
+							"name": "List Integrations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/integrations"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "739"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e3-LVPfFriKVkv3W31RU1UYDauD61Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 May 2024 18:54:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched integration\",\n    \"data\": [\n        {\n            \"id\": \"0ae13260-c7b1-4ab7-8d17-3c5c7f7b5dfa\",\n            \"name\": \"Clickup\",\n            \"slug\": \"clickup\",\n            \"description\": \"For agile project management and issue tracking.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.526Z\"\n        },\n        {\n            \"id\": \"798ab3d2-c68a-42f3-a7cc-c922bcc749b0\",\n            \"name\": \"Slack\",\n            \"slug\": \"slack\",\n            \"description\": \"For team communication and real-time collaboration.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.353Z\"\n        },\n        {\n            \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n            \"name\": \"Google\",\n            \"slug\": \"google\",\n            \"description\": \"For Google Workspaces\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 3,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Integration",
+					"id": "67369d43-e647-42ec-a5a3-6795effa1f83",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"integration\": \"google\",\n    \"clientId\": \"1234567890\",\n    \"clientSecret\": \"1234567890\",\n    \"redirectUri\": \"https://demo.wholistic.work/auth/callback\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/integrations"
+					},
+					"response": [
+						{
+							"id": "69061888-761c-4115-9490-92dafff6744a",
+							"name": "Set Integration",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"integration\": \"google\",\n    \"clientId\": \"1234567890\",\n    \"clientSecret\": \"1234567890\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/integrations"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f5-XkfE/TlTpZoBmiObv3l/4+NAtbs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 May 2024 19:20:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created integration\",\n    \"data\": {\n        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n        \"name\": \"Google\",\n        \"slug\": \"google\",\n        \"description\": \"For Google Workspaces\",\n        \"integrated\": true,\n        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Integration",
+					"id": "d34bc6d8-b2ef-46b5-85ca-ce2afed7816e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/integrations/slack"
+					},
+					"response": [
+						{
+							"id": "3a6b004f-58fc-4adf-94c3-c1282e767d48",
+							"name": "Delete Integration",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}/integrations/google"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-tXVCpLv3tCHuzRth/PZ0ls1E+EQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 May 2024 19:25:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted integration\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Authorize Integration",
+					"id": "656802c8-af3b-4c3f-83f2-20e8b2118798",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"978438002993.7189058382789.13d542200f92fe3b3525912903762d005978c397e4ad0fd4d6693482688c008b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/integrations/:integration/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"integrations",
+								":integration",
+								"auth"
+							],
+							"variable": [
+								{
+									"id": "07f5f844-1b85-4e0d-9728-6821a2d4164f",
+									"key": "integration",
+									"value": "clickup"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Integration Items",
+					"id": "0647323b-59a0-47fb-803a-0b022eba2a46",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/integrations/:integration/items",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"integrations",
+								":integration",
+								"items"
+							],
+							"variable": [
+								{
+									"id": "a918a859-6316-42f6-b818-b5c1e30c403d",
+									"key": "integration",
+									"value": "google-docs"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e8c8cc76-9a98-434e-8299-bcd04d1d0ee9",
+							"name": "List Integration Items",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/integrations/:integration/items",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"integrations",
+										":integration",
+										"items"
+									],
+									"variable": [
+										{
+											"key": "integration",
+											"value": "google-docs"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25373"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"631d-t/ZeW0JzLYzGvW1O6lU8cbTP7Ig\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 May 2024 07:34:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched integration items\",\n    \"data\": [\n        {\n            \"itemId\": \"18wmALpFfY903XC8NNk727GzMsEYe2rKnqyzMZryz1Dw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic: High level Features\",\n            \"url\": \"https://docs.google.com/document/d/18wmALpFfY903XC8NNk727GzMsEYe2rKnqyzMZryz1Dw\"\n        },\n        {\n            \"itemId\": \"1kf6J_deuQamusiAXcbmQ0QJiGgryZ7yLYFQBo-SgD6E\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic: Organisation User Stories\",\n            \"url\": \"https://docs.google.com/document/d/1kf6J_deuQamusiAXcbmQ0QJiGgryZ7yLYFQBo-SgD6E\"\n        },\n        {\n            \"itemId\": \"1YlMAPWY3XguNxIO_ZjmKs8lVZ79cR1is-jDxKQ7GzZI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Engineering Weekly Report\",\n            \"url\": \"https://docs.google.com/document/d/1YlMAPWY3XguNxIO_ZjmKs8lVZ79cR1is-jDxKQ7GzZI\"\n        },\n        {\n            \"itemId\": \"1U42u5nZt9UbEvaReAIj_2l21NMOfeYTzJXS0aLyeEbk\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic: Notification Content\",\n            \"url\": \"https://docs.google.com/document/d/1U42u5nZt9UbEvaReAIj_2l21NMOfeYTzJXS0aLyeEbk\"\n        },\n        {\n            \"itemId\": \"1fkJ44CBJKFeJIiEBabdak5wiwXA6mpwYQxs4MxauEYw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Adewunmi Akinsanya - Ramp Cover Letter\",\n            \"url\": \"https://docs.google.com/document/d/1fkJ44CBJKFeJIiEBabdak5wiwXA6mpwYQxs4MxauEYw\"\n        },\n        {\n            \"itemId\": \"16lpmkeNBNWGnSgI6VOhcgcmSgAoSo3Nwre69pHNXrIA\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Kolo Finance: Week 5 (23rd - 27th October, 2023)\",\n            \"url\": \"https://docs.google.com/document/d/16lpmkeNBNWGnSgI6VOhcgcmSgAoSo3Nwre69pHNXrIA\"\n        },\n        {\n            \"itemId\": \"1a5i_-tBH-NvkaFZduhQjXD54lUN-lLagQThQTVcRkMI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Assurdly|Uniswitch - NIBSS Integration Handover Note\",\n            \"url\": \"https://docs.google.com/document/d/1a5i_-tBH-NvkaFZduhQjXD54lUN-lLagQThQTVcRkMI\"\n        },\n        {\n            \"itemId\": \"1k54Gvmm-XDJ05YyU2euBtMDZbNrgMSIC4a_e-iv9MpQ\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic: Sample email template\",\n            \"url\": \"https://docs.google.com/document/d/1k54Gvmm-XDJ05YyU2euBtMDZbNrgMSIC4a_e-iv9MpQ\"\n        },\n        {\n            \"itemId\": \"17clf2IJ0nr0XdXWFL9S9POgsFPmUOwTlqeJnkyxzkQc\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open banking: Pilot Test Overview\",\n            \"url\": \"https://docs.google.com/document/d/17clf2IJ0nr0XdXWFL9S9POgsFPmUOwTlqeJnkyxzkQc\"\n        },\n        {\n            \"itemId\": \"1YTIyX8lrOK2Kc-V9jZSUFw7mTV0m7_1iHw3qiApfVbc\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic: Project Dependencies\",\n            \"url\": \"https://docs.google.com/document/d/1YTIyX8lrOK2Kc-V9jZSUFw7mTV0m7_1iHw3qiApfVbc\"\n        },\n        {\n            \"itemId\": \"1L-rj8fj_kkXfaeUZYpQTC41obYkIJQuiBk8k87HLhio\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Project Jarvis: Product Brief\",\n            \"url\": \"https://docs.google.com/document/d/1L-rj8fj_kkXfaeUZYpQTC41obYkIJQuiBk8k87HLhio\"\n        },\n        {\n            \"itemId\": \"1sye2voCAwIcyVulfvCNia2ojSUiL_gUguAIsRB-eNOM\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking Gateway: Email Notification Content\",\n            \"url\": \"https://docs.google.com/document/d/1sye2voCAwIcyVulfvCNia2ojSUiL_gUguAIsRB-eNOM\"\n        },\n        {\n            \"itemId\": \"1eYT3ghHOi8OqMWIrS4R01b4bXTdFXaYC2P8ZINEJbSw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"InstantEase FRD - Customers\",\n            \"url\": \"https://docs.google.com/document/d/1eYT3ghHOi8OqMWIrS4R01b4bXTdFXaYC2P8ZINEJbSw\"\n        },\n        {\n            \"itemId\": \"1OCeJEwbqCK4I7RwS8-HhDAD4KtdvkLOXBXmAWYFuV3A\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking Gateway: API Provider User Stories\",\n            \"url\": \"https://docs.google.com/document/d/1OCeJEwbqCK4I7RwS8-HhDAD4KtdvkLOXBXmAWYFuV3A\"\n        },\n        {\n            \"itemId\": \"1ci23soUl7-kr-O2OglsubOtYRxACIYtqr2vVWGlMrbI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic - Terms of Use \",\n            \"url\": \"https://docs.google.com/document/d/1ci23soUl7-kr-O2OglsubOtYRxACIYtqr2vVWGlMrbI\"\n        },\n        {\n            \"itemId\": \"1OR-FN3CzmoinSKeQr-zf8gBiG-TzFQAfhMFnCVl8DZM\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic - Frequently Asked Questions\",\n            \"url\": \"https://docs.google.com/document/d/1OR-FN3CzmoinSKeQr-zf8gBiG-TzFQAfhMFnCVl8DZM\"\n        },\n        {\n            \"itemId\": \"1DJGiD39wn59rw4JTk41O3UzSAf9sIgMrMXdAeA3ZuU0\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking Gateway: Load Test Plan\",\n            \"url\": \"https://docs.google.com/document/d/1DJGiD39wn59rw4JTk41O3UzSAf9sIgMrMXdAeA3ZuU0\"\n        },\n        {\n            \"itemId\": \"1yfkshdsMFlCOJThjm0kELT6aZy7DLjYqyxjvBfSCEr4\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic: Backend Implementation Approach/System Architecture\",\n            \"url\": \"https://docs.google.com/document/d/1yfkshdsMFlCOJThjm0kELT6aZy7DLjYqyxjvBfSCEr4\"\n        },\n        {\n            \"itemId\": \"1bs84di97sY0vw6y1Xi48cgiRzIdyKOCCjyyBbIw3HpE\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Wholistic: Frontend Implementation Approach\",\n            \"url\": \"https://docs.google.com/document/d/1bs84di97sY0vw6y1Xi48cgiRzIdyKOCCjyyBbIw3HpE\"\n        },\n        {\n            \"itemId\": \"1LhTrDrzI6VYyDh7pgUBmuaJx6yJIEykQweokjpdHerU\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Adewunmi Akinsanya Resume\",\n            \"url\": \"https://docs.google.com/document/d/1LhTrDrzI6VYyDh7pgUBmuaJx6yJIEykQweokjpdHerU\"\n        },\n        {\n            \"itemId\": \"1W5ErRukXKQZoeKV81V2lmsclDp1KnzH2UWQosZUmsRE\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking: API Consumer User Stories\",\n            \"url\": \"https://docs.google.com/document/d/1W5ErRukXKQZoeKV81V2lmsclDp1KnzH2UWQosZUmsRE\"\n        },\n        {\n            \"itemId\": \"1f4DCaBYgkVifsnKvHSEWcQQEqilmQOSwnRIVIV2jXxc\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking Gateway: High Level Features\",\n            \"url\": \"https://docs.google.com/document/d/1f4DCaBYgkVifsnKvHSEWcQQEqilmQOSwnRIVIV2jXxc\"\n        },\n        {\n            \"itemId\": \"1kiE99X9ALTJ2ic__5N33x2LPMpqG1w6CHMr0MlI6kzM\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"M-Fuel-business-requirements-document\",\n            \"url\": \"https://docs.google.com/document/d/1kiE99X9ALTJ2ic__5N33x2LPMpqG1w6CHMr0MlI6kzM\"\n        },\n        {\n            \"itemId\": \"1klKs3x95d-RncHJXWKzCfDh8jU2WIt-9yKWh-1o8Kak\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking : Test Feedback\",\n            \"url\": \"https://docs.google.com/document/d/1klKs3x95d-RncHJXWKzCfDh8jU2WIt-9yKWh-1o8Kak\"\n        },\n        {\n            \"itemId\": \"1xiJB4iZOW6Mgfk6urAiWdYP5GA2t9QDkTzGpFa3hw94\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Untitled document\",\n            \"url\": \"https://docs.google.com/document/d/1xiJB4iZOW6Mgfk6urAiWdYP5GA2t9QDkTzGpFa3hw94\"\n        },\n        {\n            \"itemId\": \"1Ql2wWSbx1UP1HFsXIz3YO4blyvP9DAaMngLhCDK2d_k\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Kolo Finance: FAQs\",\n            \"url\": \"https://docs.google.com/document/d/1Ql2wWSbx1UP1HFsXIz3YO4blyvP9DAaMngLhCDK2d_k\"\n        },\n        {\n            \"itemId\": \"13eAxnXQQtdrXm4s3-l0vdpYPIWlg6346g0dhtOluQ90\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Kolo Finance: Project Repository\",\n            \"url\": \"https://docs.google.com/document/d/13eAxnXQQtdrXm4s3-l0vdpYPIWlg6346g0dhtOluQ90\"\n        },\n        {\n            \"itemId\": \"1i8I8PbeG9aEC5JX2l-iRAEUyY9V4nzColkmtIzvOQ6Y\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking Gateway: Technical Implementation Approach\",\n            \"url\": \"https://docs.google.com/document/d/1i8I8PbeG9aEC5JX2l-iRAEUyY9V4nzColkmtIzvOQ6Y\"\n        },\n        {\n            \"itemId\": \"1eB5n-EhIPX70Rl7p2J5XdFpyJI7WC9pL8AbViu4R2nA\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Adewunmi Akinsanya - Senior Software Engineer Resume\",\n            \"url\": \"https://docs.google.com/document/d/1eB5n-EhIPX70Rl7p2J5XdFpyJI7WC9pL8AbViu4R2nA\"\n        },\n        {\n            \"itemId\": \"1X1edbv4s7BFR2ayoJgXuUxMXlslwlYnhqR44dMpFBW4\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"78 Financials - NIBSS EASYPAY UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1X1edbv4s7BFR2ayoJgXuUxMXlslwlYnhqR44dMpFBW4\"\n        },\n        {\n            \"itemId\": \"1iBaBAIU-YRgjD9-Fda-2kvXr28F3LZ8bnAIRyoTB-JY\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Loan Offer documentation\",\n            \"url\": \"https://docs.google.com/document/d/1iBaBAIU-YRgjD9-Fda-2kvXr28F3LZ8bnAIRyoTB-JY\"\n        },\n        {\n            \"itemId\": \"1DE0TFyI_b9KEk54IfdkO3-bXD_aCH5iheyU3eHPvgUE\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Clubzella - Highlevel Features Phase 1 \",\n            \"url\": \"https://docs.google.com/document/d/1DE0TFyI_b9KEk54IfdkO3-bXD_aCH5iheyU3eHPvgUE\"\n        },\n        {\n            \"itemId\": \"1AG0p4YXuDJ6z6YsZRjQ0fovX-6uHJclmPwIX-vuzbQs\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Tonye Greene - Resume\",\n            \"url\": \"https://docs.google.com/document/d/1AG0p4YXuDJ6z6YsZRjQ0fovX-6uHJclmPwIX-vuzbQs\"\n        },\n        {\n            \"itemId\": \"1CNWRtsjK7TsDAUB7WVGTtFa_yGjtAAncGW1uAaqBRYs\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"OpenBanking Gateway Installation Guide\",\n            \"url\": \"https://docs.google.com/document/d/1CNWRtsjK7TsDAUB7WVGTtFa_yGjtAAncGW1uAaqBRYs\"\n        },\n        {\n            \"itemId\": \"1plJp8ZI8YG_d-nY12HLBH7oi9h52d58bLKElRHZSL-Q\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Direct Debit: Deployment Strategy\",\n            \"url\": \"https://docs.google.com/document/d/1plJp8ZI8YG_d-nY12HLBH7oi9h52d58bLKElRHZSL-Q\"\n        },\n        {\n            \"itemId\": \"1wdJ-iKclyg9lsNQ11rT5RZ35hVUjQoXxFYjYK74LDwg\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking Gateway: Registry High Level Features\",\n            \"url\": \"https://docs.google.com/document/d/1wdJ-iKclyg9lsNQ11rT5RZ35hVUjQoXxFYjYK74LDwg\"\n        },\n        {\n            \"itemId\": \"1F_WZCc1hNga4_vm8fa56BcNplcaZMC-ognnGaJaRn4U\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Direct Debit: Project Repository\",\n            \"url\": \"https://docs.google.com/document/d/1F_WZCc1hNga4_vm8fa56BcNplcaZMC-ognnGaJaRn4U\"\n        },\n        {\n            \"itemId\": \"1a8RNsd2Ziw-P1sXFs4wmd3yPeAfFDcffkzWugWnzfQI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Direct Debit: Project Dependencies\",\n            \"url\": \"https://docs.google.com/document/d/1a8RNsd2Ziw-P1sXFs4wmd3yPeAfFDcffkzWugWnzfQI\"\n        },\n        {\n            \"itemId\": \"1AMGYnojmoKbOl4RisEXGduO42Y2eo1DxK65bz6g2kUw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Direct Debit: Frontend Implementation\",\n            \"url\": \"https://docs.google.com/document/d/1AMGYnojmoKbOl4RisEXGduO42Y2eo1DxK65bz6g2kUw\"\n        },\n        {\n            \"itemId\": \"1rzCbahqmIPK55LIvhWkFF5sKvIWd9tKd5WWOe2W2444\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Direct Debit: Backend Implementation\",\n            \"url\": \"https://docs.google.com/document/d/1rzCbahqmIPK55LIvhWkFF5sKvIWd9tKd5WWOe2W2444\"\n        },\n        {\n            \"itemId\": \"154oMyfXQTbZInjOV3IZuh_ljAP7VJqj7OjQwta5EbYQ\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Direct Debit - High Level Features\",\n            \"url\": \"https://docs.google.com/document/d/154oMyfXQTbZInjOV3IZuh_ljAP7VJqj7OjQwta5EbYQ\"\n        },\n        {\n            \"itemId\": \"18Ot5xkkR56tAojH0yVTE31zH3DLofTNrTwVLx08H7B4\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Earna Product Manager\",\n            \"url\": \"https://docs.google.com/document/d/18Ot5xkkR56tAojH0yVTE31zH3DLofTNrTwVLx08H7B4\"\n        },\n        {\n            \"itemId\": \"1mb8k2ejeroe1410QBDOb1YFhYZBuCEIPPLye33e7JaI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Configurable Loan Forms | Phase 1\",\n            \"url\": \"https://docs.google.com/document/d/1mb8k2ejeroe1410QBDOb1YFhYZBuCEIPPLye33e7JaI\"\n        },\n        {\n            \"itemId\": \"17JDmAKZQ1afzJ8kRIiOcUtD6RThaoJmuFCZLVbGpuvI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Kingdom_Orjiewuru's_Resume\",\n            \"url\": \"https://docs.google.com/document/d/17JDmAKZQ1afzJ8kRIiOcUtD6RThaoJmuFCZLVbGpuvI\"\n        },\n        {\n            \"itemId\": \"1lTcOFj9Q7SyJLexOIk7hO2mLLRbk0GwyhkyO5_Y_CRI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Colligo // Consolidated payments services\",\n            \"url\": \"https://docs.google.com/document/d/1lTcOFj9Q7SyJLexOIk7hO2mLLRbk0GwyhkyO5_Y_CRI\"\n        },\n        {\n            \"itemId\": \"1XVZb9tFYeaWC8TIPk_IyQpKrkHS9ay-G_SUccDM7VPE\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"04/10/23 Kolo Finance - Design Review and Approval Meeting\",\n            \"url\": \"https://docs.google.com/document/d/1XVZb9tFYeaWC8TIPk_IyQpKrkHS9ay-G_SUccDM7VPE\"\n        },\n        {\n            \"itemId\": \"14OARs99TfsWzv7vTELirhIqwLtYNjvv0t9_YK1otyok\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open Banking Gateway: FAQ\",\n            \"url\": \"https://docs.google.com/document/d/14OARs99TfsWzv7vTELirhIqwLtYNjvv0t9_YK1otyok\"\n        },\n        {\n            \"itemId\": \"1WJwnRzLlZ5UCcjBbQcFs8R5hXbODIaeoXyUlFiYX4G8\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"78 Financials: Test Credentials\",\n            \"url\": \"https://docs.google.com/document/d/1WJwnRzLlZ5UCcjBbQcFs8R5hXbODIaeoXyUlFiYX4G8\"\n        },\n        {\n            \"itemId\": \"1pC2rFBc_hnjOtDbI7tiFAnUFgRyVwCHm6-Hfesv4KUw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"07/09/2023 Open Banking: POC Sync\",\n            \"url\": \"https://docs.google.com/document/d/1pC2rFBc_hnjOtDbI7tiFAnUFgRyVwCHm6-Hfesv4KUw\"\n        },\n        {\n            \"itemId\": \"1TtVomwcA6WPTY72Mk5UJL5OeNAvuxXaS_a7_sQN7QR0\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"backend challenge\",\n            \"url\": \"https://docs.google.com/document/d/1TtVomwcA6WPTY72Mk5UJL5OeNAvuxXaS_a7_sQN7QR0\"\n        },\n        {\n            \"itemId\": \"1x7kt02EElx1dzZj1CSEBCVR7Y_AULfnuXe-67zfzNGs\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Open banking - Notifications List\",\n            \"url\": \"https://docs.google.com/document/d/1x7kt02EElx1dzZj1CSEBCVR7Y_AULfnuXe-67zfzNGs\"\n        },\n        {\n            \"itemId\": \"1JR_FPuuoXCyipqeSXRYEfuOZMmed_QxADu6GPoOYF4g\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \" 25/08/2023 Open Banking: Weekly sync \",\n            \"url\": \"https://docs.google.com/document/d/1JR_FPuuoXCyipqeSXRYEfuOZMmed_QxADu6GPoOYF4g\"\n        },\n        {\n            \"itemId\": \"1BNgFSJq9QbeHJvDx5hqqhBs-dqExgPh0JuJdqrN-mAQ\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"NIP Inward - CBA Specification\",\n            \"url\": \"https://docs.google.com/document/d/1BNgFSJq9QbeHJvDx5hqqhBs-dqExgPh0JuJdqrN-mAQ\"\n        },\n        {\n            \"itemId\": \"1k0136qEm15fxU1sKtJvi63nwPvjjPReGxrKhqpLC7sI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Club Zella: Project Dependencies\",\n            \"url\": \"https://docs.google.com/document/d/1k0136qEm15fxU1sKtJvi63nwPvjjPReGxrKhqpLC7sI\"\n        },\n        {\n            \"itemId\": \"1e4bHBrrmGlQy_fbx4FrHLO6Tez4f87jpn42a-UPlAiw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Uniswitch iGree - Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/1e4bHBrrmGlQy_fbx4FrHLO6Tez4f87jpn42a-UPlAiw\"\n        },\n        {\n            \"itemId\": \"1mgC9u6QjrmGGEbaaB1Ps4PzzdKJaaO4NAcYSC266cFQ\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Uniswitch - NQR UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1mgC9u6QjrmGGEbaaB1Ps4PzzdKJaaO4NAcYSC266cFQ\"\n        },\n        {\n            \"itemId\": \"1MrAvft5Qdd2fWDk3rhA8uKv16PeV1XWjdb-L9yHRyAQ\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"03/05/2023 Sterling Direct Debit: Dependency Clarification Meeting Notes\",\n            \"url\": \"https://docs.google.com/document/d/1MrAvft5Qdd2fWDk3rhA8uKv16PeV1XWjdb-L9yHRyAQ\"\n        },\n        {\n            \"itemId\": \"1h6XvE45rQuBo5sDXIm0HGJUAcXizExwlnHAZqpzcX18\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"78 Financials - NIBSS iGree UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1h6XvE45rQuBo5sDXIm0HGJUAcXizExwlnHAZqpzcX18\"\n        },\n        {\n            \"itemId\": \"1fL2JJWyon_ITtdyW-YEqYgKp9iTU2d6Xub4GYAaAqkw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"78 Financials - NIBSS Mandate Service UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1fL2JJWyon_ITtdyW-YEqYgKp9iTU2d6Xub4GYAaAqkw\"\n        },\n        {\n            \"itemId\": \"1LdNhrgT7WPNFv8UBeSmfl9ISVhghVR4kPkd3nOKJOjk\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"78 Financials - NIBSS QR UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1LdNhrgT7WPNFv8UBeSmfl9ISVhghVR4kPkd3nOKJOjk\"\n        },\n        {\n            \"itemId\": \"1FmWcTb_YLEyq8pmi_2mElEzI0yrFJeOSKm3ARhXyd4A\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Club Zella: Week 23 (24th July - 28th July 2023) \",\n            \"url\": \"https://docs.google.com/document/d/1FmWcTb_YLEyq8pmi_2mElEzI0yrFJeOSKm3ARhXyd4A\"\n        },\n        {\n            \"itemId\": \"196fBLgX7nCMPNFgO9WrnC6p4SkPFJepTMvZiDnr9f_o\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Direct Debit Service for Sterling Bank - Project Document\",\n            \"url\": \"https://docs.google.com/document/d/196fBLgX7nCMPNFgO9WrnC6p4SkPFJepTMvZiDnr9f_o\"\n        },\n        {\n            \"itemId\": \"1AYbfv_UwRMd1pTtRAZNZV7zeg2ELhJudIWSNR10cpjg\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Loan Extension Feature\",\n            \"url\": \"https://docs.google.com/document/d/1AYbfv_UwRMd1pTtRAZNZV7zeg2ELhJudIWSNR10cpjg\"\n        },\n        {\n            \"itemId\": \"12wfQTn9-k8WrajiinsmSnaB9hMs8xXQDW6Q-xvWSrV0\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Messenger: Order via API - Implementation Documentation\",\n            \"url\": \"https://docs.google.com/document/d/12wfQTn9-k8WrajiinsmSnaB9hMs8xXQDW6Q-xvWSrV0\"\n        },\n        {\n            \"itemId\": \"1_TSM--oLk-c79vK19jpKz_SupCM14KmqrFmLAAAYVnU\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Sample Bank Reference Letter\",\n            \"url\": \"https://docs.google.com/document/d/1_TSM--oLk-c79vK19jpKz_SupCM14KmqrFmLAAAYVnU\"\n        },\n        {\n            \"itemId\": \"1nwi-zeTi6L1vPTqDq_kPnKz-qf3Y1dc9mYQ5An5v-hw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Sterling Direct Debit - NIBSS Integration Handover Note\",\n            \"url\": \"https://docs.google.com/document/d/1nwi-zeTi6L1vPTqDq_kPnKz-qf3Y1dc9mYQ5An5v-hw\"\n        },\n        {\n            \"itemId\": \"1CCldduObp3hC7lAcDvQqwyP32mvTFbQSjPKYzD1bGAM\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Ofuya Tamarabibi's CV\",\n            \"url\": \"https://docs.google.com/document/d/1CCldduObp3hC7lAcDvQqwyP32mvTFbQSjPKYzD1bGAM\"\n        },\n        {\n            \"itemId\": \"1oLcy3kzJ2-8buBkCg1O3RMa38C5I4uZlaGAQ1ShXd6g\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Assurdly|Payaza - NIBSS Integration Handover Note\",\n            \"url\": \"https://docs.google.com/document/d/1oLcy3kzJ2-8buBkCg1O3RMa38C5I4uZlaGAQ1ShXd6g\"\n        },\n        {\n            \"itemId\": \"1RUcg2Cz2k9VSTCNFF3dmFrT4gOTtgeWXFhoqo5kNbos\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Sterling: NIBSS Integration Service Encryption\",\n            \"url\": \"https://docs.google.com/document/d/1RUcg2Cz2k9VSTCNFF3dmFrT4gOTtgeWXFhoqo5kNbos\"\n        },\n        {\n            \"itemId\": \"1WNVo_onkAJ_F8eU-z2XIxTZr8hhm30nAfwuwKnwEFRo\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"ClubZella™ Terms of Service\",\n            \"url\": \"https://docs.google.com/document/d/1WNVo_onkAJ_F8eU-z2XIxTZr8hhm30nAfwuwKnwEFRo\"\n        },\n        {\n            \"itemId\": \"1vSMrPn4PbGmAgRC-gMMXf01MqyRpD464LXNjWd4czIk\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Fans -  User Stories\",\n            \"url\": \"https://docs.google.com/document/d/1vSMrPn4PbGmAgRC-gMMXf01MqyRpD464LXNjWd4czIk\"\n        },\n        {\n            \"itemId\": \"1Ywl1O4ngHTiTxi3iPtxJuELBYjRXa3pqEnB6YMhGknw\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Sterling Bank: NIBSS EASYPAY UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1Ywl1O4ngHTiTxi3iPtxJuELBYjRXa3pqEnB6YMhGknw\"\n        },\n        {\n            \"itemId\": \"1fNkd6zysn5zDcbaFzpfpcZKq1xOnGMFVUKdjIuDp0-4\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Sterling Bank: NIBSS Mandate Service UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1fNkd6zysn5zDcbaFzpfpcZKq1xOnGMFVUKdjIuDp0-4\"\n        },\n        {\n            \"itemId\": \"1QrufFT6vqikVs-9Ed4hqMfUCotRDF4fDmeDy3SOEOpU\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Sterling Bank: Easypay - Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/1QrufFT6vqikVs-9Ed4hqMfUCotRDF4fDmeDy3SOEOpU\"\n        },\n        {\n            \"itemId\": \"1N7aoUMc9x00TiEQYZeY737YK0RcnIWLRxE0LMvvENbE\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Sterling Bank: Mandate Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/1N7aoUMc9x00TiEQYZeY737YK0RcnIWLRxE0LMvvENbE\"\n        },\n        {\n            \"itemId\": \"1QONxAH17rRXscm5gBtpBf6jHjSa5TCNBfNPoaengZ8k\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"NIBSS-In-A-Box - Audit Logs\",\n            \"url\": \"https://docs.google.com/document/d/1QONxAH17rRXscm5gBtpBf6jHjSa5TCNBfNPoaengZ8k\"\n        },\n        {\n            \"itemId\": \"1Mi2waY8SDGSLPWLUtF9BA-WRuPjWlJ156xyQLD3_nAM\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Fenestra // Statement data for lenders\",\n            \"url\": \"https://docs.google.com/document/d/1Mi2waY8SDGSLPWLUtF9BA-WRuPjWlJ156xyQLD3_nAM\"\n        },\n        {\n            \"itemId\": \"1q9cJ83KV-6JyWwlbDnpXtang7-SNYFXmuhq0WpJKVoQ\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza- NIBSS QR UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1q9cJ83KV-6JyWwlbDnpXtang7-SNYFXmuhq0WpJKVoQ\"\n        },\n        {\n            \"itemId\": \"1qNCcF7x8TpYtMQwldvo1-vp1TtOsPhh0QyGQF_KRGFM\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza NQR - Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/1qNCcF7x8TpYtMQwldvo1-vp1TtOsPhh0QyGQF_KRGFM\"\n        },\n        {\n            \"itemId\": \"1Yi697knM2oqgL3qH3CiFja1XgBbbGwDopHzjPsLP34I\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza: NIBSS Integration Week 4 (8th - 12th May, 2023)\",\n            \"url\": \"https://docs.google.com/document/d/1Yi697knM2oqgL3qH3CiFja1XgBbbGwDopHzjPsLP34I\"\n        },\n        {\n            \"itemId\": \"1RrIyPpLJo2Ccor0mmUbLWokHlBxjjD2__khC9SXgYik\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \" Payaza: NIBSS Integration Week 3 (2nd - 5th May, 2023)\",\n            \"url\": \"https://docs.google.com/document/d/1RrIyPpLJo2Ccor0mmUbLWokHlBxjjD2__khC9SXgYik\"\n        },\n        {\n            \"itemId\": \"1qNms9ADYkZybH8cpXI3ino1uaijqxlmY1b5Fh2nelRc\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"SnapCash Merchant: Backend Implementation\",\n            \"url\": \"https://docs.google.com/document/d/1qNms9ADYkZybH8cpXI3ino1uaijqxlmY1b5Fh2nelRc\"\n        },\n        {\n            \"itemId\": \"13OLx05qnqWi7k9hu4zgeJoVzYKToWPvHzKMeV5Ro3k0\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza - NIBSS iGree UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/13OLx05qnqWi7k9hu4zgeJoVzYKToWPvHzKMeV5Ro3k0\"\n        },\n        {\n            \"itemId\": \"1anNHTzjAFiTm6kqwIUgUDDosMGwT87KJqm3qBmKOSkM\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza iGree - Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/1anNHTzjAFiTm6kqwIUgUDDosMGwT87KJqm3qBmKOSkM\"\n        },\n        {\n            \"itemId\": \"1KC1zTKLGK_Iz0Pg879YmPH1UtwWFOIt4WfqGjJjYrdU\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza - Mandate Service UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1KC1zTKLGK_Iz0Pg879YmPH1UtwWFOIt4WfqGjJjYrdU\"\n        },\n        {\n            \"itemId\": \"1MIDjjZ3deNffVc8tmHmtog2CTIHyT60XPx5KaCRCNww\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"05/04/2023  Uniswitch: NIBSS Integration Application Walkthrough\",\n            \"url\": \"https://docs.google.com/document/d/1MIDjjZ3deNffVc8tmHmtog2CTIHyT60XPx5KaCRCNww\"\n        },\n        {\n            \"itemId\": \"1o1H_0GFgjSJ_oQsgkIAfdLY9kezMrvXq39IqrNBPro8\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza - NIBSS EASYPAY UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1o1H_0GFgjSJ_oQsgkIAfdLY9kezMrvXq39IqrNBPro8\"\n        },\n        {\n            \"itemId\": \"11bt8b3Xj_U0unEB4BKpTZRhbAMUXBH-vZSwoSS_fQ_w\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \" Payaza: NIBSS Integration Week 2 (24th - 28th April, 2023)\",\n            \"url\": \"https://docs.google.com/document/d/11bt8b3Xj_U0unEB4BKpTZRhbAMUXBH-vZSwoSS_fQ_w\"\n        },\n        {\n            \"itemId\": \"11dHcTTBh31k8PGJ-RVPkrZWfPVDobKXnO6R9UUewLhg\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Page Financials - EASYPAY UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/11dHcTTBh31k8PGJ-RVPkrZWfPVDobKXnO6R9UUewLhg\"\n        },\n        {\n            \"itemId\": \"1li8zY4NPRRzwF9B5HotszZkeBLSX2kvz7I_GRu8ZSyI\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Page Financials - Mandate Service UAT TEST Report\",\n            \"url\": \"https://docs.google.com/document/d/1li8zY4NPRRzwF9B5HotszZkeBLSX2kvz7I_GRu8ZSyI\"\n        },\n        {\n            \"itemId\": \"1NAQNakBACziZYrtXccHhpH1W7bpjWL33qJqgrp_MkzU\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"ClubZella™  Community Guidelines\",\n            \"url\": \"https://docs.google.com/document/d/1NAQNakBACziZYrtXccHhpH1W7bpjWL33qJqgrp_MkzU\"\n        },\n        {\n            \"itemId\": \"14De9NjBi2WAPI1A9_SG5P0v8SiEWx7bXE-XaJhtelH8\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza EasyPay - Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/14De9NjBi2WAPI1A9_SG5P0v8SiEWx7bXE-XaJhtelH8\"\n        },\n        {\n            \"itemId\": \"1jQ01ttjpmkPEc7PIz53cG-tNcajy-wiCsUw37eHJlWc\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza Mandate - Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/1jQ01ttjpmkPEc7PIz53cG-tNcajy-wiCsUw37eHJlWc\"\n        },\n        {\n            \"itemId\": \"1b3MzHHOy6K2-Hd1UDZ7UMmJNz2etkctbqL-SHOTxow4\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"ClubZella™  PRD Phase 1\",\n            \"url\": \"https://docs.google.com/document/d/1b3MzHHOy6K2-Hd1UDZ7UMmJNz2etkctbqL-SHOTxow4\"\n        },\n        {\n            \"itemId\": \"16KQJFHPTUDvZVAaS5IyO3tedSeqgwFMfhxKZibYnAhU\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"ClubZella : Categories\",\n            \"url\": \"https://docs.google.com/document/d/16KQJFHPTUDvZVAaS5IyO3tedSeqgwFMfhxKZibYnAhU\"\n        },\n        {\n            \"itemId\": \"1fLcMLENSHGY8Pd6vPlKih-CagmnTbowd0892FGIOFIQ\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Uniswitch EasyPay - Credentials Guide\",\n            \"url\": \"https://docs.google.com/document/d/1fLcMLENSHGY8Pd6vPlKih-CagmnTbowd0892FGIOFIQ\"\n        },\n        {\n            \"itemId\": \"1zY6_10xHwsGgytHP6kFgInVROma6uxw41eYLEhy_HWU\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"ClubZella™  Social Media Guidelines\",\n            \"url\": \"https://docs.google.com/document/d/1zY6_10xHwsGgytHP6kFgInVROma6uxw41eYLEhy_HWU\"\n        },\n        {\n            \"itemId\": \"1I9BirTiz5vnv047l6oWcyPWj_1qpsQtHUkeQc0J4Gi8\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza: NIBSS Integration Week 1 (17th - 21st April, 2023)\",\n            \"url\": \"https://docs.google.com/document/d/1I9BirTiz5vnv047l6oWcyPWj_1qpsQtHUkeQc0J4Gi8\"\n        },\n        {\n            \"itemId\": \"1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"14/04/2023 Payaza: NIBSS Integration Project Kickoff Meeting\",\n            \"url\": \"https://docs.google.com/document/d/1--0S4GtEoyHOg6YPrwKJFU-VR2yE-3S_QilgQxi46NY\"\n        },\n        {\n            \"itemId\": \"1Kfyq5RO9suAQljnzouTxELVfKg6vGVoTYjRd3pqqQ5Y\",\n            \"userIntegrationId\": \"2d5aaab0-f6be-4987-84f9-59e3aa25689d\",\n            \"name\": \"Payaza: Project Repository\",\n            \"url\": \"https://docs.google.com/document/d/1Kfyq5RO9suAQljnzouTxELVfKg6vGVoTYjRd3pqqQ5Y\"\n        }\n    ],\n    \"meta\": {}\n}"
+						}
+					]
+				}
+			],
+			"id": "499cd65d-04b1-4a88-91ea-cbed5ab198ed"
 		}
 	],
 	"auth": {
