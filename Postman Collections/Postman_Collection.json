@@ -7169,6 +7169,88 @@
 					]
 				},
 				{
+					"name": "List Integrations Copy",
+					"id": "6a4d4d41-bac9-4891-92b4-2009cc31be3d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/integrations?filter[integrated]=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"integrations"
+							],
+							"query": [
+								{
+									"key": "filter[integrated]",
+									"value": "true"
+								},
+								{
+									"key": "filter[authorized]",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "149fb9a9-4130-465f-a8cb-b13040ebf198",
+							"name": "List Integrations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/integrations"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "739"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e3-LVPfFriKVkv3W31RU1UYDauD61Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 May 2024 18:54:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched integration\",\n    \"data\": [\n        {\n            \"id\": \"0ae13260-c7b1-4ab7-8d17-3c5c7f7b5dfa\",\n            \"name\": \"Clickup\",\n            \"slug\": \"clickup\",\n            \"description\": \"For agile project management and issue tracking.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.526Z\"\n        },\n        {\n            \"id\": \"798ab3d2-c68a-42f3-a7cc-c922bcc749b0\",\n            \"name\": \"Slack\",\n            \"slug\": \"slack\",\n            \"description\": \"For team communication and real-time collaboration.\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.353Z\"\n        },\n        {\n            \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n            \"name\": \"Google\",\n            \"slug\": \"google\",\n            \"description\": \"For Google Workspaces\",\n            \"integrated\": false,\n            \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 3,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "Set Integration",
 					"id": "67369d43-e647-42ec-a5a3-6795effa1f83",
 					"protocolProfileBehavior": {
