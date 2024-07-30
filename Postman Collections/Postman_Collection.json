@@ -3788,6 +3788,16 @@
 					"name": "List Cards",
 					"item": [],
 					"id": "ad31438e-84db-4c30-ad26-c04baab83e33"
+				},
+				{
+					"name": "Subscribe to plan",
+					"item": [],
+					"id": "93711b96-89f3-441d-83a3-3c3c24af59d8"
+				},
+				{
+					"name": "Verify Subscription",
+					"item": [],
+					"id": "6e6341f8-bf72-43bf-89c8-6dcc479d454f"
 				}
 			],
 			"id": "1fd1471c-362a-4f61-94ba-dbb4be64a1a3",
