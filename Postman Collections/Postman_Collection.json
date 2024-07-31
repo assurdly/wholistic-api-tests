@@ -4312,119 +4312,92 @@
 			"item": [
 				{
 					"name": "Get Auth Providers",
-					"id": "dd5ad8ca-d40c-46f5-aa06-2b1b57e999ef",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/auth/providers"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "141286a0-6460-400e-b1ff-e4667ae14732",
 							"name": "Get Auth Providers",
-							"originalRequest": {
+							"id": "dd5ad8ca-d40c-46f5-aa06-2b1b57e999ef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/auth/providers"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "853"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"355-V4QkWHTny3JwhMoD2a6OTi2H+XY\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 22 Apr 2024 06:45:38 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "[\n    {\n        \"provider\": \"microsoft\",\n        \"url\": \"https://login.microsoftonline.com/882a38c4-44ee-45de-a50d-e7ea4b689a3a/oauth2/v2.0/authorize?client_id=2fa24578-77f8-4597-8793-be664563ece1&response_type=code&redirect_uri=http://localhost:8080/auth/callback/microsoft&scope=User.Read\"\n    },\n    {\n        \"provider\": \"linkedin\",\n        \"url\": \"https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dgjl74gom187&scope=openid%20profile%20email&redirect_uri=http://localhost:8080/auth/callback/linkedin\"\n    },\n    {\n        \"provider\": \"google\",\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?client_id=757611791737-3hr66h6c8h18eocuihseqidr2fob794o.apps.googleusercontent.com&redirect_uri=http://localhost:8080/auth/callback/google&scope=https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&response_type=code&access_type=offline&prompt=consent\"\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "Authorize Provider",
-					"id": "35490247-9a0d-4126-80ba-503d3a586d93",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"code\": \"0.Aa4AxDgqiO5E3kWlDefqS2iaOnhFoi_4d5dFh5O-ZkVj7OGuADk.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P81hVv9F1hwS4hNFl7ppd9YLA_HwK5QzYfsvmjNKUPcIUKDXt0XiG1mnfKMS7YUx_SbNvuQ0-LV-k5eM9fJBg61Qb18GZIRzLzmV8_p5PAgrVXxdRyErfQcu_YG7L6mJvLRWCnSwKFSo5I3iNI7LG7GGpI5iGFQKFIAllYvoqtZyUapPdCpSBpVomfsPUrlgzVu7W21atV-SOlFg9L5vcnA6nU3SuJhXrwSJcr7m1zzffPMGwQew4zIRT8s5yxW3jm6TB5Cdqqlaz3iFPbu4vldOLR-RBCMAYx7k4JR70X2sOHKJQSOe5QF-KTUTICQkx4SoHnXLT-b4UWD_MNlsHVlkhauJ12RHnmrNFWYF0KBDuQvB9u0mId4Dg4448WJ7iE7DQs_Rdbhl5vwLFA-F4Geh5moh5sj_feN7ek8J0pvWDum9mA5cRwdtBAAXGjKs2H0T1tWirP_tYk9wj82Tpvt0J6X6kedaHEERChh8TUeZSVjCQm9s8piZaTBaPL-5eBhkUiRLfnaE9m45bI-f0DQwgkdPUWCYIskjR5utvQTK2_TCktYw0JbKx2JRbEoCSR9tG-JWjOvGWH9uaTDR7iHxOlspCEoJjiXyY6lu9g4cEIK7osW6Vqam-1qpnVyvw7ZMjzVR2sgELQuJk6yeHDFonUPZasdifv-hYdqBgbFMHOUsK7Lkzt9Gp3i7VLmkULLYkos8a7kPpjW58fvqQfGmRz6uUdQv7F447crivw3CTxA1jDwqq-8O-wMAR-9W7HAbfrVjMR8eMEttlvxheL2NB-AMxnw-zkL0YqoeHp2rBvPzg69GlVdgOHn-ERWxrQPW2YI-9wC2NpsiGPQfpnQhvmXXbfupan_ufI8NswWUr3uRj1nW39eMVlOJNqlpErB15GbGuCnTNrPKbG2GH4DSpc3YQsuCVlrFO23Zt6MOpuLq5h-FXWoK1ZnjCOX7hXsvze_yJN3zdihzQlQcAztax7nqHwuWXJFjJSRTZEb0dWAwJP_rUr0sTbUKeODgud0L3A9dJ_maMX1h_Wai8DMSC7gkJgBw8-d3-7TLkXPjmuXr0nlM-PJSWxb5ka4c1mPk9w0qT2b-W_HvHKKcEowjhilCStHQ_n9A2fLHI8IEXWx0n3ZRphOvw6i4Gdwf66dnosJzJ0_Mf3OFlsa6KLe1KQtbChnLoqqt8GOYbDlI-CkgAUnnuIMCe048YxFrPriWpV3FA96hsQxyyVE10yYX4XG1ENZzMHnk2dY-uecEjsJxLc-FNiEiMYzOILQf6URRAwHmdv5KxPYTEO0N4O0SmYUSnHmri6t45shWsFocv1DYwNHiQjHSMVykLlBG-it4FDvntc3aGzHceyrTDho9_G6PgCQ9KLPUAo7ZHxs5DSH5ksMrOZgrhdfKGKfO11i2fSmAZABbVTe-bKDnhWokjyxdVjrlg\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/auth/providers/:provider",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"auth",
-								"providers",
-								":provider"
-							],
-							"variable": [
-								{
-									"id": "90e73fad-ea3c-49c7-bdcf-1dc0dea350ec",
-									"key": "provider",
-									"value": "microsoft",
-									"description": "google|microsoft|linkedin"
+									"id": "141286a0-6460-400e-b1ff-e4667ae14732",
+									"name": "Get Auth Providers",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/auth/providers"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "853"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"355-V4QkWHTny3JwhMoD2a6OTi2H+XY\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Apr 2024 06:45:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n    {\n        \"provider\": \"microsoft\",\n        \"url\": \"https://login.microsoftonline.com/882a38c4-44ee-45de-a50d-e7ea4b689a3a/oauth2/v2.0/authorize?client_id=2fa24578-77f8-4597-8793-be664563ece1&response_type=code&redirect_uri=http://localhost:8080/auth/callback/microsoft&scope=User.Read\"\n    },\n    {\n        \"provider\": \"linkedin\",\n        \"url\": \"https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dgjl74gom187&scope=openid%20profile%20email&redirect_uri=http://localhost:8080/auth/callback/linkedin\"\n    },\n    {\n        \"provider\": \"google\",\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?client_id=757611791737-3hr66h6c8h18eocuihseqidr2fob794o.apps.googleusercontent.com&redirect_uri=http://localhost:8080/auth/callback/google&scope=https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&response_type=code&access_type=offline&prompt=consent\"\n    }\n]"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "3bebaa5a-2bfb-4c25-961b-06ae2d78cc4a"
+				},
+				{
+					"name": "Authorize Provider",
+					"item": [
 						{
-							"id": "b70fae3a-6cfe-484f-b67e-1a9c979c82d4",
 							"name": "Authorize Provider",
-							"originalRequest": {
+							"id": "35490247-9a0d-4126-80ba-503d3a586d93",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"code\": \"AQSUMRQMeLRnrZQJEkO557WVjm-lQBQRliuDIw8sIwcrXrZDWW-8WQwkcTE5K--rZBtGkRPyHwGU7uxSKrJr6wud_ZZfOuQ6oS4DF2xjhwGldaKvWwALzTTbtn1kc6cLDngFtDAQ_qeAPFreWc5-tV7MCeB__8KPZN7s7isvZbOvHAfx5sXZ6M_LbF78On2ZeX9pqz0rI73O31mUf1U\"\n}",
+									"raw": "{\n    \"code\": \"0.Aa4AxDgqiO5E3kWlDefqS2iaOnhFoi_4d5dFh5O-ZkVj7OGuADk.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P81hVv9F1hwS4hNFl7ppd9YLA_HwK5QzYfsvmjNKUPcIUKDXt0XiG1mnfKMS7YUx_SbNvuQ0-LV-k5eM9fJBg61Qb18GZIRzLzmV8_p5PAgrVXxdRyErfQcu_YG7L6mJvLRWCnSwKFSo5I3iNI7LG7GGpI5iGFQKFIAllYvoqtZyUapPdCpSBpVomfsPUrlgzVu7W21atV-SOlFg9L5vcnA6nU3SuJhXrwSJcr7m1zzffPMGwQew4zIRT8s5yxW3jm6TB5Cdqqlaz3iFPbu4vldOLR-RBCMAYx7k4JR70X2sOHKJQSOe5QF-KTUTICQkx4SoHnXLT-b4UWD_MNlsHVlkhauJ12RHnmrNFWYF0KBDuQvB9u0mId4Dg4448WJ7iE7DQs_Rdbhl5vwLFA-F4Geh5moh5sj_feN7ek8J0pvWDum9mA5cRwdtBAAXGjKs2H0T1tWirP_tYk9wj82Tpvt0J6X6kedaHEERChh8TUeZSVjCQm9s8piZaTBaPL-5eBhkUiRLfnaE9m45bI-f0DQwgkdPUWCYIskjR5utvQTK2_TCktYw0JbKx2JRbEoCSR9tG-JWjOvGWH9uaTDR7iHxOlspCEoJjiXyY6lu9g4cEIK7osW6Vqam-1qpnVyvw7ZMjzVR2sgELQuJk6yeHDFonUPZasdifv-hYdqBgbFMHOUsK7Lkzt9Gp3i7VLmkULLYkos8a7kPpjW58fvqQfGmRz6uUdQv7F447crivw3CTxA1jDwqq-8O-wMAR-9W7HAbfrVjMR8eMEttlvxheL2NB-AMxnw-zkL0YqoeHp2rBvPzg69GlVdgOHn-ERWxrQPW2YI-9wC2NpsiGPQfpnQhvmXXbfupan_ufI8NswWUr3uRj1nW39eMVlOJNqlpErB15GbGuCnTNrPKbG2GH4DSpc3YQsuCVlrFO23Zt6MOpuLq5h-FXWoK1ZnjCOX7hXsvze_yJN3zdihzQlQcAztax7nqHwuWXJFjJSRTZEb0dWAwJP_rUr0sTbUKeODgud0L3A9dJ_maMX1h_Wai8DMSC7gkJgBw8-d3-7TLkXPjmuXr0nlM-PJSWxb5ka4c1mPk9w0qT2b-W_HvHKKcEowjhilCStHQ_n9A2fLHI8IEXWx0n3ZRphOvw6i4Gdwf66dnosJzJ0_Mf3OFlsa6KLe1KQtbChnLoqqt8GOYbDlI-CkgAUnnuIMCe048YxFrPriWpV3FA96hsQxyyVE10yYX4XG1ENZzMHnk2dY-uecEjsJxLc-FNiEiMYzOILQf6URRAwHmdv5KxPYTEO0N4O0SmYUSnHmri6t45shWsFocv1DYwNHiQjHSMVykLlBG-it4FDvntc3aGzHceyrTDho9_G6PgCQ9KLPUAo7ZHxs5DSH5ksMrOZgrhdfKGKfO11i2fSmAZABbVTe-bKDnhWokjyxdVjrlg\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4443,59 +4416,98 @@
 									],
 									"variable": [
 										{
+											"id": "90e73fad-ea3c-49c7-bdcf-1dc0dea350ec",
 											"key": "provider",
-											"value": "linkedin",
+											"value": "microsoft",
 											"description": "google|microsoft|linkedin"
 										}
 									]
 								}
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "342"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"156-kbTWg4PgPf7BkBXVmlU4NCBPtJE\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 22 Apr 2024 07:07:39 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "b70fae3a-6cfe-484f-b67e-1a9c979c82d4",
+									"name": "Authorize Provider",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"AQSUMRQMeLRnrZQJEkO557WVjm-lQBQRliuDIw8sIwcrXrZDWW-8WQwkcTE5K--rZBtGkRPyHwGU7uxSKrJr6wud_ZZfOuQ6oS4DF2xjhwGldaKvWwALzTTbtn1kc6cLDngFtDAQ_qeAPFreWc5-tV7MCeB__8KPZN7s7isvZbOvHAfx5sXZ6M_LbF78On2ZeX9pqz0rI73O31mUf1U\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/providers/:provider",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"providers",
+												":provider"
+											],
+											"variable": [
+												{
+													"key": "provider",
+													"value": "linkedin",
+													"description": "google|microsoft|linkedin"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "342"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"156-kbTWg4PgPf7BkBXVmlU4NCBPtJE\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Apr 2024 07:07:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYWMyMDI0LTg5M2QtNDEyOC1iNzBmLWU5ZjMyMWE4NmE2ZSIsImNvdW50IjowLCJpYXQiOjE3MTM3Njk2NTksImV4cCI6MTcxMzc3MDU1OX0.F_HutMZzxn6XwahU2CO8UfmPcWffTVChCgqUXGgmIbI\",\n        \"expiresIn\": 899\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYWMyMDI0LTg5M2QtNDEyOC1iNzBmLWU5ZjMyMWE4NmE2ZSIsImNvdW50IjowLCJpYXQiOjE3MTM3Njk2NTksImV4cCI6MTcxMzc3MDU1OX0.F_HutMZzxn6XwahU2CO8UfmPcWffTVChCgqUXGgmIbI\",\n        \"expiresIn\": 899\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "77c9888c-0440-4d71-8dfe-ffcde42b6710"
 				},
 				{
 					"name": "Initialize Email Signup",
