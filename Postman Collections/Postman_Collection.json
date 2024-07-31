@@ -4273,6 +4273,11 @@
 						}
 					],
 					"id": "6e6341f8-bf72-43bf-89c8-6dcc479d454f"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "ee1c792b-dcda-4552-8b4f-64ff912cad85"
 				}
 			],
 			"id": "1fd1471c-362a-4f61-94ba-dbb4be64a1a3",
@@ -5355,34 +5360,19 @@
 				},
 				{
 					"name": "Create Workspace",
-					"id": "40bda2e0-b2f6-4854-9545-a86601573b5e",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"thewunmi\",\n    \"slug\": \"thewunmi\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false,\n    \"logoUrl\": null,\n    \"requiredEmailDomains\": null,\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/workspaces"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "c733e2be-736c-4810-8d0e-ec6beb66b7b5",
 							"name": "Create Workspace",
-							"originalRequest": {
+							"id": "40bda2e0-b2f6-4854-9545-a86601573b5e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Assurdly\",\n    \"slug\": \"assurdly\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
+									"raw": "{\n    \"name\": \"thewunmi\",\n    \"slug\": \"thewunmi\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false,\n    \"logoUrl\": null,\n    \"requiredEmailDomains\": null,\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5391,99 +5381,89 @@
 								},
 								"url": "{{baseUrl}}/workspaces"
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "365"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"16d-7HIB6CSOqlFFrHrvKvt5es5nYzA\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 23 Apr 2024 10:40:09 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created workspace\",\n    \"data\": {\n        \"id\": \"6699b925-e48d-4b3b-9c17-2360af4570cf\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:40:09.412Z\",\n        \"primaryUser\": {\n            \"id\": \"3fac2024-893d-4128-b70f-e9f321a86a6e\",\n            \"email\": \"adewunmiakinsanya@gmail.com\"\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Update Workspace",
-					"id": "c55fb712-ee4b-4629-a99b-3d2da92beab5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/workspaces/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"workspaces",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "71404a15-b135-4095-b5a3-1f74d4542331",
-									"key": "id",
-									"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
+									"id": "c733e2be-736c-4810-8d0e-ec6beb66b7b5",
+									"name": "Create Workspace",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Assurdly\",\n    \"slug\": \"assurdly\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\"slack\", \"google\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/workspaces"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "365"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"16d-7HIB6CSOqlFFrHrvKvt5es5nYzA\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:40:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created workspace\",\n    \"data\": {\n        \"id\": \"6699b925-e48d-4b3b-9c17-2360af4570cf\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:40:09.412Z\",\n        \"primaryUser\": {\n            \"id\": \"3fac2024-893d-4128-b70f-e9f321a86a6e\",\n            \"email\": \"adewunmiakinsanya@gmail.com\"\n        }\n    }\n}"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "825e37f5-8d95-4f05-86a1-407ef807dfcb"
+				},
+				{
+					"name": "Update Workspace",
+					"item": [
 						{
-							"id": "9c82e65b-8d35-4337-b552-0c10023dd833",
 							"name": "Update Workspace",
-							"originalRequest": {
+							"id": "c55fb712-ee4b-4629-a99b-3d2da92beab5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5501,54 +5481,96 @@
 									],
 									"variable": [
 										{
+											"id": "71404a15-b135-4095-b5a3-1f74d4542331",
 											"key": "id",
 											"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "153"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"99-aDClWUFuYHB36cTaoMdgQ55fEu8\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 30 May 2024 13:54:28 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "9c82e65b-8d35-4337-b552-0c10023dd833",
+									"name": "Update Workspace",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/workspaces/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"workspaces",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "153"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"99-aDClWUFuYHB36cTaoMdgQ55fEu8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 30 May 2024 13:54:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "835fe01f-2442-4f10-87aa-33ec66cc7087"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "305b47e1-2a65-463a-9e5c-9a8cadc192b9"
 				},
 				{
 					"name": "Get Workspace Stats",
