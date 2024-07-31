@@ -20291,13 +20291,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ea5d31ec-54c9-4563-b4f2-ef6d202ea66d",
+				"id": "5e818306-7082-471e-ab60-6de88825cfeb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"kaybee.wholistic.work\"",
+					"  value: \"https://\" + \"ikigai.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20305,7 +20305,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "dab4669a-275f-4f66-bffd-c188640ed866",
+				"id": "d1534fd8-f80e-4592-b55a-77e83edbc6c0",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
