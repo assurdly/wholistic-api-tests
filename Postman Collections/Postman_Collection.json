@@ -6460,7 +6460,7 @@
 					"name": "Workspace",
 					"item": [
 						{
-							"name": "New Folder",
+							"name": "List Workspaces",
 							"item": [
 								{
 									"name": "List Workspaces",
@@ -6584,7 +6584,7 @@
 							"id": "906a3489-2243-464d-b852-7f3f16045be4"
 						},
 						{
-							"name": "New Folder",
+							"name": "Get Workspace",
 							"item": [
 								{
 									"name": "Get Workspace",
@@ -6688,66 +6688,20 @@
 							"id": "07be9805-65df-460a-a1d4-d8956cf1b1ab"
 						},
 						{
-							"name": "New Folder",
-							"item": [],
-							"id": "5924cda9-c461-43b1-ade9-1834b75488bf"
-						},
-						{
-							"name": "New Folder",
-							"item": [],
-							"id": "0fcd46c1-8772-4a52-b3ba-a688d3559cbe"
-						},
-						{
-							"name": "New Folder",
-							"item": [],
-							"id": "3b2c17b9-3c19-4e6e-b3c3-ffc87e12f57b"
-						},
-						{
 							"name": "Update Workspace",
-							"id": "becaf0c8-84ea-4f5c-b67a-63add4a022b0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true,\n    \"status\": \"active\" // active | inactive\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/workspaces/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"workspaces",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "1d492ace-d334-4009-80fc-0c7dd319296e",
-											"key": "id",
-											"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
-										}
-									]
-								}
-							},
-							"response": [
+							"item": [
 								{
-									"id": "f9ed54ec-8784-4ff6-9666-ab1f7fff9cf0",
 									"name": "Update Workspace",
-									"originalRequest": {
+									"id": "becaf0c8-84ea-4f5c-b67a-63add4a022b0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
 										"method": "PATCH",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+											"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true,\n    \"status\": \"active\" // active | inactive\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -6765,154 +6719,203 @@
 											],
 											"variable": [
 												{
+													"id": "1d492ace-d334-4009-80fc-0c7dd319296e",
 													"key": "id",
 													"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
 												}
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "153"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"99-aDClWUFuYHB36cTaoMdgQ55fEu8\""
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 30 May 2024 13:54:28 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
+											"id": "f9ed54ec-8784-4ff6-9666-ab1f7fff9cf0",
+											"name": "Update Workspace",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/workspaces/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"workspaces",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "153"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"99-aDClWUFuYHB36cTaoMdgQ55fEu8\""
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 30 May 2024 13:54:28 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
 										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated workspace\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"purpose\": \"Testing\",\n        \"primaryUser\": {}\n    }\n}"
+									]
 								}
-							]
+							],
+							"id": "5924cda9-c461-43b1-ade9-1834b75488bf"
 						},
 						{
 							"name": "Get Workspace Stats",
-							"id": "cc9317b1-e65f-4855-9227-e1b8f6934e0f",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/workspaces/stats"
-							},
-							"response": [
+							"item": [
 								{
-									"id": "057483d2-44d7-4114-9f86-03772a6b841b",
 									"name": "Get Workspace Stats",
-									"originalRequest": {
+									"id": "cc9317b1-e65f-4855-9227-e1b8f6934e0f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
 										"method": "GET",
 										"header": [],
 										"url": "{{baseUrl}}/workspaces/stats"
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "https://admin.wholistic.work"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Access-Control-Allow-Credentials",
-											"value": "true"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "144"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"90-dzb+T+hYjWM4ZA9FvB4HMWI1cP8\""
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 16 Jun 2024 13:36:02 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Workspaces stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"55\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Delete Workspace Copy",
-							"id": "a666dcba-50e3-44a8-854a-ad78c20cb635",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/workspaces/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"workspaces",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "b8801485-4a9b-4ede-958f-3b7532e19208",
-											"key": "id",
-											"value": ""
+											"id": "057483d2-44d7-4114-9f86-03772a6b841b",
+											"name": "Get Workspace Stats",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/workspaces/stats"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "https://admin.wholistic.work"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Access-Control-Allow-Credentials",
+													"value": "true"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "144"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"90-dzb+T+hYjWM4ZA9FvB4HMWI1cP8\""
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 16 Jun 2024 13:36:02 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"status\": \"success\",\n    \"message\": \"Workspaces stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"55\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        }\n    ]\n}"
 										}
 									]
 								}
-							},
-							"response": []
+							],
+							"id": "0fcd46c1-8772-4a52-b3ba-a688d3559cbe"
+						},
+						{
+							"name": "Delete Workspace",
+							"item": [
+								{
+									"name": "Delete Workspace",
+									"id": "a666dcba-50e3-44a8-854a-ad78c20cb635",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/workspaces/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"workspaces",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "b8801485-4a9b-4ede-958f-3b7532e19208",
+													"key": "id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "3b2c17b9-3c19-4e6e-b3c3-ffc87e12f57b"
 						}
 					],
 					"id": "b30f37a6-d3fc-40a6-a0a8-c3f5552b174c"
@@ -7046,138 +7049,122 @@
 			"item": [
 				{
 					"name": "List Audit Logs",
-					"id": "d9756cbd-0896-474c-a3e3-eff614203b26",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/audit-logs",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"audit-logs"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": "20",
-									"disabled": true
-								},
-								{
-									"key": "filter[event]",
-									"value": "role.view",
-									"disabled": true
-								},
-								{
-									"key": "filter[createdAt][gt]",
-									"value": "2024-04-30T17:20:57.737Z",
-									"disabled": true
-								},
-								{
-									"key": "filter[createdAt][lt]",
-									"value": "2024-05-02T17:20:57.737Z",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": [
+					"item": [
 						{
-							"id": "09fffd1d-7fbb-4124-ab80-16debd1102b7",
 							"name": "List Audit Logs",
-							"originalRequest": {
+							"id": "d9756cbd-0896-474c-a3e3-eff614203b26",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}/audit-logs"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "894"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"37e-id8bhNeRJ1DYdNXBNtYfExod1Xw\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 29 Apr 2024 12:56:51 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+								"url": {
+									"raw": "{{baseUrl}}/audit-logs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"audit-logs"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "20",
+											"disabled": true
+										},
+										{
+											"key": "filter[event]",
+											"value": "role.view",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][gt]",
+											"value": "2024-04-30T17:20:57.737Z",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][lt]",
+											"value": "2024-05-02T17:20:57.737Z",
+											"disabled": true
+										}
+									]
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit logs fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n            \"event\": \"auth.set-password\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n            \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"a0cb381b-3315-4ccf-b0c4-13f9951640a8\",\n            \"event\": \"profile.2fa.disable\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:52:47.666Z\",\n            \"updatedAt\": \"2024-04-28T22:52:47.666Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"49212b99-e8ca-4f98-9656-c8311e207fe6\",\n            \"event\": \"profile.2fa.verify\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:51:42.349Z\",\n            \"updatedAt\": \"2024-04-28T22:51:42.349Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"fb711a5e-91aa-4369-9e16-cffa640f1c26\",\n            \"event\": \"profile.2fa.generate\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:49:55.919Z\",\n            \"updatedAt\": \"2024-04-28T22:49:55.919Z\",\n            \"deletedAt\": null\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 4,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Audit Log",
-					"id": "4ff669e3-97dc-416d-8b62-3c641dfd3106",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/audit-logs/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"audit-logs",
-								":id"
-							],
-							"variable": [
+							},
+							"response": [
 								{
-									"id": "1ed415c4-5aa5-407c-a981-52cf3d0bcb52",
-									"key": "id",
-									"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
+									"id": "09fffd1d-7fbb-4124-ab80-16debd1102b7",
+									"name": "List Audit Logs",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/audit-logs"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "894"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37e-id8bhNeRJ1DYdNXBNtYfExod1Xw\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 29 Apr 2024 12:56:51 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit logs fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n            \"event\": \"auth.set-password\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n            \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"a0cb381b-3315-4ccf-b0c4-13f9951640a8\",\n            \"event\": \"profile.2fa.disable\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:52:47.666Z\",\n            \"updatedAt\": \"2024-04-28T22:52:47.666Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"49212b99-e8ca-4f98-9656-c8311e207fe6\",\n            \"event\": \"profile.2fa.verify\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:51:42.349Z\",\n            \"updatedAt\": \"2024-04-28T22:51:42.349Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"fb711a5e-91aa-4369-9e16-cffa640f1c26\",\n            \"event\": \"profile.2fa.generate\",\n            \"details\": {},\n            \"createdAt\": \"2024-04-28T22:49:55.919Z\",\n            \"updatedAt\": \"2024-04-28T22:49:55.919Z\",\n            \"deletedAt\": null\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 4,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "4f99d321-98b4-409c-8eca-531460b2dcb2"
+				},
+				{
+					"name": "New Folder",
+					"item": [
 						{
-							"id": "2557d33d-55dd-4e41-9d55-5180203ef4bf",
 							"name": "Get Audit Log",
-							"originalRequest": {
+							"id": "4ff669e3-97dc-416d-8b62-3c641dfd3106",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -7191,58 +7178,86 @@
 									],
 									"variable": [
 										{
+											"id": "1ed415c4-5aa5-407c-a981-52cf3d0bcb52",
 											"key": "id",
 											"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "253"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"fd-01ZVXyUH8BviVVMgaBpqiGHHqck\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 29 Apr 2024 12:57:36 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "2557d33d-55dd-4e41-9d55-5180203ef4bf",
+									"name": "Get Audit Log",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/audit-logs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"audit-logs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "253"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fd-01ZVXyUH8BviVVMgaBpqiGHHqck\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 29 Apr 2024 12:57:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit log fetched successfully.\",\n    \"data\": {\n        \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n        \"event\": \"auth.set-password\",\n        \"details\": {},\n        \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n        \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n        \"deletedAt\": null\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Audit log fetched successfully.\",\n    \"data\": {\n        \"id\": \"dd8c1bd0-d1ce-42f1-8ccc-b9cbad2d9068\",\n        \"event\": \"auth.set-password\",\n        \"details\": {},\n        \"createdAt\": \"2024-04-28T22:55:18.450Z\",\n        \"updatedAt\": \"2024-04-28T22:55:18.450Z\",\n        \"deletedAt\": null\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "724237c7-0799-47d9-94c3-bfaa011471c7"
 				}
 			],
 			"id": "de28a402-be5f-440a-afb0-f69ba54397b3"
