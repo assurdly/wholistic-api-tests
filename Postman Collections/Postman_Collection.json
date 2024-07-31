@@ -4601,52 +4601,15 @@
 					"id": "d7d8b56e-c636-4afc-a16d-7f25c4b7569c"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "35b17ec7-1e6e-4c6c-a41d-1a3352727913"
-				},
-				{
 					"name": "Complete Email Signup",
-					"id": "69ce7cab-34fd-4872-83d4-3abc39b74bb6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/auth/setup/:token",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"auth",
-								"setup",
-								":token"
-							],
-							"variable": [
-								{
-									"id": "683a8352-7e66-4244-a966-59e0aeaee48b",
-									"key": "token",
-									"value": "4742b45123b7565a16f5d0a3089ab5a5cfa1b3f4"
-								}
-							]
-						}
-					},
-					"response": [
+					"item": [
 						{
-							"id": "a5db9123-691d-424a-96dc-0d802e9e2e89",
 							"name": "Complete Email Signup",
-							"originalRequest": {
+							"id": "69ce7cab-34fd-4872-83d4-3abc39b74bb6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -4670,95 +4633,139 @@
 									],
 									"variable": [
 										{
+											"id": "683a8352-7e66-4244-a966-59e0aeaee48b",
 											"key": "token",
-											"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
+											"value": "4742b45123b7565a16f5d0a3089ab5a5cfa1b3f4"
 										}
 									]
 								}
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "344"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Apr 2024 22:04:59 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "a5db9123-691d-424a-96dc-0d802e9e2e89",
+									"name": "Complete Email Signup",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/setup/:token",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"setup",
+												":token"
+											],
+											"variable": [
+												{
+													"key": "token",
+													"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "344"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 22:04:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "35b17ec7-1e6e-4c6c-a41d-1a3352727913"
 				},
 				{
 					"name": "Login",
-					"event": [
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "eacad90f-75b8-4edc-98e1-fe564a0ac4fa",
-								"exec": [
-									"const jsonData = pm.response.json();",
-									"const accesstoken = jsonData.data.accessToken",
-									"pm.environment.set(\"accessToken\", accesstoken)"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "eacad90f-75b8-4edc-98e1-fe564a0ac4fa",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"const accesstoken = jsonData.data.accessToken",
+											"pm.environment.set(\"accessToken\", accesstoken)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "577873d2-a845-42db-b1a6-323d966c4298",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n    \"password\": \"123456789!dD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/login"
+							},
+							"response": []
 						}
 					],
-					"id": "577873d2-a845-42db-b1a6-323d966c4298",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n    \"password\": \"123456789!dD\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/auth/login"
-					},
-					"response": []
+					"id": "286be6d7-7147-428f-837b-59c6e3d800bb"
 				},
 				{
 					"name": "Initialize Forgot Password",
