@@ -1,0 +1,4 @@
+pm.request.headers.add({
+  key: "origin",
+  value: "https://" + "Account.wholistic.work"
+});
