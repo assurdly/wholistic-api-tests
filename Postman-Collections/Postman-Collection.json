@@ -20291,13 +20291,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "05752b10-e14f-4a03-a548-80d31937a166",
+				"id": "5b3b2724-bb64-4953-a559-ad657a702da7",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"account.wholistic.work\"",
+					"  value: \"https://\" + \"ikigai.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20305,7 +20305,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8cf39521-6f7a-4d35-a8ac-09cffeb77352",
+				"id": "4156e7bf-cb58-4c3d-b993-f356f2917a78",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
