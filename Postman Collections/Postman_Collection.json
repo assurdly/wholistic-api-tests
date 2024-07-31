@@ -4511,34 +4511,19 @@
 				},
 				{
 					"name": "Initialize Email Signup",
-					"id": "caeb8b69-f1b0-41f0-a6d3-095de33e5baf",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"adewunmi.ak.insan.ya@gmail.com\",\n    \"recaptchaResponse\": \"03AFcWeA41zXvKyc_DI2m6n75jQ9CkdjdBmctSqE3aHWu2fubVkXuh7LVDFFsTMLE9nNhyar-zKW36KZQUAVnhplPpQs2VCd2-53cn_Rw8Zm3aD6tPBbxYqg_K303yJR7mz292NC41HT1Hroq4SVFm-UuI2OP5LrGw29ByYCjiws73IakVKw7b7ZyTgcjBFxBuEK9V2m9ylIGHdnx4f63lfbo08AKI2LRsiOfOZZBvKoTMxKXjgjXZWpE2DJMZQXNK08SAtUzYTdtMNzlvda8z9mL0ZujESr92boNL31XA1E2viaBoZ7gdb7nTYzcEju5Iu-6mLy2y8a5LRSZ3Nwj1uh9CR2gAH9FVW80sZRl_DSLAJqBGGFcIxoEGCnipcWj3O5bNXaoJ8HIz2Hac9QCPLAiBwV0lVzQDImXbMzI4CpAKlDHBSfP46kGuEKrZfkY4SUDilsiVS-FY--GY7GvqptZQvI9xQGv-CCA95cqtC7bW7PAzIEA3PtOX1QD_WqLX205qlrMFx8ISnfFlsVJVWV3soYC5uGNzD2m3EDUK1lchtykewJo3aHPDnRo2ALGfUchDWxFKzYbqrAVAJWYilZaV3XYKGEQjPIdLfILiniSH23SGBGeBuawNbPKY90c897h31qUBdRoa0SbdeqUPA9JJRAJ1RyPbzro17kBGYMBUDMERkVrxfvURQTFXKAxS9GrBBWjFCWEI-RzxUPYKSuNdlo_LJErg3eH3KLRz3148bIxW9arIkaxIsTjulpikOO0uqZ8IqIwP0_tqYR30PgpW2p6y5MMINRTQj7ft-vJhiB1d0qQQcSbNeZsqyO08DEY__8omGJVtlnRDeaLUvA1Rgp98756kFKlTORqt5ibEdmq2zgHcNzlLTIZaqzZ9UYv1_KuyA0H6X6y5XhpEhLcSAc4JallYXOfZOv-POE1HT8Nqzeqnn7pjo1c1J61N-2OAzIF6JDUNOLvO4_8KJpcj2I7sGC_GfGK3dcl3TFSAVllMSPSFE6eUststL7Wexma340KLaX6SoH-3BBj_6oRAdus2vR9eTYdDvLk-x1W7-XTPisDtGJuIJZDFOYGcUfQz4_4BpI5B-H8_6QtnARcoPBcMiwUclu56F1iBhEF6aPONoSK0kHPXh2Ieu8wz2huw6wixZETQeRcQsLZ7u_r2pHmH95_WlPtFGGp1tdOdzb_QP4THlGO3SLE2NrDCxLYSB2jKU1mQid5RkHRYkV7S5e8kWfKQU8uMWm84F4JQ3wgAaSDK5sNdb7obf2Xz2MN66J4LDPSneTq02DPJsBp_HNdFaAAg6QK06KZiuJNPIwEg4pUaMXvc1Zqqcry3QPA8hP7xgUrHjX0nMPwqFvt6K_VyRBLSEGOdV2Zbfgg9mpaExCJc3ESke4w03oRJ5-xszeB7sPQAB4Q8dhShMSPKC7swnCN6KmA3wihQPac6WA7uo_DIhX6v1oIO0coS5pjtc4o7iye1VylF9KoSiCJ0kcpl3Fw_q9fFot_1IQhKw1Sr7EjDTPymGHvfSy3GFqlaVhaMNGC0nIcHqmxTxz8g1xj5aslV6QzPcHqK9KhIrUdatX4qG36UhnzI2w1_UDFRijGRlI-xwvX4hF3BoN04XFrltwU3zWBOm8zuZ5Qgb0QwKwblfObnTQUdBQgIdcFjpYXaUAF5YNoku2ZSM6Y3LQiZyAJ99ReiyDHKrFnSKs5yAJU3iWl7japdguoWBET9fBsXgZM7J4sYFO6T5v_lE9DDcU0sLDB_SXiKsvr_nCn0V0Dz-Q9BQ9m00Gidl2JgYLGs5dIsSFcJ8Ya7wKIVscaxc-ki6SDykHVQM5ILIyQzDBXQ_Hn7ydpL9wPmA5ckuCyB6uoWMsU8HV11vvtZ0NLg08j7xFQcK7XTU9_FSEgtqxXXbA_nKptqWZoJbjODI3ySPm7QoWhqMrxWMYa_cvl7vydORg\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/auth/signup"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "23fe724d-67b3-42ec-a695-b77e0d01932e",
 							"name": "Initialize Email Signup",
-							"originalRequest": {
+							"id": "caeb8b69-f1b0-41f0-a6d3-095de33e5baf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"adewunmiakinsanya@gmail.com\"\n}",
+									"raw": "{\n    \"email\": \"adewunmi.ak.insan.ya@gmail.com\",\n    \"recaptchaResponse\": \"03AFcWeA41zXvKyc_DI2m6n75jQ9CkdjdBmctSqE3aHWu2fubVkXuh7LVDFFsTMLE9nNhyar-zKW36KZQUAVnhplPpQs2VCd2-53cn_Rw8Zm3aD6tPBbxYqg_K303yJR7mz292NC41HT1Hroq4SVFm-UuI2OP5LrGw29ByYCjiws73IakVKw7b7ZyTgcjBFxBuEK9V2m9ylIGHdnx4f63lfbo08AKI2LRsiOfOZZBvKoTMxKXjgjXZWpE2DJMZQXNK08SAtUzYTdtMNzlvda8z9mL0ZujESr92boNL31XA1E2viaBoZ7gdb7nTYzcEju5Iu-6mLy2y8a5LRSZ3Nwj1uh9CR2gAH9FVW80sZRl_DSLAJqBGGFcIxoEGCnipcWj3O5bNXaoJ8HIz2Hac9QCPLAiBwV0lVzQDImXbMzI4CpAKlDHBSfP46kGuEKrZfkY4SUDilsiVS-FY--GY7GvqptZQvI9xQGv-CCA95cqtC7bW7PAzIEA3PtOX1QD_WqLX205qlrMFx8ISnfFlsVJVWV3soYC5uGNzD2m3EDUK1lchtykewJo3aHPDnRo2ALGfUchDWxFKzYbqrAVAJWYilZaV3XYKGEQjPIdLfILiniSH23SGBGeBuawNbPKY90c897h31qUBdRoa0SbdeqUPA9JJRAJ1RyPbzro17kBGYMBUDMERkVrxfvURQTFXKAxS9GrBBWjFCWEI-RzxUPYKSuNdlo_LJErg3eH3KLRz3148bIxW9arIkaxIsTjulpikOO0uqZ8IqIwP0_tqYR30PgpW2p6y5MMINRTQj7ft-vJhiB1d0qQQcSbNeZsqyO08DEY__8omGJVtlnRDeaLUvA1Rgp98756kFKlTORqt5ibEdmq2zgHcNzlLTIZaqzZ9UYv1_KuyA0H6X6y5XhpEhLcSAc4JallYXOfZOv-POE1HT8Nqzeqnn7pjo1c1J61N-2OAzIF6JDUNOLvO4_8KJpcj2I7sGC_GfGK3dcl3TFSAVllMSPSFE6eUststL7Wexma340KLaX6SoH-3BBj_6oRAdus2vR9eTYdDvLk-x1W7-XTPisDtGJuIJZDFOYGcUfQz4_4BpI5B-H8_6QtnARcoPBcMiwUclu56F1iBhEF6aPONoSK0kHPXh2Ieu8wz2huw6wixZETQeRcQsLZ7u_r2pHmH95_WlPtFGGp1tdOdzb_QP4THlGO3SLE2NrDCxLYSB2jKU1mQid5RkHRYkV7S5e8kWfKQU8uMWm84F4JQ3wgAaSDK5sNdb7obf2Xz2MN66J4LDPSneTq02DPJsBp_HNdFaAAg6QK06KZiuJNPIwEg4pUaMXvc1Zqqcry3QPA8hP7xgUrHjX0nMPwqFvt6K_VyRBLSEGOdV2Zbfgg9mpaExCJc3ESke4w03oRJ5-xszeB7sPQAB4Q8dhShMSPKC7swnCN6KmA3wihQPac6WA7uo_DIhX6v1oIO0coS5pjtc4o7iye1VylF9KoSiCJ0kcpl3Fw_q9fFot_1IQhKw1Sr7EjDTPymGHvfSy3GFqlaVhaMNGC0nIcHqmxTxz8g1xj5aslV6QzPcHqK9KhIrUdatX4qG36UhnzI2w1_UDFRijGRlI-xwvX4hF3BoN04XFrltwU3zWBOm8zuZ5Qgb0QwKwblfObnTQUdBQgIdcFjpYXaUAF5YNoku2ZSM6Y3LQiZyAJ99ReiyDHKrFnSKs5yAJU3iWl7japdguoWBET9fBsXgZM7J4sYFO6T5v_lE9DDcU0sLDB_SXiKsvr_nCn0V0Dz-Q9BQ9m00Gidl2JgYLGs5dIsSFcJ8Ya7wKIVscaxc-ki6SDykHVQM5ILIyQzDBXQ_Hn7ydpL9wPmA5ckuCyB6uoWMsU8HV11vvtZ0NLg08j7xFQcK7XTU9_FSEgtqxXXbA_nKptqWZoJbjODI3ySPm7QoWhqMrxWMYa_cvl7vydORg\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4547,52 +4532,78 @@
 								},
 								"url": "{{baseUrl}}/auth/signup"
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "291"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"123-tkzodprQRUi40CE+8w7oXg+Es50\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Apr 2024 21:47:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "23fe724d-67b3-42ec-a695-b77e0d01932e",
+									"name": "Initialize Email Signup",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"adewunmiakinsanya@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/auth/signup"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "291"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"123-tkzodprQRUi40CE+8w7oXg+Es50\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 21:47:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"You have successfully signed up, kindly verify your email to access the dashboard.\",\n    \"data\": {\n        \"id\": \"45291693-3544-4de2-8d79-d68195bed53e\",\n        \"email\": \"adewunmiakinsanya@gmail.com\",\n        \"profile\": {\n            \"id\": \"4684e465-5dff-4343-833e-417c62bc97ef\",\n            \"firstName\": \"\",\n            \"lastName\": \"\"\n        }\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"You have successfully signed up, kindly verify your email to access the dashboard.\",\n    \"data\": {\n        \"id\": \"45291693-3544-4de2-8d79-d68195bed53e\",\n        \"email\": \"adewunmiakinsanya@gmail.com\",\n        \"profile\": {\n            \"id\": \"4684e465-5dff-4343-833e-417c62bc97ef\",\n            \"firstName\": \"\",\n            \"lastName\": \"\"\n        }\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "d7d8b56e-c636-4afc-a16d-7f25c4b7569c"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "35b17ec7-1e6e-4c6c-a41d-1a3352727913"
 				},
 				{
 					"name": "Complete Email Signup",
