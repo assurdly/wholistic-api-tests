@@ -6460,155 +6460,139 @@
 					"name": "Workspace",
 					"item": [
 						{
-							"name": "List Workspaces",
-							"id": "bfa1d8be-b622-4322-afea-b9719218eaae",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/platform/workspaces",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"platform",
-										"workspaces"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1",
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": "20",
-											"disabled": true
-										},
-										{
-											"key": "filter[name]",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "filter[createdAt][gt]",
-											"value": "2024-04-30T17:20:57.737Z",
-											"disabled": true
-										},
-										{
-											"key": "filter[createdAt][lt]",
-											"value": "2024-05-02T17:20:57.737Z",
-											"disabled": true
-										},
-										{
-											"key": "filter[status]",
-											"value": "active",
-											"disabled": true
-										},
-										{
-											"key": "filter[email]",
-											"value": "azeez@mailinator.com",
-											"disabled": true
-										},
-										{
-											"key": "filter[planId]",
-											"value": "c1a53489-4297-4868-baed-1fc518892347",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": [
+							"name": "New Folder",
+							"item": [
 								{
-									"id": "fbc8da99-f2db-4ff0-a607-b20903637c6c",
 									"name": "List Workspaces",
-									"originalRequest": {
+									"id": "bfa1d8be-b622-4322-afea-b9719218eaae",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
 										"method": "GET",
 										"header": [],
-										"url": "{{baseUrl}}/workspaces"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "454"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"1c6-7QDcuVxZRlOJ7yE1CStFMplIn+w\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 23 Apr 2024 10:44:03 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
+										"url": {
+											"raw": "{{baseUrl}}/platform/workspaces",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"platform",
+												"workspaces"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "limit",
+													"value": "20",
+													"disabled": true
+												},
+												{
+													"key": "filter[name]",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "filter[createdAt][gt]",
+													"value": "2024-04-30T17:20:57.737Z",
+													"disabled": true
+												},
+												{
+													"key": "filter[createdAt][lt]",
+													"value": "2024-05-02T17:20:57.737Z",
+													"disabled": true
+												},
+												{
+													"key": "filter[status]",
+													"value": "active",
+													"disabled": true
+												},
+												{
+													"key": "filter[email]",
+													"value": "azeez@mailinator.com",
+													"disabled": true
+												},
+												{
+													"key": "filter[planId]",
+													"value": "c1a53489-4297-4868-baed-1fc518892347",
+													"disabled": true
+												}
+											]
 										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspaces\",\n    \"data\": [\n        {\n            \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n            \"name\": \"Assurdly\",\n            \"status\": \"active\",\n            \"slug\": \"assurdly\",\n            \"size\": \"1-10\",\n            \"purpose\": \"Testing\",\n            \"utmMedium\": \"Instagram\",\n            \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n            \"primaryUser\": {\n                \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n                \"email\": \"adewunmiakinsanya@gmail.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Get Workspace",
-							"id": "2d2c47ee-ed3c-4043-9ad6-58e83b41ccf7",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/workspaces/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"workspaces",
-										":id"
-									],
-									"variable": [
+									},
+									"response": [
 										{
-											"id": "0f4abb0d-4954-4fe1-a77e-b0511ca09c08",
-											"key": "id",
-											"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+											"id": "fbc8da99-f2db-4ff0-a607-b20903637c6c",
+											"name": "List Workspaces",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/workspaces"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "454"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"1c6-7QDcuVxZRlOJ7yE1CStFMplIn+w\""
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 23 Apr 2024 10:44:03 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspaces\",\n    \"data\": [\n        {\n            \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n            \"name\": \"Assurdly\",\n            \"status\": \"active\",\n            \"slug\": \"assurdly\",\n            \"size\": \"1-10\",\n            \"purpose\": \"Testing\",\n            \"utmMedium\": \"Instagram\",\n            \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n            \"primaryUser\": {\n                \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n                \"email\": \"adewunmiakinsanya@gmail.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 										}
 									]
 								}
-							},
-							"response": [
+							],
+							"id": "906a3489-2243-464d-b852-7f3f16045be4"
+						},
+						{
+							"name": "New Folder",
+							"item": [
 								{
-									"id": "8c0a8c75-f50b-4f3d-9637-697a601e0e49",
 									"name": "Get Workspace",
-									"originalRequest": {
+									"id": "2d2c47ee-ed3c-4043-9ad6-58e83b41ccf7",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -6622,58 +6606,101 @@
 											],
 											"variable": [
 												{
+													"id": "0f4abb0d-4954-4fe1-a77e-b0511ca09c08",
 													"key": "id",
 													"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
 												}
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "441"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"1b9-41hqW+JdMoNvyhfqhHZSEeuJ8As\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 23 Apr 2024 10:44:24 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
+											"id": "8c0a8c75-f50b-4f3d-9637-697a601e0e49",
+											"name": "Get Workspace",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/workspaces/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"workspaces",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "441"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"1b9-41hqW+JdMoNvyhfqhHZSEeuJ8As\""
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 23 Apr 2024 10:44:24 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n        \"primaryUser\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Wunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null\n            }\n        }\n    }\n}"
 										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n        \"name\": \"Assurdly\",\n        \"status\": \"active\",\n        \"slug\": \"assurdly\",\n        \"size\": \"1-10\",\n        \"purpose\": \"Testing\",\n        \"utmMedium\": \"Instagram\",\n        \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n        \"primaryUser\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"profile\": {\n                \"firstName\": \"Wunmi\",\n                \"lastName\": \"Akinsanya\",\n                \"phone\": null\n            }\n        }\n    }\n}"
+									]
 								}
-							]
+							],
+							"id": "07be9805-65df-460a-a1d4-d8956cf1b1ab"
+						},
+						{
+							"name": "New Folder",
+							"item": [],
+							"id": "5924cda9-c461-43b1-ade9-1834b75488bf"
+						},
+						{
+							"name": "New Folder",
+							"item": [],
+							"id": "0fcd46c1-8772-4a52-b3ba-a688d3559cbe"
+						},
+						{
+							"name": "New Folder",
+							"item": [],
+							"id": "3b2c17b9-3c19-4e6e-b3c3-ffc87e12f57b"
 						},
 						{
 							"name": "Update Workspace",
