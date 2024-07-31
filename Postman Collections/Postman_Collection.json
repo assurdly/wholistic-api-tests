@@ -7266,6 +7266,31 @@
 			"name": "Integrations",
 			"item": [
 				{
+					"name": "New Folder",
+					"item": [],
+					"id": "96562551-bdd3-4179-b8a6-853694c6ed59"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "61c690b9-a88f-4d3c-9f5e-2f309ad5159c"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "2566de26-4cba-4e41-ac8d-9b832953ba9b"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "1eae9cb3-1c48-4f45-903e-6e1bf6db255d"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "f8652ce2-86a7-4f9d-8d59-c9b73336f940"
+				},
+				{
 					"name": "List Integrations",
 					"id": "eed23778-0b99-43dc-b620-fc2a542d5a9a",
 					"protocolProfileBehavior": {
