@@ -4769,29 +4769,14 @@
 				},
 				{
 					"name": "Initialize Forgot Password",
-					"id": "894b91da-2ed2-404c-bfd6-28405586bcfd",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/auth/password/forgot"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "f944049f-2af9-4c8f-b98b-006ad556a04e",
 							"name": "Initialize Forgot Password",
-							"originalRequest": {
+							"id": "894b91da-2ed2-404c-bfd6-28405586bcfd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -4805,97 +4790,85 @@
 								},
 								"url": "{{baseUrl}}/auth/password/forgot"
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "130"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"82-de1AuJfqYMpyxegLyIKrqE8sSxY\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 03 May 2024 13:35:53 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"An email with instructions to reset your password has been sent to ade.wunmi.ak.insanya@gmail.com\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Complete Forgot Password",
-					"id": "509488bf-6cca-4bc8-8f98-00032220d57c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"password\": \"123456789!dD\",\n    \"confirmPassword\": \"123456789!dD\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/auth/password/reset/:token",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"auth",
-								"password",
-								"reset",
-								":token"
-							],
-							"variable": [
-								{
-									"id": "f0da1409-cfe9-4d3f-8214-4b9edde16c85",
-									"key": "token",
-									"value": "2232f116cb6ed8c559b1afac650619a094e0fddb\\"
+									"id": "f944049f-2af9-4c8f-b98b-006ad556a04e",
+									"name": "Initialize Forgot Password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/auth/password/forgot"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "130"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"82-de1AuJfqYMpyxegLyIKrqE8sSxY\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 13:35:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"An email with instructions to reset your password has been sent to ade.wunmi.ak.insanya@gmail.com\"\n}"
 								}
 							]
 						}
-					},
-					"response": [
+					],
+					"id": "633d50da-dfda-4c3a-8fb0-3bbefd3cacbb"
+				},
+				{
+					"name": "Complete Forgot Password",
+					"item": [
 						{
-							"id": "8ce132cb-02a9-415d-a6ea-d0e904b4fb93",
 							"name": "Complete Forgot Password",
-							"originalRequest": {
+							"id": "509488bf-6cca-4bc8-8f98-00032220d57c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+									"raw": "{\n    \"password\": \"123456789!dD\",\n    \"confirmPassword\": \"123456789!dD\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4915,54 +4888,93 @@
 									],
 									"variable": [
 										{
+											"id": "f0da1409-cfe9-4d3f-8214-4b9edde16c85",
 											"key": "token",
-											"value": "39f65aec3cb303c91b9e46143ee9a99f98356c92"
+											"value": "2232f116cb6ed8c559b1afac650619a094e0fddb\\"
 										}
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "100"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"64-c3/uRIyp85K08xdAC5KGPS8hMww\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 03 May 2024 13:38:21 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "8ce132cb-02a9-415d-a6ea-d0e904b4fb93",
+									"name": "Complete Forgot Password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/password/reset/:token",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"password",
+												"reset",
+												":token"
+											],
+											"variable": [
+												{
+													"key": "token",
+													"value": "39f65aec3cb303c91b9e46143ee9a99f98356c92"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "100"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"64-c3/uRIyp85K08xdAC5KGPS8hMww\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 13:38:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Your password has been successfully reset. Please proceed to login.\"\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Your password has been successfully reset. Please proceed to login.\"\n}"
+							]
 						}
-					]
+					],
+					"id": "153d0b39-8c83-4847-9cf1-50aac3598406"
 				},
 				{
 					"name": "Complete 2FA",
