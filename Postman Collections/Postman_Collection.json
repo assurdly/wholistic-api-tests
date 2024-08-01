@@ -2489,7 +2489,7 @@
 											"const response = pm.response.json();\r",
 											"const {message, data} = response;\r",
 											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
+											"pm.test(\"Status code is 400\", function () {\r",
 											"     pm.response.to.have.status(400);\r",
 											" });\r",
 											"pm.test(\"Status code response is 'Created'\", function () {\r",
@@ -7598,7 +7598,7 @@
 					"id": "1eae9cb3-1c48-4f45-903e-6e1bf6db255d"
 				},
 				{
-					"name": "New Folder",
+					"name": "Authorize Integration",
 					"item": [
 						{
 							"name": "Authorize Integration",
@@ -7643,7 +7643,7 @@
 					"id": "f8652ce2-86a7-4f9d-8d59-c9b73336f940"
 				},
 				{
-					"name": "New Folder",
+					"name": "List Integration Items",
 					"item": [
 						{
 							"name": "List Integration Items",
