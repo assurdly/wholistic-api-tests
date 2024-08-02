@@ -1,0 +1,10 @@
+{
+    "name": "Marks Inc",
+    "email": "Anastacio@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Hoeger@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Alfreda",
+    "contactEmail2": "Salma_Thompson92@hotmail.com",
+    "contactPhone2": "+2349055755673"
+}
