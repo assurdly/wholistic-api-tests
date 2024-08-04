@@ -14236,7 +14236,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "52a9fc6b-0fcd-4dc1-97bc-43a06e36aecf"
+											"value": "019113c8-b1ae-755a-8731-a9918297f336"
 										}
 									]
 								}
@@ -14352,6 +14352,115 @@
 							"response": [
 								{
 									"id": "06cdb79b-28c6-4b68-ba5f-4211dac2af24",
+									"name": "Verify Subscription",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/billings/plans/:id/subscribe/:reference",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"billings",
+												"plans",
+												":id",
+												"subscribe",
+												":reference"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "c1a53489-4297-4868-baed-1fc518892347"
+												},
+												{
+													"key": "reference",
+													"value": "oo7dh5ub0n"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "303"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"12f-Idc283pZ+inlekH6N8YKTOn0v90\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 07:09:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": {\n        \"amount\": 1000,\n        \"currency\": \"NGN\",\n        \"reference\": \"oo7dh5ub0n\",\n        \"subscription\": {\n            \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n            \"name\": \"Starter\",\n            \"description\": \"Starter\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify Subscription Copy",
+							"id": "efe7629e-e9a1-47c5-b717-65ba1e05711a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans/:id/subscribe/:reference",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans",
+										":id",
+										"subscribe",
+										":reference"
+									],
+									"variable": [
+										{
+											"id": "0e1e2b26-3bc3-4d18-851b-dd889071d0d8",
+											"key": "id",
+											"value": "c1a53489-4297-4868-baed-1fc518892347"
+										},
+										{
+											"id": "66fa79ea-533f-483d-b5a1-a3b3d12ca540",
+											"key": "reference",
+											"value": "oo7dh5ub0n"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3d3c7b2b-71e5-4520-8f08-d8743311dec5",
 									"name": "Verify Subscription",
 									"originalRequest": {
 										"method": "POST",
