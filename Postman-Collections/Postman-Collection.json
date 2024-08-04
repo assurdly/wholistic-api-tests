@@ -10647,118 +10647,124 @@
 				},
 				{
 					"name": "Get Public Workspace Details",
-					"id": "1921f284-0dd3-431f-9c7f-a3d91f27a8b4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/workspaces/public"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "996195d0-d16e-40e1-89ab-d156ebf3608b",
 							"name": "Get Public Workspace Details",
-							"originalRequest": {
+							"id": "1921f284-0dd3-431f-9c7f-a3d91f27a8b4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/workspaces/public"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "https://admind.wholistic.work"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "340"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"154-/wOvjo4nSSQ6atQS3WJStXmadPg\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 30 Jul 2024 00:03:19 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "996195d0-d16e-40e1-89ab-d156ebf3608b",
+									"name": "Get Public Workspace Details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/workspaces/public"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "340"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"154-/wOvjo4nSSQ6atQS3WJStXmadPg\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 30 Jul 2024 00:03:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"name\": \"Assurdly-342dd\",\n        \"status\": \"active\",\n        \"slug\": \"admind\",\n        \"domain\": \"admind.wholistic.work\",\n        \"logoUrl\": null,\n        \"serviceTypes\": [\n            \"Compliance\",\n            \"Product Management\",\n            \"Product, Delivery\"\n        ],\n        \"createdAt\": \"2024-04-28T22:46:22.274Z\"\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"name\": \"Assurdly-342dd\",\n        \"status\": \"active\",\n        \"slug\": \"admind\",\n        \"domain\": \"admind.wholistic.work\",\n        \"logoUrl\": null,\n        \"serviceTypes\": [\n            \"Compliance\",\n            \"Product Management\",\n            \"Product, Delivery\"\n        ],\n        \"createdAt\": \"2024-04-28T22:46:22.274Z\"\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "78f55a37-f11c-4065-823d-b0ee125e0dfc"
 				}
 			],
 			"id": "5a205488-15ab-4fab-aacf-2260a6e6408a"
@@ -19799,239 +19805,246 @@
 					"id": "023d5f4d-38a6-4446-996d-afa6a754ba22"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "0372d832-473a-40c9-85f1-593302f28a88"
-				},
-				{
 					"name": "List Chat Sessions",
-					"id": "b3bb5717-bb86-4bd4-9e5a-82fb3bc670c4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/chats/sessions"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "a54ae0c4-c2c7-49da-86e6-ff99bc68ed49",
 							"name": "List Chat Sessions",
-							"originalRequest": {
+							"id": "b3bb5717-bb86-4bd4-9e5a-82fb3bc670c4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/chats/sessions"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "https://admind.wholistic.work"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "8516"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2144-ghUJ9txi9DpAhnhmlzUCHEnI99Q\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 10 Jul 2024 14:03:16 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "a54ae0c4-c2c7-49da-86e6-ff99bc68ed49",
+									"name": "List Chat Sessions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/chats/sessions"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "8516"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2144-ghUJ9txi9DpAhnhmlzUCHEnI99Q\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 10 Jul 2024 14:03:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123d4789rrdd0dd\",\n            \"messageId\": \"chatcmpl-9hidjNN3JFrgHLGN29Wxc3c7nNAZX\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890dd\",\n            \"messageId\": \"chatcmpl-9h37XKwcEMQWfbx773M3AKL2CKhmx\",\n            \"message\": \"### Email Notification Content\\n\\n#### Organisation - Notification Content\\n- **Onboarding**\\n  - **Welcome Message**: Introduction to Wholistic, highlighting features and offering support contacts.\\n  - **Verify Email**: Request to verify email to complete registration.\\n  - **Login Alert**: Notification of account access with details of time, date, and location.\\n  - **Password Reset OTP**: Instructions to reset the password.\\n  - **Password Reset Attempt**: Confirmation of successful password reset.\\n  - **Team Member Invitation**: Invitation for a team member to join a workspace.\\n  - **Team Member Invite Reminder**: Reminder to join a workspace.\\n  - **Team Member Deactivation**: Notification of account deactivation.\\n  - **Team Member Activation**: Notification of account reactivation.\\n  - **Client Invitation**: Invitation for a client to join a project.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n  - **Workspace Disabled**: Notification of workspace deactivation.\\n  - **Workspace Enabled**: Notification of workspace reactivation.\\n\\n- **Project Requests**\\n  - **New Project Alert**: Notification of a new project request with details.\\n\\n- **Subscription**\\n  - **Subscription Confirmation Email**: Confirmation of subscription activation.\\n  - **Renewal Reminder Email**: Reminder to renew the subscription.\\n  - **Payment Confirmation Email**: Confirmation of successful payment.\\n  - **Subscription Cancellation Confirmation Email**: Confirmation of subscription cancellation.\\n  - **Failed Payment Notification Email**: Notification of failed payment processing.\\n\\n#### Team Member - Notification Content\\n- **Onboarding**\\n  - **Project Invite**: Invitation to collaborate on a project.\\n  - **Welcome Message**: Welcome to Wholistic and introduction to the project.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n\\n- **Project Requests**\\n  - **Project Request Update**: Update on project request approval or disapproval.\\n\\n- **Team Members**\\n  - **Deactivated Team Member**: Notification of account deactivation.\\n  - **Reactivation of a Team Member**: Notification of account reactivation.\\n\\n- **Project Notifications**\\n  - **New Activity**: Notification of new activity in a project.\\n  - **Comments**: Notification of new comments on a document.\\n\\n#### Platform Owner - Notifications Content\\n- **Onboarding**\\n  - **Welcome Message**: Welcome to Wholistic.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n\\n- **Team Members**\\n  - **Invite Team Member**: Invitation for a team member to join the platform.\\n  - **Deactivate a Team Member**: Notification of account deactivation.\\n  - **Activate a Team Member**: Notification of account reactivation.\\n\\n- **EOD Summary**: Summary of daily activities including new sign-ups, deactivated/activated organizations, subscriptions, and transaction details.\\n\\n### In-app Notification Content\\n\\n#### Organisation\\n- **Onboarding**\\n  - **Welcome Message**: Welcome to Wholistic.\\n- **Project Request**\\n  - **Project Request Update**: Notification of a new project request.\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n\\n#### Team Members\\n- **Onboarding\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"0987654321dd\",\n            \"messageId\": \"chatcmpl-9i8ONXDpJ9bYgtbVRdnovcyu2crPx\",\n            \"message\": \"2 + 2 equals 4.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9iH1sATCWQrGVqVvx252LF51i7yKp\",\n            \"message\": \"I don't know.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"12345678901\",\n            \"messageId\": \"chatcmpl-9iH2RzTslDGvoe7pECbrKMQjtx1Lp\",\n            \"message\": \"My name is Oluchukwu Ossai.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"d18d6c2a-2a9b-4817-844c-a565670295ae\",\n            \"messageId\": \"chatcmpl-9iz0WtZxvPW0NWC1APaetiQBbktG1\",\n            \"message\": \"I don't have the information to answer that. Could you please provide more details or ask a specific question?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234789rr0dd\",\n            \"messageId\": \"chatcmpl-9hKFG1TXp8Wl9lRo2SxsOXl2Ziwo3\",\n            \"message\": \"[Wholistic: Test Plan](https://docs.google.com/spreadsheets/d/1ZKmIB7tGZyKqkArX03aEQXE2u6Bpx_Swtc3pWfvGvAw?gid=191557530)\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"897b897a-9c44-4460-a186-a74cbda13b68\",\n            \"messageId\": \"chatcmpl-9iyPmYExg6mLotr9ewU1bULYjdWHq\",\n            \"message\": \"I don't have enough information to answer your question.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"8caa9e5a-c46d-4287-a941-adf1da7698a5\",\n            \"messageId\": \"chatcmpl-9izr1YXEFe4sg1PQTLRqDVcA1P2M6\",\n            \"message\": \"I don't have enough information to answer your question. Could you please provide more details or clarify your question?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123d4789rr0dd\",\n            \"messageId\": \"chatcmpl-9hgAwso3lhFRVpHDFQkkJBo3Ezu9W\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"0987654321\",\n            \"messageId\": \"chatcmpl-9i7ylWJiEKMEkSxX4Qc2YZ15pOZS6\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"2beef177-a504-4a43-a04f-779ed4f044f3\",\n            \"messageId\": \"chatcmpl-9iySuT8ne91L9t6IMae5XTY48YQfL\",\n            \"message\": \"Hello! How can I assist you today?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"97df1710-0f4b-4d23-b482-839614b90a6e\",\n            \"messageId\": \"chatcmpl-9iygNJsr0Q6Yp8yN7HlWiO1fQfVuG\",\n            \"message\": \"I don't have enough information to answer your question.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"e8f2fdd7-36ae-466d-85fb-1abe7b979148\",\n            \"messageId\": \"chatcmpl-9iykr6ts76Y9VYydVLZsgjlsd0gUJ\",\n            \"message\": \"Hello! How can I assist you today?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"12345d6789rr0\",\n            \"messageId\": \"chatcmpl-9hJYvycs7L0ScvZtkCzaNE7U6M3P5\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"37feebd3-7c9d-4226-8a73-998ac3f094e8\",\n            \"messageId\": \"chatcmpl-9iyLFhjCmhmdugSGX1BB5VD5RGzl2\",\n            \"message\": \"I don't know.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"2720e6fe-0cd3-4477-87e5-697e0ce8dcf7\",\n            \"messageId\": \"chatcmpl-9iyayNfi9aiSjOBLP1gmNVWxBTkRe\",\n            \"message\": \"I don't have enough information to answer your question. Could you please provide more details or clarify your query?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"127255d0-7d2c-4908-94f9-47593f9593f3\",\n            \"messageId\": \"chatcmpl-9iz7XnfZUshUgYFCqjugDlgbrzOXT\",\n            \"message\": \"You can greet me as \\\"Jane.\\\"\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123456789012\",\n            \"messageId\": \"chatcmpl-9iH3fO5dgHW4X55SHTSaSpBteenH5\",\n            \"message\": \"My name is Oluchukwu Ossai.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"38db1925-1c41-4a1e-944b-adcb154ade28\",\n            \"messageId\": \"chatcmpl-9izhgueRouqFnrkCWgjliVhSLfQhe\",\n            \"message\": \"I don't have any information to answer your question. Could you please provide more details or specify what you need help with?\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 76,\n        \"totalNumberOfPages\": 4,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123d4789rrdd0dd\",\n            \"messageId\": \"chatcmpl-9hidjNN3JFrgHLGN29Wxc3c7nNAZX\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890dd\",\n            \"messageId\": \"chatcmpl-9h37XKwcEMQWfbx773M3AKL2CKhmx\",\n            \"message\": \"### Email Notification Content\\n\\n#### Organisation - Notification Content\\n- **Onboarding**\\n  - **Welcome Message**: Introduction to Wholistic, highlighting features and offering support contacts.\\n  - **Verify Email**: Request to verify email to complete registration.\\n  - **Login Alert**: Notification of account access with details of time, date, and location.\\n  - **Password Reset OTP**: Instructions to reset the password.\\n  - **Password Reset Attempt**: Confirmation of successful password reset.\\n  - **Team Member Invitation**: Invitation for a team member to join a workspace.\\n  - **Team Member Invite Reminder**: Reminder to join a workspace.\\n  - **Team Member Deactivation**: Notification of account deactivation.\\n  - **Team Member Activation**: Notification of account reactivation.\\n  - **Client Invitation**: Invitation for a client to join a project.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n  - **Workspace Disabled**: Notification of workspace deactivation.\\n  - **Workspace Enabled**: Notification of workspace reactivation.\\n\\n- **Project Requests**\\n  - **New Project Alert**: Notification of a new project request with details.\\n\\n- **Subscription**\\n  - **Subscription Confirmation Email**: Confirmation of subscription activation.\\n  - **Renewal Reminder Email**: Reminder to renew the subscription.\\n  - **Payment Confirmation Email**: Confirmation of successful payment.\\n  - **Subscription Cancellation Confirmation Email**: Confirmation of subscription cancellation.\\n  - **Failed Payment Notification Email**: Notification of failed payment processing.\\n\\n#### Team Member - Notification Content\\n- **Onboarding**\\n  - **Project Invite**: Invitation to collaborate on a project.\\n  - **Welcome Message**: Welcome to Wholistic and introduction to the project.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n\\n- **Project Requests**\\n  - **Project Request Update**: Update on project request approval or disapproval.\\n\\n- **Team Members**\\n  - **Deactivated Team Member**: Notification of account deactivation.\\n  - **Reactivation of a Team Member**: Notification of account reactivation.\\n\\n- **Project Notifications**\\n  - **New Activity**: Notification of new activity in a project.\\n  - **Comments**: Notification of new comments on a document.\\n\\n#### Platform Owner - Notifications Content\\n- **Onboarding**\\n  - **Welcome Message**: Welcome to Wholistic.\\n\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n  - **Change Password**: Notification of a successful password change.\\n\\n- **Team Members**\\n  - **Invite Team Member**: Invitation for a team member to join the platform.\\n  - **Deactivate a Team Member**: Notification of account deactivation.\\n  - **Activate a Team Member**: Notification of account reactivation.\\n\\n- **EOD Summary**: Summary of daily activities including new sign-ups, deactivated/activated organizations, subscriptions, and transaction details.\\n\\n### In-app Notification Content\\n\\n#### Organisation\\n- **Onboarding**\\n  - **Welcome Message**: Welcome to Wholistic.\\n- **Project Request**\\n  - **Project Request Update**: Notification of a new project request.\\n- **Profile**\\n  - **Enabled 2FA**: Confirmation of enabling Two-Factor Authentication (2FA).\\n  - **Disabled 2FA**: Confirmation of disabling 2FA.\\n\\n#### Team Members\\n- **Onboarding\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"0987654321dd\",\n            \"messageId\": \"chatcmpl-9i8ONXDpJ9bYgtbVRdnovcyu2crPx\",\n            \"message\": \"2 + 2 equals 4.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9iH1sATCWQrGVqVvx252LF51i7yKp\",\n            \"message\": \"I don't know.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"12345678901\",\n            \"messageId\": \"chatcmpl-9iH2RzTslDGvoe7pECbrKMQjtx1Lp\",\n            \"message\": \"My name is Oluchukwu Ossai.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"d18d6c2a-2a9b-4817-844c-a565670295ae\",\n            \"messageId\": \"chatcmpl-9iz0WtZxvPW0NWC1APaetiQBbktG1\",\n            \"message\": \"I don't have the information to answer that. Could you please provide more details or ask a specific question?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234789rr0dd\",\n            \"messageId\": \"chatcmpl-9hKFG1TXp8Wl9lRo2SxsOXl2Ziwo3\",\n            \"message\": \"[Wholistic: Test Plan](https://docs.google.com/spreadsheets/d/1ZKmIB7tGZyKqkArX03aEQXE2u6Bpx_Swtc3pWfvGvAw?gid=191557530)\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"897b897a-9c44-4460-a186-a74cbda13b68\",\n            \"messageId\": \"chatcmpl-9iyPmYExg6mLotr9ewU1bULYjdWHq\",\n            \"message\": \"I don't have enough information to answer your question.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"8caa9e5a-c46d-4287-a941-adf1da7698a5\",\n            \"messageId\": \"chatcmpl-9izr1YXEFe4sg1PQTLRqDVcA1P2M6\",\n            \"message\": \"I don't have enough information to answer your question. Could you please provide more details or clarify your question?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123d4789rr0dd\",\n            \"messageId\": \"chatcmpl-9hgAwso3lhFRVpHDFQkkJBo3Ezu9W\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"0987654321\",\n            \"messageId\": \"chatcmpl-9i7ylWJiEKMEkSxX4Qc2YZ15pOZS6\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"2beef177-a504-4a43-a04f-779ed4f044f3\",\n            \"messageId\": \"chatcmpl-9iySuT8ne91L9t6IMae5XTY48YQfL\",\n            \"message\": \"Hello! How can I assist you today?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"97df1710-0f4b-4d23-b482-839614b90a6e\",\n            \"messageId\": \"chatcmpl-9iygNJsr0Q6Yp8yN7HlWiO1fQfVuG\",\n            \"message\": \"I don't have enough information to answer your question.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"e8f2fdd7-36ae-466d-85fb-1abe7b979148\",\n            \"messageId\": \"chatcmpl-9iykr6ts76Y9VYydVLZsgjlsd0gUJ\",\n            \"message\": \"Hello! How can I assist you today?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"12345d6789rr0\",\n            \"messageId\": \"chatcmpl-9hJYvycs7L0ScvZtkCzaNE7U6M3P5\",\n            \"message\": \"{NONE}\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"37feebd3-7c9d-4226-8a73-998ac3f094e8\",\n            \"messageId\": \"chatcmpl-9iyLFhjCmhmdugSGX1BB5VD5RGzl2\",\n            \"message\": \"I don't know.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"2720e6fe-0cd3-4477-87e5-697e0ce8dcf7\",\n            \"messageId\": \"chatcmpl-9iyayNfi9aiSjOBLP1gmNVWxBTkRe\",\n            \"message\": \"I don't have enough information to answer your question. Could you please provide more details or clarify your query?\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"127255d0-7d2c-4908-94f9-47593f9593f3\",\n            \"messageId\": \"chatcmpl-9iz7XnfZUshUgYFCqjugDlgbrzOXT\",\n            \"message\": \"You can greet me as \\\"Jane.\\\"\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"123456789012\",\n            \"messageId\": \"chatcmpl-9iH3fO5dgHW4X55SHTSaSpBteenH5\",\n            \"message\": \"My name is Oluchukwu Ossai.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"38db1925-1c41-4a1e-944b-adcb154ade28\",\n            \"messageId\": \"chatcmpl-9izhgueRouqFnrkCWgjliVhSLfQhe\",\n            \"message\": \"I don't have any information to answer your question. Could you please provide more details or specify what you need help with?\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 76,\n        \"totalNumberOfPages\": 4,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "0372d832-473a-40c9-85f1-593302f28a88"
 				},
 				{
-					"name": "List Chat Suggestions",
-					"id": "c20b171d-948a-4f19-9ca1-7e2747a4022d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/chats/suggestions"
-					},
-					"response": [
+					"name": "List Chats Suggesstions",
+					"item": [
 						{
-							"id": "03afa092-b33c-4de2-a06b-55e9ae652995",
 							"name": "List Chat Suggestions",
-							"originalRequest": {
+							"id": "c20b171d-948a-4f19-9ca1-7e2747a4022d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/chats/suggestions"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "https://admin.wholistic.work"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "268"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"10c-MhJCDcM21VkR+OZdmutLLRhh5BY\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 28 Jul 2024 20:35:27 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "03afa092-b33c-4de2-a06b-55e9ae652995",
+									"name": "List Chat Suggestions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/chats/suggestions"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "268"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10c-MhJCDcM21VkR+OZdmutLLRhh5BY\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Jul 2024 20:35:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"message\": \"What is the current health of my projects?\"\n        },\n        {\n            \"message\": \"What are the dependencies needed for Project Jarvis?\"\n        },\n        {\n            \"message\": \"Give me a summary of recent discussions around Project Jarvis\"\n        }\n    ]\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"message\": \"What is the current health of my projects?\"\n        },\n        {\n            \"message\": \"What are the dependencies needed for Project Jarvis?\"\n        },\n        {\n            \"message\": \"Give me a summary of recent discussions around Project Jarvis\"\n        }\n    ]\n}"
+							]
 						}
-					]
+					],
+					"id": "3f90578c-5024-4839-a2ff-e3acdba5c160"
 				}
 			],
 			"id": "0c84972f-d2b7-4fde-ab5b-40d4a0abd91d"
@@ -20681,121 +20694,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "Get Public Workspace Details Copy",
-			"id": "319be7b4-a0f9-4857-9c21-6f6e7cc30d5e",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{baseUrl}}/workspaces/public"
-			},
-			"response": [
-				{
-					"id": "cc62c015-ae04-455a-bbd3-a4b700510a23",
-					"name": "Get Public Workspace Details",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/workspaces/public"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Security-Policy",
-							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-						},
-						{
-							"key": "Cross-Origin-Opener-Policy",
-							"value": "same-origin"
-						},
-						{
-							"key": "Cross-Origin-Resource-Policy",
-							"value": "same-origin"
-						},
-						{
-							"key": "Origin-Agent-Cluster",
-							"value": "?1"
-						},
-						{
-							"key": "Referrer-Policy",
-							"value": "no-referrer"
-						},
-						{
-							"key": "Strict-Transport-Security",
-							"value": "max-age=15552000; includeSubDomains"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "X-DNS-Prefetch-Control",
-							"value": "off"
-						},
-						{
-							"key": "X-Download-Options",
-							"value": "noopen"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "SAMEORIGIN"
-						},
-						{
-							"key": "X-Permitted-Cross-Domain-Policies",
-							"value": "none"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "0"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "https://admind.wholistic.work"
-						},
-						{
-							"key": "Vary",
-							"value": "Origin"
-						},
-						{
-							"key": "Access-Control-Allow-Credentials",
-							"value": "true"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "340"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"154-/wOvjo4nSSQ6atQS3WJStXmadPg\""
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 30 Jul 2024 00:03:19 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspace details\",\n    \"data\": {\n        \"id\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n        \"name\": \"Assurdly-342dd\",\n        \"status\": \"active\",\n        \"slug\": \"admind\",\n        \"domain\": \"admind.wholistic.work\",\n        \"logoUrl\": null,\n        \"serviceTypes\": [\n            \"Compliance\",\n            \"Product Management\",\n            \"Product, Delivery\"\n        ],\n        \"createdAt\": \"2024-04-28T22:46:22.274Z\"\n    }\n}"
-				}
-			]
 		}
 	],
 	"auth": {
