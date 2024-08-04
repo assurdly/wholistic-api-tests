@@ -1,0 +1,10 @@
+{
+    "name": "Yost and Sons",
+    "email": "Janice@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Nienow@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Gunnar",
+    "contactEmail2": "Odessa28@hotmail.com",
+    "contactPhone2": "+2349055755673"
+}
