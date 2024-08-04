@@ -624,7 +624,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"Azeez@mailinator.com\",\n    \"password\": \"Password12@@\"\n}",
+									"raw": "{\n    \"email\": \"azeez@mailinator.com\",\n    \"password\": \"Password12@@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -20557,6 +20557,11 @@
 			"id": "cbf87082-57c3-44c3-9d98-5b4b802c7804"
 		},
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "77532d13-9169-4dcf-b7f3-d89aebe96a6e"
+		},
+		{
 			"name": "OpenAI test",
 			"id": "ee25e4cf-fd18-4ad0-95e5-2d7245affdbe",
 			"protocolProfileBehavior": {
@@ -20767,13 +20772,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5e818306-7082-471e-ab60-6de88825cfeb",
+				"id": "125bd3da-4cdf-4f82-a208-96b75414faa8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"ikigai.wholistic.work\"",
+					"  value: \"https://\" + \"account.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20781,7 +20786,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d1534fd8-f80e-4592-b55a-77e83edbc6c0",
+				"id": "b218e636-98c9-4d9e-aec4-18c0e33a24d6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
