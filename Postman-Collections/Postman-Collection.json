@@ -14424,7 +14424,7 @@
 							]
 						},
 						{
-							"name": "Verify Subscription Copy",
+							"name": "Verify Subscription - Empty Data",
 							"id": "efe7629e-e9a1-47c5-b717-65ba1e05711a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
