@@ -14325,12 +14325,12 @@
 											"        pm.response.to.have.status(400);",
 											"    });",
 											"",
-											"    pm.test(\"Status code response is Created\", function () {",
-											"        pm.response.to.have.status('Created');",
+											"    pm.test(\"Status code response is Bad request\", function () {",
+											"        pm.response.to.have.status('Bad Request');",
 											"    });",
 											"",
 											"    pm.test('Valid error message returned', () => {",
-											"        pm.expect(message).to.eql(\"Transaction not found for workspace.\")",
+											"        pm.expect(message).to.eql(\"Plan does not exist\")",
 											"    })",
 											"} catch (error) {",
 											"    console.error(error)",
@@ -14379,6 +14379,142 @@
 							"response": [
 								{
 									"id": "12a408be-77ae-45d0-8d00-53284df912a4",
+									"name": "Subscribe to Plan",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/billings/plans/:id/subscribe",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"billings",
+												"plans",
+												":id",
+												"subscribe"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "c1a53489-4297-4868-baed-1fc518892347"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "171"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ab-8aU0Ugl75s+VK9bnaMA0wJDr0DQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 06:49:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully initialized subscription\",\n    \"data\": {\n        \"authorizationUrl\": \"https://checkout.paystack.com/ozjs0003bxy4pds\",\n        \"reference\": \"oo7dh5ub0n\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Subscribe to Plan - Empty Processor",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d2faee1d-d2d8-4f72-baf0-9f99512aad6e",
+										"exec": [
+											"try {",
+											"    const { message } = pm.response.json()",
+											"",
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"",
+											"    pm.test(\"Status code response is Bad request\", function () {",
+											"        pm.response.to.have.status('Bad Request');",
+											"    });",
+											"",
+											"    pm.test('Valid error message returned', () => {",
+											"        pm.expect(message).to.eql(\"Plan does not exist\")",
+											"    })",
+											"} catch (error) {",
+											"    console.error(error)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "799cc29e-574c-4345-9595-efe6bb0628df",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"processor\": \"stripe\",\n    \"currency\": \"USD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans/:id/subscribe",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans",
+										":id",
+										"subscribe"
+									],
+									"variable": [
+										{
+											"id": "d2ef99eb-77bd-4601-be36-8402a9bf9cdf",
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "876a7614-0383-48c3-968f-ac072832de9a",
 									"name": "Subscribe to Plan",
 									"originalRequest": {
 										"method": "POST",
