@@ -19540,251 +19540,268 @@
 			"name": "Chats",
 			"item": [
 				{
-					"name": "Chat with assistant",
-					"id": "d7f6c7fd-bf35-444a-98b9-bb3e314721d1",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"sessionId\": \"1234567890\",\n    \"message\": \"can you summarize notification templates for me?\",\n    \"stream\": false // this is supported for only testing purposes, sometime in the future, response would be stream:true only.\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/chats/assistant"
-					},
-					"response": [
+					"name": "Chat with Assistant",
+					"item": [
 						{
-							"id": "99dcbd16-e520-4092-b189-09ec376a5d12",
 							"name": "Chat with assistant",
-							"originalRequest": {
+							"id": "d7f6c7fd-bf35-444a-98b9-bb3e314721d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "POST",
 								"header": [],
-								"url": "{{baseUrl}}/integrations/assistant"
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sessionId\": \"1234567890\",\n    \"message\": \"can you summarize notification templates for me?\",\n    \"stream\": false // this is supported for only testing purposes, sometime in the future, response would be stream:true only.\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/chats/assistant"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"header": [
+							"response": [
 								{
-									"key": "content-security-policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "cross-origin-opener-policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "cross-origin-resource-policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "origin-agent-cluster",
-									"value": "?1"
-								},
-								{
-									"key": "referrer-policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "strict-transport-security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "x-content-type-options",
-									"value": "nosniff"
-								},
-								{
-									"key": "x-dns-prefetch-control",
-									"value": "off"
-								},
-								{
-									"key": "x-download-options",
-									"value": "noopen"
-								},
-								{
-									"key": "x-frame-options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "x-permitted-cross-domain-policies",
-									"value": "none"
-								},
-								{
-									"key": "x-xss-protection",
-									"value": "0"
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "https://admind.wholistic.work"
-								},
-								{
-									"key": "vary",
-									"value": "Origin"
-								},
-								{
-									"key": "access-control-allow-credentials",
-									"value": "true"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/event-stream"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate, max-age=0, no-transform"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expire",
-									"value": "0"
-								},
-								{
-									"key": "X-Accel-Buffering",
-									"value": "no"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 26 Jun 2024 20:34:35 GMT"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
+									"id": "99dcbd16-e520-4092-b189-09ec376a5d12",
+									"name": "Chat with assistant",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": "{{baseUrl}}/integrations/assistant"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "content-security-policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "cross-origin-opener-policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "cross-origin-resource-policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "origin-agent-cluster",
+											"value": "?1"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "access-control-allow-credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/event-stream"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate, max-age=0, no-transform"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expire",
+											"value": "0"
+										},
+										{
+											"key": "X-Accel-Buffering",
+											"value": "no"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 26 Jun 2024 20:34:35 GMT"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "\nid: 1\ndata: {\"id\":\"1\",\"email\":\"\"}\n\nid: 2\ndata: {\"id\":\"1\",\"email\":\"I\"}\n\nid: 3\ndata: {\"id\":\"1\",\"email\":\" am\"}\n\nid: 4\ndata: {\"id\":\"1\",\"email\":\" an\"}\n\nid: 5\ndata: {\"id\":\"1\",\"email\":\" AI\"}\n\nid: 6\ndata: {\"id\":\"1\",\"email\":\" assistant\"}\n\nid: 7\ndata: {\"id\":\"1\",\"email\":\" designed\"}\n\nid: 8\ndata: {\"id\":\"1\",\"email\":\" to\"}\n\nid: 9\ndata: {\"id\":\"1\",\"email\":\" help\"}\n\nid: 10\ndata: {\"id\":\"1\",\"email\":\" you\"}\n\nid: 11\ndata: {\"id\":\"1\",\"email\":\" find\"}\n\nid: 12\ndata: {\"id\":\"1\",\"email\":\" information\"}\n\nid: 13\ndata: {\"id\":\"1\",\"email\":\",\"}\n\nid: 14\ndata: {\"id\":\"1\",\"email\":\" answer\"}\n\nid: 15\ndata: {\"id\":\"1\",\"email\":\" questions\"}\n\nid: 16\ndata: {\"id\":\"1\",\"email\":\",\"}\n\nid: 17\ndata: {\"id\":\"1\",\"email\":\" and\"}\n\nid: 18\ndata: {\"id\":\"1\",\"email\":\" assist\"}\n\nid: 19\ndata: {\"id\":\"1\",\"email\":\" with\"}\n\nid: 20\ndata: {\"id\":\"1\",\"email\":\" various\"}\n\nid: 21\ndata: {\"id\":\"1\",\"email\":\" tasks\"}\n\nid: 22\ndata: {\"id\":\"1\",\"email\":\".\"}\n\nid: 23\ndata: {\"id\":\"1\",\"email\":\" How\"}\n\nid: 24\ndata: {\"id\":\"1\",\"email\":\" can\"}\n\nid: 25\ndata: {\"id\":\"1\",\"email\":\" I\"}\n\nid: 26\ndata: {\"id\":\"1\",\"email\":\" assist\"}\n\nid: 27\ndata: {\"id\":\"1\",\"email\":\" you\"}\n\nid: 28\ndata: {\"id\":\"1\",\"email\":\" today\"}\n\nid: 29\ndata: {\"id\":\"1\",\"email\":\"?\"}\n\nid: 30\ndata: {\"id\":\"1\"}\n\n"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "\nid: 1\ndata: {\"id\":\"1\",\"email\":\"\"}\n\nid: 2\ndata: {\"id\":\"1\",\"email\":\"I\"}\n\nid: 3\ndata: {\"id\":\"1\",\"email\":\" am\"}\n\nid: 4\ndata: {\"id\":\"1\",\"email\":\" an\"}\n\nid: 5\ndata: {\"id\":\"1\",\"email\":\" AI\"}\n\nid: 6\ndata: {\"id\":\"1\",\"email\":\" assistant\"}\n\nid: 7\ndata: {\"id\":\"1\",\"email\":\" designed\"}\n\nid: 8\ndata: {\"id\":\"1\",\"email\":\" to\"}\n\nid: 9\ndata: {\"id\":\"1\",\"email\":\" help\"}\n\nid: 10\ndata: {\"id\":\"1\",\"email\":\" you\"}\n\nid: 11\ndata: {\"id\":\"1\",\"email\":\" find\"}\n\nid: 12\ndata: {\"id\":\"1\",\"email\":\" information\"}\n\nid: 13\ndata: {\"id\":\"1\",\"email\":\",\"}\n\nid: 14\ndata: {\"id\":\"1\",\"email\":\" answer\"}\n\nid: 15\ndata: {\"id\":\"1\",\"email\":\" questions\"}\n\nid: 16\ndata: {\"id\":\"1\",\"email\":\",\"}\n\nid: 17\ndata: {\"id\":\"1\",\"email\":\" and\"}\n\nid: 18\ndata: {\"id\":\"1\",\"email\":\" assist\"}\n\nid: 19\ndata: {\"id\":\"1\",\"email\":\" with\"}\n\nid: 20\ndata: {\"id\":\"1\",\"email\":\" various\"}\n\nid: 21\ndata: {\"id\":\"1\",\"email\":\" tasks\"}\n\nid: 22\ndata: {\"id\":\"1\",\"email\":\".\"}\n\nid: 23\ndata: {\"id\":\"1\",\"email\":\" How\"}\n\nid: 24\ndata: {\"id\":\"1\",\"email\":\" can\"}\n\nid: 25\ndata: {\"id\":\"1\",\"email\":\" I\"}\n\nid: 26\ndata: {\"id\":\"1\",\"email\":\" assist\"}\n\nid: 27\ndata: {\"id\":\"1\",\"email\":\" you\"}\n\nid: 28\ndata: {\"id\":\"1\",\"email\":\" today\"}\n\nid: 29\ndata: {\"id\":\"1\",\"email\":\"?\"}\n\nid: 30\ndata: {\"id\":\"1\"}\n\n"
+							]
 						}
-					]
+					],
+					"id": "70a8b528-aa89-42bd-9c6c-22369f7a1212"
 				},
 				{
 					"name": "List Chats",
-					"id": "822a23fa-11a4-4c9f-844c-501e46cc6b26",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/chats"
-					},
-					"response": [
+					"item": [
 						{
-							"id": "a7287fd2-5bca-40f3-b5b9-63f4fbb68d83",
 							"name": "List Chats",
-							"originalRequest": {
+							"id": "822a23fa-11a4-4c9f-844c-501e46cc6b26",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}/chats"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "https://admind.wholistic.work"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "3820"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"eec-EdrNTZeNsidJAT8/vSwgb//5b/M\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 27 Jun 2024 11:46:44 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
+									"id": "a7287fd2-5bca-40f3-b5b9-63f4fbb68d83",
+									"name": "List Chats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/chats"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3820"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"eec-EdrNTZeNsidJAT8/vSwgb//5b/M\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 27 Jun 2024 11:46:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehqWfDWoFYhYeyRL7eMhEGWAZ0Gx\",\n            \"message\": \"You're welcome! If you have any more questions or need more fun facts, feel free to ask. Have a great day!\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"06eec474-4cec-4489-8ad9-09ead80250e7\",\n            \"message\": \"thank you again!\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehpaKd2S31LKff9sOafG1E0jBDuo\",\n            \"message\": \"Sure! Here's the first fun fact I mentioned:\\n\\nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible! Honey's long shelf life is due to its low moisture content and acidic pH, which create an environment that's inhospitable to bacteria and other microorganisms.undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"b3daef03-dd06-47fc-b869-075f8a934f5c\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehpDGm69Mv2uwzu6CG2ENSJODXBI\",\n            \"message\": \"It seems like you're asking to repeat a fun fact, but I don't have any previous context to know what the first fun fact is. Could you please provide more details or specify the fun fact you are referring to?undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"d4886e2e-8b27-40c0-8bc7-1f48ae803286\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehonF7239eTTY3DakebLmtSyiAyc\",\n            \"message\": \"It seems like you're asking for a fun fact, but I don't have any prior context to know what the \\\"first fun fact\\\" might be. Here's a fun fact for you: \\n\\nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"e31303e9-9eb8-4f39-95dc-864e2eb8da0a\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehnpFffkPhROBnIRCi0ZpFD2aokm\",\n            \"message\": \"It sounds like you're looking for a joke or a story. Here's a joke for you:\\n\\nWhy don't scientists trust atoms?\\n\\nBecause they make up everything!undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"9708c842-481b-4640-920d-b56a891f7a3c\",\n            \"message\": \"tell me another one.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehnTm71wZjvxwURlj6O5SZcPfjrf\",\n            \"message\": \"Sure! Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible! Honey's long shelf life is due to its low moisture content and acidic pH, which create an environment that's inhospitable to bacteria and other microorganisms.undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"a0f2f01b-bb79-4e93-af05-7615a28f3781\",\n            \"message\": \"tell me a fun fact.\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 12,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched chats\",\n    \"data\": [\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehqWfDWoFYhYeyRL7eMhEGWAZ0Gx\",\n            \"message\": \"You're welcome! If you have any more questions or need more fun facts, feel free to ask. Have a great day!\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"06eec474-4cec-4489-8ad9-09ead80250e7\",\n            \"message\": \"thank you again!\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehpaKd2S31LKff9sOafG1E0jBDuo\",\n            \"message\": \"Sure! Here's the first fun fact I mentioned:\\n\\nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible! Honey's long shelf life is due to its low moisture content and acidic pH, which create an environment that's inhospitable to bacteria and other microorganisms.undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"b3daef03-dd06-47fc-b869-075f8a934f5c\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehpDGm69Mv2uwzu6CG2ENSJODXBI\",\n            \"message\": \"It seems like you're asking to repeat a fun fact, but I don't have any previous context to know what the first fun fact is. Could you please provide more details or specify the fun fact you are referring to?undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"d4886e2e-8b27-40c0-8bc7-1f48ae803286\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehonF7239eTTY3DakebLmtSyiAyc\",\n            \"message\": \"It seems like you're asking for a fun fact, but I don't have any prior context to know what the \\\"first fun fact\\\" might be. Here's a fun fact for you: \\n\\nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"e31303e9-9eb8-4f39-95dc-864e2eb8da0a\",\n            \"message\": \"repeat the first fun fact\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehnpFffkPhROBnIRCi0ZpFD2aokm\",\n            \"message\": \"It sounds like you're looking for a joke or a story. Here's a joke for you:\\n\\nWhy don't scientists trust atoms?\\n\\nBecause they make up everything!undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"9708c842-481b-4640-920d-b56a891f7a3c\",\n            \"message\": \"tell me another one.\"\n        },\n        {\n            \"senderId\": \"assistant\",\n            \"recipientId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"chatcmpl-9ehnTm71wZjvxwURlj6O5SZcPfjrf\",\n            \"message\": \"Sure! Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible! Honey's long shelf life is due to its low moisture content and acidic pH, which create an environment that's inhospitable to bacteria and other microorganisms.undefined\"\n        },\n        {\n            \"senderId\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"recipientId\": \"assistant\",\n            \"sessionId\": \"1234567890\",\n            \"messageId\": \"a0f2f01b-bb79-4e93-af05-7615a28f3781\",\n            \"message\": \"tell me a fun fact.\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 12,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+							]
 						}
-					]
+					],
+					"id": "023d5f4d-38a6-4446-996d-afa6a754ba22"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "0372d832-473a-40c9-85f1-593302f28a88"
 				},
 				{
 					"name": "List Chat Sessions",
