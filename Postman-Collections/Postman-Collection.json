@@ -11,315 +11,6 @@
 			"name": "Authentication",
 			"item": [
 				{
-					"name": "Accept Invite",
-					"item": [
-						{
-							"name": "Complete Email Signup",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"try {\r",
-											"const jsonData = pm.response.json();\r",
-											"const accesstoken = jsonData.data.accessToken\r",
-											"pm.environment.set(\"teamAccessToken\", accesstoken)\r",
-											"\r",
-											"\r",
-											"pm.test(\"Response body property\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.status).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.data).to.be.an('object');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status is success\", function () {\r",
-											"    pm.expect(jsonData.status).to.eql('success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
-											"});\r",
-											"    pm.test(\"Status code name has string\", function () {\r",
-											"        pm.response.to.have.status(\"Created\");\r",
-											"    });\r",
-											"pm.test(\"Message is Successfully logged in\", function () {\r",
-											"    pm.expect(jsonData.message).to.include('Welcome. You have been successfully signed in.');\r",
-											"});\r",
-											"\r",
-											"    } catch (errors) {\r",
-											"    console.error(errors)\r",
-											"}"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Ife\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/auth/setup/:token",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"auth",
-										"setup",
-										":token"
-									],
-									"variable": [
-										{
-											"key": "token",
-											"value": "899e4e513a743c98c6fafbdbf92b7381038940b0"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Complete Email Signup",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/auth/setup/:token",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"auth",
-												"setup",
-												":token"
-											],
-											"variable": [
-												{
-													"key": "token",
-													"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
-												}
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "344"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 28 Apr 2024 22:04:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Complete Email Signup Copy",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"try {\r",
-											"const jsonData = pm.response.json();\r",
-											"const accesstoken = jsonData.data.accessToken\r",
-											"pm.environment.set(\"teamAccessToken\", accesstoken)\r",
-											"\r",
-											"\r",
-											"pm.test(\"Response body property\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.status).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.data).to.be.an('object');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status is success\", function () {\r",
-											"    pm.expect(jsonData.status).to.eql('success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
-											"});\r",
-											"    pm.test(\"Status code name has string\", function () {\r",
-											"        pm.response.to.have.status(\"Created\");\r",
-											"    });\r",
-											"pm.test(\"Message is Successfully logged in\", function () {\r",
-											"    pm.expect(jsonData.message).to.include('Welcome. You have been successfully signed in.');\r",
-											"});\r",
-											"\r",
-											"    } catch (errors) {\r",
-											"    console.error(errors)\r",
-											"}"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Ife\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/auth/setup/:token",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"auth",
-										"setup",
-										":token"
-									],
-									"variable": [
-										{
-											"key": "token",
-											"value": "899e4e513a743c98c6fafbdbf92b7381038940b0"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Complete Email Signup",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/auth/setup/:token",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"auth",
-												"setup",
-												":token"
-											],
-											"variable": [
-												{
-													"key": "token",
-													"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
-												}
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "344"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 28 Apr 2024 22:04:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
-								}
-							]
-						}
-					]
-				},
-				{
 					"name": "Login",
 					"item": [
 						{
@@ -2115,6 +1806,315 @@
 									""
 								]
 							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Accept Invite",
+			"item": [
+				{
+					"name": "Complete Email Signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// try {\r",
+									"// const jsonData = pm.response.json();\r",
+									"// const accesstoken = jsonData.data.accessToken\r",
+									"// pm.environment.set(\"teamAccessToken\", accesstoken)\r",
+									"\r",
+									"\r",
+									"// pm.test(\"Response body property\", function () {\r",
+									"//     pm.expect(jsonData).to.be.an('object');\r",
+									"//     pm.expect(jsonData.status).to.be.a('string');\r",
+									"//     pm.expect(jsonData.message).to.be.a('string');\r",
+									"//     pm.expect(jsonData.data).to.be.an('object');\r",
+									"// });\r",
+									"\r",
+									"// pm.test(\"Status is success\", function () {\r",
+									"//     pm.expect(jsonData.status).to.eql('success');\r",
+									"// });\r",
+									"\r",
+									"// pm.test(\"Status code is 201\", function () {\r",
+									"//     pm.response.to.have.status(201);\r",
+									"// });\r",
+									"//     pm.test(\"Status code name has string\", function () {\r",
+									"//         pm.response.to.have.status(\"Created\");\r",
+									"//     });\r",
+									"// pm.test(\"Message is Successfully logged in\", function () {\r",
+									"//     pm.expect(jsonData.message).to.include('Welcome. You have been successfully signed in.');\r",
+									"// });\r",
+									"\r",
+									"//     } catch (errors) {\r",
+									"//     console.error(errors)\r",
+									"// }"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Ife\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/setup/:token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"setup",
+								":token"
+							],
+							"variable": [
+								{
+									"key": "token",
+									"value": "899e4e513a743c98c6fafbdbf92b7381038940b0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Complete Email Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/setup/:token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"setup",
+										":token"
+									],
+									"variable": [
+										{
+											"key": "token",
+											"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 22:04:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Complete Email Signup Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// try {\r",
+									"// const jsonData = pm.response.json();\r",
+									"// const accesstoken = jsonData.data.accessToken\r",
+									"// pm.environment.set(\"teamAccessToken\", accesstoken)\r",
+									"\r",
+									"\r",
+									"// pm.test(\"Response body property\", function () {\r",
+									"//     pm.expect(jsonData).to.be.an('object');\r",
+									"//     pm.expect(jsonData.status).to.be.a('string');\r",
+									"//     pm.expect(jsonData.message).to.be.a('string');\r",
+									"//     pm.expect(jsonData.data).to.be.an('object');\r",
+									"// });\r",
+									"\r",
+									"// pm.test(\"Status is success\", function () {\r",
+									"//     pm.expect(jsonData.status).to.eql('success');\r",
+									"// });\r",
+									"\r",
+									"// pm.test(\"Status code is 201\", function () {\r",
+									"//     pm.response.to.have.status(201);\r",
+									"// });\r",
+									"//     pm.test(\"Status code name has string\", function () {\r",
+									"//         pm.response.to.have.status(\"Created\");\r",
+									"//     });\r",
+									"// pm.test(\"Message is Successfully logged in\", function () {\r",
+									"//     pm.expect(jsonData.message).to.include('Welcome. You have been successfully signed in.');\r",
+									"// });\r",
+									"\r",
+									"//     } catch (errors) {\r",
+									"//     console.error(errors)\r",
+									"// }"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Ife\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/setup/:token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"setup",
+								":token"
+							],
+							"variable": [
+								{
+									"key": "token",
+									"value": "899e4e513a743c98c6fafbdbf92b7381038940b0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Complete Email Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/setup/:token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"setup",
+										":token"
+									],
+									"variable": [
+										{
+											"key": "token",
+											"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Apr 2024 22:04:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
 						}
 					]
 				}
