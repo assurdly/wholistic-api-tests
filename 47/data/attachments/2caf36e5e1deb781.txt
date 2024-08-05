@@ -1,4 +1,0 @@
-pm.request.headers.add({
-  key: "origin",
-  value: "https://" + "berkshire.wholistic.work"
-});

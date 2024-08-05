@@ -1,0 +1,1 @@
+{"message":"Your subscription does not allow you to view email template."}
