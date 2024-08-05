@@ -7130,33 +7130,33 @@
 									"script": {
 										"id": "7bf4b5f9-4d88-4d26-ba46-456d85742a6d",
 										"exec": [
-											"try{",
+											"// try{",
 											"",
-											"var jsonData = pm.response.json();",
+											"// var jsonData = pm.response.json();",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
 											"",
-											"pm.test(\"Status code response is Unauthorized\", function () {",
-											"    pm.response.to.have.status('Unauthorized');",
-											"});",
+											"// pm.test(\"Status code response is Unauthorized\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });",
 											"",
-											"pm.test(\"Message is present\", function () {",
-											"    pm.expect(jsonData.message).to.eql(\"You must provide an access token to access this resource.\");",
-											"});",
+											"// pm.test(\"Message is present\", function () {",
+											"//     pm.expect(jsonData.message).to.eql(\"You must provide an access token to access this resource.\");",
+											"// });",
 											"",
-											"pm.test(\"Response body properties\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
+											"// pm.test(\"Response body properties\", function () {",
+											"//     pm.expect(jsonData).to.be.an('object');",
+											"//     pm.expect(jsonData.message).to.be.a('string');",
+											"// });",
 											"",
-											"pm.test(\"Message is present\", function () {",
-											"    pm.expect(jsonData.message).to.eql(\"You must provide an access token to access this resource.\");",
-											"});",
-											"} catch (errors){",
-											"    console.error (errors)",
-											"}"
+											"// pm.test(\"Message is present\", function () {",
+											"//     pm.expect(jsonData.message).to.eql(\"You must provide an access token to access this resource.\");",
+											"// });",
+											"// } catch (errors){",
+											"//     console.error (errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -9622,7 +9622,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomWord}}\",\n    \"slug\": \"{{$randomWord}}\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false,\n    \"logoUrl\": null,\n    \"requiredEmailDomains\": null,\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
+									"raw": "{\n    \"name\": \"{{$randomWord}}{{$randomNamePrefix}}\",\n    \"slug\": \"{{$randomWord}}\",\n    \"size\": \"1-10\",\n    \"purpose\": \"Testing\",\n    \"utmMedium\": \"Instagram\",\n    \"integrations\": [\n        \"slack\",\n        \"google\"\n    ],\n    \"requireTwoFA\": false,\n    \"logoUrl\": null,\n    \"requiredEmailDomains\": null,\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -16871,17 +16871,17 @@
 									"script": {
 										"id": "03df7336-d6e1-4b92-b32c-d944106b0cec",
 										"exec": [
-											"try {",
-											"    const { message } = pm.response.json()",
-											"    pm.test('Tests on no Auth passed', () => {",
-											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
-											"    })",
-											"    pm.test(\"Status code is 401\", function () {",
-											"        pm.response.to.have.status(401);",
-											"    });",
-											"} catch (errors) {",
-											"    console.error(errors)",
-											"}"
+											"// try {",
+											"//     const { message } = pm.response.json()",
+											"//     pm.test('Tests on no Auth passed', () => {",
+											"//         pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"//     })",
+											"//     pm.test(\"Status code is 401\", function () {",
+											"//         pm.response.to.have.status(401);",
+											"//     });",
+											"// } catch (errors) {",
+											"//     console.error(errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -17308,7 +17308,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "53c5cbcd-0198-45a0-b12f-53d22649884e"
+											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
 										}
 									]
 								}
@@ -17571,17 +17571,17 @@
 									"script": {
 										"id": "0a23c25e-aed4-41a3-b2f5-63811027cf63",
 										"exec": [
-											"try {",
-											"    const { message } = pm.response.json()",
-											"    pm.test('Tests on no Auth passed', () => {",
-											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
-											"    })",
-											"    pm.test(\"Status code is 401\", function () {",
-											"        pm.response.to.have.status(401);",
-											"    });",
-											"} catch (errors) {",
-											"    console.error(errors)",
-											"}"
+											"// try {",
+											"//     const { message } = pm.response.json()",
+											"//     pm.test('Tests on no Auth passed', () => {",
+											"//         pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"//     })",
+											"//     pm.test(\"Status code is 401\", function () {",
+											"//         pm.response.to.have.status(401);",
+											"//     });",
+											"// } catch (errors) {",
+											"//     console.error(errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -19019,264 +19019,6 @@
 						"url": "{{baseUrl}}/projects/health/stats"
 					},
 					"response": []
-				},
-				{
-					"name": "Delete User - oo -",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4deb5859-c383-410c-bccb-857cac411a1c",
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code response is OK\", function () {",
-									"    pm.response.to.have.status('OK');",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.status).to.be.a('string');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "676e8ed6-1275-48cc-9b49-e0faf3615299",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{createdUser}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "fc64ba0f-a387-4d92-a25e-bbd39aef90db",
-							"name": "Delete User",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/users/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"users",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "529cde26-4c64-446f-b081-341850156d35"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "70"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 24 Apr 2024 18:29:54 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
-						}
-					]
-				},
-				{
-					"name": "Delete Project -oo-",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b97e35dc-711d-4731-ae4e-d61ad5e0b6f9",
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code response is OK\", function () {",
-									"    pm.response.to.have.status('OK');",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.status).to.be.a('string');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "b933ab82-8b1d-4b07-a6b7-159e3ab67ae4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/projects/:id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"projects",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{createdProject}}"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "1a6b5bbc-13f6-43b9-9d8e-026dd18877c8",
-							"name": "Delete Project",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/projects/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"projects",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "73"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"49-jl2KQYgGm0qTtiR5VAi6dCck8QE\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 14 May 2024 09:58:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted project\",\n    \"data\": null\n}"
-						}
-					]
 				}
 			],
 			"id": "7a4e5ea2-cbec-46f9-b382-579e01632f43"
