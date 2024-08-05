@@ -1363,7 +1363,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\",\n    \"photoUrl\": \"\"\n}",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n    // \"photoUrl\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -19009,6 +19009,34 @@
 				},
 				{
 					"name": "Get Project Health Stats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a3d3237a-982b-4867-9682-3f0325c2fb2a",
+								"exec": [
+									"try {",
+									"",
+									"    const { status, data, meta, message } = pm.response.json()",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"",
+									"    pm.test(\"Response body property\", function () {",
+									"        pm.expect(data).to.be.an('array');",
+									"        pm.expect(status).to.be.a('string');",
+									"    });",
+									"",
+									"} catch (error) {",
+									"    console.error('Error from test says:', error)",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "38bcf008-4874-4305-8f1a-758aa391c170",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -19016,6 +19044,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseUrl}}/projects/health/stats"
 					},
 					"response": []
