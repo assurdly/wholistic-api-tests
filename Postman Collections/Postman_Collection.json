@@ -303,7 +303,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"\",\n    \"slug\": \"\",\n    \"body\": \"<>Wholistic Month 1 Report</>\"\n}",
+									"raw": "{\n    \"title\": \"\",\n    \"slug\": \"\",\n    \"body\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
