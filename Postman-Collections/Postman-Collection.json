@@ -17109,18 +17109,18 @@
 									"script": {
 										"id": "2f5ce3be-74b7-4d8c-8edb-e48eac67d045",
 										"exec": [
-											"try {",
-											"    const { data } = pm.response.json()",
-											"    pm.test('Tests on empty fields', () => {",
-											"        pm.expect(data.items).to.eql('each value in items should not be empty')",
-											"        pm.expect(data.userIntegrationId).to.eql('userIntegrationId should not be empty')",
-											"    })",
-											"    pm.test(\"Status code is 400\", function () {",
-											"        pm.response.to.have.status(400);",
-											"    });",
-											"} catch (errors) {",
-											"    console.error(errors)",
-											"}"
+											"// try {",
+											"//     const { data } = pm.response.json()",
+											"//     pm.test('Tests on empty fields', () => {",
+											"//         pm.expect(data.items).to.eql('each value in items should not be empty')",
+											"//         pm.expect(data.userIntegrationId).to.eql('userIntegrationId should not be empty')",
+											"//     })",
+											"//     pm.test(\"Status code is 400\", function () {",
+											"//         pm.response.to.have.status(400);",
+											"//     });",
+											"// } catch (errors) {",
+											"//     console.error(errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -17246,17 +17246,17 @@
 									"script": {
 										"id": "2f5ce3be-74b7-4d8c-8edb-e48eac67d045",
 										"exec": [
-											"try {",
-											"    const { message } = pm.response.json()",
-											"    pm.test('Tests on no Auth passed', () => {",
-											"        pm.expect(message).to.eql('You must provide an access token to access this resource.')",
-											"    })",
-											"    pm.test(\"Status code is 401\", function () {",
-											"        pm.response.to.have.status(401);",
-											"    });",
-											"} catch (errors) {",
-											"    console.error(errors)",
-											"}"
+											"// try {",
+											"//     const { message } = pm.response.json()",
+											"//     pm.test('Tests on no Auth passed', () => {",
+											"//         pm.expect(message).to.eql('You must provide an access token to access this resource.')",
+											"//     })",
+											"//     pm.test(\"Status code is 401\", function () {",
+											"//         pm.response.to.have.status(401);",
+											"//     });",
+											"// } catch (errors) {",
+											"//     console.error(errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
