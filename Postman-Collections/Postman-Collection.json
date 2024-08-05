@@ -14211,6 +14211,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -14346,6 +14352,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -14467,7 +14479,7 @@
 											"    pm.test('Valid error message returned', () => {",
 											"        pm.expect(data.processor).to.eql(\"processor must be one of the following values: \")",
 											"    })",
-											"    ",
+											"",
 											"} catch (error) {",
 											"    console.error(error)",
 											"}"
@@ -14482,6 +14494,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -14594,6 +14612,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"url": {
@@ -14726,6 +14750,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"url": {
