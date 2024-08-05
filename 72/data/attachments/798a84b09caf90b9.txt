@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully fetched card","data":[{"id":"98b024d8-9a98-4f91-b773-b49c9f63031b","name":"","email":"azeez@mailinator.com","currency":"NGN","type":"visa ","last4":"4081","expiryMonth":"12","expiryYear":"2030","bin":"408408","processor":"paystack"}],"meta":{"totalNumberOfRecords":1,"totalNumberOfPages":1,"pageNumber":1,"pageSize":20}}

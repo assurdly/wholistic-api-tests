@@ -1,5 +1,0 @@
-{
-    "title": "Month 3 Report Template",
-    "slug": "",
-    "body": "<>Wholistic Month 1 Report</>"
-}

@@ -1,0 +1,14 @@
+{
+    "api-key": "",
+    "origin": "https://account.wholistic.work",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2NzY2MDU5LTE2M2UtNDQ3NC1hYmFkLWI2NjI0NTc5Zjc0MyIsImNvdW50IjowLCJpYXQiOjE3MjI4NDI5NTUsImV4cCI6MTcyMjkyOTM1NX0.2YIhkE22w_SX6QEJY8uzS9coPQOniHscNesqJzKoygE",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "bebfeaa9-edf3-4fcf-9241-6c3983af8c0e",
+    "Host": "wholistic.openai.azure.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "547"
+}
