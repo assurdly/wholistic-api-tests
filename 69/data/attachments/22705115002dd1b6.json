@@ -1,0 +1,11 @@
+{
+    "origin": "https://admin.wholistic.work",
+    "Authorization": "Bearer {{adminAccessToken}}",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "5c8d0f07-fbe9-40f2-b086-177c339695a7",
+    "Host": "{{baseurl}}",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

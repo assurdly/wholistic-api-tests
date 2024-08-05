@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully fetched card","data":[{"id":"0c3164e8-9060-4041-b4df-6e74707fe798","name":"","email":"ade.wunmi.ak.insanya@gmail.com","currency":"NGN","type":"visa ","last4":"4081","expiryMonth":"12","expiryYear":"2030","bin":"408408","processor":"paystack"}],"meta":{"totalNumberOfRecords":1,"totalNumberOfPages":1,"pageNumber":1,"pageSize":20}}
