@@ -2694,6 +2694,16 @@
 				},
 				{
 					"name": "List Email Settings",
+					"item": [],
+					"id": "bfadf28e-3af4-425a-b3e9-c4a54ef21fad"
+				},
+				{
+					"name": "Set Emails Settings",
+					"item": [],
+					"id": "a30bc7c3-ac7b-4376-9a04-574e1fbcb9d0"
+				},
+				{
+					"name": "List Email Settings",
 					"event": [
 						{
 							"listen": "test",
