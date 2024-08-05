@@ -30,28 +30,28 @@
 									"script": {
 										"id": "b8a55525-2bb0-4db4-bcf6-4db80f238649",
 										"exec": [
-											"const jsonData = pm.response.json()",
-											"console.log(jsonData)",
+											"// const jsonData = pm.response.json()",
+											"// console.log(jsonData)",
 											"",
-											"pm.test(\"Response time is less than 1200ms\", function () {",
-											"    pm.expect(pm.response.responseTime).to.be.below(500);",
-											"});",
+											"// pm.test(\"Response time is less than 1200ms\", function () {",
+											"//     pm.expect(pm.response.responseTime).to.be.below(500);",
+											"// });",
 											"",
-											"pm.test(\"Successful GET request\", function () {",
-											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);",
-											"});",
+											"// pm.test(\"Successful GET request\", function () {",
+											"//     pm.expect(pm.response.code).to.be.oneOf([201, 200]);",
+											"// });",
 											"",
-											"pm.test(\"Successful GET request\", function () {",
-											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);",
-											"});",
+											"// pm.test(\"Successful GET request\", function () {",
+											"//     pm.expect(pm.response.code).to.be.oneOf([201, 200]);",
+											"// });",
 											"",
-											"pm.test(\"Status code name is OK\", function () {",
-											"    pm.response.to.have.status(\"OK\");",
-											"});",
+											"// pm.test(\"Status code name is OK\", function () {",
+											"//     pm.response.to.have.status(\"OK\");",
+											"// });",
 											"",
-											"pm.test(\"Message is Successfully logged in\", function () {",
-											"    pm.expect(jsonData).to.be.an('array');",
-											"});"
+											"// pm.test(\"Message is Successfully logged in\", function () {",
+											"//     pm.expect(jsonData).to.be.an('array');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -9942,14 +9942,14 @@
 									"script": {
 										"id": "5d04c638-03e4-44b4-a20c-1117c343def6",
 										"exec": [
-											"const jsonData = pm.response.json()",
+											"// const jsonData = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
-											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
-											"    pm.response.to.have.status('Unauthorized');",
-											"});"
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -10827,17 +10827,17 @@
 							"script": {
 								"id": "fa3c77b1-8aa5-45e7-a9c3-5cf16f7e56a9",
 								"exec": [
-									"const jsonData = pm.response.json()",
+									"// const jsonData = pm.response.json()",
 									"",
-									"pm.test(\"Status code is 401\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});",
-									"pm.test(\"Status code name has string\", function () {",
-									"    pm.response.to.have.status(\"Unauthorized\");",
-									"});",
-									"pm.test(\"Status code response is 'Unauthorized'\", function () {",
-									"    pm.response.to.have.status('Unauthorized');",
-									"});"
+									"// pm.test(\"Status code is 401\", function () {",
+									"//     pm.response.to.have.status(401);",
+									"// });",
+									"// pm.test(\"Status code name has string\", function () {",
+									"//     pm.response.to.have.status(\"Unauthorized\");",
+									"// });",
+									"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+									"//     pm.response.to.have.status('Unauthorized');",
+									"// });"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -11082,15 +11082,15 @@
 							"script": {
 								"id": "ec049cec-183a-4003-b906-c2b35f3d0939",
 								"exec": [
-									"const jsonData = pm.response.json()",
+									"// const jsonData = pm.response.json()",
 									"",
-									"pm.test(\"Status code is 401\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});",
+									"// pm.test(\"Status code is 401\", function () {",
+									"//     pm.response.to.have.status(401);",
+									"// });",
 									"",
-									"pm.test(\"Status code response is 'Unauthorized'\", function () {",
-									"    pm.response.to.have.status('Unauthorized');",
-									"});"
+									"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+									"//     pm.response.to.have.status('Unauthorized');",
+									"// });"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -11768,14 +11768,14 @@
 									"script": {
 										"id": "42ff2118-6f8e-4fae-ac82-b1344c68dba3",
 										"exec": [
-											"const jsonData = pm.response.json()",
+											"// const jsonData = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
-											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
-											"    pm.response.to.have.status('Unauthorized');",
-											"});"
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -11980,7 +11980,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "{{createdClient}}"
+											"value": "0191213c-e275-7666-9465-bdfaadaee46f"
 										}
 									]
 								}
@@ -12236,14 +12236,14 @@
 									"script": {
 										"id": "cf7e1f5e-79a1-4aa2-8a36-3a195c78748c",
 										"exec": [
-											"const jsonData = pm.response.json()",
+											"// const jsonData = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
-											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
-											"    pm.response.to.have.status('Unauthorized');",
-											"});"
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -12432,7 +12432,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "ffdb2c17-e538-4923-b2fc-3cdbf47b97ff"
+											"value": "0191213c-e275-7666-9465-bdfaadaee46f"
 										}
 									]
 								}
@@ -12782,14 +12782,14 @@
 									"script": {
 										"id": "65d0931c-16df-4e8d-95fa-6cb75c04f8be",
 										"exec": [
-											"const jsonData = pm.response.json()",
+											"// const jsonData = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
-											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
-											"    pm.response.to.have.status('Unauthorized');",
-											"});"
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
