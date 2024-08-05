@@ -1,8 +1,0 @@
-{
-    "name": "Premium",
-    "status": "inactive", 
-    "description": "Premium features!",
-    "amount": 5000,
-    "currency": "NGN",
-    "interval": "yearly" 
-}

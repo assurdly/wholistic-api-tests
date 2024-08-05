@@ -1,1 +1,0 @@
-{"status":"success","message":"Plan created successfully","data":{"id":"1991a66c-4720-458a-96bf-1883c6a10a1c","name":"Test1","description":"Test features!","amount":5000,"currency":"NGN","interval":"monthly","createdAt":"2024-07-22T04:55:37.068Z"}}

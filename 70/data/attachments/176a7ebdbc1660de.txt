@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully updated role","data":{"id":"6146930d-d868-4459-b13d-c5220ca68fae","name":"Jaime Denesik","slug":"jaime-denesik","description":"Member","status":"","createdAt":"2024-07-29T08:40:10.388Z"}}
