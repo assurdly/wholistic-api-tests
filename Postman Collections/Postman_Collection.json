@@ -6,6 +6,832 @@
 	},
 	"item": [
 		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Get Auth Providers",
+					"item": [
+						{
+							"name": "Get Auth Providers",
+							"id": "dd5ad8ca-d40c-46f5-aa06-2b1b57e999ef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/auth/providers"
+							},
+							"response": [
+								{
+									"id": "141286a0-6460-400e-b1ff-e4667ae14732",
+									"name": "Get Auth Providers",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/auth/providers"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "853"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"355-V4QkWHTny3JwhMoD2a6OTi2H+XY\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Apr 2024 06:45:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n    {\n        \"provider\": \"microsoft\",\n        \"url\": \"https://login.microsoftonline.com/882a38c4-44ee-45de-a50d-e7ea4b689a3a/oauth2/v2.0/authorize?client_id=2fa24578-77f8-4597-8793-be664563ece1&response_type=code&redirect_uri=http://localhost:8080/auth/callback/microsoft&scope=User.Read\"\n    },\n    {\n        \"provider\": \"linkedin\",\n        \"url\": \"https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dgjl74gom187&scope=openid%20profile%20email&redirect_uri=http://localhost:8080/auth/callback/linkedin\"\n    },\n    {\n        \"provider\": \"google\",\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?client_id=757611791737-3hr66h6c8h18eocuihseqidr2fob794o.apps.googleusercontent.com&redirect_uri=http://localhost:8080/auth/callback/google&scope=https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&response_type=code&access_type=offline&prompt=consent\"\n    }\n]"
+								}
+							]
+						}
+					],
+					"id": "3bebaa5a-2bfb-4c25-961b-06ae2d78cc4a"
+				},
+				{
+					"name": "Authorize Provider",
+					"item": [
+						{
+							"name": "Authorize Provider",
+							"id": "35490247-9a0d-4126-80ba-503d3a586d93",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"0.Aa4AxDgqiO5E3kWlDefqS2iaOnhFoi_4d5dFh5O-ZkVj7OGuADk.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P81hVv9F1hwS4hNFl7ppd9YLA_HwK5QzYfsvmjNKUPcIUKDXt0XiG1mnfKMS7YUx_SbNvuQ0-LV-k5eM9fJBg61Qb18GZIRzLzmV8_p5PAgrVXxdRyErfQcu_YG7L6mJvLRWCnSwKFSo5I3iNI7LG7GGpI5iGFQKFIAllYvoqtZyUapPdCpSBpVomfsPUrlgzVu7W21atV-SOlFg9L5vcnA6nU3SuJhXrwSJcr7m1zzffPMGwQew4zIRT8s5yxW3jm6TB5Cdqqlaz3iFPbu4vldOLR-RBCMAYx7k4JR70X2sOHKJQSOe5QF-KTUTICQkx4SoHnXLT-b4UWD_MNlsHVlkhauJ12RHnmrNFWYF0KBDuQvB9u0mId4Dg4448WJ7iE7DQs_Rdbhl5vwLFA-F4Geh5moh5sj_feN7ek8J0pvWDum9mA5cRwdtBAAXGjKs2H0T1tWirP_tYk9wj82Tpvt0J6X6kedaHEERChh8TUeZSVjCQm9s8piZaTBaPL-5eBhkUiRLfnaE9m45bI-f0DQwgkdPUWCYIskjR5utvQTK2_TCktYw0JbKx2JRbEoCSR9tG-JWjOvGWH9uaTDR7iHxOlspCEoJjiXyY6lu9g4cEIK7osW6Vqam-1qpnVyvw7ZMjzVR2sgELQuJk6yeHDFonUPZasdifv-hYdqBgbFMHOUsK7Lkzt9Gp3i7VLmkULLYkos8a7kPpjW58fvqQfGmRz6uUdQv7F447crivw3CTxA1jDwqq-8O-wMAR-9W7HAbfrVjMR8eMEttlvxheL2NB-AMxnw-zkL0YqoeHp2rBvPzg69GlVdgOHn-ERWxrQPW2YI-9wC2NpsiGPQfpnQhvmXXbfupan_ufI8NswWUr3uRj1nW39eMVlOJNqlpErB15GbGuCnTNrPKbG2GH4DSpc3YQsuCVlrFO23Zt6MOpuLq5h-FXWoK1ZnjCOX7hXsvze_yJN3zdihzQlQcAztax7nqHwuWXJFjJSRTZEb0dWAwJP_rUr0sTbUKeODgud0L3A9dJ_maMX1h_Wai8DMSC7gkJgBw8-d3-7TLkXPjmuXr0nlM-PJSWxb5ka4c1mPk9w0qT2b-W_HvHKKcEowjhilCStHQ_n9A2fLHI8IEXWx0n3ZRphOvw6i4Gdwf66dnosJzJ0_Mf3OFlsa6KLe1KQtbChnLoqqt8GOYbDlI-CkgAUnnuIMCe048YxFrPriWpV3FA96hsQxyyVE10yYX4XG1ENZzMHnk2dY-uecEjsJxLc-FNiEiMYzOILQf6URRAwHmdv5KxPYTEO0N4O0SmYUSnHmri6t45shWsFocv1DYwNHiQjHSMVykLlBG-it4FDvntc3aGzHceyrTDho9_G6PgCQ9KLPUAo7ZHxs5DSH5ksMrOZgrhdfKGKfO11i2fSmAZABbVTe-bKDnhWokjyxdVjrlg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/providers/:provider",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"providers",
+										":provider"
+									],
+									"variable": [
+										{
+											"id": "90e73fad-ea3c-49c7-bdcf-1dc0dea350ec",
+											"key": "provider",
+											"value": "microsoft",
+											"description": "google|microsoft|linkedin"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "b70fae3a-6cfe-484f-b67e-1a9c979c82d4",
+									"name": "Authorize Provider",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"AQSUMRQMeLRnrZQJEkO557WVjm-lQBQRliuDIw8sIwcrXrZDWW-8WQwkcTE5K--rZBtGkRPyHwGU7uxSKrJr6wud_ZZfOuQ6oS4DF2xjhwGldaKvWwALzTTbtn1kc6cLDngFtDAQ_qeAPFreWc5-tV7MCeB__8KPZN7s7isvZbOvHAfx5sXZ6M_LbF78On2ZeX9pqz0rI73O31mUf1U\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/providers/:provider",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"providers",
+												":provider"
+											],
+											"variable": [
+												{
+													"key": "provider",
+													"value": "linkedin",
+													"description": "google|microsoft|linkedin"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "342"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"156-kbTWg4PgPf7BkBXVmlU4NCBPtJE\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 22 Apr 2024 07:07:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYWMyMDI0LTg5M2QtNDEyOC1iNzBmLWU5ZjMyMWE4NmE2ZSIsImNvdW50IjowLCJpYXQiOjE3MTM3Njk2NTksImV4cCI6MTcxMzc3MDU1OX0.F_HutMZzxn6XwahU2CO8UfmPcWffTVChCgqUXGgmIbI\",\n        \"expiresIn\": 899\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "77c9888c-0440-4d71-8dfe-ffcde42b6710"
+				},
+				{
+					"name": "Initialize Email Signup",
+					"item": [
+						{
+							"name": "Initialize Email Signup",
+							"id": "caeb8b69-f1b0-41f0-a6d3-095de33e5baf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"adewunmi.ak.insan.ya@gmail.com\",\n    \"recaptchaResponse\": \"03AFcWeA41zXvKyc_DI2m6n75jQ9CkdjdBmctSqE3aHWu2fubVkXuh7LVDFFsTMLE9nNhyar-zKW36KZQUAVnhplPpQs2VCd2-53cn_Rw8Zm3aD6tPBbxYqg_K303yJR7mz292NC41HT1Hroq4SVFm-UuI2OP5LrGw29ByYCjiws73IakVKw7b7ZyTgcjBFxBuEK9V2m9ylIGHdnx4f63lfbo08AKI2LRsiOfOZZBvKoTMxKXjgjXZWpE2DJMZQXNK08SAtUzYTdtMNzlvda8z9mL0ZujESr92boNL31XA1E2viaBoZ7gdb7nTYzcEju5Iu-6mLy2y8a5LRSZ3Nwj1uh9CR2gAH9FVW80sZRl_DSLAJqBGGFcIxoEGCnipcWj3O5bNXaoJ8HIz2Hac9QCPLAiBwV0lVzQDImXbMzI4CpAKlDHBSfP46kGuEKrZfkY4SUDilsiVS-FY--GY7GvqptZQvI9xQGv-CCA95cqtC7bW7PAzIEA3PtOX1QD_WqLX205qlrMFx8ISnfFlsVJVWV3soYC5uGNzD2m3EDUK1lchtykewJo3aHPDnRo2ALGfUchDWxFKzYbqrAVAJWYilZaV3XYKGEQjPIdLfILiniSH23SGBGeBuawNbPKY90c897h31qUBdRoa0SbdeqUPA9JJRAJ1RyPbzro17kBGYMBUDMERkVrxfvURQTFXKAxS9GrBBWjFCWEI-RzxUPYKSuNdlo_LJErg3eH3KLRz3148bIxW9arIkaxIsTjulpikOO0uqZ8IqIwP0_tqYR30PgpW2p6y5MMINRTQj7ft-vJhiB1d0qQQcSbNeZsqyO08DEY__8omGJVtlnRDeaLUvA1Rgp98756kFKlTORqt5ibEdmq2zgHcNzlLTIZaqzZ9UYv1_KuyA0H6X6y5XhpEhLcSAc4JallYXOfZOv-POE1HT8Nqzeqnn7pjo1c1J61N-2OAzIF6JDUNOLvO4_8KJpcj2I7sGC_GfGK3dcl3TFSAVllMSPSFE6eUststL7Wexma340KLaX6SoH-3BBj_6oRAdus2vR9eTYdDvLk-x1W7-XTPisDtGJuIJZDFOYGcUfQz4_4BpI5B-H8_6QtnARcoPBcMiwUclu56F1iBhEF6aPONoSK0kHPXh2Ieu8wz2huw6wixZETQeRcQsLZ7u_r2pHmH95_WlPtFGGp1tdOdzb_QP4THlGO3SLE2NrDCxLYSB2jKU1mQid5RkHRYkV7S5e8kWfKQU8uMWm84F4JQ3wgAaSDK5sNdb7obf2Xz2MN66J4LDPSneTq02DPJsBp_HNdFaAAg6QK06KZiuJNPIwEg4pUaMXvc1Zqqcry3QPA8hP7xgUrHjX0nMPwqFvt6K_VyRBLSEGOdV2Zbfgg9mpaExCJc3ESke4w03oRJ5-xszeB7sPQAB4Q8dhShMSPKC7swnCN6KmA3wihQPac6WA7uo_DIhX6v1oIO0coS5pjtc4o7iye1VylF9KoSiCJ0kcpl3Fw_q9fFot_1IQhKw1Sr7EjDTPymGHvfSy3GFqlaVhaMNGC0nIcHqmxTxz8g1xj5aslV6QzPcHqK9KhIrUdatX4qG36UhnzI2w1_UDFRijGRlI-xwvX4hF3BoN04XFrltwU3zWBOm8zuZ5Qgb0QwKwblfObnTQUdBQgIdcFjpYXaUAF5YNoku2ZSM6Y3LQiZyAJ99ReiyDHKrFnSKs5yAJU3iWl7japdguoWBET9fBsXgZM7J4sYFO6T5v_lE9DDcU0sLDB_SXiKsvr_nCn0V0Dz-Q9BQ9m00Gidl2JgYLGs5dIsSFcJ8Ya7wKIVscaxc-ki6SDykHVQM5ILIyQzDBXQ_Hn7ydpL9wPmA5ckuCyB6uoWMsU8HV11vvtZ0NLg08j7xFQcK7XTU9_FSEgtqxXXbA_nKptqWZoJbjODI3ySPm7QoWhqMrxWMYa_cvl7vydORg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/signup"
+							},
+							"response": [
+								{
+									"id": "23fe724d-67b3-42ec-a695-b77e0d01932e",
+									"name": "Initialize Email Signup",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"adewunmiakinsanya@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/auth/signup"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "291"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"123-tkzodprQRUi40CE+8w7oXg+Es50\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 21:47:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"You have successfully signed up, kindly verify your email to access the dashboard.\",\n    \"data\": {\n        \"id\": \"45291693-3544-4de2-8d79-d68195bed53e\",\n        \"email\": \"adewunmiakinsanya@gmail.com\",\n        \"profile\": {\n            \"id\": \"4684e465-5dff-4343-833e-417c62bc97ef\",\n            \"firstName\": \"\",\n            \"lastName\": \"\"\n        }\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "d7d8b56e-c636-4afc-a16d-7f25c4b7569c"
+				},
+				{
+					"name": "Complete Email Signup",
+					"item": [
+						{
+							"name": "Complete Email Signup",
+							"id": "69ce7cab-34fd-4872-83d4-3abc39b74bb6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/setup/:token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"setup",
+										":token"
+									],
+									"variable": [
+										{
+											"id": "683a8352-7e66-4244-a966-59e0aeaee48b",
+											"key": "token",
+											"value": "4742b45123b7565a16f5d0a3089ab5a5cfa1b3f4"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a5db9123-691d-424a-96dc-0d802e9e2e89",
+									"name": "Complete Email Signup",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/setup/:token",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"setup",
+												":token"
+											],
+											"variable": [
+												{
+													"key": "token",
+													"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "344"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 22:04:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "35b17ec7-1e6e-4c6c-a41d-1a3352727913"
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "eacad90f-75b8-4edc-98e1-fe564a0ac4fa",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"const accesstoken = jsonData.data.accessToken",
+											"pm.environment.set(\"accessToken\", accesstoken)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "577873d2-a845-42db-b1a6-323d966c4298",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n    \"password\": \"123456789!dD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/login"
+							},
+							"response": []
+						}
+					],
+					"id": "286be6d7-7147-428f-837b-59c6e3d800bb"
+				},
+				{
+					"name": "Initialize Forgot Password",
+					"item": [
+						{
+							"name": "Initialize Forgot Password",
+							"id": "894b91da-2ed2-404c-bfd6-28405586bcfd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/password/forgot"
+							},
+							"response": [
+								{
+									"id": "f944049f-2af9-4c8f-b98b-006ad556a04e",
+									"name": "Initialize Forgot Password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/auth/password/forgot"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "130"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"82-de1AuJfqYMpyxegLyIKrqE8sSxY\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 13:35:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"An email with instructions to reset your password has been sent to ade.wunmi.ak.insanya@gmail.com\"\n}"
+								}
+							]
+						}
+					],
+					"id": "633d50da-dfda-4c3a-8fb0-3bbefd3cacbb"
+				},
+				{
+					"name": "Complete Forgot Password",
+					"item": [
+						{
+							"name": "Complete Forgot Password",
+							"id": "509488bf-6cca-4bc8-8f98-00032220d57c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"123456789!dD\",\n    \"confirmPassword\": \"123456789!dD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/password/reset/:token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"password",
+										"reset",
+										":token"
+									],
+									"variable": [
+										{
+											"id": "f0da1409-cfe9-4d3f-8214-4b9edde16c85",
+											"key": "token",
+											"value": "2232f116cb6ed8c559b1afac650619a094e0fddb\\"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "8ce132cb-02a9-415d-a6ea-d0e904b4fb93",
+									"name": "Complete Forgot Password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/password/reset/:token",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"password",
+												"reset",
+												":token"
+											],
+											"variable": [
+												{
+													"key": "token",
+													"value": "39f65aec3cb303c91b9e46143ee9a99f98356c92"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "100"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"64-c3/uRIyp85K08xdAC5KGPS8hMww\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 13:38:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Your password has been successfully reset. Please proceed to login.\"\n}"
+								}
+							]
+						}
+					],
+					"id": "153d0b39-8c83-4847-9cf1-50aac3598406"
+				},
+				{
+					"name": "Complete 2FA",
+					"item": [
+						{
+							"name": "Complete 2FA",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "720d5db0-66f4-4832-8d5a-46f0d64d6f3e",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"const accesstoken = jsonData.data.accessToken",
+											"pm.environment.set(\"accessToken\", accesstoken)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "3992598d-e51f-4242-bb78-2b8495514e47",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"2f01a884ac87299d6e41cb382a7d5af9200b248b\",\n    \"code\": \"806601\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/auth/login/two-fa"
+							},
+							"response": [
+								{
+									"id": "cd7a3d85-35b3-41d2-aebc-3ebf7e66f878",
+									"name": "Complete 2FA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"token\": \"5bc7d6e2c945dd6c13da7935887fe813796bdd07\",\n    \"code\": \"423063\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/auth/login/two-fa"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "349"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"15d-p5x2ydc13MXHdtm1lzTImfen8no\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 12 Jul 2024 14:07:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome back. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwYzZjMDQ5LTcyNDEtNDRkOS05Yzg2LTJjZmI5NjdiYTEzYSIsImNvdW50IjowLCJpYXQiOjE3MjA3OTMyMzMsImV4cCI6MTcyMDg3OTYzM30.ouJ4Twi7EazC1hTrj3MB4-Ay0h8fwYzabagSN-1r1h8\",\n        \"expiresIn\": 86398\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "237a4a0a-9252-43eb-8f7d-3923685fd513"
+				}
+			],
+			"id": "1c7a5473-ab04-414f-9e80-9e08f8d3a4b3"
+		},
+		{
 			"name": "Login",
 			"item": [
 				{
@@ -1662,26 +2488,26 @@
 									"script": {
 										"id": "9a50a930-b625-4435-b181-ac576b1df691",
 										"exec": [
-											"try{\r",
-											"const response = pm.response.json();\r",
-											"const {message, data} = response;\r",
+											"// try{\r",
+											"// const response = pm.response.json();\r",
+											"// const {message, data} = response;\r",
 											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
-											"     pm.response.to.have.status(200);\r",
-											" });\r",
-											"pm.test(\"Status code response is 'OK'\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
+											"// pm.test(\"Status code is 200\", function () {\r",
+											"//      pm.response.to.have.status(200);\r",
+											"//  });\r",
+											"// pm.test(\"Status code response is 'OK'\", function () {\r",
+											"//     pm.response.to.have.status('OK');\r",
+											"// });\r",
 											"\r",
-											"pm.test(\"Response body is correct\", function () {\r",
-											"    pm.expect(pm.response.json()).to.be.an('object')\r",
-											"    pm.expect(pm.response.json().status).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"    pm.expect(pm.response.json().data).to.be.an('array')\r",
-											"})\r",
-											"} catch (errors){\r",
-											"    console.error (errors)\r",
-											"}"
+											"// pm.test(\"Response body is correct\", function () {\r",
+											"//     pm.expect(pm.response.json()).to.be.an('object')\r",
+											"//     pm.expect(pm.response.json().status).to.be.a('string')\r",
+											"//     pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"//     pm.expect(pm.response.json().data).to.be.an('array')\r",
+											"// })\r",
+											"// } catch (errors){\r",
+											"//     console.error (errors)\r",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -1859,23 +2685,23 @@
 									"script": {
 										"id": "1e6b8b19-6188-473c-b0db-ebc3b29d1507",
 										"exec": [
-											"try {\r",
-											"    const response = pm.response.json();\r",
-											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 200\", function () {\r",
-											"        pm.response.to.have.status(200)\r",
-											"    });\r",
-											"    pm.test(\"Status code response is 'OK'\", function () {\r",
-											"        pm.response.to.have.status('OK')\r",
-											"    });\r",
-											"    pm.test(\" Response body is valid\", function () {\r",
-											"        pm.expect(pm.response.json()).to.be.an('object')\r",
-											"        pm.expect(pm.response.json().status).to.be.eql(\"success\")\r",
-											"        pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"        pm.expect(pm.response.json().data).to.be.an('object')\r",
-											"    })\r",
-											"} catch (errors) {\r",
-											"    console.error(errors)}"
+											"// try {\r",
+											"//     const response = pm.response.json();\r",
+											"//     const { message, data } = response;\r",
+											"//     pm.test(\"Status code is 200\", function () {\r",
+											"//         pm.response.to.have.status(200)\r",
+											"//     });\r",
+											"//     pm.test(\"Status code response is 'OK'\", function () {\r",
+											"//         pm.response.to.have.status('OK')\r",
+											"//     });\r",
+											"//     pm.test(\" Response body is valid\", function () {\r",
+											"//         pm.expect(pm.response.json()).to.be.an('object')\r",
+											"//         pm.expect(pm.response.json().status).to.be.eql(\"success\")\r",
+											"//         pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"//         pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"//     })\r",
+											"// } catch (errors) {\r",
+											"//     console.error(errors)}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4184,832 +5010,6 @@
 					}
 				}
 			]
-		},
-		{
-			"name": "Authentication",
-			"item": [
-				{
-					"name": "Get Auth Providers",
-					"item": [
-						{
-							"name": "Get Auth Providers",
-							"id": "dd5ad8ca-d40c-46f5-aa06-2b1b57e999ef",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": "{{baseUrl}}/auth/providers"
-							},
-							"response": [
-								{
-									"id": "141286a0-6460-400e-b1ff-e4667ae14732",
-									"name": "Get Auth Providers",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/auth/providers"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "853"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"355-V4QkWHTny3JwhMoD2a6OTi2H+XY\""
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Apr 2024 06:45:38 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "[\n    {\n        \"provider\": \"microsoft\",\n        \"url\": \"https://login.microsoftonline.com/882a38c4-44ee-45de-a50d-e7ea4b689a3a/oauth2/v2.0/authorize?client_id=2fa24578-77f8-4597-8793-be664563ece1&response_type=code&redirect_uri=http://localhost:8080/auth/callback/microsoft&scope=User.Read\"\n    },\n    {\n        \"provider\": \"linkedin\",\n        \"url\": \"https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dgjl74gom187&scope=openid%20profile%20email&redirect_uri=http://localhost:8080/auth/callback/linkedin\"\n    },\n    {\n        \"provider\": \"google\",\n        \"url\": \"https://accounts.google.com/o/oauth2/v2/auth?client_id=757611791737-3hr66h6c8h18eocuihseqidr2fob794o.apps.googleusercontent.com&redirect_uri=http://localhost:8080/auth/callback/google&scope=https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&response_type=code&access_type=offline&prompt=consent\"\n    }\n]"
-								}
-							]
-						}
-					],
-					"id": "3bebaa5a-2bfb-4c25-961b-06ae2d78cc4a"
-				},
-				{
-					"name": "Authorize Provider",
-					"item": [
-						{
-							"name": "Authorize Provider",
-							"id": "35490247-9a0d-4126-80ba-503d3a586d93",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"code\": \"0.Aa4AxDgqiO5E3kWlDefqS2iaOnhFoi_4d5dFh5O-ZkVj7OGuADk.AgABBAIAAADnfolhJpSnRYB1SVj-Hgd8AgDs_wUA9P81hVv9F1hwS4hNFl7ppd9YLA_HwK5QzYfsvmjNKUPcIUKDXt0XiG1mnfKMS7YUx_SbNvuQ0-LV-k5eM9fJBg61Qb18GZIRzLzmV8_p5PAgrVXxdRyErfQcu_YG7L6mJvLRWCnSwKFSo5I3iNI7LG7GGpI5iGFQKFIAllYvoqtZyUapPdCpSBpVomfsPUrlgzVu7W21atV-SOlFg9L5vcnA6nU3SuJhXrwSJcr7m1zzffPMGwQew4zIRT8s5yxW3jm6TB5Cdqqlaz3iFPbu4vldOLR-RBCMAYx7k4JR70X2sOHKJQSOe5QF-KTUTICQkx4SoHnXLT-b4UWD_MNlsHVlkhauJ12RHnmrNFWYF0KBDuQvB9u0mId4Dg4448WJ7iE7DQs_Rdbhl5vwLFA-F4Geh5moh5sj_feN7ek8J0pvWDum9mA5cRwdtBAAXGjKs2H0T1tWirP_tYk9wj82Tpvt0J6X6kedaHEERChh8TUeZSVjCQm9s8piZaTBaPL-5eBhkUiRLfnaE9m45bI-f0DQwgkdPUWCYIskjR5utvQTK2_TCktYw0JbKx2JRbEoCSR9tG-JWjOvGWH9uaTDR7iHxOlspCEoJjiXyY6lu9g4cEIK7osW6Vqam-1qpnVyvw7ZMjzVR2sgELQuJk6yeHDFonUPZasdifv-hYdqBgbFMHOUsK7Lkzt9Gp3i7VLmkULLYkos8a7kPpjW58fvqQfGmRz6uUdQv7F447crivw3CTxA1jDwqq-8O-wMAR-9W7HAbfrVjMR8eMEttlvxheL2NB-AMxnw-zkL0YqoeHp2rBvPzg69GlVdgOHn-ERWxrQPW2YI-9wC2NpsiGPQfpnQhvmXXbfupan_ufI8NswWUr3uRj1nW39eMVlOJNqlpErB15GbGuCnTNrPKbG2GH4DSpc3YQsuCVlrFO23Zt6MOpuLq5h-FXWoK1ZnjCOX7hXsvze_yJN3zdihzQlQcAztax7nqHwuWXJFjJSRTZEb0dWAwJP_rUr0sTbUKeODgud0L3A9dJ_maMX1h_Wai8DMSC7gkJgBw8-d3-7TLkXPjmuXr0nlM-PJSWxb5ka4c1mPk9w0qT2b-W_HvHKKcEowjhilCStHQ_n9A2fLHI8IEXWx0n3ZRphOvw6i4Gdwf66dnosJzJ0_Mf3OFlsa6KLe1KQtbChnLoqqt8GOYbDlI-CkgAUnnuIMCe048YxFrPriWpV3FA96hsQxyyVE10yYX4XG1ENZzMHnk2dY-uecEjsJxLc-FNiEiMYzOILQf6URRAwHmdv5KxPYTEO0N4O0SmYUSnHmri6t45shWsFocv1DYwNHiQjHSMVykLlBG-it4FDvntc3aGzHceyrTDho9_G6PgCQ9KLPUAo7ZHxs5DSH5ksMrOZgrhdfKGKfO11i2fSmAZABbVTe-bKDnhWokjyxdVjrlg\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/auth/providers/:provider",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"auth",
-										"providers",
-										":provider"
-									],
-									"variable": [
-										{
-											"id": "90e73fad-ea3c-49c7-bdcf-1dc0dea350ec",
-											"key": "provider",
-											"value": "microsoft",
-											"description": "google|microsoft|linkedin"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "b70fae3a-6cfe-484f-b67e-1a9c979c82d4",
-									"name": "Authorize Provider",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"code\": \"AQSUMRQMeLRnrZQJEkO557WVjm-lQBQRliuDIw8sIwcrXrZDWW-8WQwkcTE5K--rZBtGkRPyHwGU7uxSKrJr6wud_ZZfOuQ6oS4DF2xjhwGldaKvWwALzTTbtn1kc6cLDngFtDAQ_qeAPFreWc5-tV7MCeB__8KPZN7s7isvZbOvHAfx5sXZ6M_LbF78On2ZeX9pqz0rI73O31mUf1U\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/auth/providers/:provider",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"auth",
-												"providers",
-												":provider"
-											],
-											"variable": [
-												{
-													"key": "provider",
-													"value": "linkedin",
-													"description": "google|microsoft|linkedin"
-												}
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "342"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"156-kbTWg4PgPf7BkBXVmlU4NCBPtJE\""
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Apr 2024 07:07:39 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYWMyMDI0LTg5M2QtNDEyOC1iNzBmLWU5ZjMyMWE4NmE2ZSIsImNvdW50IjowLCJpYXQiOjE3MTM3Njk2NTksImV4cCI6MTcxMzc3MDU1OX0.F_HutMZzxn6XwahU2CO8UfmPcWffTVChCgqUXGgmIbI\",\n        \"expiresIn\": 899\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "77c9888c-0440-4d71-8dfe-ffcde42b6710"
-				},
-				{
-					"name": "Initialize Email Signup",
-					"item": [
-						{
-							"name": "Initialize Email Signup",
-							"id": "caeb8b69-f1b0-41f0-a6d3-095de33e5baf",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"email\": \"adewunmi.ak.insan.ya@gmail.com\",\n    \"recaptchaResponse\": \"03AFcWeA41zXvKyc_DI2m6n75jQ9CkdjdBmctSqE3aHWu2fubVkXuh7LVDFFsTMLE9nNhyar-zKW36KZQUAVnhplPpQs2VCd2-53cn_Rw8Zm3aD6tPBbxYqg_K303yJR7mz292NC41HT1Hroq4SVFm-UuI2OP5LrGw29ByYCjiws73IakVKw7b7ZyTgcjBFxBuEK9V2m9ylIGHdnx4f63lfbo08AKI2LRsiOfOZZBvKoTMxKXjgjXZWpE2DJMZQXNK08SAtUzYTdtMNzlvda8z9mL0ZujESr92boNL31XA1E2viaBoZ7gdb7nTYzcEju5Iu-6mLy2y8a5LRSZ3Nwj1uh9CR2gAH9FVW80sZRl_DSLAJqBGGFcIxoEGCnipcWj3O5bNXaoJ8HIz2Hac9QCPLAiBwV0lVzQDImXbMzI4CpAKlDHBSfP46kGuEKrZfkY4SUDilsiVS-FY--GY7GvqptZQvI9xQGv-CCA95cqtC7bW7PAzIEA3PtOX1QD_WqLX205qlrMFx8ISnfFlsVJVWV3soYC5uGNzD2m3EDUK1lchtykewJo3aHPDnRo2ALGfUchDWxFKzYbqrAVAJWYilZaV3XYKGEQjPIdLfILiniSH23SGBGeBuawNbPKY90c897h31qUBdRoa0SbdeqUPA9JJRAJ1RyPbzro17kBGYMBUDMERkVrxfvURQTFXKAxS9GrBBWjFCWEI-RzxUPYKSuNdlo_LJErg3eH3KLRz3148bIxW9arIkaxIsTjulpikOO0uqZ8IqIwP0_tqYR30PgpW2p6y5MMINRTQj7ft-vJhiB1d0qQQcSbNeZsqyO08DEY__8omGJVtlnRDeaLUvA1Rgp98756kFKlTORqt5ibEdmq2zgHcNzlLTIZaqzZ9UYv1_KuyA0H6X6y5XhpEhLcSAc4JallYXOfZOv-POE1HT8Nqzeqnn7pjo1c1J61N-2OAzIF6JDUNOLvO4_8KJpcj2I7sGC_GfGK3dcl3TFSAVllMSPSFE6eUststL7Wexma340KLaX6SoH-3BBj_6oRAdus2vR9eTYdDvLk-x1W7-XTPisDtGJuIJZDFOYGcUfQz4_4BpI5B-H8_6QtnARcoPBcMiwUclu56F1iBhEF6aPONoSK0kHPXh2Ieu8wz2huw6wixZETQeRcQsLZ7u_r2pHmH95_WlPtFGGp1tdOdzb_QP4THlGO3SLE2NrDCxLYSB2jKU1mQid5RkHRYkV7S5e8kWfKQU8uMWm84F4JQ3wgAaSDK5sNdb7obf2Xz2MN66J4LDPSneTq02DPJsBp_HNdFaAAg6QK06KZiuJNPIwEg4pUaMXvc1Zqqcry3QPA8hP7xgUrHjX0nMPwqFvt6K_VyRBLSEGOdV2Zbfgg9mpaExCJc3ESke4w03oRJ5-xszeB7sPQAB4Q8dhShMSPKC7swnCN6KmA3wihQPac6WA7uo_DIhX6v1oIO0coS5pjtc4o7iye1VylF9KoSiCJ0kcpl3Fw_q9fFot_1IQhKw1Sr7EjDTPymGHvfSy3GFqlaVhaMNGC0nIcHqmxTxz8g1xj5aslV6QzPcHqK9KhIrUdatX4qG36UhnzI2w1_UDFRijGRlI-xwvX4hF3BoN04XFrltwU3zWBOm8zuZ5Qgb0QwKwblfObnTQUdBQgIdcFjpYXaUAF5YNoku2ZSM6Y3LQiZyAJ99ReiyDHKrFnSKs5yAJU3iWl7japdguoWBET9fBsXgZM7J4sYFO6T5v_lE9DDcU0sLDB_SXiKsvr_nCn0V0Dz-Q9BQ9m00Gidl2JgYLGs5dIsSFcJ8Ya7wKIVscaxc-ki6SDykHVQM5ILIyQzDBXQ_Hn7ydpL9wPmA5ckuCyB6uoWMsU8HV11vvtZ0NLg08j7xFQcK7XTU9_FSEgtqxXXbA_nKptqWZoJbjODI3ySPm7QoWhqMrxWMYa_cvl7vydORg\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/auth/signup"
-							},
-							"response": [
-								{
-									"id": "23fe724d-67b3-42ec-a695-b77e0d01932e",
-									"name": "Initialize Email Signup",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"email\": \"adewunmiakinsanya@gmail.com\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/auth/signup"
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "291"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"123-tkzodprQRUi40CE+8w7oXg+Es50\""
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 28 Apr 2024 21:47:24 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"You have successfully signed up, kindly verify your email to access the dashboard.\",\n    \"data\": {\n        \"id\": \"45291693-3544-4de2-8d79-d68195bed53e\",\n        \"email\": \"adewunmiakinsanya@gmail.com\",\n        \"profile\": {\n            \"id\": \"4684e465-5dff-4343-833e-417c62bc97ef\",\n            \"firstName\": \"\",\n            \"lastName\": \"\"\n        }\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "d7d8b56e-c636-4afc-a16d-7f25c4b7569c"
-				},
-				{
-					"name": "Complete Email Signup",
-					"item": [
-						{
-							"name": "Complete Email Signup",
-							"id": "69ce7cab-34fd-4872-83d4-3abc39b74bb6",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/auth/setup/:token",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"auth",
-										"setup",
-										":token"
-									],
-									"variable": [
-										{
-											"id": "683a8352-7e66-4244-a966-59e0aeaee48b",
-											"key": "token",
-											"value": "4742b45123b7565a16f5d0a3089ab5a5cfa1b3f4"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "a5db9123-691d-424a-96dc-0d802e9e2e89",
-									"name": "Complete Email Signup",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/auth/setup/:token",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"auth",
-												"setup",
-												":token"
-											],
-											"variable": [
-												{
-													"key": "token",
-													"value": "7f137972a24027029c8a8ae7a995c6612ef12337"
-												}
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "344"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"158-ocanrAKs4YO6tr2cUNp4cdewgYI\""
-										},
-										{
-											"key": "Date",
-											"value": "Sun, 28 Apr 2024 22:04:59 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjZDgwODBhLTQxMmYtNGMxNy1hMzZlLTBkYzRkMDExYmU1YyIsImNvdW50IjowLCJpYXQiOjE3MTQzNDE4OTgsImV4cCI6MTcxNDQyODI5OH0.oQalnM8ZFJ6nQUAQ6TNbBXZd9uTk3d02fmBO4gGorYg\",\n        \"expiresIn\": 86398\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "35b17ec7-1e6e-4c6c-a41d-1a3352727913"
-				},
-				{
-					"name": "Login",
-					"item": [
-						{
-							"name": "Login",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "eacad90f-75b8-4edc-98e1-fe564a0ac4fa",
-										"exec": [
-											"const jsonData = pm.response.json();",
-											"const accesstoken = jsonData.data.accessToken",
-											"pm.environment.set(\"accessToken\", accesstoken)"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "577873d2-a845-42db-b1a6-323d966c4298",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n    \"password\": \"123456789!dD\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/auth/login"
-							},
-							"response": []
-						}
-					],
-					"id": "286be6d7-7147-428f-837b-59c6e3d800bb"
-				},
-				{
-					"name": "Initialize Forgot Password",
-					"item": [
-						{
-							"name": "Initialize Forgot Password",
-							"id": "894b91da-2ed2-404c-bfd6-28405586bcfd",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/auth/password/forgot"
-							},
-							"response": [
-								{
-									"id": "f944049f-2af9-4c8f-b98b-006ad556a04e",
-									"name": "Initialize Forgot Password",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/auth/password/forgot"
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "130"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"82-de1AuJfqYMpyxegLyIKrqE8sSxY\""
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 03 May 2024 13:35:53 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"An email with instructions to reset your password has been sent to ade.wunmi.ak.insanya@gmail.com\"\n}"
-								}
-							]
-						}
-					],
-					"id": "633d50da-dfda-4c3a-8fb0-3bbefd3cacbb"
-				},
-				{
-					"name": "Complete Forgot Password",
-					"item": [
-						{
-							"name": "Complete Forgot Password",
-							"id": "509488bf-6cca-4bc8-8f98-00032220d57c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"password\": \"123456789!dD\",\n    \"confirmPassword\": \"123456789!dD\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/auth/password/reset/:token",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"auth",
-										"password",
-										"reset",
-										":token"
-									],
-									"variable": [
-										{
-											"id": "f0da1409-cfe9-4d3f-8214-4b9edde16c85",
-											"key": "token",
-											"value": "2232f116cb6ed8c559b1afac650619a094e0fddb\\"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "8ce132cb-02a9-415d-a6ea-d0e904b4fb93",
-									"name": "Complete Forgot Password",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"password\": \"123456789!dD#\",\n    \"confirmPassword\": \"123456789!dD#\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/auth/password/reset/:token",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"auth",
-												"password",
-												"reset",
-												":token"
-											],
-											"variable": [
-												{
-													"key": "token",
-													"value": "39f65aec3cb303c91b9e46143ee9a99f98356c92"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "100"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"64-c3/uRIyp85K08xdAC5KGPS8hMww\""
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 03 May 2024 13:38:21 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Your password has been successfully reset. Please proceed to login.\"\n}"
-								}
-							]
-						}
-					],
-					"id": "153d0b39-8c83-4847-9cf1-50aac3598406"
-				},
-				{
-					"name": "Complete 2FA",
-					"item": [
-						{
-							"name": "Complete 2FA",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "720d5db0-66f4-4832-8d5a-46f0d64d6f3e",
-										"exec": [
-											"const jsonData = pm.response.json();",
-											"const accesstoken = jsonData.data.accessToken",
-											"pm.environment.set(\"accessToken\", accesstoken)"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "3992598d-e51f-4242-bb78-2b8495514e47",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"token\": \"2f01a884ac87299d6e41cb382a7d5af9200b248b\",\n    \"code\": \"806601\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/auth/login/two-fa"
-							},
-							"response": [
-								{
-									"id": "cd7a3d85-35b3-41d2-aebc-3ebf7e66f878",
-									"name": "Complete 2FA",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"token\": \"5bc7d6e2c945dd6c13da7935887fe813796bdd07\",\n    \"code\": \"423063\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/auth/login/two-fa"
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Security-Policy",
-											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-										},
-										{
-											"key": "Cross-Origin-Opener-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Resource-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Origin-Agent-Cluster",
-											"value": "?1"
-										},
-										{
-											"key": "Referrer-Policy",
-											"value": "no-referrer"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=15552000; includeSubDomains"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-DNS-Prefetch-Control",
-											"value": "off"
-										},
-										{
-											"key": "X-Download-Options",
-											"value": "noopen"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Permitted-Cross-Domain-Policies",
-											"value": "none"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "0"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "https://admind.wholistic.work"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Access-Control-Allow-Credentials",
-											"value": "true"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "349"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"15d-p5x2ydc13MXHdtm1lzTImfen8no\""
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 12 Jul 2024 14:07:14 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Welcome back. You have been successfully signed in.\",\n    \"data\": {\n        \"tokenType\": \"Bearer\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwYzZjMDQ5LTcyNDEtNDRkOS05Yzg2LTJjZmI5NjdiYTEzYSIsImNvdW50IjowLCJpYXQiOjE3MjA3OTMyMzMsImV4cCI6MTcyMDg3OTYzM30.ouJ4Twi7EazC1hTrj3MB4-Ay0h8fwYzabagSN-1r1h8\",\n        \"expiresIn\": 86398\n    }\n}"
-								}
-							]
-						}
-					],
-					"id": "237a4a0a-9252-43eb-8f7d-3923685fd513"
-				}
-			],
-			"id": "1c7a5473-ab04-414f-9e80-9e08f8d3a4b3"
 		},
 		{
 			"name": "Workspaces",
