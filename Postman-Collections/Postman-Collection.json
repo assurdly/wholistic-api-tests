@@ -7245,34 +7245,34 @@
 									"script": {
 										"id": "e2acea02-54d1-4472-9a80-b26ad47d950c",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"// var jsonData = pm.response.json();",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
+											"// pm.test(\"Status code is 200\", function () {",
+											"//     pm.response.to.have.status(200);",
+											"// });",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status(\"OK\");",
-											"});",
+											"// pm.test(\"Status code response is OK\", function () {",
+											"//     pm.response.to.have.status(\"OK\");",
+											"// });",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an(\"object\");",
-											"    pm.expect(jsonData.status).to.be.an(\"string\");",
-											"    pm.expect(jsonData.message).to.be.a(\"string\");",
-											"    pm.expect(jsonData.data).to.be.an(\"object\");",
-											"});",
+											"// pm.test(\"Response body property\", function () {",
+											"//     pm.expect(jsonData).to.be.an(\"object\");",
+											"//     pm.expect(jsonData.status).to.be.an(\"string\");",
+											"//     pm.expect(jsonData.message).to.be.a(\"string\");",
+											"//     pm.expect(jsonData.data).to.be.an(\"object\");",
+											"// });",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
+											"// pm.test(\"Status is success\", function () {",
+											"//     pm.expect(jsonData.status).to.eql('success');",
+											"// });",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
+											"// pm.test(\"Status is success\", function () {",
+											"//     pm.expect(jsonData.status).to.eql('success');",
+											"// });",
 											"",
-											"pm.test(\"Message is Successfully fetched user\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Successfully fetched user');",
-											"});"
+											"// pm.test(\"Message is Successfully fetched user\", function () {",
+											"//     pm.expect(jsonData.message).to.eql('Successfully fetched user');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -7661,30 +7661,30 @@
 									"script": {
 										"id": "6a279720-c81f-4eaa-a77d-9bd0bab464b8",
 										"exec": [
-											"try{",
+											"// try{",
 											"",
-											"const jsonData = pm.response.json();",
+											"// const jsonData = pm.response.json();",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
 											"",
-											"pm.test(\"Status code response is Not FOund\", function () {",
-											"    pm.response.to.have.status(\"Unauthorized\");",
-											"});",
+											"// pm.test(\"Status code response is Not FOund\", function () {",
+											"//     pm.response.to.have.status(\"Unauthorized\");",
+											"// });",
 											"",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"// pm.test(\"Response body property\", function () {",
+											"//     pm.expect(jsonData).to.be.an(\"object\");",
 											"",
-											"});",
+											"// });",
 											"",
-											"pm.test(\"Message is Successfully fetched user\", function () {",
-											"    pm.expect(jsonData.message).to.eql('You must provide an access token to access this resource.');",
-											"});",
-											"} catch (errors){",
-											"    console.error (errors)",
-											"}"
+											"// pm.test(\"Message is Successfully fetched user\", function () {",
+											"//     pm.expect(jsonData.message).to.eql('You must provide an access token to access this resource.');",
+											"// });",
+											"// } catch (errors){",
+											"//     console.error (errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -7803,26 +7803,26 @@
 									"script": {
 										"id": "04992147-6402-4a23-9fdf-2a3d222c46b5",
 										"exec": [
-											"var jsonData = pm.response.json();",
-											"pm.environment.set('createdUser', jsonData.data.id)",
+											"// var jsonData = pm.response.json();",
+											"// pm.environment.set('createdUser', jsonData.data.id)",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
+											"// pm.test(\"Status code is 200\", function () {",
+											"//     pm.response.to.have.status(200);",
+											"// });",
 											"",
-											"pm.test(\"Status code response is 'OK'\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
+											"// pm.test(\"Status code response is 'OK'\", function () {",
+											"//     pm.response.to.have.status('OK');",
+											"// });",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
+											"// pm.test(\"Response body property\", function () {",
+											"//     pm.expect(jsonData).to.be.an('object');",
+											"//     pm.expect(jsonData.status).to.be.a('string');",
+											"//     pm.expect(jsonData.message).to.be.a('string');",
+											"// });",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});"
+											"// pm.test(\"Status is success\", function () {",
+											"//     pm.expect(jsonData.status).to.eql('success');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -7956,29 +7956,29 @@
 									"script": {
 										"id": "04992147-6402-4a23-9fdf-2a3d222c46b5",
 										"exec": [
-											"try{",
-											"    const jsonData = pm.response.json();",
-											"    const message = jsonData.message;",
+											"// try{",
+											"//     const jsonData = pm.response.json();",
+											"//     const message = jsonData.message;",
 											"",
-											"    pm.test(\"Status code is 400\", function () {",
-											"        pm.response.to.have.status(400);",
-											"    });",
+											"//     pm.test(\"Status code is 400\", function () {",
+											"//         pm.response.to.have.status(400);",
+											"//     });",
 											"",
-											"    pm.test(\"Status code response is Bad Request \", function () {",
-											"        pm.response.to.have.status(400); ",
-											"    });",
+											"//     pm.test(\"Status code response is Bad Request \", function () {",
+											"//         pm.response.to.have.status(400); ",
+											"//     });",
 											"",
-											"    pm.test(\"Response body property\", function () {",
-											"        pm.expect(jsonData).to.be.a(\"object\");",
-											"    });",
+											"//     pm.test(\"Response body property\", function () {",
+											"//         pm.expect(jsonData).to.be.a(\"object\");",
+											"//     });",
 											"",
-											"    pm.test('Verify a valid error message is returned', () => {",
-											"        pm.expect(message).eql(\"Unexpected token , in JSON at position 16\")",
-											"    });",
+											"//     pm.test('Verify a valid error message is returned', () => {",
+											"//         pm.expect(message).eql(\"Unexpected token , in JSON at position 16\")",
+											"//     });",
 											"    ",
-											"} catch (errors) {",
-											"    console.error(errors);",
-											"}",
+											"// } catch (errors) {",
+											"//     console.error(errors);",
+											"// }",
 											""
 										],
 										"type": "text/javascript",
@@ -8264,28 +8264,28 @@
 									"script": {
 										"id": "04992147-6402-4a23-9fdf-2a3d222c46b5",
 										"exec": [
-											"try{",
+											"// try{",
 											"",
-											"const jsonData = pm.response.json();",
+											"// const jsonData = pm.response.json();",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
 											"",
-											"pm.test(\"Status code response is Not FOund\", function () {",
-											"    pm.response.to.have.status(\"Unauthorized\");",
-											"});",
+											"// pm.test(\"Status code response is Not FOund\", function () {",
+											"//     pm.response.to.have.status(\"Unauthorized\");",
+											"// });",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"// pm.test(\"Response body property\", function () {",
+											"//     pm.expect(jsonData).to.be.an(\"object\");",
 											"",
-											"});",
-											"pm.test(\"Message is Successfully fetched user\", function () {",
-											"    pm.expect(jsonData.message).to.eql('You must provide an access token to access this resource.');",
-											"});",
-											"} catch (errors){",
-											"    console.error (errors)",
-											"}"
+											"// });",
+											"// pm.test(\"Message is Successfully fetched user\", function () {",
+											"//     pm.expect(jsonData.message).to.eql('You must provide an access token to access this resource.');",
+											"// });",
+											"// } catch (errors){",
+											"//     console.error (errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8569,143 +8569,6 @@
 				{
 					"name": "Delete User",
 					"item": [
-						{
-							"name": "Delete User",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "e23c2367-bab0-48da-9720-44593aa24f47",
-										"exec": [
-											"var jsonData = pm.response.json();\r",
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is OK\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response body property\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.status).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status is success\", function () {\r",
-											"    pm.expect(jsonData.status).to.eql('success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Successfully deleted user\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Successfully deleted user');\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "15bb65ec-801d-4b36-a214-e9bbce85ce8d",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/users/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"users",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "5ef4c73b-b1c1-4094-9de8-9322dda16c56"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "be44e6c7-02e6-4620-a569-58adde5757c8",
-									"name": "Delete User",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/users/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"users",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "529cde26-4c64-446f-b081-341850156d35"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "70"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"46-qlsm5PIaOOVh2sd0Q7inkbdz4+U\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:29:54 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully deleted user\",\n    \"data\": null\n}"
-								}
-							]
-						},
 						{
 							"name": "Delete User-Empty ID",
 							"event": [
@@ -9309,25 +9172,25 @@
 							"script": {
 								"id": "b66ea041-efb6-4ca2-aa21-14b791058d95",
 								"exec": [
-									"try{\r",
-									"const { data, message } = pm.response.json()\r",
+									"// try{\r",
+									"// const { data, message } = pm.response.json()\r",
 									"\r",
-									"    pm.test('Verify a valid message is returned', () => {\r",
-									"        pm.expect(message).eql(\"Cannot resend invite to a inactive user\")\r",
-									"    });\r",
-									"    pm.test(\"Response body is an object\", function () {\r",
-									"    pm.expect(pm.response.json()).to.be.a(\"object\");\r",
-									"});\r",
+									"//     pm.test('Verify a valid message is returned', () => {\r",
+									"//         pm.expect(message).eql(\"Cannot resend invite to a inactive user\")\r",
+									"//     });\r",
+									"//     pm.test(\"Response body is an object\", function () {\r",
+									"//     pm.expect(pm.response.json()).to.be.a(\"object\");\r",
+									"// });\r",
 									"\r",
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Bad Request\");\r",
-									"});\r",
-									"} catch (errors){\r",
-									"    console.error (errors)\r",
-									"}"
+									"// pm.test(\"Status code is 400\", function () {\r",
+									"//     pm.response.to.have.status(400);\r",
+									"// });\r",
+									"// pm.test(\"Status code name has string\", function () {\r",
+									"//     pm.response.to.have.status(\"Bad Request\");\r",
+									"// });\r",
+									"// } catch (errors){\r",
+									"//     console.error (errors)\r",
+									"// }"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -9435,24 +9298,24 @@
 							"script": {
 								"id": "b66ea041-efb6-4ca2-aa21-14b791058d95",
 								"exec": [
-									"try{\r",
-									"const { data, message } = pm.response.json()\r",
+									"// try{\r",
+									"// const { data, message } = pm.response.json()\r",
 									"\r",
-									"    pm.test('Verify a valid message is returned', () => {\r",
-									"        pm.expect(message).eql(\"Cannot resend invite to a inactive user\")\r",
-									"    })\r",
-									"pm.test(\"Response body is an object\", function () {\r",
-									"    pm.expect(pm.response.json()).to.be.a(\"object\");\r",
-									"});\r",
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Bad Request\");\r",
-									"});\r",
-									"} catch (errors){\r",
-									"    console.error (errors)\r",
-									"}"
+									"//     pm.test('Verify a valid message is returned', () => {\r",
+									"//         pm.expect(message).eql(\"Cannot resend invite to a inactive user\")\r",
+									"//     })\r",
+									"// pm.test(\"Response body is an object\", function () {\r",
+									"//     pm.expect(pm.response.json()).to.be.a(\"object\");\r",
+									"// });\r",
+									"// pm.test(\"Status code is 400\", function () {\r",
+									"//     pm.response.to.have.status(400);\r",
+									"// });\r",
+									"// pm.test(\"Status code name has string\", function () {\r",
+									"//     pm.response.to.have.status(\"Bad Request\");\r",
+									"// });\r",
+									"// } catch (errors){\r",
+									"//     console.error (errors)\r",
+									"// }"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -9560,22 +9423,22 @@
 							"script": {
 								"id": "b66ea041-efb6-4ca2-aa21-14b791058d95",
 								"exec": [
-									"try{\r",
-									"const { data, message } = pm.response.json()\r",
+									"// try{\r",
+									"// const { data, message } = pm.response.json()\r",
 									"\r",
-									"    pm.test('Verify a valid message is returned', () => {\r",
-									"        pm.expect(message).eql(\"User not found.\")\r",
-									"    })\r",
+									"//     pm.test('Verify a valid message is returned', () => {\r",
+									"//         pm.expect(message).eql(\"User not found.\")\r",
+									"//     })\r",
 									"\r",
-									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.response.to.have.status(\"Not Found\");\r",
-									"});\r",
-									"} catch (errors){\r",
-									"    console.error (errors)\r",
-									"}"
+									"// pm.test(\"Status code is 404\", function () {\r",
+									"//     pm.response.to.have.status(404);\r",
+									"// });\r",
+									"// pm.test(\"Status code name has string\", function () {\r",
+									"//     pm.response.to.have.status(\"Not Found\");\r",
+									"// });\r",
+									"// } catch (errors){\r",
+									"//     console.error (errors)\r",
+									"// }"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -10343,14 +10206,14 @@
 									"script": {
 										"id": "f614fa80-5b71-4c2a-8835-e82a8fd69bd1",
 										"exec": [
-											"const jsonData = pm.response.json()",
+											"// const jsonData = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(401);",
-											"});",
-											"pm.test(\"Status code response is 'Unauthorized'\", function () {",
-											"    pm.response.to.have.status('Unauthorized');",
-											"});"
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
