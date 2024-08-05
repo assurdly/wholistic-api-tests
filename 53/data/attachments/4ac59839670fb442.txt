@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully updated profile","data":{"id":"b1a28b9a-cd11-4a19-85b1-b48486420d36","firstName":"Adewunmi","lastName":"Akinsanya","photoUrl":null,"country":"NGA","createdAt":"2024-05-06T02:52:28.770Z"}}

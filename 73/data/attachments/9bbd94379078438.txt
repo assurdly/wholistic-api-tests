@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully updated profile","data":{"id":"e11d2357-8a81-4de8-b2a9-fb1cbf0ad3fa","firstName":"Keon","lastName":"Moore","photoUrl":null,"country":"NGA","createdAt":"2024-07-16T10:26:17.028Z"}}

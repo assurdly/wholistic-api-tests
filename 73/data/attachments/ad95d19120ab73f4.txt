@@ -1,0 +1,19 @@
+{
+    "name": "Website Redesign",
+    "description": "Redesign of the Website",
+    "serviceType": "Product Development",
+    "startDate": "2024-01-01",
+    "workspaceId": "  a609d20e-276f-484a-990d-90e53f99785a",
+    "recaptchaResponse": "03AFcWeA62v8D4jzd1M05vFJ_NXkg91qT1FyDcQuVbpKKSGXjamy1tnvxoJtOQlQ3TP6_ujfCTtChI59nbcV_ksm7qmJoR_grYq8omfcg5qtPG32QU2TAN2UoplJ7Xfx9HWYQPtKpHYcbpFWHoQjHONAtSLiIcmvfdBJ3zFGrYMQA5VHGE9DbQtlvKmM0HJnKmioftX4C0uMoTXHJK9Tqk3kxkb8WYsE7pw1gy2iRh7XMfSQM_0CcUmBC10BiPHLYkJSWnr_icfYcXPkbNoJWTUIs33t8DwrERHDyPsKC2Cyf3hcF92V7DLSRfVSSgKsz7mt_4wJBiwvfUSdMuG0qY_ocmEDFu6AcI7BqNHIIsH2415mXC5VUT-2E_Y5-SQQklfbgf31LI8m5mMYv62Gn_OwQunonvHJuaJ2PmRxgH_7H9udpaArXD010mpkxEEtx5zQQRMO6gdhGPL0NvXu4a76NPiiqdwd_Y5aMFSS5NUuKaw3_jvdyl-Fg2C5sYqBrkrWLpx_kEAlbBWFE8mnAuTJxiAQ7ceZiv4ewimCkkD0XPvmmsRRRzmicnlfZ5CldQiD3c2k829Q869aZ3YcwnQhBad8mLH1W0H5WmpNRTNvj--rUqsmglpDYK-sBclCmwlbIxDzNIFAE60ArM5OksHBFk724BzxQytb1VHEPOtKZMUFbh9G5fwuDB0A5WT1CR8QcZnKzGL3DHXPJiiMoGuqGKhGCroh_ilqHdTgF3_oG5HGm0LWZgyeiJ9gSZsjpu6lG5vPVmwwG8FP0CSXb1Kfa94Ogbph6zk8EDNSfsuIFYVVekb9ZCl5_5Pu96UnW1yzsehZ_78t8aQKenHwQitzl0dtb1BqRCFZNdDYTuOnk-BMJqrbBqeLAUKsGApfiZ06PSA8PH_w-vMSLvqosQXdp8tlKShe5Fu61A3IWjjnRBy3CiujJvdb3lIKC8XRhEIdwPDp-zCfiqWJKU6co-mJ4HUTAaX69Q2DsL-AEm1Tq0F3hNcbxjlreYi8qdkZqubsEL5gwoHfzOdoLftieraJcVrRU4CNauUXeDOXMeIBUanjAw5Y5KlsT09rd0Ck1q13raf0QrbgMIUMSh4SiAyX0alumkkhKU1Je-bFIahxak8-OS3LwtIPNjAF7YEOPhSaG8O8FLMu30HCMmsM5tu7m0jB3YadJMon8bEN6x104rM6qR0O-bh2u1NYF_MtMHA6PvhqrAxVgxDLmJdMMy9_ZvJzClCaZBSG9hPDusVfraDQ7b0-j6Gl30n8JFCCALnmfGpXTlYLoR1_ksU9bvZnepvneXvHoAUpgkp1J3OR93pRYCcUQ1GfcH9v-V2abzIfJ0zE-OsSBAQj8Ks_OIQFfaTe-YMxc_AZ6E8OTkozmVe_ajYE98kKG1D3Ozt4ZgkgNPdQCNif5aeV-gQRTn2bWrV6aX7T1I8YGkNd9YTWBOozy55-xNUMyxpf4uzskgMzMHMfMjhrA1B1svEHmJhbgepPSLgK_iIZX3ALvMIK1doslhhCSAhL6m2XMGLkaEGwKT7fEyupahkWNdMrOdfejCZzf8uw3dQ35zeDTfFsPPjWX-h4qexNwDq_gnk1CEnMR7xpk4tjk-FSSfpWioNubH4JayUW5zhhhXTMs8H8oZapwSRfZyowyM31MDhkxI-PhyfgnJRq6dyxAsbimo6Nlh9dB7dJ5chujjVtnsjEhtGHi3CRFYwJqvA3v7E7b0kaomNuktlJHx3OE36M2rdQLqL2CsXvyjavm7Hc8K2YUq2xj6q45szLtx6ji3N7XbP9OyDpyYjwwsVDGW-nAwLU8RWlhu2ajHxvq5N7MkGNfLuWTSff94zB8vRZsynVPkFm3BqRnojHQ2rqSJGv7z0vBqzYqOI-ePS6PuXgkvKt5qh4rtPBs-DCa53HwGqx2LIpV-wwJL3enxKEl1fTN2vlebk5G2t9dJkg",
+    "estimatedDuration": 4,
+    "client": {
+        "name": "LSQ",
+        "email": "hello@lendsqr.com",
+        "contactName": "Deji",
+        "contactEmail": "deji@lendsqr.com",
+        "contactPhone": "+2348012345678",
+        "contactName2": null,
+        "contactEmail2": null,
+        "contactPhone2": null
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "origin": "https://ikigai.wholistic.work",
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "c66a8e9b-652b-4342-a005-857f4eb3abbd",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "128",
+    "Cookie": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5YzI1MDE1LWZlYTktNGExZS04NGQzLWE5ZDM0ZGZkOWY4ZiIsImNvdW50IjowLCJpYXQiOjE3MjI4NDMxMjQsImV4cCI6MTcyMjkyOTUyNH0.8SlBJ8ggAB1LhmMIPs944Azf4IPDxquSWXATbdyr1Do.AG4bgeh1usl0z2TylmGfvBlLcp8%2FtXDxL8hT1n9zTQw"
+}
