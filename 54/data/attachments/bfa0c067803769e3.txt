@@ -1,4 +1,0 @@
-{
-    "email": "Hillary@mailinator.com",
-    "roleId": "{{createdRole}}"
-}
