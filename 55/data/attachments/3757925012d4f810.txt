@@ -1,1 +1,0 @@
-{"message":"Validation Error.","data":{"logoUrl":"logoUrl must be a URL address"}}
