@@ -1,0 +1,10 @@
+{
+    "origin": "https://Account.wholistic.work",
+    "User-Agent": "PostmanRuntime/7.39.0",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "ea2799ac-a69d-4241-8ca4-2b17d55b9c2d",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

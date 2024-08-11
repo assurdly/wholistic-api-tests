@@ -1,0 +1,10 @@
+{
+    "name": "Blanda LLC",
+    "email": "Amie@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Volkman@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Glen",
+    "contactEmail2": "Oceane64@hotmail.com",
+    "contactPhone2": "+2349055755673"
+}
