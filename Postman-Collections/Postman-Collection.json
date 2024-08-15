@@ -19,7 +19,9 @@
 									"script": {
 										"id": "0deb16dd-d3d4-4f86-b928-b39578b98e3c",
 										"exec": [
-											"pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')"
+											"// pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')",
+											"pm.environment.set(\"baseUrl\", \"https://platform.api-dev.wholistic.work\")",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -555,7 +557,7 @@
 									"script": {
 										"id": "bbf2bf2a-5474-4ecd-9eaa-97ddda15701d",
 										"exec": [
-											"pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -624,7 +626,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@\"\n}",
+									"raw": "{\n    \"email\": \"azeez@mailinator.com\",\n    \"password\": \"Password12@@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
