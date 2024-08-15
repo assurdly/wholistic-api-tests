@@ -17814,7 +17814,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"reportTemplateId\": \"2f4c8424-eeb7-4e4e-91d0-dee3553e097a\"\n}      \n\n",
+									"raw": "{\n    \"reportTemplateId\": \"b0ea8e08-b76d-4bc8-a441-807a5efa4d65\"\n}      \n\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -17834,7 +17834,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "{{createdProject}}"
+											"value": "01912715-673d-722e-ab26-d2b0f43fc36b"
 										}
 									]
 								}
