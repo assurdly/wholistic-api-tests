@@ -7630,21 +7630,23 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e5b9cf02-12c7-4f02-8389-0d5fbc5dd69e",
+				"id": "ad1f8715-f6ec-4723-a815-3d847255484e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
 					"  value: \"https://\" + \"admin.wholistic.work\"",
-					"});"
+					"});",
+					"",
+					"pm.environment.set(\"baseUrl\", \"https://platform.api-dev.wholistic.work\")"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "f31821e1-5af9-4d1f-9543-5ff730ce039f",
+				"id": "cb89bcb4-79d2-4330-87d9-3a35db3459a6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
