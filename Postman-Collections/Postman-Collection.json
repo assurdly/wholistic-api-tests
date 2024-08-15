@@ -20825,13 +20825,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "50060a09-9037-47f2-8b02-4e5bd10876ac",
+				"id": "61fa916c-2a70-486b-b46e-02c8db05d9ec",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"account.wholistic.work\"",
+					"  value: \"https://\" + \"Account.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20839,7 +20839,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1812b08c-51ed-41fe-af40-9379294face6",
+				"id": "ab2d5968-14bf-44c4-a524-f259a9c64b92",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
