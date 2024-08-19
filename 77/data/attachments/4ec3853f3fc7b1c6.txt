@@ -1,5 +1,0 @@
-{
-    "sessionId": "1234567890",
-    "message": "can you summarize notification templates for me?",
-    "stream": false 
-}

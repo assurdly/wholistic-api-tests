@@ -1,6 +1,0 @@
-{
-    "firstName": "",
-    "lastName": "",
-    "phone": "",
-    "country": ""
-}

@@ -1,4 +1,0 @@
-{
-    "templateId": "1b3ac6b0-8f7d-43a7-b95d-fb1fd3b05437",
-    "enabled": false
-}

@@ -1,7 +1,0 @@
-{
-    "firstName": "Alexys",
-    "lastName": "O'Keefe",
-    "phone": "+2348089722636",
-    "country": "NGA",
-    "photoUrl": ""
-}

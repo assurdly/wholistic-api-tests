@@ -1,3 +1,0 @@
-{
-    "code": "4%2F0AeaYSHCdN9YOUAP6XKDff4SEp7foQQodkjwlzqhQYn8QvB_EqBG8tkPStbo9awinZtpIkw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=assurdly.com&prompt=consent"
-}

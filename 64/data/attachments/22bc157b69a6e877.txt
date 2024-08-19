@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully updated client","data":{"email":"Darien@mailinator.com","name":"Dickinson - Conroy","contactName":"Deji","contactPhone":"+2348012345678","contactEmail":"Johnson@mailinator.com","contactName2":"April","contactPhone2":"+2349055755673","contactEmail2":"Cassandra_Smith64@gmail.com"}}

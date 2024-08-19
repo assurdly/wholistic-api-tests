@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully initialized subscription","data":{"authorizationUrl":"https://checkout.paystack.com/voegql02jq3ishc","reference":"rsnfl427im"}}

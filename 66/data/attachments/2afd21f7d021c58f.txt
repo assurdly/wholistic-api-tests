@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully updated client","data":{"email":"Janice@mailinator.com","name":"Yost and Sons","contactName":"Deji","contactPhone":"+2348012345678","contactEmail":"Nienow@mailinator.com","contactName2":"Gunnar","contactPhone2":"+2349055755673","contactEmail2":"Odessa28@hotmail.com"}}

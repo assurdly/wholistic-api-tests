@@ -1,1 +1,0 @@
-{"message":"Your subscription does not allow you to chat with assistant."}

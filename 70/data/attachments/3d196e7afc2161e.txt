@@ -1,5 +1,0 @@
-
-event: message
-id: 1
-data: {"senderId":"assistant","recipientId":"86766059-163e-4474-abad-b6624579f743","sessionId":"1234567890","messageId":"chatcmpl-9smFVmj7RmVhT8mDkiU6iNfOPN7fo","message":"I don't have the information to answer that question."}
-

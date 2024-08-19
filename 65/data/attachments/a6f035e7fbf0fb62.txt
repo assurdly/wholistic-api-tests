@@ -1,7 +1,0 @@
-{
-    "firstName": "Maxine",
-    "lastName": "Pfannerstill",
-    "phone": "+2348089722636",
-    "country": "NGA",
-    "photoUrl": ""
-}

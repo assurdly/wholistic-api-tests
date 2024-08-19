@@ -1,9 +1,0 @@
-{
-    "name": "Skiles Group",
-    "description": "Redesign of the Small Concrete Pizza",
-    "serviceType": "Product Development",
-    "startDate": "2024-01-01",
-    "endDate": "2024-06-01",
-    "workDone": 99,
-    "clientId": "7f11a38f-2531-40c9-b5e0-237b2ab1719a"
-}

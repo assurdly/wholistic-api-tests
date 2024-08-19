@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully updated client","data":{"email":"Kaia@mailinator.com","name":"O'Keefe and Sons","contactName":"Deji","contactPhone":"+2348012345678","contactEmail":"Cartwright@mailinator.com","contactName2":"Rosella","contactPhone2":"+2349055755673","contactEmail2":"Gregorio_Zboncak39@yahoo.com"}}

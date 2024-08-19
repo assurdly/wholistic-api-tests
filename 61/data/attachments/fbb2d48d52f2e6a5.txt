@@ -1,1 +1,0 @@
-{"status":"success","message":"Successful","data":{"id":"ad75baf0-2582-4b31-9934-03d0ceab11cb","title":"Random Report Today","status":"approved","body":"<body>Hey!</body>","startDate":"2024-07-30","endDate":"2024-08-29","reviewerUserId":"86766059-163e-4474-abad-b6624579f743"}}

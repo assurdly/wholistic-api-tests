@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully fetched role","data":[{"id":"0612275d-caf2-477b-a408-cafe98c12a21","name":"delete team member","slug":"delete-team-member","description":"","createdAt":"2024-04-28T23:43:53.224Z"}]}

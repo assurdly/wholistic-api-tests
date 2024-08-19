@@ -1,7 +1,0 @@
-{
-    "firstName": "Aaliyah",
-    "lastName": "Runolfsdottir",
-    "phone": "+2348089722636",
-    "country": "NGA"
-    
-}
