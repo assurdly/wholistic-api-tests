@@ -20831,13 +20831,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2a2473e0-d91b-4f4b-a0d0-99f50665f6d2",
+				"id": "775abae7-c971-41b2-8a2c-42261f5ec652",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"account.wholistic.work\"",
+					"  value: \"https://\" + \"meteor.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20845,7 +20845,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f88f7851-dc9d-4eca-9afc-ed70a8af52b8",
+				"id": "1619d5d8-7372-4766-b891-21f657dff4f4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
