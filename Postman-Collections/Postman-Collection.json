@@ -19,8 +19,8 @@
 									"script": {
 										"id": "0deb16dd-d3d4-4f86-b928-b39578b98e3c",
 										"exec": [
-											"// pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')",
-											"pm.environment.set(\"baseUrl\", \"https://platform.api-dev.wholistic.work\")",
+											"pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')",
+											"// pm.environment.set(\"baseUrl\", \"https://platform.api-dev.wholistic.work\")",
 											""
 										],
 										"type": "text/javascript",
@@ -20831,13 +20831,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e31fffe0-1b24-4fb6-861c-f81e2dbcf8b8",
+				"id": "b6eed2d1-3460-4440-b65e-18de80d0a6ab",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"account.wholistic.work\"",
+					"  value: \"https://\" + \"assurdly.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20845,7 +20845,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f56e4145-974b-4f5d-a21e-a96546fb425f",
+				"id": "798c35fc-5e4e-4f11-ab13-da2c60acdfe7",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
