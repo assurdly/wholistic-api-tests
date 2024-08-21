@@ -20831,13 +20831,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9c90454b-b377-4b38-8240-a4a726251653",
+				"id": "f126ad67-02dc-42f7-b4cf-25cdb2f31c5e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
-					"  value: \"https://\" + \"otis.wholistic.work\"",
+					"  value: \"https://\" + \"account.wholistic.work\"",
 					"});"
 				]
 			}
@@ -20845,7 +20845,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "40f0f0a6-b225-4952-b1d7-a0e057d6d471",
+				"id": "afef32b4-f8c9-48b9-be64-964f5aecea1d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
