@@ -15857,6 +15857,126 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created project\",\n    \"data\": {\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2024-01-01\",\n        \"endDate\": \"2024-06-01\",\n        \"daysSpent\": 30,\n        \"workDone\": 99,\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n        }\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Create Project Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dd7d6b7c-810a-45af-8d89-a8b34a201383",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"const createdProject = jsonData.data.id",
+											"pm.environment.set(\"createdProject\", createdProject)",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Status code response is Created\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "39a623e2-8f12-4b3e-8757-85ee09be80cb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomProductName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-06-15\",\n    \"endDate\": \"2025-06-15\",\n    \"daysSpent\": 30,\n    \"workDone\": 99.9,\n    \"clientId\": \"{{createdClient}}\",\n    \"users\": [\"330e090f-e65a-4c08-b3c9-91b83450d13b\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/projects"
+							},
+							"response": [
+								{
+									"id": "a9a24626-9cb2-4871-ae70-ad6b01bd273a",
+									"name": "Create Project",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/projects"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "417"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1a1-nZu+wK6r0J3rGOaZqKjj8IDHDko\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 12 May 2024 21:24:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully created project\",\n    \"data\": {\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2024-01-01\",\n        \"endDate\": \"2024-06-01\",\n        \"daysSpent\": 30,\n        \"workDone\": 99,\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\",\n        \"primaryUser\": {\n            \"id\": \"90c6c049-7241-44d9-9c86-2cfb967ba13a\",\n            \"email\": \"ade.wunmi.ak.insanya@gmail.com\"\n        }\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "678f6b6c-1e23-4c50-8477-df06423c53cd"
