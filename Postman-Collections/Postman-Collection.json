@@ -16612,6 +16612,149 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Update Project Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5cc933aa-ac62-4750-8ff2-c013cd48c555",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});",
+											"",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an('object');",
+											"    pm.expect(jsonData.status).to.be.a('string');",
+											"    pm.expect(jsonData.message).to.be.a('string');",
+											"});",
+											"",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c07739c9-b4fa-452c-b808-85223c72ce6d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"name\": \"{{$randomCompanyName}}\",\n    // \"description\": \"Redesign of the {{$randomProductName}}\",\n    // \"serviceType\": \"Product Development\",\n    // \"startDate\": \"2024-01-01\",\n    // \"endDate\": \"2024-06-01\",\n    \"workDone\": 99\n    // \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/projects/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "54d4f561-5dd2-4a12-8a10-06c676052fff",
+											"key": "id",
+											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "01ee3a06-4f9f-427b-936f-80488ea5c9d7",
+									"name": "Update Project",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-06-01\",\n    \"daysSpent\": 30,\n    \"workDone\": 99,\n    \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "4a24f23c-8a26-4a93-8654-5e75375401e8"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "401"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"191-WUldaBsru9EglN6+3jds9LIulwU\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 14 May 2024 09:58:12 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated project details\",\n    \"data\": {\n        \"id\": \"4a24f23c-8a26-4a93-8654-5e75375401e8\",\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesign of the Website\",\n        \"serviceType\": \"Product Development\",\n        \"status\": \"draft\",\n        \"startDate\": \"2023-12-31T23:00:00.000Z\",\n        \"endDate\": \"2024-05-31T23:00:00.000Z\",\n        \"daysSpent\": 30,\n        \"workDone\": \"99.00\",\n        \"clientId\": \"7f11a38f-2531-40c9-b5e0-237b2ab1719a\"\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "72684421-e3a1-41fd-a27e-a96fffc7e409"
