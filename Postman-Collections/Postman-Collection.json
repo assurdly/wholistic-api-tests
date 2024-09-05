@@ -18285,7 +18285,336 @@
 							]
 						},
 						{
-							"name": "List Project Integrations - No Auth",
+							"name": "Calculate Quality Result",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0a23c25e-aed4-41a3-b2f5-63811027cf63",
+										"exec": [
+											"try {",
+											"    const { status, message, data, meta } = pm.response.json()",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"",
+											"    pm.test(\"Status code response is OK\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(status).to.be.a('string');",
+											"        pm.expect(message).to.be.a('string');",
+											"        pm.expect(data).to.be.a('array');",
+											"        pm.expect(meta).to.be.a('object');",
+											"",
+											"",
+											"    });",
+											"",
+											"    pm.test(\"Status is success\", function () {",
+											"        pm.expect(status).to.eql('success');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "a20129b2-ab05-4846-b7a0-c95ab5af9d3d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/quality-results/:resultId/calculate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"quality-results",
+										":resultId",
+										"calculate"
+									],
+									"query": [
+										{
+											"key": "filter[parentId]",
+											"value": "25c1a387-f1a3-4867-a2a0-daa7c773700f",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": ""
+										},
+										{
+											"key": "resultId",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "129f7d77-2990-4eb2-8169-c3c35127b935",
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"query": [
+												{
+													"key": "filter[parentId]",
+													"value": "07687334-1539-4726-8d3a-3bf9aebbc30e",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "0c41ea4e-ad7c-4c1b-88c0-22e35742ecf6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2768"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ad0-v7P4Vi1TijjMZhH0ZqcSznlAy2M\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 21 Jul 2024 03:53:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"25c1a387-f1a3-4867-a2a0-daa7c773700f\",\n            \"name\": \"Payaza - NIBSS Integration\",\n            \"url\": \"https://drive.google.com/drive/folders/1og0PtGm5HpckLvP2SLXjwU0iS4mDOrrf\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                \"name\": \"Google Drive\",\n                \"slug\": \"google-drive\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": [\n                {\n                    \"id\": \"68746932-cf86-42f6-9b75-25a864da9dd6\",\n                    \"name\": \"Product Delivery\",\n                    \"url\": \"https://drive.google.com/drive/folders/1ANWsnlncVftaIKssUcKENCPSBg7nudbN\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": \"427e37f7-3f09-4077-8b83-df0540b6b1bc\",\n            \"name\": \"Adewunmi Akinsanya\",\n            \"url\": \"https://groups.google.com/a/assurdly.com/g/wunmi\",\n            \"integration\": {\n                \"id\": \"d9d97dfe-68e1-4789-8814-9a5bc2fda66b\",\n                \"name\": \"Google Groups\",\n                \"slug\": \"google-groups\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=P7UIlhbpWzZm&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-07-05T11:14:13.403Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"07687334-1539-4726-8d3a-3bf9aebbc30e\",\n            \"name\": \"Payaza - NIBSS Integration\",\n            \"url\": \"https://drive.google.com/drive/folders/1og0PtGm5HpckLvP2SLXjwU0iS4mDOrrf\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"1212d82a-15cc-4c92-9c08-1e5ac6dabffb\",\n            \"name\": \"OBN\",\n            \"url\": \"https://drive.google.com/drive/folders/1VcgqNpm3mD4lXi-KOSx03_TeYQj3awjI\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"9ed44243-90b9-43c7-b59f-a4526ad0bfca\",\n            \"name\": \"Wholistic: Test Plan\",\n            \"url\": \"https://docs.google.com/spreadsheets/d/1ZKmIB7tGZyKqkArX03aEQXE2u6Bpx_Swtc3pWfvGvAw\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 5,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								},
+								{
+									"id": "5e0a414f-46bd-429d-b2f6-d3518e57d177",
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations?filter[parentId]=25c1a387-f1a3-4867-a2a0-daa7c773700f",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"query": [
+												{
+													"key": "filter[parentId]",
+													"value": "25c1a387-f1a3-4867-a2a0-daa7c773700f"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "0c41ea4e-ad7c-4c1b-88c0-22e35742ecf6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3549"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ddd-3QeykReGJgR+Ph6u8XSqX0E1HY8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 21 Jul 2024 03:57:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"68746932-cf86-42f6-9b75-25a864da9dd6\",\n            \"name\": \"Product Delivery\",\n            \"url\": \"https://drive.google.com/drive/folders/1ANWsnlncVftaIKssUcKENCPSBg7nudbN\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                \"name\": \"Google Drive\",\n                \"slug\": \"google-drive\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": [\n                {\n                    \"id\": \"1d10babf-be92-481f-87b9-00dea7dcd4a2\",\n                    \"name\": \"NIBSS Submissions\",\n                    \"url\": \"https://drive.google.com/drive/folders/1PYbDH_R3tAazn_ephfSfp2Fpjdd9SAkW\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"62689577-f224-44e7-a66f-2b8544d4d22c\",\n                    \"name\": \"Postman Collection\",\n                    \"url\": \"https://drive.google.com/drive/folders/1I7O6DaXOV-ZBlTI05F_IX89EwN0X8cgr\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"69d34694-ebf2-47ed-9d56-1afe97b463a5\",\n                    \"name\": \"NIBBS Signed Documents\",\n                    \"url\": \"https://drive.google.com/drive/folders/149fba1a9yDs2re-5W1iYFO1L4U1skdkr\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"7a12ab72-375c-4351-a8d7-f1dfa0c417fc\",\n                    \"name\": \"Production\",\n                    \"url\": \"https://drive.google.com/drive/folders/1EUnBlGpqKFUYeev2QzzkGrVvsiv50Q1H\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"7dd285af-cb5e-4e92-bb42-c7d6e84b451b\",\n                    \"name\": \"Project Management\",\n                    \"url\": \"https://drive.google.com/drive/folders/1nZCcZh5OF3CyUzNRZwTVfTigJdDbvCiQ\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"dc718119-ec98-4b05-bf9e-91ddd4101de7\",\n                    \"name\": \"NIBSS Guides\",\n                    \"url\": \"https://drive.google.com/drive/folders/1yvnLicdTFlOqONtUBgoDHLXKQeXJAdj4\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"ea99d770-f71b-408d-840e-a06e58917853\",\n                    \"name\": \"NIBBS Templates\",\n                    \"url\": \"https://drive.google.com/drive/folders/1M6xgtf7LDMvbBEjhBgFkzvjkUXM3AbIT\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Quality Results",
 							"event": [
 								{
 									"listen": "test",
