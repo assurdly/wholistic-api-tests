@@ -17962,7 +17962,7 @@
 					"name": "Project Quality",
 					"item": [
 						{
-							"name": "List Project Integrations",
+							"name": "Create Quality Resource",
 							"event": [
 								{
 									"listen": "test",
@@ -18007,17 +18007,17 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/projects/:id/integrations",
+									"raw": "{{baseUrl}}/projects/:projectId/quality",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"projects",
-										":id",
-										"integrations"
+										":projectId",
+										"quality"
 									],
 									"query": [
 										{
@@ -18028,9 +18028,8 @@
 									],
 									"variable": [
 										{
-											"id": "6036bb11-1ab6-4060-8716-49582df7dc44",
-											"key": "id",
-											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
+											"key": "projectId",
+											"value": ""
 										}
 									]
 								}
