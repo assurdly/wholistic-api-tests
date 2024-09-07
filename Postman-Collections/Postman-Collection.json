@@ -6254,7 +6254,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"roleId\": \"{{createdRole}}\"\n}",
+									"raw": "{\n    \"email\": \"{{$randomFirstName}}@mailinator.com\",\n    \"roleId\": \"fd8d13f1-95c6-43ea-9084-b94de22163f5\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
