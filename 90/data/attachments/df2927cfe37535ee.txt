@@ -1,0 +1,10 @@
+{
+    "name": "Witting - Gerhold",
+    "email": "Angelita@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Bruen@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Brando",
+    "contactEmail2": "Emilio.Gusikowski@yahoo.com",
+    "contactPhone2": "+2349055755673"
+}
