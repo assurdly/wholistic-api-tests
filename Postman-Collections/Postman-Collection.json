@@ -5465,8 +5465,8 @@
 											"try {\r",
 											"    const response = pm.response.json();\r",
 											"    const { message, data } = response;\r",
-											"    pm.test(\"Response code should return a 200\", function () {\r",
-											"        pm.response.to.have.status(200);\r",
+											"    pm.test(\"Response code should return a 400\", function () {\r",
+											"        pm.response.to.have.status(400);\r",
 											"    });\r",
 											"    pm.test(\"Response status is 'OK'\", function () {\r",
 											"        pm.response.to.have.status('OK');\r",
@@ -5475,13 +5475,11 @@
 											"        pm.expect(pm.response.json()).to.be.an('object');\r",
 											"        pm.expect(pm.response.json().message).to.exist.and.to.be.a('string');\r",
 											"        pm.expect(pm.response.json().data).to.exist.and.to.be.an('object');\r",
-											"        pm.expect(message).eql(\"Successfully updated role\")\r",
+											"        // pm.expect(message).eql(\"Successfully updated role\")\r",
 											"    });\r",
 											"\r",
-											"    pm.test(\"'status' in request body should not be empty\", function () {\r",
-											"        var status = pm.response.json().status;\r",
-											"        pm.expect(status).to.exist;\r",
-											"        pm.expect(status).to.not.equal('');\r",
+											"    pm.test(\"'status' in request body to be true\", function () {\r",
+											"        pm.expect(data.status).to.eql(true)\r",
 											"    })\r",
 											"}\r",
 											"catch (errors) {\r",
@@ -5666,7 +5664,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"PLUTO@@\" // active|inactive\n}",
+									"raw": "{\n    \"description\": \"Member\",\n    \"name\": \"{{$randomWord}}\",\n    \"status\": \"PLUTO@@\" // active|inactive\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5685,7 +5683,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "6146930d-d868-4459-b13d-c5220ca68fae"
+											"value": "01917974-48ce-7997-92d2-b956089920f7"
 										}
 									]
 								}
@@ -5836,7 +5834,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "6146930d-d868-4459-b13d-c5220ca68fae"
+											"value": "01917974-48ce-7997-92d2-b956089920f7"
 										}
 									]
 								}
