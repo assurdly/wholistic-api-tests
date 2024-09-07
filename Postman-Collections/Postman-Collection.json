@@ -3931,7 +3931,7 @@
 											"    });",
 											"",
 											"    pm.test('Verify a valid message is returned', () => {",
-											"        pm.expect(message).eql(\"Permission '0612275d-caf2-477b-a408-cafe98c1221' does not exist\");",
+											"        pm.expect(data.permissions).eql(\"each value in permissions must be a UUID\");",
 											"    });",
 											"",
 											"    pm.test(\"Status code response is 'Bad Request'\", function () {",
@@ -4071,13 +4071,13 @@
 											"        pm.expect(data.permissions).eql(\"each value in permissions should not be empty\");",
 											"    });",
 											"    pm.test(\"Response body is correct\", function () {",
-											"     pm.expect(pm.response.json()).to.be.an('object');",
-											"     pm.expect(pm.response.json().message).to.exist.and.to.be.a('string');",
-											"     pm.expect(pm.response.json().data).to.be.an('object');",
-											"     pm.expect(pm.response.json().data.name).to.exist.and.to.be.a('string');",
-											"     pm.expect(pm.response.json().data.status).to.exist.and.to.be.a('string');",
-											"     pm.expect(pm.response.json().data.permissions).to.exist.and.to.be.a('string');",
-											"}); ",
+											"        pm.expect(pm.response.json()).to.be.an('object');",
+											"        pm.expect(pm.response.json().message).to.exist.and.to.be.a('string');",
+											"        pm.expect(pm.response.json().data).to.be.an('object');",
+											"        pm.expect(pm.response.json().data.name).to.exist.and.to.be.a('string');",
+											"        pm.expect(pm.response.json().data.status).to.exist.and.to.be.a('string');",
+											"        pm.expect(pm.response.json().data.permissions).to.exist.and.to.be.a('string');",
+											"    });",
 											"} catch (errors) {",
 											"    console.error(errors);",
 											"}",
@@ -4725,7 +4725,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "6146930d-d868-4459-b13d-c5220ca68fae"
+											"value": "fd8d13f1-95c6-43ea-9084-b94de22163f5"
 										}
 									]
 								}
