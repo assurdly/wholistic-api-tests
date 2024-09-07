@@ -5350,7 +5350,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
+									"raw": "{\n    \"description\": \"Member\",\n    \"name\": \"{{$randomWord}}\",\n    \"status\": \"inactive\" // active|inactive\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5369,7 +5369,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "6146930d-d868-4459-b13d-c5220ca68fae"
+											"value": "01917974-48ce-7997-92d2-b956089920f7"
 										}
 									]
 								}
@@ -5508,7 +5508,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"\" // active|inactive\n}",
+									"raw": "{\n    \"description\": \"Member\",\n    \"name\": \"{{$randomWord}}\",\n    \"status\": \"\" // active|inactive\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5527,7 +5527,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "6146930d-d868-4459-b13d-c5220ca68fae"
+											"value": "01917974-48ce-7997-92d2-b956089920f7"
 										}
 									]
 								}
