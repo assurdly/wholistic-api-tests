@@ -979,55 +979,6 @@
 					"response": []
 				},
 				{
-					"name": "Login - Empty Fields",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "58f07815-f8ea-44b7-b155-6e4a8dbfa53d",
-								"exec": [
-									"const jsonData = pm.response.json();",
-									"",
-									"pm.test(\"Status code is 400\", function () {",
-									"    pm.response.to.have.status(400);",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"    pm.expect(jsonData.data).to.be.an('object');",
-									"});",
-									"",
-									"pm.test(`Message is \"Validation Error.\"`, function () {",
-									"    pm.expect(jsonData.message).to.include('Validation Error.');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "0bd22b65-d44d-45b4-9c58-4be88063e101",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/auth/login"
-					},
-					"response": []
-				},
-				{
 					"name": "Login - Invalid Credentials",
 					"event": [
 						{
@@ -10071,6 +10022,55 @@
 				}
 			],
 			"id": "c0edca93-b38e-45a4-b0f3-c2406c0718ed"
+		},
+		{
+			"name": "Login - Empty Fields",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "58f07815-f8ea-44b7-b155-6e4a8dbfa53d",
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response body property\", function () {",
+							"    pm.expect(jsonData).to.be.an('object');",
+							"    pm.expect(jsonData.message).to.be.a('string');",
+							"    pm.expect(jsonData.data).to.be.an('object');",
+							"});",
+							"",
+							"pm.test(`Message is \"Validation Error.\"`, function () {",
+							"    pm.expect(jsonData.message).to.include('Validation Error.');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "0bd22b65-d44d-45b4-9c58-4be88063e101",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/auth/login"
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -10083,7 +10083,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e93b74f3-c710-42bf-b86a-0291838bb026",
+				"id": "154174cf-b2dd-4b4b-91ee-4c7904e02bd5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -10092,14 +10092,14 @@
 					"    value: \"https://\" + \"admin.wholistic.work\"",
 					"});",
 					"",
-					"pm.environment.set(\"baseUrl\", \"https://platform.api-dev.wholistic.work\")"
+					"pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "efefbeff-d293-43d7-90d7-579e74472478",
+				"id": "b80d3b03-a6b3-4c4c-b0bb-a82c7228cc10",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
