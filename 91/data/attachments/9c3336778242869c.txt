@@ -1,5 +1,0 @@
-{
-    "oldPassword": "123456789!dD#!",
-    "newPassword": "Password12@@",
-    "confirmPassword": "Password12@@"
-}
