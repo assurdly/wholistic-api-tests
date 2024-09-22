@@ -1,0 +1,13 @@
+{
+    "x-workspace-id": "0dc706da-90d0-4709-8024-ad61227602e7",
+    "origin": "https://azeez.wholistic.work",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTEzNTM0LWZkMDEtNzIyMC05NzVhLTlmM2U1YjA0ZjYxNSIsImNvdW50IjowLCJpYXQiOjE3MjcwMjU3MDUsImV4cCI6MTcyOTYxNzcwNX0.kCIzCmB3mcGeKK0RHHG2S4H8gNbRlDTM9FqxnuCuZH0",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "1d3c7fd1-84e0-4d07-bc0a-bbdc7a22c3dc",
+    "Host": "platform.api.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Cookie": "accessToken=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTEzNTM0LWZkMDEtNzIyMC05NzVhLTlmM2U1YjA0ZjYxNSIsImNvdW50IjowLCJpYXQiOjE3MjcwMjU3MDUsImV4cCI6MTcyOTYxNzcwNX0.kCIzCmB3mcGeKK0RHHG2S4H8gNbRlDTM9FqxnuCuZH0.oDPBiJNf63owTKVy0xWoRCkywHU4i7g%2FErl0Wd1vxTM"
+}
