@@ -10075,23 +10075,23 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "154174cf-b2dd-4b4b-91ee-4c7904e02bd5",
+				"id": "d45ad05c-a852-4cbb-b22b-50226d31ecaa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"origin\",",
-					"    value: \"https://\" + \"admin.wholistic.work\"",
+					"    value: \"https://\" + \"admin.dev.wholistic.work\"",
 					"});",
 					"",
-					"pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
+					"pm.environment.set(\"baseUrl\", \"https://auth.dev.wholistic.work\")"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "b80d3b03-a6b3-4c4c-b0bb-a82c7228cc10",
+				"id": "667c5350-3e42-4ddd-9c37-4dd3dc20ed21",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
