@@ -622,7 +622,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"oyedotunabisola@gmail.com\",\n    \"password\": \"@Password2\"\n}",
+									"raw": "{\n    \"email\": \"azeez@assurdly.com\",\n    \"password\": \"Password12@@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
