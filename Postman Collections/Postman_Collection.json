@@ -889,7 +889,7 @@
 							"script": {
 								"id": "bbf2bf2a-5474-4ecd-9eaa-97ddda15701d",
 								"exec": [
-									"pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')"
+									"pm.environment.set('baseUrl', 'https://platform.api-dev.wholistic.work')"
 								],
 								"type": "text/javascript",
 								"packages": {}
