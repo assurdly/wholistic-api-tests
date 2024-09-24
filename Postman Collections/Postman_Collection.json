@@ -10075,7 +10075,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ef7b401e-382f-4b23-9e27-9cdb7669d8c9",
+				"id": "7e27a240-eba0-412f-87f7-7e5dfe394535",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -10084,14 +10084,14 @@
 					"    value: \"https://\" + \"admin.wholistic.work\"",
 					"});",
 					"",
-					"pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
+					"// pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "b48c23d7-f44a-4ee1-af08-36275fba0e5f",
+				"id": "273bb44d-c07b-4817-8b12-aeee178df8fd",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
