@@ -4212,6 +4212,20 @@
 										"type": "text/javascript",
 										"packages": {}
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1e198cf5-c8f3-4262-82a2-2489f8ccda6d",
+										"exec": [
+											"pm.request.headers.add({\r",
+											"    key: \"origin\",\r",
+											"    value: \"https://\" + \"admin.wholistic.work\"\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
 								}
 							],
 							"id": "ba415429-45d4-4063-abc8-c115159e3ded",
@@ -4228,7 +4242,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/billings/transactions?activeWorkspace=6cb80e0a-a70a-4493-a2c8-0ffe09b1def7",
+									"raw": "{{baseUrl}}/billings/transactions?activeWorkspace=40620b2d-e53f-4464-8c85-4d9042f4ecb1",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -4239,8 +4253,7 @@
 									"query": [
 										{
 											"key": "activeWorkspace",
-											"value": "6cb80e0a-a70a-4493-a2c8-0ffe09b1def7",
-											"type": "text"
+											"value": "40620b2d-e53f-4464-8c85-4d9042f4ecb1"
 										}
 									]
 								}
