@@ -4567,27 +4567,33 @@
 									"query": [
 										{
 											"key": "filter[currency]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[reference]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[status]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[createdAt][gt]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[createdAt][lt]",
-											"value": null,
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[workspaceId]",
+											"value": "01920a0a-f8bf-7aac-8e19-dd9d903beebe",
+											"type": "text",
 											"disabled": true
 										}
 									]
