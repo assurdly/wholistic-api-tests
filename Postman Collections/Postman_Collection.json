@@ -10163,13 +10163,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7e27a240-eba0-412f-87f7-7e5dfe394535",
+				"id": "bbcde4df-7ee7-421d-aff1-e06443aabd4f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"origin\",",
-					"    value: \"https://\" + \"admin.wholistic.work\"",
+					"    value: \"https://\" + \"admin.dev.wholistic.work\"",
 					"});",
 					"",
 					"// pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
@@ -10179,7 +10179,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "273bb44d-c07b-4817-8b12-aeee178df8fd",
+				"id": "11080470-4e2d-4adf-8b0c-170b4f5e8f7f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
