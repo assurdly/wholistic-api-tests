@@ -5141,22 +5141,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/workspaces/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"workspaces",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "162a4aff-3153-4487-90ec-bb15bc5d7354"
-										}
-									]
-								}
+								"url": "{{baseUrl}}/platform/workspaces"
 							},
 							"response": [
 								{
@@ -12622,7 +12607,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bbcde4df-7ee7-421d-aff1-e06443aabd4f",
+				"id": "110ab1ec-c411-4109-b853-c880521b0bab",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -12638,7 +12623,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "11080470-4e2d-4adf-8b0c-170b4f5e8f7f",
+				"id": "d0159191-febe-45a2-97eb-f569e330a03c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
