@@ -10346,7 +10346,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n    // \"photoUrl\": \"\"\n}",
+									"raw": "{\n    \"firstName\": \"Admin-Dev\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\",\n    \"domain\": \"admin.dev.wholistic.work\"\n    // \"photoUrl\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
