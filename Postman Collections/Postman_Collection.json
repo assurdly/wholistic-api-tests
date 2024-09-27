@@ -5133,6 +5133,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -5147,7 +5153,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "40620b2d-e53f-4464-8c85-4d9042f4ecb1"
+											"value": "162a4aff-3153-4487-90ec-bb15bc5d7354"
 										}
 									]
 								}
