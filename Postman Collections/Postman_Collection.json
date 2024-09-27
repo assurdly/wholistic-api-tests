@@ -10104,6 +10104,2459 @@
 			"id": "c0edca93-b38e-45a4-b0f3-c2406c0718ed"
 		},
 		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"item": [
+						{
+							"name": "Get Profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d2e922c0-5a41-480e-b02b-1c9968eec174",
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"loggedInUserId\", data.user.id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "5660c612-6c50-40e2-8293-c0b18f5be107",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "dd451497-1c3a-4eb1-804d-1536cc1aa409",
+									"name": "Get Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "426"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:45:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Profile - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ddd0b62f-7a97-4d3f-b76a-9a9e24fba16b",
+										"exec": [
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "00a34248-7240-41d2-ae05-0c7a0a9764b7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "697e11da-48cc-4b15-bf72-154c689611c2",
+									"name": "Get Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "426"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:45:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "64f81057-7d4d-422d-b2ee-b2469bb9879f"
+				},
+				{
+					"name": "Update Profile",
+					"item": [
+						{
+							"name": "Update Profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "df9f498d-ec1e-4071-9105-bfc1ea34e827",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c62eabbd-3905-496e-b686-15b5295f95d6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{adminAccessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n    // \"photoUrl\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "4443d67f-1afa-4535-b326-cd21d13f2719",
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Profile- Empty fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "df9f498d-ec1e-4071-9105-bfc1ea34e827",
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code name has Bad Request\", function () {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(`Message is \"Validation Error.\"`, function () {",
+											"    pm.expect(jsonData.message).to.include('Validation Error.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "3ede4255-5ee6-4911-8713-7e824f24336e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"phone\": \"\",\n    \"country\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "00ceee5a-0a5d-4d3e-87af-62cb9c196f4e",
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Profile - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "df9f498d-ec1e-4071-9105-bfc1ea34e827",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c2954f00-66c4-4372-a630-de062b0c3a60",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile"
+							},
+							"response": [
+								{
+									"id": "301df299-5cc4-4f08-bf38-da8fe7bbbe61",
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "dd9c9194-8ecf-4266-bfc1-785b8f90b758"
+				},
+				{
+					"name": "Generate 2FA",
+					"item": [
+						{
+							"name": "Generate 2FA",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "14b2e147-7259-4579-b75a-c9f998ece057",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"pm.test(\"Status code response is 'Created'\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "68ac12bc-3fd2-4474-b3c2-ae28c41074ab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/profile/two-fa"
+							},
+							"response": [
+								{
+									"id": "129be592-679c-46de-95a4-7cbf3879a8be",
+									"name": "Generate 2FA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": "{{baseUrl}}/profile/two-fa"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2772"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ad4-LxdZqrH0SehmuSkwcSty4UCr4Lg\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:49:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully generated 2FA code\",\n    \"data\": {\n        \"otpAuthURL\": \"otpauth://totp/SecretKey?secret=GFZFC53MJMYDI23LKNLEOM3BMM2UCTD2\",\n        \"qrCodeImage\": \"data:image/png;base64,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\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Generate 2FA - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "14b2e147-7259-4579-b75a-c9f998ece057",
+										"exec": [
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "2b7c8c99-bf98-435f-a2b3-f2783ead4a62",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}/profile/two-fa"
+							},
+							"response": [
+								{
+									"id": "df8bc008-94e0-403f-9aaf-63a1292acd16",
+									"name": "Generate 2FA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": "{{baseUrl}}/profile/two-fa"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2772"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ad4-LxdZqrH0SehmuSkwcSty4UCr4Lg\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:49:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully generated 2FA code\",\n    \"data\": {\n        \"otpAuthURL\": \"otpauth://totp/SecretKey?secret=GFZFC53MJMYDI23LKNLEOM3BMM2UCTD2\",\n        \"qrCodeImage\": \"data:image/png;base64,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\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "61f33cad-b8de-42c2-914a-40eec35396e5"
+				},
+				{
+					"name": "Enable 2FA",
+					"item": [
+						{
+							"name": "Enable 2FA",
+							"id": "2d9875b6-fd95-4134-8bc6-09200704c168",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"509404\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/two-fa"
+							},
+							"response": [
+								{
+									"id": "ed085677-f08e-4db3-afe0-94506f64a1c7",
+									"name": "Enable 2FA",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"509404\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/two-fa"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "174"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ae-EAo4bcbGG4YdofPNTrjoMhunt8I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:51:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully enabled 2FA\",\n    \"data\": [\n        \"P2XTre\",\n        \"Wa3kAu\",\n        \"byFsXs\",\n        \"ZyTAOC\",\n        \"zWGr6n\",\n        \"c3jlaU\",\n        \"eFBLCz\",\n        \"Fgk5bZ\",\n        \"CukZok\",\n        \"zdcO26\",\n        \"1c8ips\",\n        \"JLKJuU\"\n    ]\n}"
+								}
+							]
+						}
+					],
+					"id": "65b64e6a-a649-4556-953c-7b3abd8f0ac9"
+				},
+				{
+					"name": "Disable 2FA",
+					"item": [
+						{
+							"name": "Disable 2FA",
+							"id": "2f4c1bb8-52d5-4f27-a8c7-6ecd9933234e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"285034\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/two-fa/disable"
+							},
+							"response": [
+								{
+									"id": "cba1a9d5-37fa-4a46-92e7-584e08ad6454",
+									"name": "Disable 2FA",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"285034\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/two-fa/disable"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3a-wFg4OVRtNAL6UUw7+6xApaNEwSM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:52:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully disabled 2FA\"\n}"
+								}
+							]
+						}
+					],
+					"id": "89333942-550b-4c6c-a754-54952534ef55"
+				},
+				{
+					"name": "Change Password",
+					"item": [
+						{
+							"name": "Change Password - Invalid Current Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ad9ecc8a-b94c-4ae3-a4a2-fe7a604ad12a",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ebe94ada-aedc-4b07-a816-e6bfb30697ad",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"123456789!dD#!\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "4ae6e750-06d9-438d-a1b9-605f4e685faa",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Password Complexity",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf235ed9-59ab-4bf1-8f3d-a92dc5240979",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "783e38f6-ffe8-4053-b6ec-cec547f9051d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"123456789\",\n    \"confirmPassword\": \"123456789\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "77834d00-9f95-4237-8e14-a0b3d619a84f",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Mismatched Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf235ed9-59ab-4bf1-8f3d-a92dc5240979",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "062517e4-38e6-4ef9-81b0-cac91f2ebacb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@@\",\n    \"confirmPassword\": \"Password12@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "125714f3-dc81-44c0-a69a-57b902d6edcd",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Same as Old Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf235ed9-59ab-4bf1-8f3d-a92dc5240979",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e785a492-f51d-4a05-889d-c6d83db06cd1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "dd0cf13d-d804-4572-bfb3-71fb7097837c",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Valid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf235ed9-59ab-4bf1-8f3d-a92dc5240979",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "97a351ce-5eca-4c11-8a95-f08b27169eec",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@@\",\n    \"confirmPassword\": \"Password12@@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "4d4acee4-cecc-4b8b-8fc9-1a5ea4eaf3d4",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Revert",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bf235ed9-59ab-4bf1-8f3d-a92dc5240979",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "93b022ed-5f4c-4d54-8aeb-e95f62d37035",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@@\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/password"
+							},
+							"response": [
+								{
+									"id": "27ce86b3-5223-41ff-8008-1bc3f3293fd4",
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/password"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						}
+					],
+					"id": "2406873a-846e-4f76-97fb-5c03be637c09"
+				},
+				{
+					"name": "List Email Settings",
+					"item": [
+						{
+							"name": "List Email Settings",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fe5217df-4f3f-46f3-bd7f-6a5cddcc27c4",
+										"exec": [
+											"// try {",
+											"//     const { data } = pm.response.json()",
+											"",
+											"//     pm.test(\"Status code is 200\", function () {",
+											"//         pm.response.to.have.status(200);",
+											"//     });",
+											"//     pm.test(\"Status code response is 'OK'\", function () {",
+											"//         pm.response.to.have.status('OK');",
+											"//     });",
+											"// } catch (errors) {",
+											"//     console.error(errors)",
+											"// }",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e8470d03-4274-49c6-9cf8-0aa046bb8fa0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile/email-settings"
+							},
+							"response": []
+						}
+					],
+					"id": "a5340099-3209-47f9-bbb1-50e9d85509f9"
+				},
+				{
+					"name": "Set Emails Settings",
+					"item": [
+						{
+							"name": "Set Email Settings",
+							"id": "ffa62caa-2d1a-4265-9efd-370f336996fb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"templateId\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n    \"enabled\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/email-settings"
+							},
+							"response": []
+						}
+					],
+					"id": "80e3b289-9fbb-48b0-a2ee-53bc2507cb8d"
+				},
+				{
+					"name": "List Notification Settings",
+					"item": [
+						{
+							"name": "List Notification Settings",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f6931031-7f2b-4de8-9ec8-53cf9b572e3f",
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "2630fddd-e5fd-4d37-a4c4-a9a207523ca6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/notification-settings?limit=100",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"notification-settings"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c7aedcaa-c4e1-44ae-b41e-498ba3860cda",
+									"name": "List Notification Settings",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/profile/notification-settings"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1042"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"412-SvLf3bbr8rpvoG6oE7pGF2a/Gso\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 25 Jun 2024 20:44:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"1b3ac6b0-8f7d-43a7-b95d-fb1fd3b05437\",\n            \"slug\": \"project-request-created\",\n            \"title\": \"Project Request Update\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"2c19cea6-452a-4f1b-87e0-6f8988f4eeac\",\n            \"slug\": \"comment-notification\",\n            \"title\": \"Comments\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"48457c85-0a6e-4e99-96e1-3d157d87bf2e\",\n            \"slug\": \"project-request-approved\",\n            \"title\": \"Project Request Update\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"4b184be8-c58d-409c-966a-06d1de5004b7\",\n            \"slug\": \"2fa-disabled\",\n            \"title\": \"Disabled 2FA\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"6f3ce822-adfa-4107-9606-638deb161fec\",\n            \"slug\": \"2fa-enabled\",\n            \"title\": \"Enabled 2FA\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"97059832-eae2-43e2-8907-4c3e7d362a83\",\n            \"slug\": \"project-request-disapproved\",\n            \"title\": \"Project Request Update\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"9e9a653d-f41b-4a52-9f89-11f592887413\",\n            \"slug\": \"tag-notification\",\n            \"title\": \"Tags\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"fc0b0861-977a-4efd-b999-03915186164d\",\n            \"slug\": \"welcome\",\n            \"title\": \"Welcome\",\n            \"enabled\": true\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 8,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "c166eb14-00d8-45b7-8ea6-36894a19b52c"
+				},
+				{
+					"name": "Set Notification Settings",
+					"item": [
+						{
+							"name": "Set Notification Settings",
+							"id": "84a17bd1-051d-4dbf-b4e0-36ad107923d4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // missing templateIds here would be disabled for user.\n    \"enabled\": [\n        \"019117a3-da62-7339-9270-014a5165d6e2\",\n        \"019117a3-da62-7339-9271-1e75ef911c94\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/profile/notification-settings"
+							},
+							"response": [
+								{
+									"id": "a9cd43d5-e351-456e-b86b-bba70c888710",
+									"name": "Set Notification Settings",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    // missing templateIds here would be disabled for user.\n    \"enabled\": [\n        \"019117a3-da62-7339-9270-014a5165d6e2\",\n        \"019117a3-da62-7339-9271-1e75ef911c94\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/profile/notification-settings"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-site"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 09:50:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					],
+					"id": "183246eb-4fdb-4da8-b25b-3c363273eeb2"
+				},
+				{
+					"name": "Get Profile Role",
+					"item": [
+						{
+							"name": "Get Profile Role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c65f44b7-1935-4ab9-aa0a-6f17f6ef2e42",
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"loggedInUserId\", data.user.id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e1700587-d0cb-4886-9b7d-23fe7731061d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile/role"
+							},
+							"response": [
+								{
+									"id": "5d7d8622-b0cf-417b-93e5-c94040a5a84c",
+									"name": "Get Profile Role",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/profile/role"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "8938"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"22ea-CdfOZe4nsscKNNekt6YXHNwZB6g\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 19 Jun 2024 15:35:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"5b57b0b3-c731-4b88-b008-155fba62f829\",\n        \"name\": \"Workspace Manager\",\n        \"slug\": \"workspace-manager\",\n        \"description\": \"Workspace Manager role\",\n        \"status\": \"active\",\n        \"permissions\": [\n            {\n                \"id\": \"013784d6-4a8c-4902-812e-8c604764f06f\",\n                \"name\": \"view email template\",\n                \"slug\": \"view-email-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"01d7ed1e-8422-49bd-acbf-a33b4e84b238\",\n                \"name\": \"list subscriptions\",\n                \"slug\": \"list-subscriptions\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"0612275d-caf2-477b-a408-cafe98c12a21\",\n                \"name\": \"delete team member\",\n                \"slug\": \"delete-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"08fe3e54-b50e-4c56-8e4c-400b1adbff33\",\n                \"name\": \"list project reports\",\n                \"slug\": \"list-project-reports\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"0a7c6031-6b82-48ea-aad6-100c7de08f25\",\n                \"name\": \"list email templates\",\n                \"slug\": \"list-email-templates\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"110f06f4-995c-42ac-a3ef-3766741c1e41\",\n                \"name\": \"change password\",\n                \"slug\": \"change-password\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1ac1c791-b4e0-4edb-b39c-025f4ecbb52f\",\n                \"name\": \"list team members\",\n                \"slug\": \"list-team-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1b4ed25e-e178-46f9-b9b6-dd14460d9f5b\",\n                \"name\": \"disable twofa\",\n                \"slug\": \"disable-twofa\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1dd03657-23b2-42c2-8196-76bc835f9749\",\n                \"name\": \"update project\",\n                \"slug\": \"update-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"2267c76a-9400-4603-b162-b0cf8a788879\",\n                \"name\": \"view team member\",\n                \"slug\": \"view-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"2a7057d2-454f-4fde-869a-805e05f1791e\",\n                \"name\": \"update role\",\n                \"slug\": \"update-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"2d620db3-35fa-492f-8cc5-b9ba55287b18\",\n                \"name\": \"list project integrations\",\n                \"slug\": \"list-project-integrations\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"308759f8-0c25-44ad-851b-718be1e7632b\",\n                \"name\": \"update team member\",\n                \"slug\": \"update-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"31947ffa-8fdc-4683-b9e5-d452387774f3\",\n                \"name\": \"list integrations\",\n                \"slug\": \"list-integrations\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"470f190c-0e6b-4824-a477-dd8dc7956126\",\n                \"name\": \"view profile\",\n                \"slug\": \"view-profile\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"541258eb-368c-42bb-bc29-75f2d8905300\",\n                \"name\": \"view client\",\n                \"slug\": \"view-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"55c3123e-a7ac-4419-827e-ec0eb9a32295\",\n                \"name\": \"list projects requests\",\n                \"slug\": \"list-projects-requests\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"58261bda-4817-4184-ad4f-14e58428bf5e\",\n                \"name\": \"add client\",\n                \"slug\": \"add-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"58e724c0-2ad5-4361-910a-b4a8a98b73bc\",\n                \"name\": \"view audit\",\n                \"slug\": \"view-audit\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"5d8daaf1-5cb8-4895-9f00-da59f9e3a519\",\n                \"name\": \"view project members\",\n                \"slug\": \"view-project-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"5eabbacc-3bf6-43c8-a377-6486881925f7\",\n                \"name\": \"list cards\",\n                \"slug\": \"list-cards\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"5ec61b46-4321-42a2-a36a-c0ba0b282980\",\n                \"name\": \"update profile\",\n                \"slug\": \"update-profile\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"616d82a3-62a3-49b7-ab04-59366e9f6781\",\n                \"name\": \"delete integration\",\n                \"slug\": \"delete-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"676d09dc-681a-4b4e-88e4-32e5c0e0ff61\",\n                \"name\": \"delete workspace\",\n                \"slug\": \"delete-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"6b181afe-391d-429d-99dc-e65fbf6698ba\",\n                \"name\": \"create workspace\",\n                \"slug\": \"create-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7aa12c09-d85a-472a-92c6-8e15307cbbbe\",\n                \"name\": \"set integration\",\n                \"slug\": \"set-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7b5c1836-50b1-426a-b067-b409a53f1dd2\",\n                \"name\": \"list projects\",\n                \"slug\": \"list-projects\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7ec2674f-6552-406c-8b41-48339dd51882\",\n                \"name\": \"list audit logs\",\n                \"slug\": \"list-audit-logs\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"7fbffb3d-55dd-4d5e-b090-ce20a92682e9\",\n                \"name\": \"deactivate team member\",\n                \"slug\": \"deactivate-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"81c13d1d-14c3-450e-9654-6f9c7a590a7f\",\n                \"name\": \"activate role\",\n                \"slug\": \"activate-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"8d86243a-5c83-4acd-b38d-1cc3ed831658\",\n                \"name\": \"view workspace\",\n                \"slug\": \"view-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"8f88cc74-037d-4343-bcfa-2bfc5a8744db\",\n                \"name\": \"list report templates\",\n                \"slug\": \"list-report-templates\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"912c2bb0-a019-43d9-8fa0-e3ed83a10eba\",\n                \"name\": \"create project\",\n                \"slug\": \"create-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"96b84514-786a-4ddb-977d-9bc95e3ce49f\",\n                \"name\": \"view project\",\n                \"slug\": \"view-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"986589bb-fabb-441e-88d9-7ab942c1d600\",\n                \"name\": \"enable twofa\",\n                \"slug\": \"enable-twofa\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"9dafdcd5-74d8-47c6-9f70-9fbe6b515ad0\",\n                \"name\": \"add project integration\",\n                \"slug\": \"add-project-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a1e4d72c-60e4-414b-a07f-f6e087348166\",\n                \"name\": \"update workspace\",\n                \"slug\": \"update-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a447bfc5-d8c5-44a0-8bef-d43f05df31e8\",\n                \"name\": \"update client\",\n                \"slug\": \"update-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a521bf6d-7ece-461e-9862-e86449d4763e\",\n                \"name\": \"deactivate role\",\n                \"slug\": \"deactivate-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"a6a70143-7745-4d05-b72f-4414e9b30859\",\n                \"name\": \"list subscription plans\",\n                \"slug\": \"list-subscription-plans\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a878d6b3-3d61-4b53-95aa-f0301f9cc8eb\",\n                \"name\": \"add project report\",\n                \"slug\": \"add-project-report\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a879b6b4-2b9e-42be-b9dd-8ef4c81c5ab0\",\n                \"name\": \"create report template\",\n                \"slug\": \"create-report-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"aaf7f2bc-33de-4018-b86e-fb3865259b64\",\n                \"name\": \"create role\",\n                \"slug\": \"create-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"bea8fe13-5db1-4d0f-ac9f-670d110dcc85\",\n                \"name\": \"list clients\",\n                \"slug\": \"list-clients\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"c32793a9-77d0-47d4-8588-49ad46f81c8e\",\n                \"name\": \"delete role\",\n                \"slug\": \"delete-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"c367090b-d9b6-44b9-b591-40bdf85445e3\",\n                \"name\": \"subscribe to subscription plan\",\n                \"slug\": \"subscribe-to-subscription-plan\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"c63a5814-9247-437a-a709-c3fe7a6550eb\",\n                \"name\": \"view report template\",\n                \"slug\": \"view-report-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"d36e111b-3770-4008-bee7-2b742dc2127b\",\n                \"name\": \"delete client\",\n                \"slug\": \"delete-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"d5e70c38-d093-4bfc-9bec-de684498d4c9\",\n                \"name\": \"activate team member\",\n                \"slug\": \"activate-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d66960bf-aeb6-4f2b-94ee-16931b4943d3\",\n                \"name\": \"list workspaces\",\n                \"slug\": \"list-workspaces\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d740a7b8-d9ba-4fa6-b258-20440b53617c\",\n                \"name\": \"add team member\",\n                \"slug\": \"add-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d753d633-1b16-442a-9c07-f005533fdb30\",\n                \"name\": \"list roles\",\n                \"slug\": \"list-roles\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d7c92c49-8dd2-4e01-82bf-9b8958ae7cae\",\n                \"name\": \"create email template\",\n                \"slug\": \"create-email-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"e41e317b-2ace-4cbd-839d-fd8176574a51\",\n                \"name\": \"update project report\",\n                \"slug\": \"update-project-report\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"e75eb445-231e-4751-96b1-aa603441cbde\",\n                \"name\": \"delete project\",\n                \"slug\": \"delete-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"ecbd3588-d1f2-4489-b9d3-6e82e7f85acc\",\n                \"name\": \"set project members\",\n                \"slug\": \"set-project-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            }\n        ],\n        \"createdAt\": \"2024-06-10T05:42:47.766Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "7eb67762-ddc3-4aee-bbd4-3b5a2db4d4e2"
+				},
+				{
+					"name": "Set Device",
+					"item": [
+						{
+							"name": "Set Device",
+							"id": "e53d55f4-f8b2-4766-b877-7fdc846ef2e1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"notificationToken\": \"firebaseNotificationToken\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/device/:deviceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"device",
+										":deviceId"
+									],
+									"variable": [
+										{
+											"id": "83bb9a87-1b8e-413f-8331-a581367fdd76",
+											"key": "deviceId",
+											"value": "1234567890"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a1cea1c3-8126-4bbe-8372-8951d1014d62",
+									"name": "Set Device",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"notificationToken\": \"firebaseNotificationToken\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/device/:deviceId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"device",
+												":deviceId"
+											],
+											"variable": [
+												{
+													"key": "deviceId",
+													"value": "1234567890"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Jul 2024 17:24:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					],
+					"id": "d76d922a-cd12-4d00-bbcd-521faff813e8"
+				},
+				{
+					"name": "List Notifications",
+					"item": [
+						{
+							"name": "List Notifications",
+							"id": "941c240a-52e1-4d07-9238-4de21e264f4a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{accessToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/profile/notifications"
+							},
+							"response": [
+								{
+									"id": "7a23d57b-037c-4592-a5ae-2708290fec3e",
+									"name": "List Notifications",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/profile/notifications"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "284"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11c-u7F+I7QcGioXaf7srhkSqDA4Y00\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Jul 2024 05:56:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"42800ccb-8af6-44db-a411-14dc42c2e093\",\n            \"title\": \"Project Request Update\",\n            \"body\": \"A new project request has been submitted for your review.\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "b498690f-86f9-4a26-8ff2-eaac29735d86"
+				},
+				{
+					"name": "Upload",
+					"item": [
+						{
+							"name": "Upload File",
+							"id": "3e9fe7a3-ad0a-4a8c-8ee0-d84c13f9c17b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/thewunmi/Documents/Screenshot 2023-07-06 at 10.09.59.png"
+										}
+									]
+								},
+								"url": "{{baseUrl}}/profile/uploads"
+							},
+							"response": [
+								{
+									"id": "be837b8a-62ff-4e5d-91aa-27fcdffd351c",
+									"name": "Upload File",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/Users/thewunmi/Documents/Screenshot 2023-07-06 at 10.09.59.png"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/profile/uploads"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "343"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"157-OfqG8Ez3odNBrMvhxQCr/tEuB98\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Jul 2024 09:34:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": {\n        \"url\": \"https://wholistic.blob.core.windows.net/app/90c6c049-7241-44d9-9c86-2cfb967ba13a%2FScreenshot%202023-07-06%20at%2010.09.59.png?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2024-07-24T16:54:13Z&st=2024-07-24T08:54:13Z&spr=https&sig=71J4TtM86AgTyIlU9UNS1XKT4MBBAD4u9SgCsorEdlA%3D\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "a711326f-0308-4d59-b09a-eaead0fb6285"
+				}
+			],
+			"id": "b1987826-21a0-4ee2-a996-7aae7bd54940"
+		},
+		{
 			"name": "Login - Empty Fields",
 			"event": [
 				{
