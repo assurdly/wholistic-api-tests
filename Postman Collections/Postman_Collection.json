@@ -6810,6 +6810,11 @@
 								}
 							],
 							"id": "3b2c17b9-3c19-4e6e-b3c3-ffc87e12f57b"
+						},
+						{
+							"name": "Export workspace",
+							"item": [],
+							"id": "888587d3-8851-4ba2-b7b3-2548c0a403a5"
 						}
 					],
 					"id": "b30f37a6-d3fc-40a6-a0a8-c3f5552b174c"
