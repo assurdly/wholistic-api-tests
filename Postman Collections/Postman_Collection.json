@@ -6813,7 +6813,36 @@
 						},
 						{
 							"name": "Export workspace",
-							"item": [],
+							"item": [
+								{
+									"name": "Export Workspaces",
+									"id": "5caf39b9-f8ba-4801-b5f2-724dc50a1f2c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{adminAccessToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"format\": \"csv\" // xlsx|pdf|csv\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/platform/workspaces/export"
+									},
+									"response": []
+								}
+							],
 							"id": "888587d3-8851-4ba2-b7b3-2548c0a403a5"
 						}
 					],
@@ -12598,34 +12627,6 @@
 					}
 				},
 				"url": "{{baseUrl}}/auth/login"
-			},
-			"response": []
-		},
-		{
-			"name": "Export Workspaces",
-			"id": "5caf39b9-f8ba-4801-b5f2-724dc50a1f2c",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "{{adminAccessToken}}"
-					}
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"format\": \"csv\" // xlsx|pdf|csv\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseUrl}}/platform/workspaces/export"
 			},
 			"response": []
 		}
