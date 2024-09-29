@@ -3774,7 +3774,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\" //monthly|yearly\n}",
+									"raw": "{\n    \"name\": \"Pro Max\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"All features!\",\n    \"amount\": 1000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\" //monthly|yearly\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5574,7 +5574,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "40620b2d-e53f-4464-8c85-4d9042f4ecb1"
+											"value": "01921ea4-c150-7ff4-9f1d-c0eaf7c3dcba"
 										}
 									]
 								}
@@ -12680,7 +12680,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"inactivityTimeout\": 1800000,\n    \"requestTimeout\": 1800000,\n    \"authTokenValidity\": 1800000,\n    \"refreshTokenValidity\": 1800000,\n    \"passwordResetTokenValidity\": 1800000,\n    \"setupTokenValidity\": 1800000,\n    \"maxAuthAttempts\": 9,\n    \"maxAuthAttemptValdiity\": 1800000\n}",
+					"raw": "{\n    \"inactivityTimeout\": 1800000,\n    \"requestTimeout\": 1800000,\n    \"authTokenValidity\": 1800000,\n    \"refreshTokenValidity\": 1800000,\n    \"passwordResetTokenValidity\": 1800000,\n    \"setupTokenValidity\": 1800000,\n    \"maxAuthAttempts\": 10,\n    \"maxAuthAttemptValdiity\": 1800000\n}",
 					"options": {
 						"raw": {
 							"language": "json"
