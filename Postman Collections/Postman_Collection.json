@@ -4964,8 +4964,48 @@
 					"id": "6e6341f8-bf72-43bf-89c8-6dcc479d454f"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
+					"name": "Export transaction",
+					"item": [
+						{
+							"name": "Export Transactions Copy",
+							"id": "b8c31cca-c463-4abb-b685-b2f9c47fd9d4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"format\": \"csv\" // csv|xlsx|pdf\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/billings/transactions/export",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"transactions",
+										"export"
+									],
+									"query": [
+										{
+											"key": "filter[workspaceId]",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
 					"id": "ee1c792b-dcda-4552-8b4f-64ff912cad85"
 				}
 			],
