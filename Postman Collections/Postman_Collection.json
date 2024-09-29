@@ -4967,7 +4967,7 @@
 					"name": "Export transaction",
 					"item": [
 						{
-							"name": "Export Transactions Copy",
+							"name": "Export Transactions",
 							"id": "b8c31cca-c463-4abb-b685-b2f9c47fd9d4",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
