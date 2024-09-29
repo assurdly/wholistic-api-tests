@@ -12669,6 +12669,28 @@
 				"url": "{{baseUrl}}/auth/login"
 			},
 			"response": []
+		},
+		{
+			"name": "Update Settings",
+			"id": "5cc973ee-ba57-4b8e-83c5-c79d0776a119",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"inactivityTimeout\": 1800000,\n    \"requestTimeout\": 1800000,\n    \"authTokenValidity\": 1800000,\n    \"refreshTokenValidity\": 1800000,\n    \"passwordResetTokenValidity\": 1800000,\n    \"setupTokenValidity\": 1800000,\n    \"maxAuthAttempts\": 9,\n    \"maxAuthAttemptValdiity\": 1800000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/platform/settings"
+			},
+			"response": []
 		}
 	],
 	"auth": {
