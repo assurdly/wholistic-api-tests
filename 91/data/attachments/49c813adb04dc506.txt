@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully updated profile","data":{"id":"01913534-fd01-7220-975a-ab277cdc0224","firstName":"Treva","lastName":"Will","photoUrl":null,"country":"NGA","createdAt":"2024-08-09T03:35:50.791Z"}}
