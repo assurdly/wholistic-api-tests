@@ -5706,7 +5706,7 @@
 					"id": "4875ea08-4697-4270-8fd8-1f7d05f57b2e"
 				},
 				{
-					"name": "Delete Workspace Copy",
+					"name": "Delete Workspace",
 					"id": "031b3c07-e016-4db3-b32c-b83d3e241e91",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -5725,9 +5725,8 @@
 							],
 							"variable": [
 								{
-									"id": "df75727a-3843-4658-9a95-56a8ef151f18",
 									"key": "id",
-									"value": ""
+									"value": "01921ea4-c150-7ff4-9f1d-c0eaf7c3dcba"
 								}
 							]
 						}
