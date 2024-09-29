@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully fetched role","data":{"id":"fd8d13f1-95c6-43ea-9084-b94de22163f5","workspaceId":null,"name":"Project Team Member","slug":"project-team-member","description":"Project Team Member role","status":"active","createdAt":"2024-08-07T21:24:12.281Z"}}

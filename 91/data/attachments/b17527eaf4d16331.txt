@@ -1,0 +1,17 @@
+
+event: message
+id: 1
+data: {"senderId":"assistant","recipientId":"01913534-fd01-7220-975a-9f3e5b04f615","sessionId":"1234567890","messageId":"chatcmpl-ACvYOlc5kfm6iRcTAYTetaVIeSu1F","message":"I"}
+
+event: message
+id: 2
+data: {"senderId":"assistant","recipientId":"01913534-fd01-7220-975a-9f3e5b04f615","sessionId":"1234567890","messageId":"chatcmpl-ACvYOlc5kfm6iRcTAYTetaVIeSu1F","message":" don't"}
+
+event: message
+id: 3
+data: {"senderId":"assistant","recipientId":"01913534-fd01-7220-975a-9f3e5b04f615","sessionId":"1234567890","messageId":"chatcmpl-ACvYOlc5kfm6iRcTAYTetaVIeSu1F","message":" know"}
+
+event: message
+id: 4
+data: {"senderId":"assistant","recipientId":"01913534-fd01-7220-975a-9f3e5b04f615","sessionId":"1234567890","messageId":"chatcmpl-ACvYOlc5kfm6iRcTAYTetaVIeSu1F","message":"."}
+
