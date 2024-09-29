@@ -12603,6 +12603,12 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{adminAccessToken}}"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
