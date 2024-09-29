@@ -12595,6 +12595,28 @@
 				"url": "{{baseUrl}}/auth/login"
 			},
 			"response": []
+		},
+		{
+			"name": "Export Workspaces",
+			"id": "5caf39b9-f8ba-4801-b5f2-724dc50a1f2c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"format\": \"csv\" // xlsx|pdf|csv\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/platform/workspaces/export"
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -12607,13 +12629,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "110ab1ec-c411-4109-b853-c880521b0bab",
+				"id": "263b58d7-106a-4930-b432-51fd8779c689",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"origin\",",
-					"    value: \"https://\" + \"admin.dev.wholistic.work\"",
+					"    value: \"https://\" + \"admin.wholistic.work\"",
 					"});",
 					"",
 					"// pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
@@ -12623,7 +12645,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d0159191-febe-45a2-97eb-f569e330a03c",
+				"id": "1db66199-44e2-4df9-88b2-feac7ec5e9b0",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
