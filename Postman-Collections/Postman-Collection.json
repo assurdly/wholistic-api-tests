@@ -21999,21 +21999,22 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9e9536d5-d194-452d-b909-c24347d02de7",
+				"id": "9d4df893-035d-46b8-a270-da53b05eaf6f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"  key: \"origin\",",
 					"  value: \"https://\" + \"the-devs.wholistic.work\"",
-					"});"
+					"});",
+					" pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "5ed997b2-ecf4-4bd3-913c-1dda558ce6d8",
+				"id": "e78635a9-4ebe-4150-98ab-8d9c76bd8440",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
