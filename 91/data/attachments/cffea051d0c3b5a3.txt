@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully created client","data":{"id":"01924148-8512-766f-8fb2-4bd21c7a0aee","email":"Nelle@mailinator.com","name":"Garrett","contactName":"Azeez","contactPhone":"+2349055755671","contactEmail":"Nelle@mailinator.com","contactName2":null,"contactPhone2":null,"contactEmail2":null,"status":"active","createdAt":"2024-09-30T04:55:24.691Z"}}

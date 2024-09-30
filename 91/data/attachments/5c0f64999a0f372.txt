@@ -1,0 +1,13 @@
+{
+    "purpose": "Testing",
+    "requireTwoFA": false,
+    "logoUrl": "",
+    "requiredEmailDomains": [
+        "wholistic.work"
+    ],
+    "domain": "slug.wholistic.work",
+    "serviceTypes": [
+        "vibes",
+        "inshallah"
+    ]
+}
