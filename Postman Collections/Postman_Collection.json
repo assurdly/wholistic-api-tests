@@ -3174,7 +3174,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test2\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"over jara!\",\n    \"amount\": 2000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"over jara!\",\n    \"amount\": 2000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\n         \"0191073b-9096-7442-9f1e-1b0066e35885\",\n         \"0191073b-9096-7442-9f1e-17c086825238\",\n         \"0191073b-9096-7442-9f1e-0c70c7804b2b\"\n        ],\n    \"processors\": []\n}",
 									"options": {
 										"raw": {
 											"language": "json"
