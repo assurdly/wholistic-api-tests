@@ -3174,7 +3174,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"over jara!\",\n    \"amount\": 2000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\n         \"0191073b-9096-7442-9f1e-1b0066e35885\",\n         \"0191073b-9096-7442-9f1e-17c086825238\",\n         \"0191073b-9096-7442-9f1e-0c70c7804b2b\"\n        ],\n    \"processors\": []\n}",
+									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Limited offer!\",\n    \"amount\": 2000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\n         \"0191073b-9096-7442-9f1e-1b0066e35885\",\n         \"0191073b-9096-7442-9f1e-17c086825238\",\n         \"0191073b-9096-7442-9f1e-0c70c7804b2b\"\n        ],\n    \"processors\": []\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3774,7 +3774,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Pro Max\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"All features!\",\n    \"amount\": 1000,\n    \"currency\": \"NGN\",\n    \"interval\": \"monthly\" //monthly|yearly\n}",
+									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Limited offer!\",\n    \"amount\": 3000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\" //monthly|yearly\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3794,7 +3794,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2d75b05e-499a-4e5a-8b81-52d71e9a7ef8"
+											"value": "01924709-11a0-788e-97d2-8540f0ab48a1"
 										}
 									]
 								}
@@ -4142,7 +4142,25 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}/billings/transactions/stats"
+								"url": {
+									"raw": "{{baseUrl}}/billings/transactions/stats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"transactions",
+										"stats"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
 							},
 							"response": [
 								{
@@ -5037,9 +5055,8 @@
 									],
 									"variable": [
 										{
-											"id": "8ebb4a6a-a1c6-43cf-9e74-bb0c2827a132",
 											"key": "id",
-											"value": ""
+											"value": "01924701-4eb9-788e-97d2-75c630b8e855"
 										}
 									]
 								}
