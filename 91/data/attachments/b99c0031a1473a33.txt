@@ -1,4 +1,0 @@
-{
-    "email": "Nola@mailinator.com",
-    "roleId": "fd8d13f1-95c6-43ea-9084-b94de22163f5"
-}
