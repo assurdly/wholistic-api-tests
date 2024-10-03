@@ -4694,6 +4694,77 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": [\n        {\n            \"id\": \"c967f82c-9f49-4853-8dcb-b9e2e60e2383\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"reference\": \"oo7dh5ub0n\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": 1000,\n                \"currency\": \"NGN\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-05-06T06:10:35.962Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Get Subscription Stats",
+							"id": "5678e536-3a81-40bf-9210-ec290f6f60ed",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/billings/subscriptions/stats"
+							},
+							"response": [
+								{
+									"id": "fa844d78-dd38-4552-9277-b0d4d8f0ea91",
+									"name": "Get Subscription Stats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/billings/subscriptions/stats"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "178"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b2-4WVmyaoztKOcADdb7R9OHw+0qug\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jun 2024 13:41:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Subscription stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"14\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"overdue\"\n        }\n    ]\n}"
+								}
+							]
 						}
 					],
 					"id": "ad20aa96-663c-48d1-a9b7-f6224c1d4cde"
