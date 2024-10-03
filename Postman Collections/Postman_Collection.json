@@ -4274,7 +4274,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/billings/transactions?filter[currency]=NGN",
+									"raw": "{{baseUrl}}/billings/transactions",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -4297,7 +4297,7 @@
 										{
 											"key": "filter[currency]",
 											"value": "NGN",
-											"type": "text"
+											"disabled": true
 										}
 									]
 								}
