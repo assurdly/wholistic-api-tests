@@ -5595,7 +5595,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    // \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
+									"raw": "{\n    // \"purpose\": \"Testing\",\n    // \"requireTwoFA\": false,\n    // \"logoUrl\": \"\",\n    // \"requiredEmailDomains\": [\n    //     \"wholistic.work\"\n    // ],\n    // \"domain\": \"admin.dev.wholistic.work\"\n    // \"serviceTypes\": [\n    //     \"vibes\",\n    //     \"inshallah\"\n    // ],\n    // \"assistantEnabled\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5614,7 +5614,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "0191d70c-d8ef-7aac-8e19-22bc4d6304d8\n"
+											"value": "162a4aff-3153-4487-90ec-bb15bc5d7354"
 										}
 									]
 								}
