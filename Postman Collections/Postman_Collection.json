@@ -5595,7 +5595,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
+									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    // \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -12934,13 +12934,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d3646113-6bb0-46a4-ba88-d10f8ed5cea0",
+				"id": "673b7f1b-c424-46e0-90be-045c227ced9f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"origin\",",
-					"    value: \"https://\" + \"admin.dev.wholistic.work\"",
+					"    value: \"https://\" + \"admin-dev.wholistic.work\"",
 					"});",
 					"",
 					"// pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
@@ -12950,7 +12950,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8ee71f2c-948f-4163-8f47-a9c1b595ae40",
+				"id": "40d07ede-5afd-42d7-a703-677e5e0d72e8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
