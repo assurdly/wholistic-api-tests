@@ -4,7 +4,7 @@
 		"name": "QA - Admin",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34282093",
-		"_collection_link": "https://martian-flare-262952.postman.co/workspace/af172639-7ee4-42ad-89e3-f0f32f7a43a1/collection/34282093-4a51541b-466b-4631-a67c-18b22114172c?action=share&source=collection_link&creator=34282093"
+		"_collection_link": "https://martian-flare-262952.postman.co/workspace/Team-Workspace~af172639-7ee4-42ad-89e3-f0f32f7a43a1/collection/34282093-4a51541b-466b-4631-a67c-18b22114172c?action=share&source=collection_link&creator=34282093"
 	},
 	"item": [
 		{
@@ -15,6 +15,18 @@
 					"item": [
 						{
 							"name": "Get Auth Providers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('baseUrl', 'https://platform.api-dev.wholistic.work')"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -447,6 +459,13 @@
 										"type": "text/javascript",
 										"packages": {}
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"packages": {},
+										"type": "text/javascript"
+									}
 								}
 							],
 							"request": {
@@ -454,7 +473,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"ade.wunmi.ak.insanya@gmail.com\",\n    \"password\": \"123456789!dD\"\n}",
+									"raw": "{\n    \"email\": \"admin@wholistic.work\",\n    \"password\": \"Password12@@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -876,23 +895,11 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
 									"pm.test(\"Response body property\", function () {",
 									"    pm.expect(jsonData).to.be.an('object');",
 									"    pm.expect(jsonData.status).to.be.a('string');",
 									"    pm.expect(jsonData.message).to.be.a('string');",
 									"    pm.expect(jsonData.data).to.be.an('object');",
-									"});",
-									"",
-									"pm.test(\"Status is success\", function () {",
-									"    pm.expect(jsonData.status).to.eql('success');",
 									"});",
 									"",
 									"pm.test(\"Status is success\", function () {",
@@ -915,7 +922,7 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"pm.environment.set('baseUrl', 'https://platform.api.wholistic.work')"
+									"pm.environment.set('baseUrl', 'https://platform.api-dev.wholistic.work')"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -989,59 +996,6 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"email\": \"admin@wholistic.work\",\n    \"password\": \"Password12@@\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/auth/login",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login - Empty Fields",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"const jsonData = pm.response.json();",
-									"",
-									"pm.test(\"Status code is 400\", function () {",
-									"    pm.response.to.have.status(400);",
-									"});",
-									"",
-									"pm.test(\"Response body property\", function () {",
-									"    pm.expect(jsonData).to.be.an('object');",
-									"    pm.expect(jsonData.message).to.be.a('string');",
-									"    pm.expect(jsonData.data).to.be.an('object');",
-									"});",
-									"",
-									"pm.test(`Message is \"Validation Error.\"`, function () {",
-									"    pm.expect(jsonData.message).to.include('Validation Error.');",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3303,7 +3257,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test2\",\n    \"status\": \"away\", // active|inactive\n    \"description\": \"Test features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\"275387e5-6b01-465d-bf6d-e0ab398c0583\"]\n}",
+									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Limited offer!\",\n    \"amount\": 2000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\n         \"0191073b-9096-7442-9f1e-1b0066e35885\",\n         \"0191073b-9096-7442-9f1e-17c086825238\",\n         \"0191073b-9096-7442-9f1e-0c70c7804b2b\"\n        ],\n    \"processors\": []\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3578,6 +3532,13 @@
 									"path": [
 										"billings",
 										"plans"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -3936,7 +3897,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Premium\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Premium features!\",\n    \"amount\": 5000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\" //monthly|yearly\n}",
+									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"inactive\", // active|inactive\n    \"description\": \"Limited offer!\",\n    \"amount\": 3000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\" //monthly|yearly\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3956,7 +3917,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2d75b05e-499a-4e5a-8b81-52d71e9a7ef8"
+											"value": "01924709-11a0-788e-97d2-8540f0ab48a1"
 										}
 									]
 								}
@@ -4309,6 +4270,13 @@
 										"billings",
 										"transactions",
 										"stats"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -4403,6 +4371,16 @@
 										"type": "text/javascript",
 										"packages": {}
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
 								}
 							],
 							"request": {
@@ -4419,7 +4397,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/billings/transactions?activeWorkspace=6cb80e0a-a70a-4493-a2c8-0ffe09b1def7",
+									"raw": "{{baseUrl}}/billings/transactions",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -4430,7 +4408,23 @@
 									"query": [
 										{
 											"key": "activeWorkspace",
-											"value": "6cb80e0a-a70a-4493-a2c8-0ffe09b1def7"
+											"value": "40620b2d-e53f-4464-8c85-4d9042f4ecb1",
+											"disabled": true
+										},
+										{
+											"key": "filter[workspaceId]",
+											"value": "3b84e01d-1d93-4188-82aa-f4765fff66ff",
+											"disabled": true
+										},
+										{
+											"key": "filter[currency]",
+											"value": "NGN",
+											"disabled": true
+										},
+										{
+											"key": "filter[status]",
+											"value": "failed",
+											"disabled": true
 										}
 									]
 								}
@@ -4743,27 +4737,218 @@
 									"query": [
 										{
 											"key": "filter[currency]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[reference]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[status]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[createdAt][gt]",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "filter[createdAt][lt]",
-											"value": null,
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[workspaceId]",
+											"value": "3b84e01d-1d93-4188-82aa-f4765fff66ff",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Subscriptions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/billings/subscriptions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"billings",
+												"subscriptions"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "474"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1da-MbccLbIPmNydU7JW8g4c5JSkcFA\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 May 2024 07:11:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": [\n        {\n            \"id\": \"c967f82c-9f49-4853-8dcb-b9e2e60e2383\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"reference\": \"oo7dh5ub0n\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": 1000,\n                \"currency\": \"NGN\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-05-06T06:10:35.962Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Subscription Stats",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/subscriptions/stats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"subscriptions",
+										"stats"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Subscription Stats",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/billings/subscriptions/stats",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"billings",
+												"subscriptions",
+												"stats"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "178"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b2-4WVmyaoztKOcADdb7R9OHw+0qug\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jun 2024 13:41:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Subscription stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"14\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"overdue\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "List Subscriptions Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/subscriptions?filter[status]=inactive",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"subscriptions"
+									],
+									"query": [
+										{
+											"key": "filter[currency]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[reference]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[status]",
+											"value": "inactive"
+										},
+										{
+											"key": "filter[createdAt][gt]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "filter[createdAt][lt]",
+											"value": "",
 											"disabled": true
 										}
 									]
@@ -5113,8 +5298,74 @@
 					]
 				},
 				{
-					"name": "New Folder",
-					"item": []
+					"name": "Export transaction",
+					"item": [
+						{
+							"name": "Export Transactions",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"format\": \"csv\" // csv|xlsx|pdf\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/billings/transactions/export",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"transactions",
+										"export"
+									],
+									"query": [
+										{
+											"key": "filter[workspaceId]",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Subscription",
+					"item": [
+						{
+							"name": "Delete Subscription Plan",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/billings/plans/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"billings",
+										"plans",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "01924701-4eb9-788e-97d2-75c630b8e855"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"auth": {
@@ -5159,6 +5410,16 @@
 						{
 							"name": "List Workspaces",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -5273,22 +5534,26 @@
 						{
 							"name": "Get Workspace",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/workspaces/:id",
+									"raw": "{{baseUrl}}/platform/workspaces",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
-										"workspaces",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "0ca43bc7-f78c-424f-adf4-56fddafa3b35"
-										}
+										"platform",
+										"workspaces"
 									]
 								}
 							},
@@ -5473,7 +5738,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"purpose\": \"Testing\",\n    \"requireTwoFA\": false,\n    \"logoUrl\": \"\",\n    \"requiredEmailDomains\": [\n        \"wholistic.work\"\n    ],\n    \"domain\": \"slug.wholistic.work\",\n    \"serviceTypes\": [\n        \"vibes\",\n        \"inshallah\"\n    ],\n    \"assistantEnabled\": true\n}",
+									"raw": "{\n    // \"purpose\": \"Testing\",\n    // \"requireTwoFA\": false,\n    // \"logoUrl\": \"\",\n    // \"requiredEmailDomains\": [\n    //     \"wholistic.work\"\n    // ],\n    // \"domain\": \"admin.dev.wholistic.work\"\n    // \"serviceTypes\": [\n    //     \"vibes\",\n    //     \"inshallah\"\n    // ],\n    // \"assistantEnabled\": true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5492,7 +5757,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "f3876832-e0fc-4d12-afe8-e0089a9002e6"
+											"value": "162a4aff-3153-4487-90ec-bb15bc5d7354"
 										}
 									]
 								}
@@ -5667,21 +5932,32 @@
 						{
 							"name": "Delete Workspace",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/workspaces/:id",
+									"raw": "{{baseUrl}}/platform/workspaces/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
+										"platform",
 										"workspaces",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
-											"value": "25521814-fbc2-4801-829d-ea913530356f"
+											"value": "01921ea4-c150-7ff4-9f1d-c0eaf7c3dcba"
 										}
 									]
 								}
@@ -5821,6 +6097,30 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Delete Workspace",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workspaces/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "01921ea4-c150-7ff4-9f1d-c0eaf7c3dcba"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -6917,6 +7217,49 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Export workspace",
+							"item": [
+								{
+									"name": "Export Workspaces",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{adminAccessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"format\": \"csv\" // xlsx|pdf|csv\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/platform/workspaces/export",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"platform",
+												"workspaces",
+												"export"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
@@ -7755,6 +8098,2784 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"item": [
+						{
+							"name": "Get Profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"loggedInUserId\", data.user.id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "426"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:45:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Profile - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "426"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1aa-1JJRp2He3Q/RLe9PM2auc2nDoiM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 10:45:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Wunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": null,\n        \"country\": null,\n        \"user\": {\n            \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n            \"email\": \"adewunmiakinsanya@gmail.com\",\n            \"twofaEnabled\": false,\n            \"status\": \"active\",\n            \"emailVerified\": true,\n            \"role\": null,\n            \"createdAt\": \"2024-04-23T10:42:20.241Z\"\n        },\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Update Profile",
+					"item": [
+						{
+							"name": "Update Profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Admin-Dev\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\",\n    \"domain\": \"admin.dev.wholistic.work\"\n    // \"photoUrl\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Profile- Empty fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const jsonData = pm.response.json()",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code name has Bad Request\", function () {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(`Message is \"Validation Error.\"`, function () {",
+											"    pm.expect(jsonData.message).to.include('Validation Error.');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"phone\": \"\",\n    \"country\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Profile - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code name has OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Profile",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Adewunmi\",\n    \"lastName\": \"Akinsanya\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "240"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f0-RMBrOHbgPXT8ACVE84+BfvejG40\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Apr 2024 11:00:36 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated profile\",\n    \"data\": {\n        \"id\": \"fdaae002-3b98-49cd-b4a5-28ee935b243a\",\n        \"firstName\": \"Adewunmi\",\n        \"lastName\": \"Akinsanya\",\n        \"phone\": \"+2348089722636\",\n        \"country\": \"NGA\",\n        \"createdAt\": \"2024-04-23T10:42:20.252Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Generate 2FA",
+					"item": [
+						{
+							"name": "Generate 2FA",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"pm.test(\"Status code response is 'Created'\", function () {",
+											"    pm.response.to.have.status('Created');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/two-fa",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"two-fa"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Generate 2FA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile/two-fa",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"two-fa"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2772"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ad4-LxdZqrH0SehmuSkwcSty4UCr4Lg\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:49:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully generated 2FA code\",\n    \"data\": {\n        \"otpAuthURL\": \"otpauth://totp/SecretKey?secret=GFZFC53MJMYDI23LKNLEOM3BMM2UCTD2\",\n        \"qrCodeImage\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAAAklEQVR4AewaftIAAAdGSURBVO3BQW4ky5LAQDKg+1+Z00tfJZCokub9gJvZP6x1icNaFzmsdZHDWhc5rHWRw1oXOax1kcNaFzmsdZHDWhc5rHWRw1oXOax1kcNaFzmsdZHDWhf54UMqf6niDZWpYlJ5o+KJypOKT6hMFW+oPKmYVP5SxScOa13ksNZFDmtd5Icvq/gmlW9S+SaVqWJSmVSmiicqT1SmiicVk8obFd+k8k2HtS5yWOsih7Uu8sMvU3mj4g2V31QxqUwVTyreUJkqPqEyVXyTyhsVv+mw1kUOa13ksNZFfrhcxRsqTyomlScVT1SmikllqphUPlFxk8NaFzmsdZHDWhf54XIqTyqeqHxC5Q2VqWJSeVLxhspU8b/ssNZFDmtd5LDWRX74ZRV/qWJSmSreqJhU3qj4poonKn+p4r/ksNZFDmtd5LDWRX74MpX/JSpTxaQyVUwqU8WkMlVMKlPFpDJVTCpTxaQyVUwqb6j8lx3WushhrYsc1rrIDx+q+C9ReaNiUnmi8gmV36QyVXyi4n/JYa2LHNa6yGGti/zwIZWpYlL5poqp4onKb6p4UjGpPFGZKiaVJxWTylTxhso3Vfymw1oXOax1kcNaF/nhy1SmikllqvgmlaniN6lMFd+kMlVMKk8qJpUnKlPFpDJVTCpTxaQyVXzTYa2LHNa6yGGti/zwxyreUHmjYlKZKiaVJxWfUHlSMalMFU8qnqhMFU9U3lCZKiaVJypTxScOa13ksNZFDmtdxP7hF6lMFZPKk4pJZap4ovKkYlJ5UjGpTBWfUPlExSdUporfpDJVfOKw1kUOa13ksNZF7B8+oPKJiicqTyomlaliUnlSMalMFU9UnlS8ofKbKp6oTBWTyjdVfOKw1kUOa13ksNZF7B++SOVJxROVqWJSmSomlScVk8obFZPKVDGpvFHxRGWqmFSmir+kMlX8pcNaFzmsdZHDWhf54ZdVTCpTxROVNyo+UfFE5YnKk4pJ5Y2KJxVPVKaKJypTxaTyhsqTik8c1rrIYa2LHNa6yA//z1Smiicqn1B5Q+VJxROVJxWTypOKJypTxScq3qh4UvGbDmtd5LDWRQ5rXcT+4Rep/KWKJypvVEwqTyq+SeWNiicqU8Wk8qRiUvlExTcd1rrIYa2LHNa6yA9fpvKkYlJ5UvFEZVJ5UjGpTBVvVHxCZap4UvGbKp6oTBVPVP7SYa2LHNa6yGGti/zwIZWp4hMVk8obFZPKpPKGyhOVqeKbKiaVJxWTyhOVJxW/SWWq+MRhrYsc1rrIYa2L/PBlKlPFk4onFZ+omFS+qeINlScqb1R8omJS+aaKSWWq+KbDWhc5rHWRw1oXsX/4gMobFW+ofFPFE5U3KiaVNyreUHmjYlL5L6n4psNaFzmsdZHDWhexf/gilScVT1SmiknlScUTlaniEypPKiaVNyomlaniEypPKt5QmSr+0mGtixzWushhrYvYP3yRylTxROUvVTxRmSomlScVk8pUMalMFZPKVDGpTBWTypOKSeVJxTepTBWfOKx1kcNaFzmsdZEffpnKk4pPqDyp+C9RmSreUJkqnlRMKpPKJ1Smiv9Ph7UucljrIoe1LvLDh1SmiknlEypTxVQxqUwqU8UnKj5RMalMFW+oTBWTypOKSeWbVJ5UfNNhrYsc1rrIYa2L/PBlKlPFE5UnFU9UnlR8QuWNiicqU8UbFZPKpDJVfKJiUpkq3qj4TYe1LnJY6yKHtS5i//ABlaniicp/ScWk8qTim1SmikllqphU/ksqnqg8qfjEYa2LHNa6yGGti/zwy1SeVEwqU8WkMlU8UXmiMlVMKk9UpopJZaqYKiaVqeJJxRsqTyomlaniicpU8aTimw5rXeSw1kUOa13E/uEDKlPFJ1SeVLyhMlU8UZkq3lD5RMWk8k0Vk8o3VUwqb1R84rDWRQ5rXeSw1kV++FDFN1W8ofJNFZPKVDGpPKmYVJ6oTBWTylQxqXyi4g2VJxV/6bDWRQ5rXeSw1kV++JDKX6qYKj6hMlU8UflExROVJxV/SWWq+ITKk4pPHNa6yGGtixzWusgPX1bxTSpPVKaKSeWbKiaVJyqfUJkq3qj4RMX/ksNaFzmsdZHDWhf54ZepvFHxCZWp4ptUnlQ8UZkq/pLKE5VvUpkqftNhrYsc1rrIYa2L/HCZikllqphUPlHxRGWqmFSmikllqnhSMalMFZPKGxWTyhsqU8U3Hda6yGGtixzWusgPl1F5ojJVTCpvqEwVb1RMKlPFpPKbKp6oTBVvVEwqU8UnDmtd5LDWRQ5rXeSHX1bxmyomlaliUvmmit+k8qTiicobKk8q3qj4S4e1LnJY6yKHtS7yw5ep/CWVT6g8qZhUnqhMFZPKVDFVTCpTxROVJypTxROVSWWqeKLylw5rXeSw1kUOa13E/mGtSxzWushhrYsc1rrIYa2LHNa6yGGtixzWushhrYsc1rrIYa2LHNa6yGGtixzWushhrYsc1rrI/wFimaWUtHcdcQAAAABJRU5ErkJggg==\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Generate 2FA - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// pm.test(\"Status code is 401\", function () {",
+											"//     pm.response.to.have.status(401);",
+											"// });",
+											"// pm.test(\"Status code response is 'Unauthorized'\", function () {",
+											"//     pm.response.to.have.status('Unauthorized');",
+											"// });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/two-fa",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"two-fa"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Generate 2FA",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile/two-fa",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"two-fa"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2772"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ad4-LxdZqrH0SehmuSkwcSty4UCr4Lg\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:49:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully generated 2FA code\",\n    \"data\": {\n        \"otpAuthURL\": \"otpauth://totp/SecretKey?secret=GFZFC53MJMYDI23LKNLEOM3BMM2UCTD2\",\n        \"qrCodeImage\": \"data:image/png;base64,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\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Enable 2FA",
+					"item": [
+						{
+							"name": "Enable 2FA",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"509404\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/two-fa",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"two-fa"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Enable 2FA",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"509404\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/two-fa",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"two-fa"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "174"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ae-EAo4bcbGG4YdofPNTrjoMhunt8I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:51:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully enabled 2FA\",\n    \"data\": [\n        \"P2XTre\",\n        \"Wa3kAu\",\n        \"byFsXs\",\n        \"ZyTAOC\",\n        \"zWGr6n\",\n        \"c3jlaU\",\n        \"eFBLCz\",\n        \"Fgk5bZ\",\n        \"CukZok\",\n        \"zdcO26\",\n        \"1c8ips\",\n        \"JLKJuU\"\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Disable 2FA",
+					"item": [
+						{
+							"name": "Disable 2FA",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"285034\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/two-fa/disable",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"two-fa",
+										"disable"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Disable 2FA",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"code\": \"285034\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/two-fa/disable",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"two-fa",
+												"disable"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3a-wFg4OVRtNAL6UUw7+6xApaNEwSM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:52:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully disabled 2FA\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Change Password",
+					"item": [
+						{
+							"name": "Change Password - Invalid Current Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"123456789!dD#!\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Password Complexity",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"123456789\",\n    \"confirmPassword\": \"123456789\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Mismatched Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@@\",\n    \"confirmPassword\": \"Password12@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Same as Old Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"pm.test(\"Status code response is 'Bad Request'\", function () {",
+											"    pm.response.to.have.status('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Valid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@\",\n    \"newPassword\": \"Password12@@@\",\n    \"confirmPassword\": \"Password12@@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password - Revert",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Status code response is 'OK'\", function () {",
+											"    pm.response.to.have.status('OK');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password12@@@\",\n    \"newPassword\": \"Password12@@\",\n    \"confirmPassword\": \"Password12@@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Change Password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"oldPassword\": \"123456789!dD#\",\n    \"newPassword\": \"123456789!dD#!\",\n    \"confirmPassword\": \"123456789!dD#!\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3e-hoUf7OfUSjCmRW6UJOdPJuLH5co\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 28 Apr 2024 23:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated password\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "List Email Settings",
+					"item": [
+						{
+							"name": "List Email Settings",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// try {",
+											"//     const { data } = pm.response.json()",
+											"",
+											"//     pm.test(\"Status code is 200\", function () {",
+											"//         pm.response.to.have.status(200);",
+											"//     });",
+											"//     pm.test(\"Status code response is 'OK'\", function () {",
+											"//         pm.response.to.have.status('OK');",
+											"//     });",
+											"// } catch (errors) {",
+											"//     console.error(errors)",
+											"// }",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/email-settings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"email-settings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Set Emails Settings",
+					"item": [
+						{
+							"name": "Set Email Settings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\n//     \"templateId\": \"16e0840a-4aba-49c2-8443-fff08e916ad1\",\n//     \"enabled\": false\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/email-settings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"email-settings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List Notification Settings",
+					"item": [
+						{
+							"name": "List Notification Settings",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/notification-settings?limit=100",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"notification-settings"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Notification Settings",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile/notification-settings",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"notification-settings"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1042"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"412-SvLf3bbr8rpvoG6oE7pGF2a/Gso\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 25 Jun 2024 20:44:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"1b3ac6b0-8f7d-43a7-b95d-fb1fd3b05437\",\n            \"slug\": \"project-request-created\",\n            \"title\": \"Project Request Update\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"2c19cea6-452a-4f1b-87e0-6f8988f4eeac\",\n            \"slug\": \"comment-notification\",\n            \"title\": \"Comments\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"48457c85-0a6e-4e99-96e1-3d157d87bf2e\",\n            \"slug\": \"project-request-approved\",\n            \"title\": \"Project Request Update\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"4b184be8-c58d-409c-966a-06d1de5004b7\",\n            \"slug\": \"2fa-disabled\",\n            \"title\": \"Disabled 2FA\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"6f3ce822-adfa-4107-9606-638deb161fec\",\n            \"slug\": \"2fa-enabled\",\n            \"title\": \"Enabled 2FA\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"97059832-eae2-43e2-8907-4c3e7d362a83\",\n            \"slug\": \"project-request-disapproved\",\n            \"title\": \"Project Request Update\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"9e9a653d-f41b-4a52-9f89-11f592887413\",\n            \"slug\": \"tag-notification\",\n            \"title\": \"Tags\",\n            \"enabled\": true\n        },\n        {\n            \"id\": \"fc0b0861-977a-4efd-b999-03915186164d\",\n            \"slug\": \"welcome\",\n            \"title\": \"Welcome\",\n            \"enabled\": true\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 8,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Set Notification Settings",
+					"item": [
+						{
+							"name": "Set Notification Settings",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\n//     // missing templateIds here would be disabled for user.\n//     \"enabled\": [\n//         \"019117a3-da62-7339-9270-014a5165d6e2\",\n//         \"019117a3-da62-7339-9271-1e75ef911c94\"\n//     ]\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/notification-settings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"notification-settings"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Set Notification Settings",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    // missing templateIds here would be disabled for user.\n    \"enabled\": [\n        \"019117a3-da62-7339-9270-014a5165d6e2\",\n        \"019117a3-da62-7339-9271-1e75ef911c94\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/notification-settings",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"notification-settings"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-site"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admin.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 03 Aug 2024 09:50:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get Profile Role",
+					"item": [
+						{
+							"name": "Get Profile Role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"try {",
+											"    const { data } = pm.response.json()",
+											"    pm.environment.set(\"loggedInUserId\", data.user.id)",
+											"",
+											"    pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Status code response is 'OK'\", function () {",
+											"        pm.response.to.have.status('OK');",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/role",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"role"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Profile Role",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile/role",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"role"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "8938"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"22ea-CdfOZe4nsscKNNekt6YXHNwZB6g\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 19 Jun 2024 15:35:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched profile\",\n    \"data\": {\n        \"id\": \"5b57b0b3-c731-4b88-b008-155fba62f829\",\n        \"name\": \"Workspace Manager\",\n        \"slug\": \"workspace-manager\",\n        \"description\": \"Workspace Manager role\",\n        \"status\": \"active\",\n        \"permissions\": [\n            {\n                \"id\": \"013784d6-4a8c-4902-812e-8c604764f06f\",\n                \"name\": \"view email template\",\n                \"slug\": \"view-email-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"01d7ed1e-8422-49bd-acbf-a33b4e84b238\",\n                \"name\": \"list subscriptions\",\n                \"slug\": \"list-subscriptions\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"0612275d-caf2-477b-a408-cafe98c12a21\",\n                \"name\": \"delete team member\",\n                \"slug\": \"delete-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"08fe3e54-b50e-4c56-8e4c-400b1adbff33\",\n                \"name\": \"list project reports\",\n                \"slug\": \"list-project-reports\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"0a7c6031-6b82-48ea-aad6-100c7de08f25\",\n                \"name\": \"list email templates\",\n                \"slug\": \"list-email-templates\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"110f06f4-995c-42ac-a3ef-3766741c1e41\",\n                \"name\": \"change password\",\n                \"slug\": \"change-password\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1ac1c791-b4e0-4edb-b39c-025f4ecbb52f\",\n                \"name\": \"list team members\",\n                \"slug\": \"list-team-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1b4ed25e-e178-46f9-b9b6-dd14460d9f5b\",\n                \"name\": \"disable twofa\",\n                \"slug\": \"disable-twofa\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"1dd03657-23b2-42c2-8196-76bc835f9749\",\n                \"name\": \"update project\",\n                \"slug\": \"update-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"2267c76a-9400-4603-b162-b0cf8a788879\",\n                \"name\": \"view team member\",\n                \"slug\": \"view-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"2a7057d2-454f-4fde-869a-805e05f1791e\",\n                \"name\": \"update role\",\n                \"slug\": \"update-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"2d620db3-35fa-492f-8cc5-b9ba55287b18\",\n                \"name\": \"list project integrations\",\n                \"slug\": \"list-project-integrations\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"308759f8-0c25-44ad-851b-718be1e7632b\",\n                \"name\": \"update team member\",\n                \"slug\": \"update-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"31947ffa-8fdc-4683-b9e5-d452387774f3\",\n                \"name\": \"list integrations\",\n                \"slug\": \"list-integrations\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"470f190c-0e6b-4824-a477-dd8dc7956126\",\n                \"name\": \"view profile\",\n                \"slug\": \"view-profile\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"541258eb-368c-42bb-bc29-75f2d8905300\",\n                \"name\": \"view client\",\n                \"slug\": \"view-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"55c3123e-a7ac-4419-827e-ec0eb9a32295\",\n                \"name\": \"list projects requests\",\n                \"slug\": \"list-projects-requests\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"58261bda-4817-4184-ad4f-14e58428bf5e\",\n                \"name\": \"add client\",\n                \"slug\": \"add-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"58e724c0-2ad5-4361-910a-b4a8a98b73bc\",\n                \"name\": \"view audit\",\n                \"slug\": \"view-audit\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"5d8daaf1-5cb8-4895-9f00-da59f9e3a519\",\n                \"name\": \"view project members\",\n                \"slug\": \"view-project-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"5eabbacc-3bf6-43c8-a377-6486881925f7\",\n                \"name\": \"list cards\",\n                \"slug\": \"list-cards\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"5ec61b46-4321-42a2-a36a-c0ba0b282980\",\n                \"name\": \"update profile\",\n                \"slug\": \"update-profile\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"616d82a3-62a3-49b7-ab04-59366e9f6781\",\n                \"name\": \"delete integration\",\n                \"slug\": \"delete-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"676d09dc-681a-4b4e-88e4-32e5c0e0ff61\",\n                \"name\": \"delete workspace\",\n                \"slug\": \"delete-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"6b181afe-391d-429d-99dc-e65fbf6698ba\",\n                \"name\": \"create workspace\",\n                \"slug\": \"create-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7aa12c09-d85a-472a-92c6-8e15307cbbbe\",\n                \"name\": \"set integration\",\n                \"slug\": \"set-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7b5c1836-50b1-426a-b067-b409a53f1dd2\",\n                \"name\": \"list projects\",\n                \"slug\": \"list-projects\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"7ec2674f-6552-406c-8b41-48339dd51882\",\n                \"name\": \"list audit logs\",\n                \"slug\": \"list-audit-logs\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"7fbffb3d-55dd-4d5e-b090-ce20a92682e9\",\n                \"name\": \"deactivate team member\",\n                \"slug\": \"deactivate-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"81c13d1d-14c3-450e-9654-6f9c7a590a7f\",\n                \"name\": \"activate role\",\n                \"slug\": \"activate-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"8d86243a-5c83-4acd-b38d-1cc3ed831658\",\n                \"name\": \"view workspace\",\n                \"slug\": \"view-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"8f88cc74-037d-4343-bcfa-2bfc5a8744db\",\n                \"name\": \"list report templates\",\n                \"slug\": \"list-report-templates\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"912c2bb0-a019-43d9-8fa0-e3ed83a10eba\",\n                \"name\": \"create project\",\n                \"slug\": \"create-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"96b84514-786a-4ddb-977d-9bc95e3ce49f\",\n                \"name\": \"view project\",\n                \"slug\": \"view-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"986589bb-fabb-441e-88d9-7ab942c1d600\",\n                \"name\": \"enable twofa\",\n                \"slug\": \"enable-twofa\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"9dafdcd5-74d8-47c6-9f70-9fbe6b515ad0\",\n                \"name\": \"add project integration\",\n                \"slug\": \"add-project-integration\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a1e4d72c-60e4-414b-a07f-f6e087348166\",\n                \"name\": \"update workspace\",\n                \"slug\": \"update-workspace\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a447bfc5-d8c5-44a0-8bef-d43f05df31e8\",\n                \"name\": \"update client\",\n                \"slug\": \"update-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a521bf6d-7ece-461e-9862-e86449d4763e\",\n                \"name\": \"deactivate role\",\n                \"slug\": \"deactivate-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"a6a70143-7745-4d05-b72f-4414e9b30859\",\n                \"name\": \"list subscription plans\",\n                \"slug\": \"list-subscription-plans\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a878d6b3-3d61-4b53-95aa-f0301f9cc8eb\",\n                \"name\": \"add project report\",\n                \"slug\": \"add-project-report\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"a879b6b4-2b9e-42be-b9dd-8ef4c81c5ab0\",\n                \"name\": \"create report template\",\n                \"slug\": \"create-report-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"aaf7f2bc-33de-4018-b86e-fb3865259b64\",\n                \"name\": \"create role\",\n                \"slug\": \"create-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"bea8fe13-5db1-4d0f-ac9f-670d110dcc85\",\n                \"name\": \"list clients\",\n                \"slug\": \"list-clients\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"c32793a9-77d0-47d4-8588-49ad46f81c8e\",\n                \"name\": \"delete role\",\n                \"slug\": \"delete-role\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"c367090b-d9b6-44b9-b591-40bdf85445e3\",\n                \"name\": \"subscribe to subscription plan\",\n                \"slug\": \"subscribe-to-subscription-plan\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"c63a5814-9247-437a-a709-c3fe7a6550eb\",\n                \"name\": \"view report template\",\n                \"slug\": \"view-report-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"d36e111b-3770-4008-bee7-2b742dc2127b\",\n                \"name\": \"delete client\",\n                \"slug\": \"delete-client\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"d5e70c38-d093-4bfc-9bec-de684498d4c9\",\n                \"name\": \"activate team member\",\n                \"slug\": \"activate-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d66960bf-aeb6-4f2b-94ee-16931b4943d3\",\n                \"name\": \"list workspaces\",\n                \"slug\": \"list-workspaces\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d740a7b8-d9ba-4fa6-b258-20440b53617c\",\n                \"name\": \"add team member\",\n                \"slug\": \"add-team-member\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d753d633-1b16-442a-9c07-f005533fdb30\",\n                \"name\": \"list roles\",\n                \"slug\": \"list-roles\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-04-28T22:43:53.224Z\"\n            },\n            {\n                \"id\": \"d7c92c49-8dd2-4e01-82bf-9b8958ae7cae\",\n                \"name\": \"create email template\",\n                \"slug\": \"create-email-template\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"e41e317b-2ace-4cbd-839d-fd8176574a51\",\n                \"name\": \"update project report\",\n                \"slug\": \"update-project-report\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"e75eb445-231e-4751-96b1-aa603441cbde\",\n                \"name\": \"delete project\",\n                \"slug\": \"delete-project\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            },\n            {\n                \"id\": \"ecbd3588-d1f2-4489-b9d3-6e82e7f85acc\",\n                \"name\": \"set project members\",\n                \"slug\": \"set-project-members\",\n                \"description\": \"\",\n                \"createdAt\": \"2024-06-10T05:42:47.350Z\"\n            }\n        ],\n        \"createdAt\": \"2024-06-10T05:42:47.766Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Set Device",
+					"item": [
+						{
+							"name": "Set Device",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// {\n//     \"notificationToken\": \"firebaseNotificationToken\"\n// }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/device/:deviceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"device",
+										":deviceId"
+									],
+									"variable": [
+										{
+											"key": "deviceId",
+											"value": "1234567890"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Set Device",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"notificationToken\": \"firebaseNotificationToken\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/device/:deviceId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"device",
+												":deviceId"
+											],
+											"variable": [
+												{
+													"key": "deviceId",
+													"value": "1234567890"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 23 Jul 2024 17:24:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "List Notifications",
+					"item": [
+						{
+							"name": "List Notifications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/notifications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"notifications"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Notifications",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile/notifications",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"notifications"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "284"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11c-u7F+I7QcGioXaf7srhkSqDA4Y00\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Jul 2024 05:56:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": [\n        {\n            \"id\": \"42800ccb-8af6-44db-a411-14dc42c2e093\",\n            \"title\": \"Project Request Update\",\n            \"body\": \"A new project request has been submitted for your review.\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Upload",
+					"item": [
+						{
+							"name": "Upload File",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/thewunmi/Documents/Screenshot 2023-07-06 at 10.09.59.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/uploads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"uploads"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Upload File",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/Users/thewunmi/Documents/Screenshot 2023-07-06 at 10.09.59.png"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/profile/uploads",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"uploads"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "343"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"157-OfqG8Ez3odNBrMvhxQCr/tEuB98\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 24 Jul 2024 09:34:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": {\n        \"url\": \"https://wholistic.blob.core.windows.net/app/90c6c049-7241-44d9-9c86-2cfb967ba13a%2FScreenshot%202023-07-06%20at%2010.09.59.png?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2024-07-24T16:54:13Z&st=2024-07-24T08:54:13Z&spr=https&sig=71J4TtM86AgTyIlU9UNS1XKT4MBBAD4u9SgCsorEdlA%3D\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login - Empty Fields",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response body property\", function () {",
+							"    pm.expect(jsonData).to.be.an('object');",
+							"    pm.expect(jsonData.message).to.be.a('string');",
+							"    pm.expect(jsonData.data).to.be.an('object');",
+							"});",
+							"",
+							"pm.test(`Message is \"Validation Error.\"`, function () {",
+							"    pm.expect(jsonData.message).to.include('Validation Error.');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Settings",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\n//     \"inactivityTimeout\": 1800000,\n//     \"requestTimeout\": 1800000,\n//     \"authTokenValidity\": 1800000,\n//     \"refreshTokenValidity\": 1800000,\n//     \"passwordResetTokenValidity\": 1800000,\n//     \"setupTokenValidity\": 1800000,\n//     \"maxAuthAttempts\": 10,\n//     \"maxAuthAttemptValdiity\": 1800000\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/platform/settings",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"platform",
+						"settings"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -7775,9 +10896,11 @@
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({",
-					"  key: \"origin\",",
-					"  value: \"https://\" + \"admin.wholistic.work\"",
-					"});"
+					"    key: \"origin\",",
+					"    value: \"https://\" + \"admin-dev.wholistic.work\"",
+					"});",
+					"",
+					"// pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
 				]
 			}
 		},
