@@ -1,0 +1,6 @@
+{
+    "integration": "google",
+    "clientId": "1234567890",
+    "clientSecret": "1234567890",
+    "redirectUri": "https://demo.wholistic.work/auth/callback"
+}
