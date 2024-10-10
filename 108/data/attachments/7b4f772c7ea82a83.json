@@ -1,0 +1,13 @@
+{
+    "origin": "https://admin-dev.wholistic.work",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {{adminAccessToken}}",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "1f0d46a3-d371-4ccd-9f5b-70ac49b058ba",
+    "Host": "platform.api-dev.wholistic.work",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "133"
+}

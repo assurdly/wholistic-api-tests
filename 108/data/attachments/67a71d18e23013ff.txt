@@ -1,0 +1,4 @@
+{
+    "email": "admin@wholistic.work",
+    "password": "Password12@@"
+}
