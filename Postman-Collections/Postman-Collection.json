@@ -4,7 +4,7 @@
 		"name": "QA - Team Members",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34282093",
-		"_collection_link": "https://martian-flare-262952.postman.co/workspace/af172639-7ee4-42ad-89e3-f0f32f7a43a1/collection/34282093-8080388a-7066-43e7-ad52-47e31767f139?action=share&source=collection_link&creator=34282093"
+		"_collection_link": "https://martian-flare-262952.postman.co/workspace/Team-Workspace~af172639-7ee4-42ad-89e3-f0f32f7a43a1/collection/34282093-8080388a-7066-43e7-ad52-47e31767f139?action=share&source=collection_link&creator=34282093"
 	},
 	"item": [
 		{
@@ -20,30 +20,28 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"",
-											"",
 											"try {",
-											"const jsonData = pm.response.json();",
-											"const accesstoken = jsonData.data.accessToken",
-											"pm.environment.set(\"teamAccessToken\", accesstoken)",
+											"    const jsonData = pm.response.json();",
+											"    const accesstoken = jsonData.data.accessToken",
+											"    pm.environment.set(\"teamAccessToken\", accesstoken)",
 											"",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"    pm.expect(jsonData.data).to.be.an('object');",
-											"});",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});",
-											"",
-											"pm.test(\"Message is Successfully logged in\", function () {",
-											"    pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
-											"});",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(jsonData).to.be.an('object');",
+											"        pm.expect(jsonData.status).to.be.a('string');",
+											"        pm.expect(jsonData.message).to.be.a('string');",
+											"        pm.expect(jsonData.data).to.be.an('object');",
+											"    });",
+											"   ",
+											"    pm.test(\"Status is success\", function () {",
+											"        pm.expect(jsonData.status).to.eql('success');",
+											"    });",
+											" pm.test(\"Status code is 200\", function () {",
+											"        pm.response.to.have.status(200);",
+											"    });",
+											"    pm.test(\"Message is Successfully logged in\", function () {",
+											"        pm.expect(jsonData.message).to.include('Welcome back. You have been successfully signed in.');",
+											"    });",
 											"} catch (errors) {",
 											"    console.error(errors)",
 											"}"
@@ -140,7 +138,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"abisola4@mailinator.com\",\n    \"password\": \"Password12@@\"\n}",
+									"raw": "{\n    \"email\": \"l.adeosun.la@gmail.com\",\n    \"password\": \"Password12@@\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -963,7 +961,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"password\": \"@Password5\",\n    \"confirmPassword\": \"@Password5\"\n}",
+									"raw": "{\n    \"password\": \"@Password1\",\n    \"confirmPassword\": \"@Password1\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -984,7 +982,7 @@
 									"variable": [
 										{
 											"key": "token",
-											"value": "b25461d0b7b54a2c449fef110e88d0555da14e04"
+											"value": "04db5490975702cb01a7bc1528296f05123c7870"
 										}
 									]
 								}
@@ -1808,6 +1806,125 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "List Workspaces Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{teamAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workspaces",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "filter[name]",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "filter[createdAt][gt]",
+									"value": "2024-04-30T17:20:57.737Z",
+									"disabled": true
+								},
+								{
+									"key": "filter[createdAt][lt]",
+									"value": "2024-05-02T17:20:57.737Z",
+									"disabled": true
+								},
+								{
+									"key": "filter[status]",
+									"value": "active",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Workspaces",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/workspaces",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"workspaces"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "454"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c6-7QDcuVxZRlOJ7yE1CStFMplIn+w\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Apr 2024 10:44:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched workspaces\",\n    \"data\": [\n        {\n            \"id\": \"0ca43bc7-f78c-424f-adf4-56fddafa3b35\",\n            \"name\": \"Assurdly\",\n            \"status\": \"active\",\n            \"slug\": \"assurdly\",\n            \"size\": \"1-10\",\n            \"purpose\": \"Testing\",\n            \"utmMedium\": \"Instagram\",\n            \"createdAt\": \"2024-04-23T10:42:47.595Z\",\n            \"primaryUser\": {\n                \"id\": \"a74b5956-1d70-4157-9d99-64c39906c1e9\",\n                \"email\": \"adewunmiakinsanya@gmail.com\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -2179,7 +2296,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Website Redesign\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-07-08\",\n    \"estimatedDuration\":10,\n    \"workspaceId\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n    \"client\": {\n        \"name\": \"LSQ\",\n        \"email\": \"abisola@mailinator.com\",\n        \"contactName\": \"Abisola\",\n        \"contactEmail\": \"abisola@mailinator.com\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactName2\": null,\n        \"contactEmail2\": null,\n        \"contactPhone2\": null\n    }\n}",
+							"raw": "{\n    \"name\": \"\",\n    \"description\": \"Redesign of the Website\",\n    \"serviceType\": \"Product Development\",\n    \"startDate\": \"2024-07-08\",\n    \"estimatedDuration\":10,\n    \"workspaceId\": \"f3876832-e0fc-4d12-afe8-e0089a9002e6\",\n    \"client\": {\n        \"name\": \"LSQ\",\n        \"email\": \"abisola@mailinator.com\",\n        \"contactName\": \"Abisola\",\n        \"contactEmail\": \"abisola@mailinator.com\",\n        \"contactPhone\": \"+2348012345678\",\n        \"contactName2\": null,\n        \"contactEmail2\": null,\n        \"contactPhone2\": null\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3506,7 +3623,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "245b2332-6dfe-4491-bd1e-ec89bf7f7835"
+											"value": "01918f6c-3ff7-7bb5-9827-e74b3c093df7"
 										}
 									]
 								}
@@ -3902,7 +4019,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "c1267b36-6219-44de-aa0a-2c9408b27cad"
+											"value": "01918f6c-3ff7-7bb5-9827-e74b3c093df7"
 										}
 									]
 								}
@@ -4109,8 +4226,8 @@
 											"try {",
 											"    const jsonData = pm.response.json();",
 											"",
-											"    pm.test(\"Status code is 401\", function () {",
-											"        pm.response.to.have.status(401);",
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
 											"    });",
 											"",
 											"    pm.test(\"Response body has property 'message'\", function () {",
@@ -4119,7 +4236,7 @@
 											"    });",
 											"",
 											"    pm.test('Verify a valid data error response it returned', () => {",
-											"        pm.expect(jsonData.message).eql(\"You must provide an access token to access this resource.\")",
+											"        pm.expect(jsonData.data.id).eql(\"id must be a UUID\")",
 											"    })",
 											"} catch (errors) {",
 											"    console.error(errors)",
@@ -4323,7 +4440,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "c1267b36-6219-44de-aa0a-2c9408b27cad"
+											"value": "01918f6c-3ff7-7bb5-9827-e74b3c093df7"
 										}
 									]
 								}
@@ -4418,7 +4535,7 @@
 											"});\r",
 											"\r",
 											"    pm.test('Verify a valid data error response it returned', () => {\r",
-											"     pm.expect(jsonData.message).eql(\"No project found with ID - 2f2441be-530c-4456-8b06-3c505205a465\")\r",
+											"     pm.expect(jsonData.message).to.include(\"No project found with ID\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
 											"    console.error(errors)\r",
@@ -4457,7 +4574,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2f2441be-530c-4456-8b06-3c505205a465"
+											"value": "01918f6c-3ff7-7bb5-9827-e74b3c093df0"
 										}
 									]
 								}
@@ -4538,21 +4655,21 @@
 											"try {\r",
 											"    const jsonData = pm.response.json();\r",
 											"\r",
-											"    pm.test(\"Status code is 404\", function () {\r",
-											"        pm.response.to.have.status(404);\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400);\r",
 											"    });\r",
 											"\r",
-											"    pm.test(\"Status code response is Not Found \", function () {\r",
-											"        pm.response.to.have.status(404);\r",
-											"    });\r",
+											"    // pm.test(\"Status code response is Not Found \", function () {\r",
+											"    //     pm.response.to.have.status(\"Not Found\");\r",
+											"    // });\r",
 											"\r",
 											"    pm.test(\"Response body has property 'message'\", function () {\r",
-											"    pm.expect(jsonData).to.have.property(\"message\");\r",
-											"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
-											"});\r",
+											"        pm.expect(jsonData).to.have.property(\"message\");\r",
+											"        pm.expect(jsonData.message).to.be.a(\"string\");\r",
+											"    });\r",
 											"\r",
 											"    pm.test('Verify a valid data error response it returned', () => {\r",
-											"     pm.expect(jsonData.message).eql(\"No project found with ID - :id\")\r",
+											"        pm.expect(jsonData.data.id).eql(\"id must be a UUID\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
 											"    console.error(errors)\r",
@@ -5156,7 +5273,7 @@
 									"variable": [
 										{
 											"key": "projectId",
-											"value": "c1267b36-6219-44de-aa0a-2c9408b27cad"
+											"value": "01918f6c-3ff7-7bb5-9827-e74b3c093df7"
 										}
 									]
 								}
@@ -5270,7 +5387,7 @@
 									"variable": [
 										{
 											"key": "projectId",
-											"value": "c1267b36-6219-44de-aa0a-2c9408b27cad"
+											"value": "01918f6c-3ff7-7bb5-9827-e74b3c093df7"
 										},
 										{
 											"key": "commentId",
@@ -5362,29 +5479,29 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"try {",
-											"    var jsonData = pm.response.json();",
+											"// try {",
+											"//     var jsonData = pm.response.json();",
 											"",
-											"    pm.test(\"Status code is 200\", function () {",
-											"        pm.response.to.have.status(200);",
-											"    });",
+											"//     pm.test(\"Status code is 200\", function () {",
+											"//         pm.response.to.have.status(200);",
+											"//     });",
 											"",
-											"    pm.test(\"Status code response is OK\", function () {",
-											"        pm.response.to.have.status('OK');",
-											"    });",
+											"//     pm.test(\"Status code response is OK\", function () {",
+											"//         pm.response.to.have.status('OK');",
+											"//     });",
 											"",
-											"    pm.test(\"Response body property\", function () {",
-											"        pm.expect(jsonData).to.be.an('object');",
-											"        pm.expect(jsonData.status).to.be.a('string');",
-											"        pm.expect(jsonData.message).to.be.a('string');",
-											"    });",
+											"//     pm.test(\"Response body property\", function () {",
+											"//         pm.expect(jsonData).to.be.an('object');",
+											"//         pm.expect(jsonData.status).to.be.a('string');",
+											"//         pm.expect(jsonData.message).to.be.a('string');",
+											"//     });",
 											"",
-											"    pm.test(\"Status is success\", function () {",
-											"        pm.expect(jsonData.status).to.eql('success');",
-											"    });",
-											"} catch (errors) {",
-											"    console.error(errors)",
-											"}"
+											"//     pm.test(\"Status is success\", function () {",
+											"//         pm.expect(jsonData.status).to.eql('success');",
+											"//     });",
+											"// } catch (errors) {",
+											"//     console.error(errors)",
+											"// }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6378,19 +6495,19 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status code name has OK\", function () {",
-											"    pm.response.to.have.status(\"OK\");",
-											"});",
+											"// pm.test(\"Status code is 200\", function () {",
+											"//     pm.response.to.have.status(200);",
+											"// });",
+											"// pm.test(\"Status code name has OK\", function () {",
+											"//     pm.response.to.have.status(\"OK\");",
+											"// });",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"pm.test(\"Status code name has OK\", function () {",
-											"    pm.response.to.have.status(\"OK\");",
-											"});",
+											"// pm.test(\"Status code is 200\", function () {",
+											"//     pm.response.to.have.status(200);",
+											"// });",
+											"// pm.test(\"Status code name has OK\", function () {",
+											"//     pm.response.to.have.status(\"OK\");",
+											"// });",
 											""
 										],
 										"type": "text/javascript",
@@ -6413,7 +6530,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n    // \"photoUrl\": \"\"\n}",
+									"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"phone\": \"+2348089722636\",\n    \"country\": \"NGA\"\n    // \"photoUrl\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7708,6 +7825,147 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Delete Profile",
+					"item": [
+						{
+							"name": "Delete Profile",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"123456789!dD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/delete",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"delete"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Profile",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/profile/delete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"profile",
+												"delete"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-site"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://my-workspace.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "55"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"37-ADRrDhMSsM7Dnriv3Z8L73cQK1Y\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 22:12:25 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successful\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
 				}
 			]
 		}
@@ -7720,9 +7978,12 @@
 				"packages": {},
 				"exec": [
 					"pm.request.headers.add({\r",
-					"  key: \"origin\",\r",
-					"  value: \"https://\" + \"ikigai.wholistic.work\"\r",
-					"});"
+					"    key: \"origin\",\r",
+					"    value: \"https://\" + \"the-devs.wholistic.work\"\r",
+					"});\r",
+					"\r",
+					"pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")\r",
+					""
 				]
 			}
 		},
@@ -7732,7 +7993,10 @@
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					""
+					"pm.request.headers.add({",
+					"    key: \"origin\",",
+					"    value: \"https://\" + \"the-devs.wholistic.work\"",
+					"});"
 				]
 			}
 		}
