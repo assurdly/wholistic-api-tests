@@ -1,0 +1,6 @@
+pm.request.headers.add({
+    key: "origin",
+    value: "https://" + "the-devs.wholistic.work"
+});
+
+pm.environment.set("baseUrl", "https://platform.api.wholistic.work")
