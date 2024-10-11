@@ -1739,7 +1739,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "b0ea8e08-b76d-4bc8-a441-807a5efa4d65"
+											"value": "01927a99-6edd-7115-af8b-8fbdda966018"
 										}
 									]
 								}
@@ -1935,14 +1935,14 @@
 											"try {\r",
 											"    const response = pm.response.json();\r",
 											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 404\", function () {\r",
-											"        pm.response.to.have.status(404)\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400)\r",
 											"    });\r",
 											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
-											"        pm.response.to.have.status('Not Found')\r",
+											"        pm.response.to.have.status('Bad Request')\r",
 											"    });\r",
 											"    pm.test(\"Error Response is valid\", function () {\r",
-											"        pm.expect(pm.response.json().message).to.be.eql(\"Template '2f4c8424-eeb7-4e4e-91d0-dee35' does not exist\")\r",
+											"        pm.expect(pm.response.json().data.id).to.be.eql(\"id must be a UUID\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
 											"    console.error(errors)\r",
@@ -2048,17 +2048,18 @@
 											"try {\r",
 											"    const response = pm.response.json();\r",
 											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 404\", function () {\r",
-											"        pm.response.to.have.status(404)\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400)\r",
 											"    });\r",
 											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
-											"        pm.response.to.have.status('Not Found')\r",
+											"        pm.response.to.have.status('Bad Request')\r",
 											"    });\r",
 											"    pm.test(\"Error Response is valid\", function () {\r",
-											"        pm.expect(pm.response.json().message).to.be.eql(\"Template ':id' does not exist\")\r",
+											"        pm.expect(pm.response.json().data.id).to.be.eql(\"id must be a UUID\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
-											"    console.error(errors)}"
+											"    console.error(errors)\r",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -2748,23 +2749,23 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"// try {\r",
-											"//     const response = pm.response.json();\r",
-											"//     const { message, data } = response;\r",
-											"//     pm.test(\"Status code is 200\", function () {\r",
-											"//         pm.response.to.have.status(200)\r",
-											"//     });\r",
-											"//     pm.test(\"Status code response is 'OK'\", function () {\r",
-											"//         pm.response.to.have.status('OK')\r",
-											"//     });\r",
-											"//     pm.test(\" Response body is valid\", function () {\r",
-											"//         pm.expect(pm.response.json()).to.be.an('object')\r",
-											"//         pm.expect(pm.response.json().status).to.be.eql(\"success\")\r",
-											"//         pm.expect(pm.response.json().message).to.be.a('string')\r",
-											"//         pm.expect(pm.response.json().data).to.be.an('object')\r",
-											"//     })\r",
-											"// } catch (errors) {\r",
-											"//     console.error(errors)}"
+											"try {\r",
+											"    const response = pm.response.json();\r",
+											"    const { message, data } = response;\r",
+											"    pm.test(\"Status code is 200\", function () {\r",
+											"        pm.response.to.have.status(200)\r",
+											"    });\r",
+											"    pm.test(\"Status code response is 'OK'\", function () {\r",
+											"        pm.response.to.have.status('OK')\r",
+											"    });\r",
+											"    pm.test(\" Response body is valid\", function () {\r",
+											"        pm.expect(pm.response.json()).to.be.an('object')\r",
+											"        pm.expect(pm.response.json().status).to.be.eql(\"success\")\r",
+											"        pm.expect(pm.response.json().message).to.be.a('string')\r",
+											"        pm.expect(pm.response.json().data).to.be.an('object')\r",
+											"    })\r",
+											"} catch (errors) {\r",
+											"    console.error(errors)}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -2982,19 +2983,18 @@
 											"try {\r",
 											"    const response = pm.response.json();\r",
 											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 404\", function () {\r",
-											"        pm.response.to.have.status(404)\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400)\r",
 											"    });\r",
 											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
-											"        pm.response.to.have.status('Not Found')\r",
+											"        pm.response.to.have.status('Bad Request')\r",
 											"    });\r",
-											"    pm.test(\"Error Response is Valid\", function () {\r",
-											"        pm.expect(pm.response.json()).to.be.an('object')\r",
-											"\r",
-											"        pm.expect(pm.response.json().message).to.be.eql(\"Template '1f8c3e8a-657b-40d2-bb1e-9c6017' does not exist\")\r",
+											"    pm.test(\"Error Response is valid\", function () {\r",
+											"        pm.expect(pm.response.json().data.id).to.be.eql(\"id must be a UUID\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
-											"    console.error(errors)}"
+											"    console.error(errors)\r",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -3096,19 +3096,18 @@
 											"try {\r",
 											"    const response = pm.response.json();\r",
 											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 404\", function () {\r",
-											"        pm.response.to.have.status(404)\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400)\r",
 											"    });\r",
 											"    pm.test(\"Status code response is 'Not Found'\", function () {\r",
-											"        pm.response.to.have.status('Not Found')\r",
+											"        pm.response.to.have.status('Bad Request')\r",
 											"    });\r",
-											"    pm.test(\"Error Response is Valid\", function () {\r",
-											"        pm.expect(pm.response.json()).to.be.an('object')\r",
-											"\r",
-											"        pm.expect(pm.response.json().message).to.be.eql(\"Template ':id' does not exist\")\r",
+											"    pm.test(\"Error Response is valid\", function () {\r",
+											"        pm.expect(pm.response.json().data.id).to.be.eql(\"id must be a UUID\")\r",
 											"    })\r",
 											"} catch (errors) {\r",
-											"    console.error(errors)}"
+											"    console.error(errors)\r",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -3257,7 +3256,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"active\", // active|inactive\n    \"description\": \"Limited offer!\",\n    \"amount\": 2000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\n         \"0191073b-9096-7442-9f1e-1b0066e35885\",\n         \"0191073b-9096-7442-9f1e-17c086825238\",\n         \"0191073b-9096-7442-9f1e-0c70c7804b2b\"\n        ],\n    \"processors\": []\n}",
+									"raw": "{\n    \"name\": \"Jolly\",\n    \"status\": \"bless\", // active|inactive\n    \"description\": \"Limited offer!\",\n    \"amount\": 2000,\n    \"currency\": \"NGN\",\n    \"interval\": \"yearly\", //monthly|yearly\n    \"features\": [\n         \"0191073b-9096-7442-9f1e-1b0066e35885\",\n         \"0191073b-9096-7442-9f1e-17c086825238\",\n         \"0191073b-9096-7442-9f1e-0c70c7804b2b\"\n        ],\n    \"processors\": []\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3497,21 +3496,21 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"try {\r",
-											"    const response = pm.response.json();\r",
-											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 401\", function () {\r",
-											"        pm.response.to.have.status(401)\r",
-											"    });\r",
-											"    pm.test(\"Status code response is 'Unauthorized'\", function () {\r",
-											"        pm.response.to.have.status('Unauthorized')\r",
-											"    });\r",
-											"    pm.test(\"Error Response is valid\", function () {\r",
-											"        pm.expect(pm.response.json().message).to.be.eql(\"You must provide an access token to access this resource.\")\r",
+											"// try {\r",
+											"//     const response = pm.response.json();\r",
+											"//     const { message, data } = response;\r",
+											"//     pm.test(\"Status code is 401\", function () {\r",
+											"//         pm.response.to.have.status(401)\r",
+											"//     });\r",
+											"//     pm.test(\"Status code response is 'Unauthorized'\", function () {\r",
+											"//         pm.response.to.have.status('Unauthorized')\r",
+											"//     });\r",
+											"//     pm.test(\"Error Response is valid\", function () {\r",
+											"//         pm.expect(pm.response.json().message).to.be.eql(\"You must provide an access token to access this resource.\")\r",
 											"    \r",
-											"    })\r",
-											"} catch (errors) {\r",
-											"    console.error(errors)}"
+											"//     })\r",
+											"// } catch (errors) {\r",
+											"//     console.error(errors)}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4911,107 +4910,6 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Subscription stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"14\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"overdue\"\n        }\n    ]\n}"
 								}
 							]
-						},
-						{
-							"name": "List Subscriptions Copy",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/billings/subscriptions?filter[status]=inactive",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"billings",
-										"subscriptions"
-									],
-									"query": [
-										{
-											"key": "filter[currency]",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "filter[reference]",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "filter[status]",
-											"value": "inactive"
-										},
-										{
-											"key": "filter[createdAt][gt]",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "filter[createdAt][lt]",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "List Subscriptions",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/billings/subscriptions",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"billings",
-												"subscriptions"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "474"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"1da-MbccLbIPmNydU7JW8g4c5JSkcFA\""
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 06 May 2024 07:11:28 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": [\n        {\n            \"id\": \"c967f82c-9f49-4853-8dcb-b9e2e60e2383\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"reference\": \"oo7dh5ub0n\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": 1000,\n                \"currency\": \"NGN\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-05-06T06:10:35.962Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-								}
-							]
 						}
 					]
 				},
@@ -5358,7 +5256,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01924701-4eb9-788e-97d2-75c630b8e855"
+											"value": "01924701-4eb9-788e-97d2-75c630b8e85"
 										}
 									]
 								}
@@ -10897,7 +10795,7 @@
 				"exec": [
 					"pm.request.headers.add({",
 					"    key: \"origin\",",
-					"    value: \"https://\" + \"admin-dev.wholistic.work\"",
+					"    value: \"https://\" + \"admin.dev.wholistic.work\"",
 					"});",
 					"",
 					"// pm.environment.set(\"baseUrl\", \"https://platform.api.wholistic.work\")"
