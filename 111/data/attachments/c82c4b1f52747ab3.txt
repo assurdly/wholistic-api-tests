@@ -1,0 +1,10 @@
+{
+    "name": "Rutherford LLC",
+    "email": "Frederick@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Jakubowski@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Carey",
+    "contactEmail2": "Isom_Bartoletti@yahoo.com",
+    "contactPhone2": "+2349055755673"
+}
