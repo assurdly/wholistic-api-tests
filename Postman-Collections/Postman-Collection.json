@@ -16432,25 +16432,25 @@
 									"script": {
 										"id": "5cc933aa-ac62-4750-8ff2-c013cd48c555",
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"try {",
+											"    const { data, message } = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
+											"    pm.test('Verify a valid message is returned', () => {",
+											"        pm.expect(message).eql(\"Validation Error.\")",
+											"    });",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data.id).to.be.a(\"string\");",
+											"    });",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
-											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
-											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});"
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Bad Request\");",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -16484,9 +16484,8 @@
 									],
 									"variable": [
 										{
-											"id": "54d4f561-5dd2-4a12-8a10-06c676052fff",
 											"key": "id",
-											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
+											"value": ""
 										}
 									]
 								}
