@@ -1,1 +1,0 @@
-{"message":"Validation Error.","data":{"estimatedDuration":"estimatedDuration must be a positive number","recaptchaResponse":"recaptchaResponse should not be empty"}}

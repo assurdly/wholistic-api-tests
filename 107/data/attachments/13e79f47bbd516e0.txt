@@ -1,7 +1,0 @@
-{
-    "firstName": "",
-    "lastName": "Cormier",
-    "phone": "+2348089722636",
-    "country": "NGA"
-    
-}

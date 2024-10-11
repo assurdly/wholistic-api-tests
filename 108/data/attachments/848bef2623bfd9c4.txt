@@ -1,8 +1,0 @@
-{
-    "name": "Jolly",
-    "status": "inactive", 
-    "description": "Limited offer!",
-    "amount": 3000,
-    "currency": "NGN",
-    "interval": "yearly" 
-}

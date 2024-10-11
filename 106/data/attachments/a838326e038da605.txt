@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully created client","data":{"id":"01927c1d-05d2-7bba-a5d2-326df90de44f","email":"Aaliyah@mailinator.com","name":"Loyal","contactName":"Azeez","contactPhone":"+2349055755671","contactEmail":"Aaliyah@mailinator.com","contactName2":null,"contactPhone2":null,"contactEmail2":null,"status":"active","createdAt":"2024-10-11T15:05:29.845Z"}}
