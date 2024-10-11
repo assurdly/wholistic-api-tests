@@ -1,0 +1,1 @@
+{"status":"success","message":"Projects stats fetched successfully","data":[{"count":"3","value":"pending"},{"count":"6","value":"rejected"},{"count":"0","value":"accepted"},{"count":"0","value":"draft"},{"count":"0","value":"scheduled"},{"count":"10","value":"ongoing"},{"count":"3","value":"completed"},{"count":"1","value":"blocked"}]}
