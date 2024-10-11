@@ -1,1 +1,0 @@
-{"status":"success","message":"Transaction stats fetched successfully","data":[{"count":"48","value":"success","amount":"246108.00"},{"count":"86","value":"pending","amount":"231156.00"},{"count":"0","value":"failed","amount":"0.00"},{"count":"23","value":"unpaid","amount":"138.00"},{"count":"2","value":"abandoned","amount":"20000.00"}]}

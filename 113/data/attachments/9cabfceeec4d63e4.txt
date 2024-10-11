@@ -1,1 +1,0 @@
-{"status":"success","message":"Workspaces stats fetched successfully","data":[{"count":"122","value":"active"},{"count":"0","value":"inactive"}]}

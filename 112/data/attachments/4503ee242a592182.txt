@@ -1,1 +1,0 @@
-{"status":"success","message":"Welcome back. You have been successfully signed in.","data":{"tokenType":"Bearer","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxOTEzNTM0LWZkMDEtNzIyMC05NzVhLTlmM2U1YjA0ZjYxNSIsImNvdW50IjowLCJpYXQiOjE3Mjg2NjQ3NTMsImV4cCI6MTczMTI1Njc1M30.GVpSdFFc1-CttCyhbGTpnPflfcs7vVXC61_rzonKueo","expiresIn":2591999}}

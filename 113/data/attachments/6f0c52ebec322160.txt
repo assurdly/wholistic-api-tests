@@ -1,8 +1,0 @@
-{
-    "firstName": "Admin-Dev",
-    "lastName": "Hintz",
-    "phone": "+2348089722636",
-    "country": "NGA",
-    "domain": "admin.dev.wholistic.work"
-    
-}

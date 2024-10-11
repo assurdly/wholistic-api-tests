@@ -1,1 +1,0 @@
-{"status":"success","message":"Successfully updated workspace","data":{"id":"162a4aff-3153-4487-90ec-bb15bc5d7354","timeZone":"Africa/Lagos"}}
