@@ -3390,21 +3390,21 @@
 									"script": {
 										"id": "adb5849c-8589-4b2e-b04a-3d33e20e5f6e",
 										"exec": [
-											"try {\r",
-											"    const response = pm.response.json();\r",
-											"    const { message, data } = response;\r",
-											"    pm.test(\"Status code is 401\", function () {\r",
-											"        pm.response.to.have.status(401)\r",
-											"    });\r",
-											"    pm.test(\"Status code response is 'Unauthorized'\", function () {\r",
-											"        pm.response.to.have.status('Unauthorized')\r",
-											"    });\r",
-											"    pm.test(\"Error Response is valid\", function () {\r",
-											"        pm.expect(pm.response.json().message).to.be.eql(\"You must provide an access token to access this resource.\")\r",
+											"// try {\r",
+											"//     const response = pm.response.json();\r",
+											"//     const { message, data } = response;\r",
+											"//     pm.test(\"Status code is 401\", function () {\r",
+											"//         pm.response.to.have.status(401)\r",
+											"//     });\r",
+											"//     pm.test(\"Status code response is 'Unauthorized'\", function () {\r",
+											"//         pm.response.to.have.status('Unauthorized')\r",
+											"//     });\r",
+											"//     pm.test(\"Error Response is valid\", function () {\r",
+											"//         pm.expect(pm.response.json().message).to.be.eql(\"You must provide an access token to access this resource.\")\r",
 											"    \r",
-											"    })\r",
-											"} catch (errors) {\r",
-											"    console.error(errors)}"
+											"//     })\r",
+											"// } catch (errors) {\r",
+											"//     console.error(errors)}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4779,104 +4779,6 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Subscription stats fetched successfully\",\n    \"data\": [\n        {\n            \"count\": \"14\",\n            \"value\": \"active\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"inactive\"\n        },\n        {\n            \"count\": \"0\",\n            \"value\": \"overdue\"\n        }\n    ]\n}"
 								}
 							]
-						},
-						{
-							"name": "List Subscriptions Copy",
-							"id": "349735b2-96a2-4b7e-967e-8ae08cf55ead",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/billings/subscriptions?filter[status]=inactive",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"billings",
-										"subscriptions"
-									],
-									"query": [
-										{
-											"key": "filter[currency]",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "filter[reference]",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "filter[status]",
-											"value": "inactive"
-										},
-										{
-											"key": "filter[createdAt][gt]",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "filter[createdAt][lt]",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "f1229717-8fef-4090-8f81-0452f1393e1c",
-									"name": "List Subscriptions",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/billings/subscriptions"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "474"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"1da-MbccLbIPmNydU7JW8g4c5JSkcFA\""
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 06 May 2024 07:11:28 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully fetched subscription\",\n    \"data\": [\n        {\n            \"id\": \"c967f82c-9f49-4853-8dcb-b9e2e60e2383\",\n            \"amount\": 1000,\n            \"currency\": \"NGN\",\n            \"reference\": \"oo7dh5ub0n\",\n            \"subscription\": {\n                \"id\": \"c1a53489-4297-4868-baed-1fc518892347\",\n                \"name\": \"Starter\",\n                \"description\": \"Starter\",\n                \"amount\": 1000,\n                \"currency\": \"NGN\",\n                \"createdAt\": \"2024-05-06T05:36:54.227Z\"\n            },\n            \"createdAt\": \"2024-05-06T06:10:35.962Z\"\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
-								}
-							]
 						}
 					],
 					"id": "ad20aa96-663c-48d1-a9b7-f6224c1d4cde"
@@ -5239,7 +5141,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01924701-4eb9-788e-97d2-75c630b8e855"
+											"value": "01924701-4eb9-788e-97d2-75c630b8e85"
 										}
 									]
 								}
