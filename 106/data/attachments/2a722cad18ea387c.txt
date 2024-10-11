@@ -1,0 +1,10 @@
+{
+    "name": "Schmitt - Pacocha",
+    "email": "Giovanna@mailinator.com",
+    "contactName": "Deji",
+    "contactEmail": "Wehner@mailinator.com",
+    "contactPhone": "+2348012345678",
+    "contactName2": "Tyra",
+    "contactEmail2": "Linnea_Padberg91@yahoo.com",
+    "contactPhone2": "+2349055755673"
+}

@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully updated role","data":{"id":"01917974-48ce-7997-92d2-b956089920f7","workspaceId":"cbaa42a9-2085-4e41-8555-db54e6a06057","name":"Outdoors","slug":"clients","description":"Member","status":"","createdAt":"2024-08-22T09:39:09.648Z"}}

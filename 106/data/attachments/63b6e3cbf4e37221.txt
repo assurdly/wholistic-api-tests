@@ -1,0 +1,1 @@
+{"status":"success","message":"Projects stats fetched successfully","data":[{"count":"0","value":"on-track"},{"count":"0","value":"catching-up"},{"count":"17","value":"at-risk"},{"count":"0","value":"warning"},{"count":"26","value":"overdue"},{"count":"2","value":"on-hold"},{"count":"9","value":"completed"}]}
