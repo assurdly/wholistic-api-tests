@@ -5439,26 +5439,22 @@
 										"id": "964b683e-2dfd-422e-be29-ef29bff0970f",
 										"exec": [
 											"try {\r",
-											"    const response = pm.response.json();\r",
-											"    const { message, data } = response;\r",
-											"    pm.test(\"Response code should return a 400\", function () {\r",
-											"        pm.response.to.have.status(400);\r",
+											"    const { data, message } = pm.response.json()\r",
+											"\r",
+											"    pm.test('Verify a valid message is returned', () => {\r",
+											"        pm.expect(message).eql(\"Validation Error.\")\r",
 											"    });\r",
-											"    pm.test(\"Response status is 'OK'\", function () {\r",
-											"        pm.response.to.have.status('OK');\r",
-											"    });\r",
-											"    pm.test(\"Response body is correct\", function () {\r",
-											"        pm.expect(pm.response.json()).to.be.an('object');\r",
-											"        pm.expect(pm.response.json().message).to.exist.and.to.be.a('string');\r",
-											"        pm.expect(pm.response.json().data).to.exist.and.to.be.an('object');\r",
-											"        // pm.expect(message).eql(\"Successfully updated role\")\r",
+											"    pm.test(\"Response body property\", function () {\r",
+											"        pm.expect(data.id).to.be.a(\"string\");\r",
 											"    });\r",
 											"\r",
-											"    pm.test(\"'status' in request body to be true\", function () {\r",
-											"        pm.expect(data.status).to.eql(true)\r",
-											"    })\r",
-											"}\r",
-											"catch (errors) {\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400);\r",
+											"    });\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"        pm.response.to.have.status(\"Bad Request\");\r",
+											"    });\r",
+											"} catch (errors) {\r",
 											"    console.error(errors)\r",
 											"}"
 										],
@@ -5501,7 +5497,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01917974-48ce-7997-92d2-b956089920f7"
+											"value": ""
 										}
 									]
 								}
@@ -5509,164 +5505,6 @@
 							"response": [
 								{
 									"id": "d7a018dd-840f-4b15-ab0d-d8be0824c7e1",
-									"name": "Update Role",
-									"originalRequest": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/roles/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"roles",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "235"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"eb-0Onk9un/wqugABny4ek4IbFPqhs\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:19:22 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"Member\",\n        \"status\": \"inactive\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Update Role - Invalid status field",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "964b683e-2dfd-422e-be29-ef29bff0970f",
-										"exec": [
-											"try{\r",
-											"const response = pm.response.json();\r",
-											"const { message,data } = response;\r",
-											"pm.test(\"Response code should return a 400\",function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Response status is 'Bad request'\", function (){\r",
-											"    pm.response.to.have.status('Bad request');\r",
-											"});\r",
-											"pm.test(\"Response body is correct\", function (){\r",
-											"     pm.expect(pm.response.json()).to.be.an('object');\r",
-											"     pm.expect(pm.response.json().message).to.exist.and.to.be.a('string');\r",
-											"     pm.expect(pm.response.json().data).to.exist.and.to.be.an('object');\r",
-											"     pm.expect(message).eql(\"Successfully updated role\")    \r",
-											"});\r",
-											"\r",
-											"pm.test(\"'status' in request body should not be empty\", function () {\r",
-											"    var status = pm.response.json().status;\r",
-											"    pm.expect(status).to.exist;\r",
-											"    pm.expect(status).to.not.equal('PLUTO@@');\r",
-											"})\r",
-											"}\r",
-											"catch (errors){\r",
-											"    console.error (errors)\r",
-											"}"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "5130cf55-94f1-4118-b70e-9d9293052dbf",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
-								},
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"Member\",\n    \"name\": \"{{$randomWord}}\",\n    \"status\": \"PLUTO@@\" // active|inactive\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/roles/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"roles",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "01917974-48ce-7997-92d2-b956089920f7"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "797f3edd-e02b-4734-96a3-cb5968c92ee6",
 									"name": "Update Role",
 									"originalRequest": {
 										"method": "PATCH",
@@ -7221,34 +7059,34 @@
 									"script": {
 										"id": "e2acea02-54d1-4472-9a80-b26ad47d950c",
 										"exec": [
-											"// var jsonData = pm.response.json();",
+											"var jsonData = pm.response.json();",
 											"",
-											"// pm.test(\"Status code is 200\", function () {",
-											"//     pm.response.to.have.status(200);",
-											"// });",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
 											"",
-											"// pm.test(\"Status code response is OK\", function () {",
-											"//     pm.response.to.have.status(\"OK\");",
-											"// });",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
 											"",
-											"// pm.test(\"Response body property\", function () {",
-											"//     pm.expect(jsonData).to.be.an(\"object\");",
-											"//     pm.expect(jsonData.status).to.be.an(\"string\");",
-											"//     pm.expect(jsonData.message).to.be.a(\"string\");",
-											"//     pm.expect(jsonData.data).to.be.an(\"object\");",
-											"// });",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData.status).to.be.an(\"string\");",
+											"    pm.expect(jsonData.message).to.be.a(\"string\");",
+											"    pm.expect(jsonData.data).to.be.an(\"array\");",
+											"});",
 											"",
-											"// pm.test(\"Status is success\", function () {",
-											"//     pm.expect(jsonData.status).to.eql('success');",
-											"// });",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
 											"",
-											"// pm.test(\"Status is success\", function () {",
-											"//     pm.expect(jsonData.status).to.eql('success');",
-											"// });",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
 											"",
-											"// pm.test(\"Message is Successfully fetched user\", function () {",
-											"//     pm.expect(jsonData.message).to.eql('Successfully fetched user');",
-											"// });"
+											"pm.test(\"Message is Successfully fetched users\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Successfully fetched users');",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
