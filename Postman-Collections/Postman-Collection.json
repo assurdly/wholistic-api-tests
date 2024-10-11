@@ -7073,7 +7073,7 @@
 											"    pm.expect(jsonData).to.be.an(\"object\");",
 											"    pm.expect(jsonData.status).to.be.an(\"string\");",
 											"    pm.expect(jsonData.message).to.be.a(\"string\");",
-											"    pm.expect(jsonData.data).to.be.an(\"array\");",
+											"    pm.expect(jsonData.data).to.be.an(\"object\");",
 											"});",
 											"",
 											"pm.test(\"Status is success\", function () {",
@@ -7085,7 +7085,7 @@
 											"});",
 											"",
 											"pm.test(\"Message is Successfully fetched users\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Successfully fetched users');",
+											"    pm.expect(jsonData.message).to.eql('Successfully fetched user');",
 											"});"
 										],
 										"type": "text/javascript",
@@ -7118,7 +7118,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "{{createdUser}}"
+											"value": "01927c68-ea70-7bba-a5d2-56943efc5def"
 										}
 									]
 								}
