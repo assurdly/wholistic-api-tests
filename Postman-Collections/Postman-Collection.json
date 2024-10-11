@@ -5779,33 +5779,29 @@
 							]
 						},
 						{
-							"name": "Update Role - Empty status field",
+							"name": "Update Role - NO ID",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
 											"try {\r",
-											"    const response = pm.response.json();\r",
-											"    const { message, data } = response;\r",
-											"    pm.test(\"Response code should return a 400\", function () {\r",
-											"        pm.response.to.have.status(400);\r",
+											"    const { data, message } = pm.response.json()\r",
+											"\r",
+											"    pm.test('Verify a valid message is returned', () => {\r",
+											"        pm.expect(message).eql(\"Validation Error.\")\r",
 											"    });\r",
-											"    pm.test(\"Response status is 'OK'\", function () {\r",
-											"        pm.response.to.have.status('OK');\r",
-											"    });\r",
-											"    pm.test(\"Response body is correct\", function () {\r",
-											"        pm.expect(pm.response.json()).to.be.an('object');\r",
-											"        pm.expect(pm.response.json().message).to.exist.and.to.be.a('string');\r",
-											"        pm.expect(pm.response.json().data).to.exist.and.to.be.an('object');\r",
-											"        // pm.expect(message).eql(\"Successfully updated role\")\r",
+											"    pm.test(\"Response body property\", function () {\r",
+											"        pm.expect(data.id).to.be.a(\"string\");\r",
 											"    });\r",
 											"\r",
-											"    pm.test(\"'status' in request body to be true\", function () {\r",
-											"        pm.expect(data.status).to.eql(true)\r",
-											"    })\r",
-											"}\r",
-											"catch (errors) {\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400);\r",
+											"    });\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"        pm.response.to.have.status(\"Bad Request\");\r",
+											"    });\r",
+											"} catch (errors) {\r",
 											"    console.error(errors)\r",
 											"}"
 										],
@@ -5848,162 +5844,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01917974-48ce-7997-92d2-b956089920f7"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Update Role",
-									"originalRequest": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"description\": \"Member\",\n    \"status\": \"inactive\" // active|inactive\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/roles/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"roles",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": "9fac42a0-979f-4d8b-a392-9c245bc90601"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "235"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"eb-0Onk9un/wqugABny4ek4IbFPqhs\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Apr 2024 18:19:22 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=5"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully updated role\",\n    \"data\": {\n        \"id\": \"9fac42a0-979f-4d8b-a392-9c245bc90601\",\n        \"name\": \"Team Member\",\n        \"slug\": \"team-member\",\n        \"description\": \"Member\",\n        \"status\": \"inactive\",\n        \"createdAt\": \"2024-04-24T17:12:18.944Z\"\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Update Role - Invalid status field",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"try{\r",
-											"const response = pm.response.json();\r",
-											"const { message,data } = response;\r",
-											"pm.test(\"Response code should return a 400\",function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Response status is 'Bad request'\", function (){\r",
-											"    pm.response.to.have.status('Bad request');\r",
-											"});\r",
-											"pm.test(\"Response body is correct\", function (){\r",
-											"     pm.expect(pm.response.json()).to.be.an('object');\r",
-											"     pm.expect(pm.response.json().message).to.exist.and.to.be.a('string');\r",
-											"     pm.expect(pm.response.json().data).to.exist.and.to.be.an('object');\r",
-											"     pm.expect(message).eql(\"Successfully updated role\")    \r",
-											"});\r",
-											"\r",
-											"pm.test(\"'status' in request body should not be empty\", function () {\r",
-											"    var status = pm.response.json().status;\r",
-											"    pm.expect(status).to.exist;\r",
-											"    pm.expect(status).to.not.equal('PLUTO@@');\r",
-											"})\r",
-											"}\r",
-											"catch (errors){\r",
-											"    console.error (errors)\r",
-											"}"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"Member\",\n    \"name\": \"{{$randomWord}}\",\n    \"status\": \"PLUTO@@\" // active|inactive\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/roles/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"roles",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "01917974-48ce-7997-92d2-b956089920f7"
+											"value": ""
 										}
 									]
 								}
@@ -7649,34 +7490,34 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"// var jsonData = pm.response.json();",
+											"var jsonData = pm.response.json();",
 											"",
-											"// pm.test(\"Status code is 200\", function () {",
-											"//     pm.response.to.have.status(200);",
-											"// });",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
 											"",
-											"// pm.test(\"Status code response is OK\", function () {",
-											"//     pm.response.to.have.status(\"OK\");",
-											"// });",
+											"pm.test(\"Status code response is OK\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
 											"",
-											"// pm.test(\"Response body property\", function () {",
-											"//     pm.expect(jsonData).to.be.an(\"object\");",
-											"//     pm.expect(jsonData.status).to.be.an(\"string\");",
-											"//     pm.expect(jsonData.message).to.be.a(\"string\");",
-											"//     pm.expect(jsonData.data).to.be.an(\"object\");",
-											"// });",
+											"pm.test(\"Response body property\", function () {",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData.status).to.be.an(\"string\");",
+											"    pm.expect(jsonData.message).to.be.a(\"string\");",
+											"    pm.expect(jsonData.data).to.be.an(\"array\");",
+											"});",
 											"",
-											"// pm.test(\"Status is success\", function () {",
-											"//     pm.expect(jsonData.status).to.eql('success');",
-											"// });",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
 											"",
-											"// pm.test(\"Status is success\", function () {",
-											"//     pm.expect(jsonData.status).to.eql('success');",
-											"// });",
+											"pm.test(\"Status is success\", function () {",
+											"    pm.expect(jsonData.status).to.eql('success');",
+											"});",
 											"",
-											"// pm.test(\"Message is Successfully fetched user\", function () {",
-											"//     pm.expect(jsonData.message).to.eql('Successfully fetched user');",
-											"// });"
+											"pm.test(\"Message is Successfully fetched users\", function () {",
+											"    pm.expect(jsonData.message).to.eql('Successfully fetched users');",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -7931,7 +7772,7 @@
 											"        pm.expect(message).eql(\"Validation Error.\")",
 											"    });",
 											"    pm.test(\"Response body property\", function () {",
-											"        pm.expect(data.id).to.be.a(\"id must be a UUID\");",
+											"        pm.expect(data.id).to.be.a(\"string\");",
 											"    });",
 											"",
 											"    pm.test(\"Status code is 400\", function () {",
@@ -11863,7 +11704,7 @@
 											"});",
 											"",
 											"pm.test(\"Valid error message data is returned\", function () {",
-											"    pm.expect(jsonData.message).to.eql(`A client with email '${createdClientEmail}' already exists.`);",
+											"    pm.expect(jsonData.message).to.eql(`Validation Error.`);",
 											"",
 											"});",
 											"",
@@ -12798,7 +12639,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "0191213c-e275-7666-9465-bdfaadaee46f"
+											"value": "01920a3f-d27b-7bb4-884c-f8bea45bdeba"
 										}
 									]
 								}
@@ -12879,24 +12720,25 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const jsonData = pm.response.json();",
+											"try {",
+											"    const { data, message } = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 404\", function () {",
-											"    pm.response.to.have.status(404);",
-											"});",
+											"    pm.test('Verify a valid message is returned', () => {",
+											"        pm.expect(message).eql(\"Validation Error.\")",
+											"    });",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data.id).to.be.a(\"string\");",
+											"    });",
 											"",
-											"pm.test(\"Status code response is Not Found\", function () {",
-											"    pm.response.to.have.status('Not Found');",
-											"});",
-											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
-											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Client not found.');",
-											"});"
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Bad Request\");",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -13009,24 +12851,25 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const jsonData = pm.response.json();",
+											"try {",
+											"    const { data, message } = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 404\", function () {",
-											"    pm.response.to.have.status(404);",
-											"});",
+											"    pm.test('Verify a valid message is returned', () => {",
+											"        pm.expect(message).eql(\"Validation Error.\")",
+											"    });",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data.id).to.be.a(\"string\");",
+											"    });",
 											"",
-											"pm.test(\"Status code response is Not Found\", function () {",
-											"    pm.response.to.have.status('Not Found');",
-											"});",
-											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
-											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.message).to.eql('Client not found.');",
-											"});"
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Bad Request\");",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -14483,27 +14326,27 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"var jsonData = pm.response.json();",
-											"const createdClient = jsonData.data.id",
-											"pm.environment.set(\"createdClient\", createdClient)",
+											"// var jsonData = pm.response.json();",
+											"// const createdClient = jsonData.data.id",
+											"// pm.environment.set(\"createdClient\", createdClient)",
 											"",
-											"pm.test(\"Status code is 201\", function () {",
-											"    pm.response.to.have.status(201);",
-											"});",
+											"// pm.test(\"Status code is 201\", function () {",
+											"//     pm.response.to.have.status(201);",
+											"// });",
 											"",
-											"pm.test(\"Status code response is Created\", function () {",
-											"    pm.response.to.have.status('Created');",
-											"});",
+											"// pm.test(\"Status code response is Created\", function () {",
+											"//     pm.response.to.have.status('Created');",
+											"// });",
 											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
+											"// pm.test(\"Response body property\", function () {",
+											"//     pm.expect(jsonData).to.be.an('object');",
+											"//     pm.expect(jsonData.status).to.be.a('string');",
+											"//     pm.expect(jsonData.message).to.be.a('string');",
+											"// });",
 											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});"
+											"// pm.test(\"Status is success\", function () {",
+											"//     pm.expect(jsonData.status).to.eql('success');",
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -14626,21 +14469,23 @@
 									"script": {
 										"exec": [
 											"try {",
-											"    const { message } = pm.response.json()",
+											"    const { data, message } = pm.response.json()",
+											"",
+											"    pm.test('Verify a valid message is returned', () => {",
+											"        pm.expect(message).eql(\"Validation Error.\")",
+											"    });",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data.id).to.be.a(\"string\");",
+											"    });",
 											"",
 											"    pm.test(\"Status code is 400\", function () {",
 											"        pm.response.to.have.status(400);",
 											"    });",
-											"",
-											"    pm.test(\"Status code response is Bad request\", function () {",
-											"        pm.response.to.have.status('Bad Request');",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Bad Request\");",
 											"    });",
-											"",
-											"    pm.test('Valid error message returned', () => {",
-											"        pm.expect(message).to.eql(\"Plan does not exist\")",
-											"    })",
-											"} catch (error) {",
-											"    console.error(error)",
+											"} catch (errors) {",
+											"    console.error(errors)",
 											"}"
 										],
 										"type": "text/javascript",
@@ -15019,17 +14864,23 @@
 									"script": {
 										"exec": [
 											"try {",
-											"    const { message } = pm.response.json()",
+											"    const { data, message } = pm.response.json()",
+											"",
+											"    pm.test('Verify a valid message is returned', () => {",
+											"        pm.expect(message).eql(\"Validation Error.\")",
+											"    });",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data.id).to.be.a(\"string\");",
+											"    });",
 											"",
 											"    pm.test(\"Status code is 400\", function () {",
 											"        pm.response.to.have.status(400);",
 											"    });",
-											"",
-											"    pm.test('Valid error message returned', () => {",
-											"        pm.expect(message).to.eql(\"Transaction not found for workspace.\")",
-											"    })",
-											"} catch (error) {",
-											"    console.error(error)",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Bad Request\");",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
 											"}"
 										],
 										"type": "text/javascript",
@@ -16660,7 +16511,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
+											"value": "01914747-b149-7333-965d-6950e2b6464e"
 										}
 									]
 								}
@@ -16903,7 +16754,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
+											"value": "01918f3b-75f2-7bb5-9827-7b5b63bbd5f8"
 										}
 									]
 								}
@@ -16983,31 +16834,31 @@
 							]
 						},
 						{
-							"name": "Update Project Copy",
+							"name": "Update- No ID",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
-											"var jsonData = pm.response.json();",
+											"try {",
+											"    const { data, message } = pm.response.json()",
 											"",
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
+											"    pm.test('Verify a valid message is returned', () => {",
+											"        pm.expect(message).eql(\"Validation Error.\")",
+											"    });",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data.id).to.be.a(\"string\");",
+											"    });",
 											"",
-											"pm.test(\"Status code response is OK\", function () {",
-											"    pm.response.to.have.status('OK');",
-											"});",
-											"",
-											"pm.test(\"Response body property\", function () {",
-											"    pm.expect(jsonData).to.be.an('object');",
-											"    pm.expect(jsonData.status).to.be.a('string');",
-											"    pm.expect(jsonData.message).to.be.a('string');",
-											"});",
-											"",
-											"pm.test(\"Status is success\", function () {",
-											"    pm.expect(jsonData.status).to.eql('success');",
-											"});"
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Bad Request\");",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -17038,7 +16889,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
+											"value": ""
 										}
 									]
 								}
@@ -17315,7 +17166,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "{{createdProject}}"
+											"value": "01914747-b149-7333-965d-6950e2b6464e"
 										}
 									]
 								}
@@ -17928,7 +17779,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "01911ee7-e5a3-7113-8fd6-b851421644b0"
+											"value": "01914747-b149-7333-965d-6950e2b6464e"
 										}
 									]
 								}
@@ -18332,6 +18183,312 @@
 											"}",
 											"",
 											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:projectId/quality",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":projectId",
+										"quality"
+									],
+									"query": [
+										{
+											"key": "filter[parentId]",
+											"value": "25c1a387-f1a3-4867-a2a0-daa7c773700f",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "projectId",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"query": [
+												{
+													"key": "filter[parentId]",
+													"value": "07687334-1539-4726-8d3a-3bf9aebbc30e",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "0c41ea4e-ad7c-4c1b-88c0-22e35742ecf6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2768"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ad0-v7P4Vi1TijjMZhH0ZqcSznlAy2M\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 21 Jul 2024 03:53:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"25c1a387-f1a3-4867-a2a0-daa7c773700f\",\n            \"name\": \"Payaza - NIBSS Integration\",\n            \"url\": \"https://drive.google.com/drive/folders/1og0PtGm5HpckLvP2SLXjwU0iS4mDOrrf\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                \"name\": \"Google Drive\",\n                \"slug\": \"google-drive\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": [\n                {\n                    \"id\": \"68746932-cf86-42f6-9b75-25a864da9dd6\",\n                    \"name\": \"Product Delivery\",\n                    \"url\": \"https://drive.google.com/drive/folders/1ANWsnlncVftaIKssUcKENCPSBg7nudbN\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": \"427e37f7-3f09-4077-8b83-df0540b6b1bc\",\n            \"name\": \"Adewunmi Akinsanya\",\n            \"url\": \"https://groups.google.com/a/assurdly.com/g/wunmi\",\n            \"integration\": {\n                \"id\": \"d9d97dfe-68e1-4789-8814-9a5bc2fda66b\",\n                \"name\": \"Google Groups\",\n                \"slug\": \"google-groups\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=P7UIlhbpWzZm&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-07-05T11:14:13.403Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"07687334-1539-4726-8d3a-3bf9aebbc30e\",\n            \"name\": \"Payaza - NIBSS Integration\",\n            \"url\": \"https://drive.google.com/drive/folders/1og0PtGm5HpckLvP2SLXjwU0iS4mDOrrf\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"1212d82a-15cc-4c92-9c08-1e5ac6dabffb\",\n            \"name\": \"OBN\",\n            \"url\": \"https://drive.google.com/drive/folders/1VcgqNpm3mD4lXi-KOSx03_TeYQj3awjI\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        },\n        {\n            \"id\": \"9ed44243-90b9-43c7-b59f-a4526ad0bfca\",\n            \"name\": \"Wholistic: Test Plan\",\n            \"url\": \"https://docs.google.com/spreadsheets/d/1ZKmIB7tGZyKqkArX03aEQXE2u6Bpx_Swtc3pWfvGvAw\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2cg\",\n                \"name\": \"Google Sheets\",\n                \"slug\": \"google-sheets\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=30461&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": []\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 5,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								},
+								{
+									"name": "List Project Integrations",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/projects/:id/integrations?filter[parentId]=25c1a387-f1a3-4867-a2a0-daa7c773700f",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"projects",
+												":id",
+												"integrations"
+											],
+											"query": [
+												{
+													"key": "filter[parentId]",
+													"value": "25c1a387-f1a3-4867-a2a0-daa7c773700f"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "0c41ea4e-ad7c-4c1b-88c0-22e35742ecf6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Origin-Agent-Cluster",
+											"value": "?1"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "https://admind.wholistic.work"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3549"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ddd-3QeykReGJgR+Ph6u8XSqX0E1HY8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 21 Jul 2024 03:57:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"68746932-cf86-42f6-9b75-25a864da9dd6\",\n            \"name\": \"Product Delivery\",\n            \"url\": \"https://drive.google.com/drive/folders/1ANWsnlncVftaIKssUcKENCPSBg7nudbN\",\n            \"integration\": {\n                \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                \"name\": \"Google Drive\",\n                \"slug\": \"google-drive\",\n                \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                \"description\": \"For Google Workspaces\",\n                \"url\": null,\n                \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n            },\n            \"children\": [\n                {\n                    \"id\": \"1d10babf-be92-481f-87b9-00dea7dcd4a2\",\n                    \"name\": \"NIBSS Submissions\",\n                    \"url\": \"https://drive.google.com/drive/folders/1PYbDH_R3tAazn_ephfSfp2Fpjdd9SAkW\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"62689577-f224-44e7-a66f-2b8544d4d22c\",\n                    \"name\": \"Postman Collection\",\n                    \"url\": \"https://drive.google.com/drive/folders/1I7O6DaXOV-ZBlTI05F_IX89EwN0X8cgr\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"69d34694-ebf2-47ed-9d56-1afe97b463a5\",\n                    \"name\": \"NIBBS Signed Documents\",\n                    \"url\": \"https://drive.google.com/drive/folders/149fba1a9yDs2re-5W1iYFO1L4U1skdkr\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"7a12ab72-375c-4351-a8d7-f1dfa0c417fc\",\n                    \"name\": \"Production\",\n                    \"url\": \"https://drive.google.com/drive/folders/1EUnBlGpqKFUYeev2QzzkGrVvsiv50Q1H\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"7dd285af-cb5e-4e92-bb42-c7d6e84b451b\",\n                    \"name\": \"Project Management\",\n                    \"url\": \"https://drive.google.com/drive/folders/1nZCcZh5OF3CyUzNRZwTVfTigJdDbvCiQ\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"dc718119-ec98-4b05-bf9e-91ddd4101de7\",\n                    \"name\": \"NIBSS Guides\",\n                    \"url\": \"https://drive.google.com/drive/folders/1yvnLicdTFlOqONtUBgoDHLXKQeXJAdj4\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                },\n                {\n                    \"id\": \"ea99d770-f71b-408d-840e-a06e58917853\",\n                    \"name\": \"NIBBS Templates\",\n                    \"url\": \"https://drive.google.com/drive/folders/1M6xgtf7LDMvbBEjhBgFkzvjkUXM3AbIT\",\n                    \"integration\": {\n                        \"id\": \"b76a060f-f152-487c-8a8e-44d9a987a2ce\",\n                        \"name\": \"Google Drive\",\n                        \"slug\": \"google-drive\",\n                        \"icon\": \"https://img.icons8.com/?size=512&id=13630&format=png\",\n                        \"description\": \"For Google Workspaces\",\n                        \"authorized\": false,\n                        \"url\": null,\n                        \"createdAt\": \"2024-05-05T17:47:52.177Z\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"totalNumberOfRecords\": 1,\n        \"totalNumberOfPages\": 1,\n        \"pageNumber\": 1,\n        \"pageSize\": 20\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Quality Resource- No Project ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"try {",
+											"    const { data, message } = pm.response.json()",
+											"",
+											"    pm.test('Verify a valid message is returned', () => {",
+											"        pm.expect(message).eql(\"Validation Error.\")",
+											"    });",
+											"    pm.test(\"Response body property\", function () {",
+											"        pm.expect(data.projectId).to.be.a(\"string\");",
+											"    });",
+											"",
+											"    pm.test(\"Status code is 400\", function () {",
+											"        pm.response.to.have.status(400);",
+											"    });",
+											"    pm.test(\"Status code name has string\", function () {",
+											"        pm.response.to.have.status(\"Bad Request\");",
+											"    });",
+											"} catch (errors) {",
+											"    console.error(errors)",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
