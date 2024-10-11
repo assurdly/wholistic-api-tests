@@ -11152,7 +11152,7 @@
 							]
 						},
 						{
-							"name": "Empty Fields - Add Client",
+							"name": "Add client - Add Client",
 							"event": [
 								{
 									"listen": "test",
@@ -11289,7 +11289,7 @@
 							]
 						},
 						{
-							"name": "Empty Fields - Existing client",
+							"name": "Add Client - Existing client",
 							"event": [
 								{
 									"listen": "test",
@@ -11339,7 +11339,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{createdClientnName}}\",\n    \"email\": \"{{createdClientEmail}}\",\n    \"contactName\": \"Azeez\",\n    \"contactEmail\": \"{{createdClientEmail}}\",\n    \"contactPhone\": \"+2349055755671\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
+									"raw": "{\n    \"name\": \"\",\n    \"email\": \"{{createdClientEmail}}\",\n    \"contactName\": \"Azeez\",\n    \"contactEmail\": \"{{createdClientEmail}}\",\n    \"contactPhone\": \"+2349055755671\",\n    \"contactName2\": null,\n    \"contactEmail2\": null,\n    \"contactPhone2\": null\n}",
 									"options": {
 										"raw": {
 											"language": "json"
