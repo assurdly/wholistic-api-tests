@@ -1,0 +1,123 @@
+﻿Name,Created By,Email Address,Date Created,Status
+Assurdly-342dd,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Sunday, April 28, 2024 11:46 PM",active
+the devs,Temitope Pinheiro,temitopepinheiro@gmail.com,"Tuesday, April 30, 2024 11:31 PM",active
+Assurdly,Adewunmi Akinsanya,azeez@assurdly.com,"Wednesday, May 1, 2024 9:26 AM",active
+Azeez,Adewunmi Akinsanya,azeez@assurdly.com,"Friday, May 3, 2024 3:42 AM",active
+tester,Adewunmi Akinsanya,azeez@mailinator.com,"Tuesday, May 7, 2024 7:42 AM",active
+Ibrahim Azeez,Azeez Ibrahim,azeez+11@assurdly.com,"Tuesday, May 7, 2024 7:51 AM",active
+azeez.o1316,Ibrahim Azeez,azeez.o1316@gmail.com,"Tuesday, May 7, 2024 8:00 AM",active
+adetutu,Adewunmi Akinsanya,azeez+100@assurdly.com,"Wednesday, May 8, 2024 4:15 PM",active
+bypass,Adewunmi Akinsanya,azeez@assurdly.com,"Wednesday, May 8, 2024 6:07 PM",active
+upward-trending,Adewunmi Akinsanya,azeez@assurdly.com,"Friday, May 10, 2024 9:48 PM",active
+My Workspace,,,"Sunday, May 12, 2024 1:19 PM",active
+ahnahn,Azeez azeez,azeez+65@assurdly.com,"Sunday, May 12, 2024 2:44 PM",active
+Serious,Temitope Pinheiro,temitopepinheiro@gmail.com,"Sunday, May 12, 2024 8:41 PM",active
+,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Tuesday, May 14, 2024 12:22 PM",active
+Great,Adex Frett,fryer@yopmail.com,"Friday, May 17, 2024 10:27 AM",active
+wireless,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, May 19, 2024 6:44 PM",active
+Legacy,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, May 19, 2024 6:46 PM",active
+Chicken,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, May 19, 2024 6:47 PM",active
+Account,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, May 19, 2024 6:48 PM",active
+Bacon,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, May 19, 2024 7:30 PM",active
+thirdparty,Abolade Adebayo,abolade.adebayo@assurdly.com,"Monday, May 20, 2024 12:36 PM",active
+ABC Project,Abisola Oyedotun,abisola@assurdly.com,"Monday, May 20, 2024 12:37 PM",active
+XYZProject,Veekee James,abisola@mailinator.com,"Monday, May 20, 2024 3:25 PM",active
+Abolade Adebayo ,Abolade Adebayo,asakeolasunbo8@gmail.com ,"Monday, May 20, 2024 3:38 PM",active
+Flex,Asake Olasunbo,aboladeadebayo080@gmail.com,"Monday, May 20, 2024 4:54 PM",active
+Focus project,Halima Bisola,halima@mailinator.com,"Monday, May 20, 2024 7:48 PM",active
+Add,Fred Teslim,frerr@yopmail.com,"Tuesday, May 21, 2024 7:37 AM",active
+adetuts,Azeez Ibrahim,azeez+29@assurdly.com,"Wednesday, May 22, 2024 9:31 AM",active
+Ibrahim Azeez your The work,Azeez Ibrahim,azeez+50@assurdly.com,"Wednesday, May 22, 2024 1:54 PM",active
+Ola King,Ola King,rhedalee@gmail.com,"Thursday, May 23, 2024 11:32 AM",active
+Free Plan,Abolade A,abolade.adebayo+1@assurdly.com ,"Thursday, May 23, 2024 11:40 AM",active
+jaded,Fuan Akinsanya,sign@yopmail.com,"Thursday, May 23, 2024 11:46 AM",active
+FOREX COUNTY,Adeleke Halima,Ahalima@mailinator.com,"Thursday, May 23, 2024 11:47 AM",active
+Ibrahim Azeezzz,Azeez Ibrahim,azeez+31@assurdly.com,"Thursday, May 23, 2024 11:49 AM",active
+Hello,Abolade A,abolade.adebayo+2@assurdly.com ,"Thursday, May 23, 2024 11:52 AM",active
+ball boys,Luis Campos,temitopepinheiro+44@gmail.com,"Thursday, May 23, 2024 11:59 AM",active
+Test project,Luis Campos,temitopepinheiro+44@gmail.com,"Thursday, May 23, 2024 12:00 PM",active
+Here,Abolade D,abolade.adebayo+5@assurdly.com ,"Thursday, May 23, 2024 12:01 PM",active
+Temitope Pinheiro,Luis Campos,temitopepinheiro+44@gmail.com,"Thursday, May 23, 2024 12:02 PM",active
+final space,Luis Campos,temitopepinheiro+44@gmail.com,"Thursday, May 23, 2024 12:02 PM",active
+Ola,Ola K,abolade.adebayo+7@assurdly.com,"Thursday, May 23, 2024 12:14 PM",active
+Maryam,Fred Azeez,sir@yopmail.com,"Thursday, May 23, 2024 12:18 PM",active
+maximize,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, May 26, 2024 3:32 PM",active
+SyncTest,Abolade Olasunbo,abolade.adebayo+10@assurdly.com,"Monday, May 27, 2024 2:07 PM",active
+Object-based,Adewunmi Akinsanya,azeez@assurdly.com,"Monday, June 3, 2024 6:13 AM",active
+dynamic,Adewunmi Akinsanya,azeez@assurdly.com,"Wednesday, June 5, 2024 6:09 PM",active
+Admin,Adewunmi Akinsanya,admin@wholistic.work,"Sunday, June 9, 2024 3:38 PM",active
+Rustic,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, June 9, 2024 9:45 PM",active
+Grocery,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, June 9, 2024 10:03 PM",active
+Supervisor,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, June 9, 2024 10:08 PM",active
+firewall,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, June 9, 2024 10:20 PM",active
+Soap,Adewunmi Akinsanya,azeez@assurdly.com,"Sunday, June 9, 2024 10:33 PM",active
+Services,Damilola Olayinka,abolade.adebayo+12@assurdly.com,"Monday, June 10, 2024 10:17 AM",active
+Arial,Abolade Olasunbo,Abolade.adebayo+15@assurdly.com,"Wednesday, June 12, 2024 6:17 AM",active
+Infinity,Jane Doe,abolade.adebayo+20@assurdly.com,"Thursday, June 13, 2024 11:48 AM",active
+Brainer,Adetutu Isinks,brain@yopmail.com,"Wednesday, June 19, 2024 11:51 AM",active
+thewunmi,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Friday, June 21, 2024 5:59 AM",active
+Team Avengers,Ayomide Liasu,Liasusegun1@gmail.com,"Friday, June 21, 2024 7:42 AM",active
+Auth,,,"Tuesday, June 25, 2024 9:11 PM",active
+KitchenDelight,Fenty Rihanna,KitchenDelight@mailinator.com,"Sunday, June 30, 2024 6:34 AM",active
+Texclusive,Odumodu Black,Odumodu@mailinator.com,"Wednesday, July 3, 2024 6:08 PM",active
+blasto,Azeez Azeez,azeez+35@assurdly.com,"Monday, July 8, 2024 4:53 AM",active
+Clothing,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, July 8, 2024 5:55 AM",active
+interface,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, July 8, 2024 6:01 AM",active
+plug-and-play,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, July 8, 2024 6:19 AM",active
+Xvibes,Tushab,tushab19@gmail.com,"Tuesday, July 9, 2024 5:05 AM",active
+Frozen,Adewunmi Akinsanya,azeez@mailinator.com,"Wednesday, July 10, 2024 6:35 PM",active
+technologies,Adewunmi Akinsanya,admin@wholistic.work,"Friday, July 12, 2024 3:37 PM",active
+yellow,Adewunmi Akinsanya,azeez@mailinator.com,"Friday, July 12, 2024 6:35 PM",active
+grey,Adewunmi Akinsanya,azeez@mailinator.com,"Sunday, July 14, 2024 8:03 PM",active
+universe,Azeez Azeez,azeez+2@assurdly.com,"Monday, July 15, 2024 5:26 AM",active
+Dieter,Asake Ola,abolade2@mailinator.com,"Tuesday, July 16, 2024 9:55 AM",active
+Ikigai,Ayomide Liasu,Theonlyliasu@mailinator.com,"Tuesday, July 16, 2024 10:24 AM",active
+circuit,Ayomide Liasu,Theonlyliasu@mailinator.com,"Tuesday, July 16, 2024 2:14 PM",active
+BigTee,Halimat Oye,halimat@mailinator.com,"Wednesday, July 17, 2024 12:42 PM",active
+Wooden,Adewunmi Akinsanya,azeez@mailinator.com,"Wednesday, July 17, 2024 6:35 PM",active
+Brown,Adex Brown,Free@yopmail.com,"Thursday, July 18, 2024 6:51 AM",active
+az,Azeez Ibrahim,az@mailinator.com,"Thursday, July 18, 2024 8:17 AM",active
+demotest,Azeez Ibrahim,demotest@mailinator.com,"Thursday, July 18, 2024 11:05 AM",active
+Berkshire,Adewunmi Akinsanya,azeez@mailinator.com,"Friday, July 19, 2024 6:34 PM",active
+alarm,Adewunmi Akinsanya,azeez@mailinator.com,"Sunday, July 21, 2024 8:04 PM",active
+Books,Adewunmi Akinsanya,azeez@mailinator.com,"Wednesday, July 24, 2024 6:36 PM",active
+the rookies,John Nolan,nolan@yopmail.com,"Friday, July 26, 2024 11:04 AM",active
+gasly,Ibrahim Azeez,l.adeosun.la@gmail.com,"Friday, July 26, 2024 2:07 PM",active
+Pinnacle,Betty Butter,bettybutter@mailinator.com,"Friday, July 26, 2024 5:11 PM",active
+Litty,Abeeesola Hoye,abisola1@mailinator.com,"Friday, July 26, 2024 5:56 PM",active
+data-warehouse,Adewunmi Akinsanya,azeez@mailinator.com,"Friday, July 26, 2024 6:33 PM",active
+TestApiKey,Ibrahim Azeez,ade@mailinator.com,"Saturday, July 27, 2024 11:21 PM",active
+User,Adewunmi Akinsanya,azeez@mailinator.com,"Sunday, July 28, 2024 8:03 PM",active
+Fresh,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, July 29, 2024 8:25 AM",active
+digital,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, July 29, 2024 8:39 AM",active
+Security,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, July 29, 2024 8:40 AM",active
+okiki,Okiki Azeez,oki@mailinator.com,"Monday, July 29, 2024 8:07 PM",active
+subscription test,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Wednesday, July 31, 2024 7:39 AM",active
+subscription2 test,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Wednesday, July 31, 2024 7:44 AM",active
+subscription3 test,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Wednesday, July 31, 2024 7:45 AM",active
+subscription4 test,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Wednesday, July 31, 2024 7:47 AM",active
+Apple,Damilola Gates,abolade3@mailinator.com,"Wednesday, July 31, 2024 8:57 AM",active
+Kaybee,Kim Kay,gbemi@mailinator.com,"Wednesday, July 31, 2024 2:51 PM",active
+Luxe,,Ajoke@mailinator.com,"Wednesday, July 31, 2024 3:38 PM",active
+Devolved,Adewunmi Akinsanya,azeez@mailinator.com,"Wednesday, July 31, 2024 6:35 PM",active
+Vibes,,super@mailinator.com,"Sunday, August 4, 2024 10:00 PM",active
+collaborative+Miss,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, August 5, 2024 7:23 AM",active
+BedfordshireMrs.,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, August 5, 2024 7:23 AM",active
+BrandingMs.,Adewunmi Akinsanya,azeez@mailinator.com,"Monday, August 5, 2024 7:29 AM",active
+development,,dev@mailinator.com,"Monday, August 5, 2024 3:16 PM",active
+testing,,testdemo@mailinator.com,"Tuesday, August 6, 2024 4:36 PM",active
+tuesday,Ibrahim Azeez,tuesdaytest@mailinator.com,"Tuesday, August 6, 2024 5:04 PM",active
+process,Adewunmi Akinsanya,azeez@mailinator.com,"Wednesday, August 7, 2024 6:35 PM",active
+the wunmi,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Friday, August 9, 2024 12:15 AM",active
+bash,Adewunmi Akinsanya,azeez@mailinator.com,"Tuesday, August 13, 2024 5:27 PM",active
+algorithmMs.,Adewunmi Akinsanya,ade.wunmi.ak.insanya@gmail.com,"Friday, August 16, 2024 5:16 PM",active
+ibrahim-azeezoo,Ibrahim azeez,don@mailinator.com,"Thursday, August 22, 2024 3:54 AM",active
+demo,Adewunmi Akinsanya,adewunmiakinsanya+03@gmail.com,"Sunday, September 8, 2024 1:57 PM",active
+Emerald,,,"Monday, September 9, 2024 1:50 PM",active
+Xxness,Junior Raymond,rasheedat@mailinator.com,"Thursday, September 19, 2024 11:29 AM",active
+BeautyfuLife,Beauty Tukura,beauty@mailinator.com,"Wednesday, October 2, 2024 3:12 PM",active
+AQUA,Veekee James,abisola@mailinator.com,"Wednesday, October 2, 2024 7:15 PM",active
+yeah-wunmi,Adewunmi Akinsanya,adewunmiakinsanya@gmail.com,"Thursday, October 3, 2024 8:04 AM",active
+KA- Logistics,Kimso Akide,kimso@mailinator.com,"Friday, October 4, 2024 11:38 AM",active
+Raya.inc,Raya Moana,raya@mailinator.com,"Friday, October 4, 2024 5:17 PM",active
+S-vibes,Seyi Vibes,seyi@mailinator.com,"Friday, October 4, 2024 6:05 PM",active
