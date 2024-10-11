@@ -1,0 +1,1 @@
+{"status":"success","message":"Successfully updated project details","data":{"id":"01918f3b-75f2-7bb5-9827-7b5b63bbd5f8","email":null,"serviceType":null,"startDate":"2024-09-02","duration":114,"daysSpent":39,"daysSpentPercentage":34.21,"endDate":"2024-12-25","availableDate":null,"estimatedDuration":null,"workDone":99,"health":null}}
