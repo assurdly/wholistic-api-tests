@@ -1,0 +1,5 @@
+{
+    "description": "Member",
+    "name": "pink",
+    "status": "inactive" 
+}
