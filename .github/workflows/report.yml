@@ -38,7 +38,7 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Copy existing content to allure-history
+      - name: Copy existing content to allure-history.
         run: |
           mkdir -p allure-history
           if [ -d gh-pages ]; then
